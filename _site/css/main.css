@@ -1,160 +1,146 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
+/* =Reset
+-------------------------------------------------------------- */
 
-/* Global Reset */
-* {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
   margin: 0;
+  outline: 0;
   padding: 0;
+  vertical-align: baseline;
 }
-
-html, body { height: 100%; }
-
+html {
+  font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+  overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+  -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+  -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
 body {
-  background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center;
+  background: #fff;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
-
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
-
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
-
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-ul.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+  display: block;
 }
-
-ul.posts li {
-  line-height: 1.75em;
+ol, ul {
+  list-style: none;
 }
-
-ul.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
+table { /* tables still need 'cellspacing="0"' in the markup */
+  border-collapse: separate;
+  border-spacing: 0;
 }
-
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
-.site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+caption, th, td {
+  font-weight: normal;
+  text-align: left;
 }
-
-.site .header a {
-  font-weight: bold;
-  text-decoration: none;
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
 }
-
-.site .header h1.title {
-  display: inline-block;
-  margin-bottom: 2em;
+blockquote, q {
+  quotes: "" "";
 }
-
-.site .header h1.title a {
-  color: #a00;
+a:focus {
+  outline: thin dotted;
 }
-
-.site .header h1.title a:hover {
-  color: #000;
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+  outline: 0;
 }
-
-.site .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-
-.site .header a.extra:hover {
-  color: #000;
-}
-
-.site .meta {
-  color: #aaa;
-}
-
-.site .footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
-  overflow: hidden;
-}
-
-.site .footer .contact {
-  float: left;
-  margin-right: 3em;
-}
-
-.site .footer .contact a {
-  color: #8085C1;
-}
-
-.site .footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
-}
-
-.site .footer .rss img {
+a img {
   border: 0;
 }
 
-/*****************************************************************************/
-/*
-/* Posts
-/*
-/*****************************************************************************/
-
-/* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
+/* Clearing */
+.clear:before,
+.clear:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+  content: '';
+  display: table;
 }
 
-.post ul, .post ol {
-  margin-left: 1.35em;
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+  clear: both;
 }
 
-.post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
+/* =Typography
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+  color: #222;
+  font-family: "prenton", sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.6;
 }
 
-.post pre code {
-  border: none;
+h1 { font-size: 2.25em; line-height:1.5em; font-weight:bold;} /*36/16*/
+h2 { font-size: 1.5em; line-height:1.5em; font-weight:bold;} /*246/16*/
+h3 { font-size: 1.3125em; line-height:1.5em; font-weight:bold;} /*21/16*/
+h4 { font-size: 1.125em; line-height:1.5em;} /*18/16*/
+h5 { font-size: 1em; line-height:1.5em;} /*16/16*/
+
+
+/* =Global
+----------------------------------------------- */
+.island {
+  max-width:900px;
+  margin:0 auto;
 }
 
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
+/* =Header
+----------------------------------------------- */
+#site-header {
+  padding:4em 0;
+  border-bottom:1px solid;
+  border-top:2px solid #FF7400;
 }
 
-.post pre.terminal code {
-  background-color: #333;
+.header-avatar {
+  overflow:hidden;
+  width:100px;
+  margin-top:10px;
+  padding:0;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  float:left;
+  margin-right:2em;
+}
+
+#identity {
+  float:left;
+  font-weight:normal;
+  padding-top:1.2em;
+}
+
+#identity h1 {
+  font-weight:normal;
+  font-size:2em;
 }

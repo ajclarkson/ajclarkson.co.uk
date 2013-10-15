@@ -1,13 +1,21 @@
 ---
 layout: default
-title: Your New Jekyll Site!!!!!
+title: Adam James Clarkson
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+<article class="page banner">
+    <section id="masthead">
+        <div id="home-masthead-content" class="island">
+            <h2>I design and code beautiful sites and applications for the web.</h2>          
+        </div><!-- /masthead-content -->
+    </section><!-- /masthead -->
+           
+    <section class="island">
+        <p class="excerpt">I've worked on a wide variety of <a href="/projects">projects</a>, covering identity design through to application development.</p>
+
+        <p class="excerpt">I also <a href="/blog">write</a> about design, development, and the workflows that I use on my projects.</p>
+
+        <p class="excerpt">You can read more <a href="/about">about me</a>, or <a href="adam@ajclarkson.co.uk">get in touch</a> if you want to talk about my work.</p>
+    </section>
+</article><!-- /page -->
+       

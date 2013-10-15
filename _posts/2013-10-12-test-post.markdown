@@ -1,8 +1,0 @@
----
-layout: default
-title: This is a test post
----
-
-# This s a test post
-
-If I have configured everything correctly, then this is a blog post for you to see.
