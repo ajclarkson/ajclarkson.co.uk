@@ -1,0 +1,34 @@
+---
+layout: default
+title: Recent Projects
+---
+
+<article class="page island clear">
+	<h1>Recent Projects</h1>
+		<p class="excerpt">Below is a selection of projects that I've worked on recently. I'm accepting work again now, so feel free to <a href="mailto:adam@ajclarkson.co.uk">get in touch</a> if you're interested in working with me.</p>
+
+	<section id="recent-articles" class="clear">               
+                <ul>
+                	{% for post in site.categories['projects'] %}
+					<li class="clear">
+                        <aside class="post-meta">
+                        	<img src="/images/{{post.shortcode}}_thumb.png" />
+                        </aside>
+                        <div class="article-details">
+                            <h2>{{post.title}}</h2>
+                            <p>{{ post.excerpt }}</p>
+                           <a href="{{post.url}}" class="button-link">See More Details &raquo;</a>
+                        </div>
+                    </li>
+
+
+{% endfor %}
+                    
+
+                   </ul>
+
+
+
+            </section>
+
+</article><!-- /article.page -->

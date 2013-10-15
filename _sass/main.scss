@@ -1,0 +1,232 @@
+@import "colours";
+/* =Reset
+-------------------------------------------------------------- */
+@import "reset";
+/* =Typography
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+  color: $body-text;
+  font-family: "jubilat", georgia, serif;
+  font-size: 18px;
+  font-size: 1.8em;
+  line-height: 1.6;
+}
+
+
+h1 {
+  font-size:5em;
+  font-weight:600;
+  line-height:1.1em;
+  font-family:"futura-pt", sans-serif;
+  margin-bottom:.5em;
+  letter-spacing:-.04em;
+}
+h2 { font-size: 1.5em; line-height:1.5em; font-weight:bold;font-family:"futura-pt", sans-serif; margin-bottom:.5em; margin-top:1.5em;} /*26/16*/
+h3 { font-size: 1em; line-height:1.5em; font-weight:bold; font-family:"futura-pt", sans-serif; text-transform:uppercase;} /*21/16*/
+h4 { font-size: 1.125em; line-height:1.5em;} /*18/16*/
+h5 { font-size: 1em; line-height:1.5em;} /*16/16*/
+
+strong {
+  font-weight:600;
+  letter-spacing:.03em;
+}
+
+em {
+  font-style:italic;
+}
+
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    src: url('/fonts/MonoSocialIconsFont-1.10.eot');
+    src: url('/fonts/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/MonoSocialIconsFont-1.10.woff') format('woff'),
+         url('/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype'),
+         url('/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+    src: url('/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.symbol, a.symbol:before {
+
+    font-family: 'Mono Social Icons Font';
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+a.symbol:before {
+    content: attr(title);
+    margin-right: 0.3em;
+    font-size: 130%;
+}
+
+/* =Global
+----------------------------------------------- */
+.island {
+  max-width:900px;
+  margin:0 auto;
+}
+
+a:link, a:visited {
+  color:$link-colour;;
+}
+
+a:active, a:hover {
+  color:$hover-colour;
+}
+
+p {
+  margin-bottom:1.5em;
+}
+
+ul, ol {
+  margin-bottom:1.5em;
+  position:relative;
+  left:2em;
+}
+
+ul {
+  list-style-type:disc;
+}
+ol{
+  list-style-type:decimal;
+}
+
+blockquote {
+  font-family:"futura-pt", sans-serif;
+  font-style:italic;
+  color:#aaa;
+  font-size:1.2em;
+  margin-bottom:1.5em;
+
+}
+
+figcaption {
+  color:#888;
+  font-family:"futura-pt", sans-serif;
+  font-size:.9em;
+  margin-bottom:1.5em;
+
+}
+
+code {
+  font-family: monospace;
+  white-space:pre;
+}
+
+.video-container{
+   position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    margin-bottom:1.5em;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.social-links{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  float:right;
+  width:40%;
+  font-size:2em;
+  text-align:right;
+  position:relative;
+  left:0em;
+  
+  li {
+    display:inline;
+    margin-left:.125em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.button-link {
+  display:inline-block;
+  background:#e57554;
+  padding:1em 1.2em;
+  margin-bottom:1.5em;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+a.button-link:link, a.button-link:visited {
+    color:#f9ddd5;
+    font-family:"futura-pt", sans-serif;
+    text-transform:uppercase;
+    text-decoration:none;
+    font-size:.75em;
+}
+
+a.button-link:hover, a.button-link:active {
+  color:#ffffff;
+}
+
+/* =Header
+----------------------------------------------- */
+@import "site-header";
+
+/* =Content
+----------------------------------------------- */
+
+@import "site-body";
+
+.portfolio-details {
+    float:right;
+    width:72.3606798%;
+}
+
+#page-content {
+  width:72.3606798%;
+  float:right;
+}
+
+
+
+
+a:link.twitter , a:visited.twitter {
+  color:#00acee;
+}
+a:link.instagram, a:visited.instagram { 
+  color:#634d40;
+}
+a:link.dribbble, a:visited.dribbble {
+  color:#ea4c89;
+}
+a:link.github, a:visited.github {
+  color:#171515;
+}
+a:link.strava, a:visited.strava {
+  color:#fc4c02;
+}
+
+
+
+
+/* =Footer
+----------------------------------------------- */
+@import "site-footer";

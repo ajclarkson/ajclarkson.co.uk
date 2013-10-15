@@ -1,0 +1,61 @@
+#site-header {
+  padding:4em 0;
+  background:#efefef;
+  border-top:5px solid $orange;
+
+  h1 {
+    font-family:"futura-pt", sans-serif;
+    font-weight:200;
+    font-size:1.25em;
+
+    strong {
+      font-weight:600;
+    }
+
+    a:link, a:visited {
+      color:$body-text;
+      text-decoration:none;
+    }
+  }
+  img.avatar {
+      overflow:hidden;
+      width:50px;
+      margin:0.15em 1em 0 -70px;
+      padding:0;
+      border-radius: 10px;
+      float:left;
+  }
+
+  .tagline {
+    font-size:.85em;
+    font-family:"futura-pt", sans-serif;
+  }
+
+  a:hover, a:active {
+    color:$body-text;
+  }
+
+  #identity {
+    float:left;
+    text-transform:uppercase;
+    width:40%;
+
+  }
+}
+
+nav {
+  list-style-type:none;
+  display:block;
+  clear:both;
+}
+
+nav li {
+  display:inline;
+  margin-right:.3em;
+}
+
+nav a:link, nav a:visited {
+  font-weight:bold;
+  text-decoration:none;
+  font-family:"futura-pt", sans-serif;
+}

@@ -1,0 +1,24 @@
+footer {
+  clear:both;
+  background:#222;
+  color:#ccc;
+  font-family:"futura-pt";
+  padding:4em 0 2em;
+}
+
+footer a:link, footer a:visited {
+  color:#ccc;
+}
+
+footer a:hover, footer:active {
+  color:#e57554;
+}
+
+footer .footer-text {
+	float:left;
+	width:50%;
+}
+
+footer .social-links {
+	top:-.75em;
+}

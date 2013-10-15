@@ -1,0 +1,691 @@
+/* =Reset
+-------------------------------------------------------------- */
+/* line 8, ../_sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* line 19, ../_sass/_reset.scss */
+html {
+  font-size: 62.5%;
+  /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+  overflow-y: scroll;
+  /* Keeps page centred in all browsers regardless of content height */
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+  -ms-text-size-adjust: 100%;
+  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+
+/* line 25, ../_sass/_reset.scss */
+body {
+  background: #fff;
+}
+
+/* line 36, ../_sass/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/* line 39, ../_sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 42, ../_sass/_reset.scss */
+table {
+  /* tables still need 'cellspacing="0"' in the markup */
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* line 46, ../_sass/_reset.scss */
+caption, th, td {
+  font-weight: normal;
+  text-align: left;
+}
+
+/* line 51, ../_sass/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+/* line 54, ../_sass/_reset.scss */
+blockquote, q {
+  quotes: "" "";
+}
+
+/* line 57, ../_sass/_reset.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* line 61, ../_sass/_reset.scss */
+a:hover,
+a:active {
+  /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+  outline: 0;
+}
+
+/* line 64, ../_sass/_reset.scss */
+a img {
+  border: 0;
+}
+
+/* Clearing */
+/* line 74, ../_sass/_reset.scss */
+.clear:before,
+.clear:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+  content: '';
+  display: table;
+}
+
+/* line 81, ../_sass/_reset.scss */
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+  clear: both;
+}
+
+/* =Typography
+----------------------------------------------- */
+/* line 12, ../_sass/main.scss */
+body,
+button,
+input,
+select,
+textarea {
+  color: #222222;
+  font-family: "jubilat", georgia, serif;
+  font-size: 18px;
+  font-size: 1.8em;
+  line-height: 1.6;
+}
+
+/* line 21, ../_sass/main.scss */
+h1 {
+  font-size: 5em;
+  font-weight: 600;
+  line-height: 1.1em;
+  font-family: "futura-pt", sans-serif;
+  margin-bottom: .5em;
+  letter-spacing: -.04em;
+}
+
+/* line 29, ../_sass/main.scss */
+h2 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  margin-bottom: .5em;
+  margin-top: 1.5em;
+}
+
+/*26/16*/
+/* line 30, ../_sass/main.scss */
+h3 {
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: bold;
+  font-family: "futura-pt", sans-serif;
+  text-transform: uppercase;
+}
+
+/*21/16*/
+/* line 31, ../_sass/main.scss */
+h4 {
+  font-size: 1.125em;
+  line-height: 1.5em;
+}
+
+/*18/16*/
+/* line 32, ../_sass/main.scss */
+h5 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/*16/16*/
+/* line 34, ../_sass/main.scss */
+strong {
+  font-weight: 600;
+  letter-spacing: .03em;
+}
+
+/* line 39, ../_sass/main.scss */
+em {
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Mono Social Icons Font';
+  src: url("/fonts/MonoSocialIconsFont-1.10.eot");
+  src: url("/fonts/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("/fonts/MonoSocialIconsFont-1.10.woff") format("woff"), url("/fonts/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont") format("svg");
+  src: url("/fonts/MonoSocialIconsFont-1.10.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 55, ../_sass/main.scss */
+.symbol, a.symbol:before {
+  font-family: 'Mono Social Icons Font';
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+/* line 70, ../_sass/main.scss */
+a.symbol:before {
+  content: attr(title);
+  margin-right: 0.3em;
+  font-size: 130%;
+}
+
+/* =Global
+----------------------------------------------- */
+/* line 78, ../_sass/main.scss */
+.island {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* line 83, ../_sass/main.scss */
+a:link, a:visited {
+  color: #e57554;
+}
+
+/* line 87, ../_sass/main.scss */
+a:active, a:hover {
+  color: #dddddd;
+}
+
+/* line 91, ../_sass/main.scss */
+p {
+  margin-bottom: 1.5em;
+}
+
+/* line 95, ../_sass/main.scss */
+ul, ol {
+  margin-bottom: 1.5em;
+  position: relative;
+  left: 2em;
+}
+
+/* line 101, ../_sass/main.scss */
+ul {
+  list-style-type: disc;
+}
+
+/* line 104, ../_sass/main.scss */
+ol {
+  list-style-type: decimal;
+}
+
+/* line 108, ../_sass/main.scss */
+blockquote {
+  font-family: "futura-pt", sans-serif;
+  font-style: italic;
+  color: #aaa;
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+/* line 117, ../_sass/main.scss */
+figcaption {
+  color: #888;
+  font-family: "futura-pt", sans-serif;
+  font-size: .9em;
+  margin-bottom: 1.5em;
+}
+
+/* line 125, ../_sass/main.scss */
+code {
+  font-family: monospace;
+  white-space: pre;
+}
+
+/* line 130, ../_sass/main.scss */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+}
+
+/* line 139, ../_sass/main.scss */
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 146, ../_sass/main.scss */
+.social-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  width: 40%;
+  font-size: 2em;
+  text-align: right;
+  position: relative;
+  left: 0em;
+}
+/* line 157, ../_sass/main.scss */
+.social-links li {
+  display: inline;
+  margin-left: .125em;
+}
+/* line 162, ../_sass/main.scss */
+.social-links a {
+  text-decoration: none;
+}
+
+/* line 167, ../_sass/main.scss */
+.button-link {
+  display: inline-block;
+  background: #e57554;
+  padding: 1em 1.2em;
+  margin-bottom: 1.5em;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+/* line 177, ../_sass/main.scss */
+a.button-link:link, a.button-link:visited {
+  color: #f9ddd5;
+  font-family: "futura-pt", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .75em;
+}
+
+/* line 185, ../_sass/main.scss */
+a.button-link:hover, a.button-link:active {
+  color: #ffffff;
+}
+
+/* =Header
+----------------------------------------------- */
+/* line 1, ../_sass/_site-header.scss */
+#site-header {
+  padding: 4em 0;
+  background: #efefef;
+  border-top: 5px solid #e57554;
+}
+/* line 6, ../_sass/_site-header.scss */
+#site-header h1 {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 200;
+  font-size: 1.25em;
+}
+/* line 11, ../_sass/_site-header.scss */
+#site-header h1 strong {
+  font-weight: 600;
+}
+/* line 15, ../_sass/_site-header.scss */
+#site-header h1 a:link, #site-header h1 a:visited {
+  color: #222222;
+  text-decoration: none;
+}
+/* line 20, ../_sass/_site-header.scss */
+#site-header img.avatar {
+  overflow: hidden;
+  width: 50px;
+  margin: 0.15em 1em 0 -70px;
+  padding: 0;
+  border-radius: 10px;
+  float: left;
+}
+/* line 29, ../_sass/_site-header.scss */
+#site-header .tagline {
+  font-size: .85em;
+  font-family: "futura-pt", sans-serif;
+}
+/* line 34, ../_sass/_site-header.scss */
+#site-header a:hover, #site-header a:active {
+  color: #222222;
+}
+/* line 38, ../_sass/_site-header.scss */
+#site-header #identity {
+  float: left;
+  text-transform: uppercase;
+  width: 40%;
+}
+
+/* line 46, ../_sass/_site-header.scss */
+nav {
+  list-style-type: none;
+  display: block;
+  clear: both;
+}
+
+/* line 52, ../_sass/_site-header.scss */
+nav li {
+  display: inline;
+  margin-right: .3em;
+}
+
+/* line 57, ../_sass/_site-header.scss */
+nav a:link, nav a:visited {
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "futura-pt", sans-serif;
+}
+
+/* =Content
+----------------------------------------------- */
+/* line 7, ../_sass/_site-body.scss */
+.post, .page {
+  margin: 5em auto 6em;
+}
+/* line 10, ../_sass/_site-body.scss */
+.post h1, .page h1 {
+  font-size: 5em;
+  font-weight: 600;
+  line-height: 1.1em;
+  font-family: 'futura-pt', sans-serif;
+  margin-bottom: .5em;
+  letter-spacing: -.04em;
+}
+/* line 19, ../_sass/_site-body.scss */
+.post aside, .page aside {
+  clear: both;
+  float: left;
+  width: 21.6393202%;
+  margin-right: 0%;
+  border-top: 2px solid #e57554;
+  padding-top: 1em;
+  margin-top: .5em;
+}
+/* line 28, ../_sass/_site-body.scss */
+.post aside img, .post aside p, .post aside ol, .post aside ul, .post aside figcaption, .post aside h3, .page aside img, .page aside p, .page aside ol, .page aside ul, .page aside figcaption, .page aside h3 {
+  width: 100%;
+}
+
+/* line 34, ../_sass/_site-body.scss */
+.post.banner, .page.banner {
+  margin-top: 0;
+}
+
+/* line 39, ../_sass/_site-body.scss */
+.post p, .post ul, .post ol, .post h2, .post h3, .post blockquote, .post code, .post img, .post figcaption, .post .video-container {
+  float: right;
+  width: 72.3606798%;
+}
+
+/* line 43, ../_sass/_site-body.scss */
+#post-content {
+  margin-bottom: 3em;
+}
+
+/* line 47, ../_sass/_site-body.scss */
+#masthead {
+  background: #e57554;
+  margin-top: 0;
+  margin-bottom: 6em;
+}
+
+/* line 53, ../_sass/_site-body.scss */
+#home-masthead-content {
+  min-height: 450px;
+  background: url("/images/bg.png") no-repeat center right;
+}
+
+/* line 58, ../_sass/_site-body.scss */
+#home-masthead-content h2 {
+  width: 45%;
+  color: #f9ddd5;
+  padding-top: 2.5em;
+  font-size: 2.2em;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 68, ../_sass/_site-body.scss */
+p.excerpt {
+  float: none;
+  width: 100%;
+  font-weight: 400;
+  font-size: 2em;
+  margin-bottom: 1.2em;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 1em;
+  line-height: 1.2em;
+}
+
+/* line 79, ../_sass/_site-body.scss */
+.post-meta h3 {
+  font-size: .75em;
+  color: #888888;
+  text-align: left;
+}
+
+/* line 85, ../_sass/_site-body.scss */
+#tag-list {
+  margin-bottom: 4.5em;
+}
+/* line 87, ../_sass/_site-body.scss */
+#tag-list h2 {
+  margin-top: 0em;
+}
+/* line 90, ../_sass/_site-body.scss */
+#tag-list ul {
+  list-style-type: none;
+  left: 0px;
+}
+/* line 95, ../_sass/_site-body.scss */
+#tag-list li {
+  display: inline-block;
+  margin-right: .75em;
+}
+
+/* line 101, ../_sass/_site-body.scss */
+#recent-articles ul {
+  list-style-type: none;
+  left: 0;
+}
+/* line 106, ../_sass/_site-body.scss */
+#recent-articles li {
+  margin: 1.5em 0;
+}
+/* line 110, ../_sass/_site-body.scss */
+#recent-articles aside {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+/* line 115, ../_sass/_site-body.scss */
+.post-tags {
+  list-style-type: none;
+  left: 0;
+}
+/* line 119, ../_sass/_site-body.scss */
+.post-tags li {
+  margin: 0 .5em -.2em 0 !important;
+  float: left;
+}
+/* line 122, ../_sass/_site-body.scss */
+.post-tags li a:after {
+  content: ", ";
+}
+/* line 129, ../_sass/_site-body.scss */
+.post-tags li:last-child a:after {
+  content: "";
+}
+
+/* line 135, ../_sass/_site-body.scss */
+.article-details {
+  float: right;
+  width: 72.3606798%;
+  border-top: 1px solid #dddddd;
+}
+/* line 139, ../_sass/_site-body.scss */
+.article-details a:link, .article-details a:visited {
+  text-decoration: none;
+}
+/* line 143, ../_sass/_site-body.scss */
+.article-details h2 {
+  margin-top: 1em;
+}
+/* line 145, ../_sass/_site-body.scss */
+.article-details h2 a:after {
+  content: " \BB ";
+}
+
+/* line 150, ../_sass/_site-body.scss */
+#portfolio-masthead-details {
+  width: 45%;
+  color: #f9ddd5;
+  float: left;
+  padding: 3em 0 6em;
+}
+
+/* line 157, ../_sass/_site-body.scss */
+#portfolio-masthead-details h3 {
+  font-weight: normal;
+  margin-bottom: 1.5em;
+}
+
+/* line 163, ../_sass/_site-body.scss */
+#portfolio-masthead-image {
+  width: 50%;
+  float: right;
+  padding-top: 1.5em;
+}
+
+/* line 169, ../_sass/_site-body.scss */
+#portfolio-page-details h2 {
+  padding-top: 1.5em;
+}
+
+/* line 173, ../_sass/_site-body.scss */
+#portfolio-page-content img {
+  border: 1px solid #efefef;
+}
+
+/* line 178, ../_sass/_site-body.scss */
+.portfolio-page-details {
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  margin: 5em 0;
+  padding: 2em 0;
+}
+
+/* line 185, ../_sass/_site-body.scss */
+#disqus_thread {
+  font-family: "jubilat", sans-serif;
+}
+
+/* line 198, ../_sass/main.scss */
+.portfolio-details {
+  float: right;
+  width: 72.3606798%;
+}
+
+/* line 203, ../_sass/main.scss */
+#page-content {
+  width: 72.3606798%;
+  float: right;
+}
+
+/* line 211, ../_sass/main.scss */
+a:link.twitter, a:visited.twitter {
+  color: #00acee;
+}
+
+/* line 214, ../_sass/main.scss */
+a:link.instagram, a:visited.instagram {
+  color: #634d40;
+}
+
+/* line 217, ../_sass/main.scss */
+a:link.dribbble, a:visited.dribbble {
+  color: #ea4c89;
+}
+
+/* line 220, ../_sass/main.scss */
+a:link.github, a:visited.github {
+  color: #171515;
+}
+
+/* line 223, ../_sass/main.scss */
+a:link.strava, a:visited.strava {
+  color: #fc4c02;
+}
+
+/* =Footer
+----------------------------------------------- */
+/* line 1, ../_sass/_site-footer.scss */
+footer {
+  clear: both;
+  background: #222;
+  color: #ccc;
+  font-family: "futura-pt";
+  padding: 4em 0 2em;
+}
+
+/* line 9, ../_sass/_site-footer.scss */
+footer a:link, footer a:visited {
+  color: #ccc;
+}
+
+/* line 13, ../_sass/_site-footer.scss */
+footer a:hover, footer:active {
+  color: #e57554;
+}
+
+/* line 17, ../_sass/_site-footer.scss */
+footer .footer-text {
+  float: left;
+  width: 50%;
+}
+
+/* line 22, ../_sass/_site-footer.scss */
+footer .social-links {
+  top: -.75em;
+}
