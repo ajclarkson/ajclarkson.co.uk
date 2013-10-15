@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Adam James Clarkson</title>
+ <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
+ <link href="http://ajclarkson.co.uk/"/>
+ <updated>2013-10-15T23:31:27+01:00</updated>
+ <id>http://ajclarkson.co.uk</id>
+ <author>
+   <name>Adam James Clarkson</name>
+ </author>
+ 
+ 
+ <entry>
+   <title>Tom Brock - Research Blog</title>
+   <link href="http://ajclarkson.co.uk/projects/tom-brock-research-blog/"/>
+   <updated>2013-10-14T00:00:00+01:00</updated>
+   <id>http://ajclarkson.co.uk/projects/tom-brock-research-blog</id>
+   <content type="html">&lt;article class=&quot;page banner clear&quot;&gt;
+           &lt;section id=&quot;masthead&quot; class=&quot;clear&quot;&gt;
+                &lt;section id=&quot;portfolio-masthead-content&quot; class=&quot;island&quot;&gt;
+                    
+                    &lt;section id=&quot;portfolio-masthead-details&quot;&gt;
+                        &lt;h2&gt;Tom Brock - Research Blog&lt;/h2&gt;
+                        &lt;h3&gt;Wordpress Theme Design, Plugin &amp;amp; Function Customisation&lt;/h3&gt;
+                        &lt;p&gt;Dr. Tom Brock wanted a new platform to express his sociological research ideas, but wanted to stand out from the hundreds of other blogs. Putting a strong focus on the content, and developing some custom functions and plugins to link with his various social media activities did the trick.&lt;/p&gt;
+                    &lt;/section&gt;
+
+                    &lt;section id=&quot;portfolio-masthead-image&quot;&gt;
+                        &lt;img src=&quot;/images/tgjbrock_screen.png&quot;&gt;
+                    &lt;/section&gt;
+                    
+
+
+                &lt;/section&gt;
+             
+           &lt;/section&gt;&lt;!-- /masthead --&gt;
+
+           &lt;section id=&quot;portfolio-page-content&quot; class=&quot;island&quot;&gt;
+                    &lt;img src=&quot;/images/tgjbrock_detailshot1.png&quot; /&gt;
+
+                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
+                        &lt;h2&gt;Clear Content Focus&lt;/h2&gt;
+                        &lt;p&gt;The value of this site is in it's content. The blog posts are often long form, and as such it was imperitive to make sure that it was comfortable to read. By paying close attention to the typography, and removing any distracting sidebars, the reader is directed straight to the content they need to see.&lt;/p&gt;
+                    &lt;/section&gt;
+                    &lt;img src=&quot;/images/tgjbrock_detailshot2.png&quot; /&gt;
+                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
+                        &lt;h2&gt;Promoting Social Media&lt;/h2&gt;
+                        &lt;p&gt;Tom is very active on both twitter and readability, so it made sense to promote that fact on his site. Following the content first ethos of the site, these were moved to an expanded footer at the bottom of his pages. That way they don't distract from the content, but are still easily accessible.&lt;/p&gt;
+                    &lt;/section&gt;
+                    &lt;img src=&quot;/images/tgjbrock_detailshot3.png&quot; /&gt;
+                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
+                        &lt;h2&gt;Augmenting Wordpress Functions&lt;/h2&gt;
+                        &lt;p&gt;Additional functions were added to the wordpress install to provide administrator access to edit every aspect of the site, and to provide a number of shortcodes for custom placement of widgets.&lt;/p&gt;
+                    &lt;/section&gt;
+           &lt;/section&gt;&lt;!-- /portfolio-page-content --&gt;
+        &lt;/article&gt;&lt;!-- /page --&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>St Aidan's College - Senior Common Room</title>
+   <link href="http://ajclarkson.co.uk/projects/st-aidans-scr/"/>
+   <updated>2013-10-14T00:00:00+01:00</updated>
+   <id>http://ajclarkson.co.uk/projects/st-aidans-scr</id>
+   <content type="html">&lt;article class=&quot;page banner clear&quot;&gt;
+           &lt;section id=&quot;masthead&quot; class=&quot;clear&quot;&gt;
+                &lt;section id=&quot;portfolio-masthead-content&quot; class=&quot;island&quot;&gt;
+                    
+                    &lt;section id=&quot;portfolio-masthead-details&quot;&gt;
+                        &lt;h2&gt;St Aidan's College - Senior Common Room&lt;/h2&gt;
+                        &lt;h3&gt;Identity, Website Design, &amp;amp; Handbook Layout&lt;/h3&gt;
+                        &lt;p&gt;St Aidan's College SCR Website is used as an information portal. Maintaining a professional image while presenting all of the neccessary information was the key goal of this project.&lt;/p&gt;
+                    &lt;/section&gt;
+
+                    &lt;section id=&quot;portfolio-masthead-image&quot;&gt;
+                        &lt;img src=&quot;/images/scr_screen.png&quot;&gt;
+                    &lt;/section&gt;
+                    
+
+
+                &lt;/section&gt;
+             
+           &lt;/section&gt;&lt;!-- /masthead --&gt;
+
+           &lt;section id=&quot;portfolio-page-content&quot; class=&quot;island&quot;&gt;
+                    &lt;img src=&quot;/images/scr_detailshot1.png&quot; /&gt;
+
+                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
+                        &lt;h2&gt;Clear, Recognisable Branding&lt;/h2&gt;
+                        &lt;p&gt;The College has a well established brand within Durham Unviersity, and so the Senior Common Room site had to covey this. By focusing on the College crest, and chosing the green College colour, the site fell in line with other media elements.&lt;/p&gt;
+                    &lt;/section&gt;
+                    &lt;img src=&quot;/images/scr_detailshot2.png&quot; /&gt;
+                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
+                        &lt;h2&gt;Information Architecture&lt;/h2&gt;
+                        &lt;p&gt;The SCR has to provide a wealth of information to current and prospective students. However, the site shouldn't appear overwhelming, which meant keeping the top level navigation simple. Utilising some jQuery to show and hide content allowed more commonly searched information to take the centre stage.&lt;/p&gt;
+                    &lt;/section&gt;
+                    &lt;img src=&quot;/images/scr_detailshot3.png&quot; /&gt;
+                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
+                        &lt;h2&gt;Consolidating the Brand&lt;/h2&gt;
+                        &lt;p&gt;The College sends a handbook to all new postgraduate students before they start. The handbook information was due to be updated at the same time as this web project, and so a new layout was commissioned to fall in line with the new website look and feel.&lt;/p&gt;
+                    &lt;/section&gt;
+           &lt;/section&gt;&lt;!-- /portfolio-page-content --&gt;
+        &lt;/article&gt;&lt;!-- /page --&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Make Blogging Simpler With Jekyll</title>
+   <link href="http://ajclarkson.co.uk/blog/simple-blogging-with-jekyll/"/>
+   <updated>2013-10-14T00:00:00+01:00</updated>
+   <id>http://ajclarkson.co.uk/blog/simple-blogging-with-jekyll</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt; Blogging with Jekyll requires a small amount of technical know-how, mainly focused around git. It's a great option for developers who blog, and designers who code &lt;em&gt;&lt;a href=&quot;#&quot;&gt;which you should&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Wordpress is pretty much the ubiquitous platform when it comes to setting up a blog now, and with good reason. As a blogging CMS, even as a full blown CMS, it does a great job. It makes it easy for users to post articles, and offers some powerful templating options and plugins. That makes it great for the masses. But just because it works for them, does that mean it has to work for you?&lt;/p&gt;
+
+&lt;h2&gt;The Trouble with CMSs&lt;/h2&gt;
+&lt;aside class=&quot;alignleft&quot;&gt;
+    &lt;img src=&quot;/images/new-avatar.jpg&quot;/&gt;
+    &lt;figcaption&gt;Testing Image Captions in the Sidebar&lt;/figcaption&gt;
+&lt;/aside&gt;
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
+   &lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
+   &lt;li&gt;Vestibulum auctor dapibus neque.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;
+
+&lt;ol&gt;
+   &lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
+   &lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
+   &lt;li&gt;Vestibulum auctor dapibus neque.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/blockquote&gt;
+&lt;img src=&quot;/images/new-avatar.jpg&quot;/&gt;
+    &lt;figcaption&gt;Testing Image Captions in the main post&lt;/figcaption&gt;
+
+&lt;h3&gt;Code Sample for Commit Hook&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span id=&quot;True-1&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/home/ajclarkson/.rvm/bin/rvm-shell 1.9.3-p429&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;True-2&quot;&gt;&lt;span class=&quot;nv&quot;&gt;GIT_REPO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/ajclarkson.co.uk.git
+&lt;/span&gt;&lt;span id=&quot;True-3&quot;&gt;&lt;span class=&quot;nv&quot;&gt;TMP_GIT_CLONE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/tmp/ajclarkson.co.uk.git
+&lt;/span&gt;&lt;span id=&quot;True-4&quot;&gt;&lt;span class=&quot;nv&quot;&gt;PUBLIC_WWW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/srv/www/ajclarkson.co.uk/public
+&lt;/span&gt;&lt;span id=&quot;True-5&quot;&gt;
+&lt;/span&gt;&lt;span id=&quot;True-6&quot;&gt;git clone &lt;span class=&quot;nv&quot;&gt;$GIT_REPO&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$TMP_GIT_CLONE&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;True-7&quot;&gt;/home/ajclarkson/.rvm/gems/ruby-1.9.3-p429/bin/jekyll build -s &lt;span class=&quot;nv&quot;&gt;$TMP_GIT_CLONE&lt;/span&gt; -d &lt;span class=&quot;nv&quot;&gt;$PUBLIC_WWW&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;True-8&quot;&gt;rm -Rf &lt;span class=&quot;nv&quot;&gt;$TMP_GIT_CLONE&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;True-9&quot;&gt;&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;media-container-full-width&quot;&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/hdb35avQvmg&quot; frameborder=&quot;0&quot; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Michelle Ormrod - Pilates Classes</title>
+   <link href="http://ajclarkson.co.uk/projects/michelle-ormrod-pilates/"/>
+   <updated>2013-10-14T00:00:00+01:00</updated>
+   <id>http://ajclarkson.co.uk/projects/michelle-ormrod-pilates</id>
+   <content type="html">&lt;article class=&quot;page banner clear&quot;&gt;
+           &lt;section id=&quot;masthead&quot; class=&quot;clear&quot;&gt;
+                &lt;section id=&quot;portfolio-masthead-content&quot; class=&quot;island&quot;&gt;
+                    
+                    &lt;section id=&quot;portfolio-masthead-details&quot;&gt;
+                        &lt;h2&gt;Michelle Ormrod - Pilates Classes&lt;/h2&gt;
+                        &lt;h3&gt;Identity Update, Website Design &amp;amp; Stationary&lt;/h3&gt;
+                        &lt;p&gt;Michelle was looking for an update to her old site and branding. As a small business, the personality of her brand is very important. A new site and stationary were created to convey this to her clients.&lt;/p&gt;
+                    &lt;/section&gt;
+
+                    &lt;section id=&quot;portfolio-masthead-image&quot;&gt;
+                        &lt;img src=&quot;/images/mopilates_screen.png&quot;&gt;
+                    &lt;/section&gt;
+                    
+
+
+                &lt;/section&gt;
+             
+           &lt;/section&gt;&lt;!-- /masthead --&gt;
+
+           &lt;section id=&quot;portfolio-page-content&quot; class=&quot;island&quot;&gt;
+                    &lt;img src=&quot;/images/mopilates_detailshot1.png&quot; /&gt;
+
+                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
+                        &lt;h2&gt;Relaxation to the Core&lt;/h2&gt;
+                        &lt;p&gt;Michelle had a very strong desire to update her old branding and website to a more calm colour scheme and modern feel. A minimal template for the Perch CMS and a tweak to the typography and colour scheme of the branding achieved this.&lt;/p&gt;
+                    &lt;/section&gt;
+                    &lt;img src=&quot;/images/mopilates_detailshot2.png&quot; /&gt;
+                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
+                        &lt;h2&gt;Content Focus&lt;/h2&gt;
+                        &lt;p&gt;The site is here to provide class information for prospective and current clients. To that end, the design gets out of the way when it comes to presenting the key information.&lt;/p&gt;
+                    &lt;/section&gt;
+                    &lt;img src=&quot;/images/mopilates_detailshot3.png&quot; /&gt;
+                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
+                        &lt;h2&gt;Business Stationary&lt;/h2&gt;
+                        &lt;p&gt;To fall in line with the branding refresh, a new set of stationary including letterheads and business card were designed. These allow Michelle to keep a consistent brand across all communication with her clients.&lt;/p&gt;
+                    &lt;/section&gt;
+           &lt;/section&gt;&lt;!-- /portfolio-page-content --&gt;
+        &lt;/article&gt;&lt;!-- /page --&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Automatically Deploy Your Jekyll Site</title>
+   <link href="http://ajclarkson.co.uk/blog/git-build-jekyll-deploy/"/>
+   <updated>2013-10-10T00:00:00+01:00</updated>
+   <id>http://ajclarkson.co.uk/blog/git-build-jekyll-deploy</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>Hello, World!</title>
+   <link href="http://ajclarkson.co.uk/blog/hello-world/"/>
+   <updated>2013-10-07T00:00:00+01:00</updated>
+   <id>http://ajclarkson.co.uk/blog/hello-world</id>
+   <content type="html"></content>
+ </entry>
+ 
+ 
+</feed>
