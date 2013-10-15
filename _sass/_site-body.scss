@@ -36,8 +36,14 @@
 }
 
 .post {
-	p, ul, ol, h2, h3, blockquote, code, img, figcaption, .video-container {
+	p, ul, ol, h2, h3, blockquote, code, img, figcaption, .media-container {
 		@include grid_72_right;
+    }
+
+    .media-container-full-width, img.full-width{
+    	clear:both;
+    	float:none;
+    	width:100%;
     }
 }
 #post-content {
