@@ -4,104 +4,12 @@
  <title>Adam James Clarkson</title>
  <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
  <link href="http://ajclarkson.co.uk/"/>
- <updated>2013-10-15T23:31:27+01:00</updated>
+ <updated>2013-10-16T09:43:27+01:00</updated>
  <id>http://ajclarkson.co.uk</id>
  <author>
    <name>Adam James Clarkson</name>
  </author>
  
- 
- <entry>
-   <title>Tom Brock - Research Blog</title>
-   <link href="http://ajclarkson.co.uk/projects/tom-brock-research-blog/"/>
-   <updated>2013-10-14T00:00:00+01:00</updated>
-   <id>http://ajclarkson.co.uk/projects/tom-brock-research-blog</id>
-   <content type="html">&lt;article class=&quot;page banner clear&quot;&gt;
-           &lt;section id=&quot;masthead&quot; class=&quot;clear&quot;&gt;
-                &lt;section id=&quot;portfolio-masthead-content&quot; class=&quot;island&quot;&gt;
-                    
-                    &lt;section id=&quot;portfolio-masthead-details&quot;&gt;
-                        &lt;h2&gt;Tom Brock - Research Blog&lt;/h2&gt;
-                        &lt;h3&gt;Wordpress Theme Design, Plugin &amp;amp; Function Customisation&lt;/h3&gt;
-                        &lt;p&gt;Dr. Tom Brock wanted a new platform to express his sociological research ideas, but wanted to stand out from the hundreds of other blogs. Putting a strong focus on the content, and developing some custom functions and plugins to link with his various social media activities did the trick.&lt;/p&gt;
-                    &lt;/section&gt;
-
-                    &lt;section id=&quot;portfolio-masthead-image&quot;&gt;
-                        &lt;img src=&quot;/images/tgjbrock_screen.png&quot;&gt;
-                    &lt;/section&gt;
-                    
-
-
-                &lt;/section&gt;
-             
-           &lt;/section&gt;&lt;!-- /masthead --&gt;
-
-           &lt;section id=&quot;portfolio-page-content&quot; class=&quot;island&quot;&gt;
-                    &lt;img src=&quot;/images/tgjbrock_detailshot1.png&quot; /&gt;
-
-                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
-                        &lt;h2&gt;Clear Content Focus&lt;/h2&gt;
-                        &lt;p&gt;The value of this site is in it's content. The blog posts are often long form, and as such it was imperitive to make sure that it was comfortable to read. By paying close attention to the typography, and removing any distracting sidebars, the reader is directed straight to the content they need to see.&lt;/p&gt;
-                    &lt;/section&gt;
-                    &lt;img src=&quot;/images/tgjbrock_detailshot2.png&quot; /&gt;
-                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
-                        &lt;h2&gt;Promoting Social Media&lt;/h2&gt;
-                        &lt;p&gt;Tom is very active on both twitter and readability, so it made sense to promote that fact on his site. Following the content first ethos of the site, these were moved to an expanded footer at the bottom of his pages. That way they don't distract from the content, but are still easily accessible.&lt;/p&gt;
-                    &lt;/section&gt;
-                    &lt;img src=&quot;/images/tgjbrock_detailshot3.png&quot; /&gt;
-                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
-                        &lt;h2&gt;Augmenting Wordpress Functions&lt;/h2&gt;
-                        &lt;p&gt;Additional functions were added to the wordpress install to provide administrator access to edit every aspect of the site, and to provide a number of shortcodes for custom placement of widgets.&lt;/p&gt;
-                    &lt;/section&gt;
-           &lt;/section&gt;&lt;!-- /portfolio-page-content --&gt;
-        &lt;/article&gt;&lt;!-- /page --&gt;</content>
- </entry>
- 
- <entry>
-   <title>St Aidan's College - Senior Common Room</title>
-   <link href="http://ajclarkson.co.uk/projects/st-aidans-scr/"/>
-   <updated>2013-10-14T00:00:00+01:00</updated>
-   <id>http://ajclarkson.co.uk/projects/st-aidans-scr</id>
-   <content type="html">&lt;article class=&quot;page banner clear&quot;&gt;
-           &lt;section id=&quot;masthead&quot; class=&quot;clear&quot;&gt;
-                &lt;section id=&quot;portfolio-masthead-content&quot; class=&quot;island&quot;&gt;
-                    
-                    &lt;section id=&quot;portfolio-masthead-details&quot;&gt;
-                        &lt;h2&gt;St Aidan's College - Senior Common Room&lt;/h2&gt;
-                        &lt;h3&gt;Identity, Website Design, &amp;amp; Handbook Layout&lt;/h3&gt;
-                        &lt;p&gt;St Aidan's College SCR Website is used as an information portal. Maintaining a professional image while presenting all of the neccessary information was the key goal of this project.&lt;/p&gt;
-                    &lt;/section&gt;
-
-                    &lt;section id=&quot;portfolio-masthead-image&quot;&gt;
-                        &lt;img src=&quot;/images/scr_screen.png&quot;&gt;
-                    &lt;/section&gt;
-                    
-
-
-                &lt;/section&gt;
-             
-           &lt;/section&gt;&lt;!-- /masthead --&gt;
-
-           &lt;section id=&quot;portfolio-page-content&quot; class=&quot;island&quot;&gt;
-                    &lt;img src=&quot;/images/scr_detailshot1.png&quot; /&gt;
-
-                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
-                        &lt;h2&gt;Clear, Recognisable Branding&lt;/h2&gt;
-                        &lt;p&gt;The College has a well established brand within Durham Unviersity, and so the Senior Common Room site had to covey this. By focusing on the College crest, and chosing the green College colour, the site fell in line with other media elements.&lt;/p&gt;
-                    &lt;/section&gt;
-                    &lt;img src=&quot;/images/scr_detailshot2.png&quot; /&gt;
-                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
-                        &lt;h2&gt;Information Architecture&lt;/h2&gt;
-                        &lt;p&gt;The SCR has to provide a wealth of information to current and prospective students. However, the site shouldn't appear overwhelming, which meant keeping the top level navigation simple. Utilising some jQuery to show and hide content allowed more commonly searched information to take the centre stage.&lt;/p&gt;
-                    &lt;/section&gt;
-                    &lt;img src=&quot;/images/scr_detailshot3.png&quot; /&gt;
-                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
-                        &lt;h2&gt;Consolidating the Brand&lt;/h2&gt;
-                        &lt;p&gt;The College sends a handbook to all new postgraduate students before they start. The handbook information was due to be updated at the same time as this web project, and so a new layout was commissioned to fall in line with the new website look and feel.&lt;/p&gt;
-                    &lt;/section&gt;
-           &lt;/section&gt;&lt;!-- /portfolio-page-content --&gt;
-        &lt;/article&gt;&lt;!-- /page --&gt;</content>
- </entry>
  
  <entry>
    <title>Make Blogging Simpler With Jekyll</title>
@@ -152,52 +60,6 @@
 &lt;iframe src=&quot;//www.youtube.com/embed/hdb35avQvmg&quot; frameborder=&quot;0&quot; allowfullscreen&gt;
 &lt;/iframe&gt;
 &lt;/div&gt;</content>
- </entry>
- 
- <entry>
-   <title>Michelle Ormrod - Pilates Classes</title>
-   <link href="http://ajclarkson.co.uk/projects/michelle-ormrod-pilates/"/>
-   <updated>2013-10-14T00:00:00+01:00</updated>
-   <id>http://ajclarkson.co.uk/projects/michelle-ormrod-pilates</id>
-   <content type="html">&lt;article class=&quot;page banner clear&quot;&gt;
-           &lt;section id=&quot;masthead&quot; class=&quot;clear&quot;&gt;
-                &lt;section id=&quot;portfolio-masthead-content&quot; class=&quot;island&quot;&gt;
-                    
-                    &lt;section id=&quot;portfolio-masthead-details&quot;&gt;
-                        &lt;h2&gt;Michelle Ormrod - Pilates Classes&lt;/h2&gt;
-                        &lt;h3&gt;Identity Update, Website Design &amp;amp; Stationary&lt;/h3&gt;
-                        &lt;p&gt;Michelle was looking for an update to her old site and branding. As a small business, the personality of her brand is very important. A new site and stationary were created to convey this to her clients.&lt;/p&gt;
-                    &lt;/section&gt;
-
-                    &lt;section id=&quot;portfolio-masthead-image&quot;&gt;
-                        &lt;img src=&quot;/images/mopilates_screen.png&quot;&gt;
-                    &lt;/section&gt;
-                    
-
-
-                &lt;/section&gt;
-             
-           &lt;/section&gt;&lt;!-- /masthead --&gt;
-
-           &lt;section id=&quot;portfolio-page-content&quot; class=&quot;island&quot;&gt;
-                    &lt;img src=&quot;/images/mopilates_detailshot1.png&quot; /&gt;
-
-                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
-                        &lt;h2&gt;Relaxation to the Core&lt;/h2&gt;
-                        &lt;p&gt;Michelle had a very strong desire to update her old branding and website to a more calm colour scheme and modern feel. A minimal template for the Perch CMS and a tweak to the typography and colour scheme of the branding achieved this.&lt;/p&gt;
-                    &lt;/section&gt;
-                    &lt;img src=&quot;/images/mopilates_detailshot2.png&quot; /&gt;
-                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
-                        &lt;h2&gt;Content Focus&lt;/h2&gt;
-                        &lt;p&gt;The site is here to provide class information for prospective and current clients. To that end, the design gets out of the way when it comes to presenting the key information.&lt;/p&gt;
-                    &lt;/section&gt;
-                    &lt;img src=&quot;/images/mopilates_detailshot3.png&quot; /&gt;
-                    &lt;section class=&quot;portfolio-page-details&quot;&gt;
-                        &lt;h2&gt;Business Stationary&lt;/h2&gt;
-                        &lt;p&gt;To fall in line with the branding refresh, a new set of stationary including letterheads and business card were designed. These allow Michelle to keep a consistent brand across all communication with her clients.&lt;/p&gt;
-                    &lt;/section&gt;
-           &lt;/section&gt;&lt;!-- /portfolio-page-content --&gt;
-        &lt;/article&gt;&lt;!-- /page --&gt;</content>
  </entry>
  
  <entry>

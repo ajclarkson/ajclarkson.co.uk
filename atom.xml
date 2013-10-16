@@ -13,7 +13,7 @@ layout: nil
    <name>Adam James Clarkson</name>
  </author>
  
- {% for post in site.posts %}
+ {% for post in site.categories['blog'] %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="http://ajclarkson.co.uk{{ post.url }}"/>

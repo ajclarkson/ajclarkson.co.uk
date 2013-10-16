@@ -669,26 +669,49 @@ footer {
   background: #222;
   color: #ccc;
   font-family: "futura-pt";
-  padding: 4em 0 2em;
+}
+/* line 8, ../_sass/_site-footer.scss */
+footer #footer-content {
+  padding: 1.5em 0 2em;
+}
+/* line 12, ../_sass/_site-footer.scss */
+footer .top-link {
+  display: block;
+  width: 75px;
+  height: 50px;
+  text-indent: -9999px;
+  margin: 0 auto;
+  position: relative;
+  top: -20px;
+  background: url("/images/up-arrow.png") no-repeat center center #222222;
+  border-radius: 50px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+/* line 28, ../_sass/_site-footer.scss */
+footer .top-link:hover {
+  top: -24px;
 }
 
-/* line 9, ../_sass/_site-footer.scss */
+/* line 33, ../_sass/_site-footer.scss */
 footer a:link, footer a:visited {
   color: #ccc;
 }
 
-/* line 13, ../_sass/_site-footer.scss */
+/* line 37, ../_sass/_site-footer.scss */
 footer a:hover, footer:active {
   color: #e57554;
 }
 
-/* line 17, ../_sass/_site-footer.scss */
+/* line 41, ../_sass/_site-footer.scss */
 footer .footer-text {
   float: left;
   width: 50%;
 }
 
-/* line 22, ../_sass/_site-footer.scss */
+/* line 46, ../_sass/_site-footer.scss */
 footer .social-links {
   top: -.75em;
 }

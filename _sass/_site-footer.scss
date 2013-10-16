@@ -3,7 +3,31 @@ footer {
   background:#222;
   color:#ccc;
   font-family:"futura-pt";
-  padding:4em 0 2em;
+  
+
+  #footer-content {
+     padding:1.5em 0 2em;
+  }
+
+  .top-link {
+      display:block;
+      width:75px;
+      height:50px;
+      text-indent:-9999px;
+      margin:0 auto; 
+      position:relative;
+      top:-20px;
+      background:url('/images/up-arrow.png') no-repeat center center $body-text; 
+      border-radius:50px;
+      -webkit-transition:all 0.1s ease-in-out;
+  -moz-transition:all 0.1s ease-in-out;
+  -o-transition:all 0.1s ease-in-out;
+  transition:all 0.1s ease-in-out;
+  }
+
+  .top-link:hover {
+    top:-24px;
+  }
 }
 
 footer a:link, footer a:visited {
