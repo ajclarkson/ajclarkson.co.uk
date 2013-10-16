@@ -91,6 +91,7 @@
     <figcaption>Testing Image Captions in the main post</figcaption>
 
 <h3>Code Sample for Commit Hook</h3>
+<p>This simple commit hook will let you auto deploy your site with Git and have it built on the server. </p>
 <div class="highlight"><pre><code class="bash"><span id="True-1"><span class="c">#!/home/ajclarkson/.rvm/bin/rvm-shell 1.9.3-p429</span>
 </span><span id="True-2"><span class="nv">GIT_REPO</span><span class="o">=</span><span class="nv">$HOME</span>/ajclarkson.co.uk.git
 </span><span id="True-3"><span class="nv">TMP_GIT_CLONE</span><span class="o">=</span><span class="nv">$HOME</span>/tmp/ajclarkson.co.uk.git
@@ -101,6 +102,7 @@
 </span><span id="True-8">rm -Rf <span class="nv">$TMP_GIT_CLONE</span>
 </span><span id="True-9"><span class="nb">exit</span>
 </span></code></pre></div>
+<figcaption>repo_path/hooks/post-receive</figcaption>
 <div class="media-container-full-width">
 <iframe src="//www.youtube.com/embed/hdb35avQvmg" frameborder="0" allowfullscreen>
 </iframe>

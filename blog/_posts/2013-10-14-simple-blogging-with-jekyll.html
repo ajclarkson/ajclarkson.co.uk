@@ -35,6 +35,7 @@ tags: [Jekyll, Git]
     <figcaption>Testing Image Captions in the main post</figcaption>
 
 <h3>Code Sample for Commit Hook</h3>
+<p>This simple commit hook will let you auto deploy your site with Git and have it built on the server. </p>
 {% highlight bash linespans %}
 #!/home/ajclarkson/.rvm/bin/rvm-shell 1.9.3-p429
 GIT_REPO=$HOME/ajclarkson.co.uk.git
@@ -46,6 +47,7 @@ git clone $GIT_REPO $TMP_GIT_CLONE
 rm -Rf $TMP_GIT_CLONE
 exit
 {% endhighlight %}
+<figcaption>repo_path/hooks/post-receive</figcaption>
 <div class="media-container-full-width">
 <iframe src="//www.youtube.com/embed/hdb35avQvmg" frameborder="0" allowfullscreen>
 </iframe>
