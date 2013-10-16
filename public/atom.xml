@@ -4,7 +4,7 @@
  <title>Adam James Clarkson</title>
  <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
  <link href="http://ajclarkson.co.uk/"/>
- <updated>2013-10-16T11:18:17+01:00</updated>
+ <updated>2013-10-16T14:41:33+01:00</updated>
  <id>http://ajclarkson.co.uk</id>
  <author>
    <name>Adam James Clarkson</name>
@@ -12,72 +12,32 @@
  
  
  <entry>
-   <title>Make Blogging Simpler With Jekyll</title>
-   <link href="http://ajclarkson.co.uk/blog/simple-blogging-with-jekyll/"/>
-   <updated>2013-10-14T00:00:00+01:00</updated>
-   <id>http://ajclarkson.co.uk/blog/simple-blogging-with-jekyll</id>
-   <content type="html">&lt;p&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt; Blogging with Jekyll requires a small amount of technical know-how, mainly focused around git. It's a great option for developers who blog, and designers who code &lt;em&gt;&lt;a href=&quot;#&quot;&gt;which you should&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+   <title>Jekyll Post Navigation Within a Category</title>
+   <link href="http://ajclarkson.co.uk/blog/jekyll-category-post-navigation/"/>
+   <updated>2013-10-16T00:00:00+01:00</updated>
+   <id>http://ajclarkson.co.uk/blog/jekyll-category-post-navigation</id>
+   <content type="html">&lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;Wordpress is pretty much the ubiquitous platform when it comes to setting up a blog now, and with good reason. As a blogging CMS, even as a full blown CMS, it does a great job. It makes it easy for users to post articles, and offers some powerful templating options and plugins. That makes it great for the masses. But just because it works for them, does that mean it has to work for you?&lt;/p&gt;
-
-&lt;h2&gt;The Trouble with CMSs&lt;/h2&gt;
-&lt;aside class=&quot;alignleft&quot;&gt;
-    &lt;img src=&quot;/images/new-avatar.jpg&quot;/&gt;
-    &lt;figcaption&gt;Testing Image Captions in the Sidebar&lt;/figcaption&gt;
-&lt;/aside&gt;
-&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus&lt;/p&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
-   &lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
-   &lt;li&gt;Vestibulum auctor dapibus neque.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;
-
-&lt;ol&gt;
-   &lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
-   &lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
-   &lt;li&gt;Vestibulum auctor dapibus neque.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/blockquote&gt;
-&lt;img src=&quot;/images/new-avatar.jpg&quot;/&gt;
-    &lt;figcaption&gt;Testing Image Captions in the main post&lt;/figcaption&gt;
-
-&lt;h3&gt;Code Sample for Commit Hook&lt;/h3&gt;
-&lt;p&gt;This simple commit hook will let you auto deploy your site with Git and have it built on the server. &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span id=&quot;True-1&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/home/ajclarkson/.rvm/bin/rvm-shell 1.9.3-p429&lt;/span&gt;
-&lt;/span&gt;&lt;span id=&quot;True-2&quot;&gt;&lt;span class=&quot;nv&quot;&gt;GIT_REPO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/ajclarkson.co.uk.git
-&lt;/span&gt;&lt;span id=&quot;True-3&quot;&gt;&lt;span class=&quot;nv&quot;&gt;TMP_GIT_CLONE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/tmp/ajclarkson.co.uk.git
-&lt;/span&gt;&lt;span id=&quot;True-4&quot;&gt;&lt;span class=&quot;nv&quot;&gt;PUBLIC_WWW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/srv/www/ajclarkson.co.uk/public
-&lt;/span&gt;&lt;span id=&quot;True-5&quot;&gt;
-&lt;/span&gt;&lt;span id=&quot;True-6&quot;&gt;git clone &lt;span class=&quot;nv&quot;&gt;$GIT_REPO&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$TMP_GIT_CLONE&lt;/span&gt;
-&lt;/span&gt;&lt;span id=&quot;True-7&quot;&gt;/home/ajclarkson/.rvm/gems/ruby-1.9.3-p429/bin/jekyll build -s &lt;span class=&quot;nv&quot;&gt;$TMP_GIT_CLONE&lt;/span&gt; -d &lt;span class=&quot;nv&quot;&gt;$PUBLIC_WWW&lt;/span&gt;
-&lt;/span&gt;&lt;span id=&quot;True-8&quot;&gt;rm -Rf &lt;span class=&quot;nv&quot;&gt;$TMP_GIT_CLONE&lt;/span&gt;
-&lt;/span&gt;&lt;span id=&quot;True-9&quot;&gt;&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;figcaption&gt;repo_path/hooks/post-receive&lt;/figcaption&gt;
-&lt;div class=&quot;media-container-full-width&quot;&gt;
-&lt;iframe src=&quot;//www.youtube.com/embed/hdb35avQvmg&quot; frameborder=&quot;0&quot; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;/div&gt;</content>
+</content>
  </entry>
  
  <entry>
-   <title>Automatically Deploy Your Jekyll Site</title>
-   <link href="http://ajclarkson.co.uk/blog/git-build-jekyll-deploy/"/>
-   <updated>2013-10-10T00:00:00+01:00</updated>
-   <id>http://ajclarkson.co.uk/blog/git-build-jekyll-deploy</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Hello, World!</title>
-   <link href="http://ajclarkson.co.uk/blog/hello-world/"/>
-   <updated>2013-10-07T00:00:00+01:00</updated>
-   <id>http://ajclarkson.co.uk/blog/hello-world</id>
-   <content type="html"></content>
+   <title>A New Blog - But Why Choose Jekyll</title>
+   <link href="http://ajclarkson.co.uk/blog/why-jekyll/"/>
+   <updated>2013-10-15T00:00:00+01:00</updated>
+   <id>http://ajclarkson.co.uk/blog/why-jekyll</id>
+   <content type="html">&lt;p&gt;The last incarnation of my blog was something of an experiment for me. I was running Wordpress, as I always did, and becoming increasingly attracted to the idea of having the ability to &quot;Art Direct&quot; certain posts. &lt;a href=&quot;http://www.trentwalton.com&quot;&gt;Trent Walton&lt;/a&gt;, &lt;a href=&quot;http://www.jasonsantamaria.com&quot;&gt;Jason Santa Maria&lt;/a&gt;, and &lt;a href=&quot;http://www.craigmod.com&quot;&gt;Craig Mod&lt;/a&gt; all played a part in fueling my desire to experiment with this. And I wasn't alone. A whole slew of plugins exist for Wordpress to give you the ability to specify custom CSS, Javascript and so forth, but they always felt like a workaround. Something that created messy, unneccessary code. Surely, there must be a better way?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; allows you to construct a post as a markdown, or a HTML file, which means that I could actually edit the layout of a post, directly where I was writing the content. By manipulating the HTML around what I was writing, there was no need for ugly hacks, or creation of page specific templates that needed uploading before I could use them. For all intents and purposes, it allows you to &lt;em&gt;design&lt;/em&gt; every single page or post you add to your site.&lt;/p&gt;
+
+&lt;p&gt;Once you have finished creating your layouts and writing your content, Jekyll then builds your site into a series of static pages. So there are precisely &lt;strong&gt;zero&lt;/strong&gt; database requirements or requests involved. The navigation is generated for you and inserted into each page, as defined by your template. This results in an incredibly fast and stable site for your readers, as they don't have to wait for any server side processing at all.&lt;/p&gt;
+
+&lt;p&gt;It isn't without some drawbacks when compared with a CMS like Wordpress. For example, as there is no server side element to Jekyll, it's very difficult to roll your own comment system. I chose instead to use &lt;a href=&quot;http://www.disqus.com&quot;&gt;disqus&lt;/a&gt; and I was even thinking of switching my Wordpress comments to that before this move. Additionally, there is no web interface to compose or edit content. This might be a drawback for some, but it is born out of one of the most attractive features for me. All of your content is in a git repository, and therefore the repository has to be cloned to your local machine for you to work on it. But that means that you always have a fully versioned backup of your site to fall back on, or easily migrate to a new server - without having to worry about database migrations. I might not be able to easily publish a post from someone elses computer, but that is a small price to pay; an activity I rarely, if ever did on wordpress.&lt;/p&gt;
+
+&lt;p&gt;The other drawback for some designers is the fact that you need to be able to work with HTML, and understand some very basic Ruby to get your templates up and running. If you were interested in customising wordpress, you'd have had to get your hands dirty at some point, and anyway designers should be able to code, &lt;a href=&quot;#&quot;&gt;at least a bit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I'll be posting a few articles in the near future about how I've customised Jekyll and tweaked the settings to end up with the site you see before you now.&lt;/p&gt;
+</content>
  </entry>
  
  
