@@ -624,6 +624,28 @@ p.excerpt {
   font-family: "jubilat", sans-serif;
 }
 
+/* line 194, ../_sass/_site-body.scss */
+.next-link, .previous-link {
+  position: fixed;
+  top: 50%;
+  height: 75px;
+  width: 80px;
+  text-indent: -9999999px;
+  border-radius: 30px;
+}
+
+/* line 204, ../_sass/_site-body.scss */
+.next-link {
+  background: url("/images/left-arrow.png") no-repeat 31px center #222222;
+  left: -25px;
+}
+
+/* line 209, ../_sass/_site-body.scss */
+.previous-link {
+  background: url("/images/right-arrow.png") no-repeat 18px center #222222;
+  right: -25px;
+}
+
 /* line 197, ../_sass/main.scss */
 .portfolio-details {
   float: right;
