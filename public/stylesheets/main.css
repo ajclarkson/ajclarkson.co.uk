@@ -653,10 +653,10 @@ p.excerpt {
   border: 1px solid #dddddd;
   clear: both;
   overflow: scroll;
-  margin-bottom: 0.5em;
+  border-radius: 10px;
 }
 
-/* line 220, ../_sass/_site-body.scss */
+/* line 221, ../_sass/_site-body.scss */
 pre {
   padding: 1em;
 }
