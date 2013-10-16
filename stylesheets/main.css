@@ -147,7 +147,7 @@ h2 {
   font-weight: bold;
   font-family: "futura-pt", sans-serif;
   margin-bottom: .5em;
-  margin-top: 1.5em;
+  margin-top: .5em;
 }
 
 /*26/16*/
@@ -587,7 +587,7 @@ p.excerpt {
   width: 45%;
   color: #f9ddd5;
   float: left;
-  padding: 3em 0 6em;
+  padding: 4.5em 0 6em;
 }
 
 /* line 164, ../_sass/_site-body.scss */
