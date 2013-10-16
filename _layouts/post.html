@@ -1,13 +1,9 @@
 ---
 layout: default
 ---
-
-
-
-
 <article class="island post">
-	{% if page.blog_next.title != nil %}<a href="{{page.blog_next.url}}" class="next-link">Older Post</a>{% endif %}
-	{% if page.blog_previous.title != nil %}<a href="{{page.blog_previous.url}}" class="previous-link">Newer Post</a>{% endif %}
+	{% if page.next_in_category != nil %}<a href="{{page.next_in_category.url}}" class="next-link">Older Post</a>{% endif %}
+	{% if page.previous_in_category != nil %}<a href="{{page.previous_in_category.url}}" class="previous-link">Newer Post</a>{% endif %}
 
             <h1>{{ page.title }}</h1>
             <p class="excerpt">{{ page.excerpt }}</p>
