@@ -3,5 +3,4 @@ markdown: redcarpet
 pygments: true
 destination: ./public
 permalink: /:categories/:title/
-exclude: ['scss','Gem*','Guard*','*.rb','.sass-cache','.git']
 tag_dir: tag
