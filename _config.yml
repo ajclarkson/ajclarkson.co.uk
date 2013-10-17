@@ -4,3 +4,4 @@ pygments: true
 destination: ./public
 permalink: /:categories/:title/
 tag_dir: tag
+exclude: ['scss','Gem','Guard','*.rb','.sass-cache','.git']
