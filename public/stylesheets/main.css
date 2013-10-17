@@ -187,78 +187,87 @@ em {
   font-style: italic;
 }
 
-@font-face {
-  font-family: 'Mono Social Icons Font';
-  src: url("/fonts/MonoSocialIconsFont-1.10.eot");
-  src: url("/fonts/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("/fonts/MonoSocialIconsFont-1.10.woff") format("woff"), url("/fonts/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont") format("svg");
-  src: url("/fonts/MonoSocialIconsFont-1.10.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+/* line 46, ../_sass/main.scss */
+.social-links a {
+  display: inline-block;
+  font-size: .5em;
+  width: 32px;
+  height: 32px;
+  text-align: left;
+  text-indent: -99999px;
 }
 
 /* line 55, ../_sass/main.scss */
-.symbol, a.symbol:before {
-  font-family: 'Mono Social Icons Font';
-  -webkit-text-rendering: optimizeLegibility;
-  -moz-text-rendering: optimizeLegibility;
-  -ms-text-rendering: optimizeLegibility;
-  -o-text-rendering: optimizeLegibility;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -ms-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
+a.twitter-button, footer a.twitter-button:hover {
+  background: url("/images/twitter_bird.png") no-repeat center center;
 }
 
-/* line 70, ../_sass/main.scss */
-a.symbol:before {
-  content: attr(title);
-  margin-right: 0.3em;
-  font-size: 130%;
+/* line 59, ../_sass/main.scss */
+a.email-button, footer a.email-button:hover {
+  background: url("/images/email.png") no-repeat center center;
+}
+
+/* line 63, ../_sass/main.scss */
+a.rss-button, footer a.rss-button:hover {
+  background: url("/images/rss.png") no-repeat center center;
+}
+
+/* line 68, ../_sass/main.scss */
+footer a.twitter-button, a.twitter-button:hover {
+  background: url("/images/twitter_bird_alt.png") no-repeat center center;
+}
+
+/* line 72, ../_sass/main.scss */
+footer a.email-button, a.email-button:hover {
+  background: url("/images/email_alt.png") no-repeat center center;
+}
+
+/* line 76, ../_sass/main.scss */
+footer a.rss-button, a.rss-button:hover {
+  background: url("/images/rss_alt.png") no-repeat center center;
 }
 
 /* =Global
 ----------------------------------------------- */
-/* line 78, ../_sass/main.scss */
+/* line 84, ../_sass/main.scss */
 .island {
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* line 83, ../_sass/main.scss */
+/* line 89, ../_sass/main.scss */
 a:link, a:visited {
   color: #e57554;
 }
 
-/* line 87, ../_sass/main.scss */
+/* line 93, ../_sass/main.scss */
 a:active, a:hover {
   color: #dddddd;
 }
 
-/* line 91, ../_sass/main.scss */
+/* line 97, ../_sass/main.scss */
 p {
   margin-bottom: 1.5em;
 }
 
-/* line 95, ../_sass/main.scss */
+/* line 101, ../_sass/main.scss */
 ul, ol {
   margin-bottom: 1.5em;
   position: relative;
   left: 2em;
 }
 
-/* line 101, ../_sass/main.scss */
+/* line 107, ../_sass/main.scss */
 ul {
   list-style-type: disc;
 }
 
-/* line 104, ../_sass/main.scss */
+/* line 110, ../_sass/main.scss */
 ol {
   list-style-type: decimal;
 }
 
-/* line 108, ../_sass/main.scss */
+/* line 114, ../_sass/main.scss */
 blockquote {
   font-family: "futura-pt", sans-serif;
   font-style: italic;
@@ -267,7 +276,7 @@ blockquote {
   margin-bottom: 1.5em;
 }
 
-/* line 117, ../_sass/main.scss */
+/* line 123, ../_sass/main.scss */
 figcaption {
   color: #888;
   font-family: "futura-pt", sans-serif;
@@ -275,13 +284,13 @@ figcaption {
   margin-bottom: 1.5em;
 }
 
-/* line 125, ../_sass/main.scss */
+/* line 131, ../_sass/main.scss */
 code {
   font-family: monospace;
   white-space: pre;
 }
 
-/* line 130, ../_sass/main.scss */
+/* line 136, ../_sass/main.scss */
 .media-container, .media-container-full-width {
   position: relative;
   padding-bottom: 56.25%;
@@ -290,7 +299,7 @@ code {
   overflow: hidden;
   margin-bottom: 1.5em;
 }
-/* line 137, ../_sass/main.scss */
+/* line 143, ../_sass/main.scss */
 .media-container iframe, .media-container object, .media-container embed, .media-container-full-width iframe, .media-container-full-width object, .media-container-full-width embed {
   position: absolute;
   top: 0;
@@ -299,7 +308,7 @@ code {
   height: 100%;
 }
 
-/* line 145, ../_sass/main.scss */
+/* line 151, ../_sass/main.scss */
 .social-links {
   list-style-type: none;
   margin: 0;
@@ -311,17 +320,17 @@ code {
   position: relative;
   left: 0em;
 }
-/* line 156, ../_sass/main.scss */
+/* line 162, ../_sass/main.scss */
 .social-links li {
   display: inline;
   margin-left: .125em;
 }
-/* line 161, ../_sass/main.scss */
+/* line 167, ../_sass/main.scss */
 .social-links a {
   text-decoration: none;
 }
 
-/* line 166, ../_sass/main.scss */
+/* line 172, ../_sass/main.scss */
 .button-link {
   display: inline-block;
   background: #e57554;
@@ -332,7 +341,7 @@ code {
   -moz-border-radius: 10px;
 }
 
-/* line 176, ../_sass/main.scss */
+/* line 182, ../_sass/main.scss */
 a.button-link:link, a.button-link:visited {
   color: #f9ddd5;
   font-family: "futura-pt", sans-serif;
@@ -341,7 +350,7 @@ a.button-link:link, a.button-link:visited {
   font-size: .75em;
 }
 
-/* line 184, ../_sass/main.scss */
+/* line 190, ../_sass/main.scss */
 a.button-link:hover, a.button-link:active {
   color: #ffffff;
 }
@@ -661,39 +670,39 @@ pre {
   padding: 1em;
 }
 
-/* line 197, ../_sass/main.scss */
+/* line 203, ../_sass/main.scss */
 .portfolio-details {
   float: right;
   width: 72.3606798%;
 }
 
-/* line 202, ../_sass/main.scss */
+/* line 208, ../_sass/main.scss */
 #page-content {
   width: 72.3606798%;
   float: right;
 }
 
-/* line 210, ../_sass/main.scss */
+/* line 216, ../_sass/main.scss */
 a:link.twitter, a:visited.twitter {
   color: #00acee;
 }
 
-/* line 213, ../_sass/main.scss */
+/* line 219, ../_sass/main.scss */
 a:link.instagram, a:visited.instagram {
   color: #634d40;
 }
 
-/* line 216, ../_sass/main.scss */
+/* line 222, ../_sass/main.scss */
 a:link.dribbble, a:visited.dribbble {
   color: #ea4c89;
 }
 
-/* line 219, ../_sass/main.scss */
+/* line 225, ../_sass/main.scss */
 a:link.github, a:visited.github {
   color: #171515;
 }
 
-/* line 222, ../_sass/main.scss */
+/* line 228, ../_sass/main.scss */
 a:link.strava, a:visited.strava {
   color: #fc4c02;
 }

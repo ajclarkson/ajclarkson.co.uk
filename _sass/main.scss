@@ -40,38 +40,44 @@ em {
   font-style:italic;
 }
 
-@font-face {
-    font-family: 'Mono Social Icons Font';
-    src: url('/fonts/MonoSocialIconsFont-1.10.eot');
-    src: url('/fonts/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/MonoSocialIconsFont-1.10.woff') format('woff'),
-         url('/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype'),
-         url('/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
-    src: url('/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+.social-links {
 
-.symbol, a.symbol:before {
 
-    font-family: 'Mono Social Icons Font';
-    -webkit-text-rendering: optimizeLegibility;
-    -moz-text-rendering: optimizeLegibility;
-    -ms-text-rendering: optimizeLegibility;
-    -o-text-rendering: optimizeLegibility;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -ms-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+  a {
+    display:inline-block;
+    font-size:.5em;
+    width:32px; height:32px;
+    text-align:left;
+    text-indent:-99999px;
+   
+  }
 }
+  a.twitter-button, footer a.twitter-button:hover{
+    background:url("/images/twitter_bird.png") no-repeat center center;
 
-a.symbol:before {
-    content: attr(title);
-    margin-right: 0.3em;
-    font-size: 130%;
-}
+  }
+  a.email-button, footer a.email-button:hover {
+    background:url("/images/email.png") no-repeat center center;
+
+  }
+  a.rss-button, footer a.rss-button:hover {
+    background:url("/images/rss.png") no-repeat center center;
+
+  }
+
+  footer a.twitter-button, a.twitter-button:hover{
+    background:url("/images/twitter_bird_alt.png") no-repeat center center;
+
+  }
+  footer a.email-button, a.email-button:hover {
+    background:url("/images/email_alt.png") no-repeat center center;
+
+  }
+  footer a.rss-button, a.rss-button:hover {
+    background:url("/images/rss_alt.png") no-repeat center center;
+
+  }
+
 
 /* =Global
 ----------------------------------------------- */
