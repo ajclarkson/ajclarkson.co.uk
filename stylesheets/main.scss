@@ -96,7 +96,10 @@ em {
 }
 
 a:link, a:visited {
-  color:$link-colour;;
+	color:$link-colour;
+	-webkit-transition: all 0.15s linear;
+	-moz-transition: all 0.15s linear;
+	transition: all 0.15s linear;
 }
 
 a:active, a:hover {

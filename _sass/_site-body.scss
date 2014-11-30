@@ -50,27 +50,6 @@
 	margin-bottom:3em;
 }
 
-#masthead {
-  background:$orange;
-  margin-top:0;
-  margin-bottom:6em;
-}
-
-#home-masthead-content {
-  min-height:450px;
-  background:url('/images/bg.png') no-repeat center right;
-}
-
-#home-masthead-content h2 {
-  width:45%;
-  color:$masthead-contrast;
-  padding-top:2.5em;
-  font-size:2.2em;
-  text-align: center;
-  margin-top:0;
-  margin-bottom:0;
-}
-
 p.excerpt {
   float:none;
   width:100%;
@@ -150,40 +129,6 @@ p.excerpt {
 			content: " \BB ";
 		}
 	}
-}
-#portfolio-masthead-details {
-  width:45%;
-  color:#f9ddd5;
-  float:left;
-  padding:4.5em 0 6em;
-}
-
-#portfolio-masthead-details h3 {
-  font-weight:normal;
-  margin-bottom:1.5em;
-}
-
-
-#portfolio-masthead-image {
-  width:50%;
-  float:right;
-  padding-top:1.5em;
-}
-
-#portfolio-page-details h2{
-  padding-top:1.5em;
-}
-
-#portfolio-page-content img {
-  border:1px solid #efefef;
-
-}
-
-.portfolio-page-details {
-  border-top:1px solid #efefef;
-  border-bottom:1px solid #efefef;
-  margin:5em 0;
-  padding:2em 0;
 }
 
 #disqus_thread {

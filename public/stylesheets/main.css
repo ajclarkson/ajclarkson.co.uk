@@ -182,7 +182,10 @@ footer a.rss-button, a.rss-button:hover {
   padding: 0; }
 
 a:link, a:visited {
-  color: #e57554; }
+  color: #e57554;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
 
 a:active, a:hover {
   color: #dddddd; }
@@ -281,9 +284,6 @@ a.button-link:hover, a.button-link:active {
     color: #e57554;
     padding-bottom: 2px;
     border-bottom: 1px dotted #e57554; }
-  #site-header .tagline {
-    font-size: .85em;
-    font-family: "futura-pt", sans-serif; }
   #site-header ul#tiles {
     margin: 0;
     padding: 0;
@@ -326,11 +326,6 @@ a.button-link:hover, a.button-link:active {
   #site-header #site-header-content {
     padding: 0; }
 
-nav a:link, nav a:visited {
-  font-weight: bold;
-  text-decoration: none;
-  font-family: "futura-pt", sans-serif; }
-
 /* =Content
 ----------------------------------------------- */
 .post, .page {
@@ -365,24 +360,6 @@ nav a:link, nav a:visited {
 
 #post-content {
   margin-bottom: 3em; }
-
-#masthead {
-  background: #e57554;
-  margin-top: 0;
-  margin-bottom: 6em; }
-
-#home-masthead-content {
-  min-height: 450px;
-  background: url("/images/bg.png") no-repeat center right; }
-
-#home-masthead-content h2 {
-  width: 45%;
-  color: #f9ddd5;
-  padding-top: 2.5em;
-  font-size: 2.2em;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 0; }
 
 p.excerpt {
   float: none;
@@ -438,33 +415,6 @@ p.excerpt {
     margin-top: 1em; }
     .article-details h2 a:after {
       content: " \BB "; }
-
-#portfolio-masthead-details {
-  width: 45%;
-  color: #f9ddd5;
-  float: left;
-  padding: 4.5em 0 6em; }
-
-#portfolio-masthead-details h3 {
-  font-weight: normal;
-  margin-bottom: 1.5em; }
-
-#portfolio-masthead-image {
-  width: 50%;
-  float: right;
-  padding-top: 1.5em; }
-
-#portfolio-page-details h2 {
-  padding-top: 1.5em; }
-
-#portfolio-page-content img {
-  border: 1px solid #efefef; }
-
-.portfolio-page-details {
-  border-top: 1px solid #efefef;
-  border-bottom: 1px solid #efefef;
-  margin: 5em 0;
-  padding: 2em 0; }
 
 #disqus_thread {
   font-family: "jubilat", sans-serif; }
