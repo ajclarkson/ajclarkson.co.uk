@@ -1,6 +1,6 @@
 name: Adam James Clarkson
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 destination: ./public
 permalink: /:categories/:title/
 tag_dir: tag

@@ -1,3 +1,5 @@
+---
+---
 @import "colours";
 /* =Reset
 -------------------------------------------------------------- */
@@ -12,9 +14,9 @@ select,
 textarea {
   color: $body-text;
   font-family: "jubilat", georgia, serif;
-  font-size: 18px;
-  font-size: 1.8em;
-  line-height: 1.6;
+  font-size: 16px;
+  font-size: 1.6em;
+  line-height: 1.4;
 }
 
 
@@ -47,9 +49,9 @@ em {
     display:inline-block;
     font-size:.5em;
     width:32px; height:32px;
-    text-align:left; 
+    text-align:left;
     text-indent:-99999px;
-   
+
   }
 }
   a.twitter-button, footer a.twitter-button:hover{
@@ -158,7 +160,7 @@ code {
   text-align:right;
   position:relative;
   left:0em;
-  
+
   li {
     display:inline;
     margin-left:.125em;
@@ -216,7 +218,7 @@ a.button-link:hover, a.button-link:active {
 a:link.twitter , a:visited.twitter {
   color:#00acee;
 }
-a:link.instagram, a:visited.instagram { 
+a:link.instagram, a:visited.instagram {
   color:#634d40;
 }
 a:link.dribbble, a:visited.dribbble {
