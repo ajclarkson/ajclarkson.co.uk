@@ -1,58 +1,89 @@
 #site-header {
-  padding:4em 0;
-  background:#efefef;
-  border-top:5px solid $orange;
+  background:$background;
 
   h1 {
     font-family:"futura-pt", sans-serif;
     font-weight:200;
-    font-size:1.25em;
 
-    strong {
-      font-weight:600;
-    }
 
-    a:link, a:visited {
+  }
+	a:link, a:visited {
       color:$body-text;
       text-decoration:none;
-    }
+ 	}
+ 	 a:hover, a:active {
+    color:$orange;
+    padding-bottom:2px;
+    border-bottom:1px dotted $orange;
   }
-  img.avatar {
-      overflow:hidden;
-      width:50px;
-      margin:0.15em 1em 0 -70px;
-      padding:0;
-      border-radius: 10px;
-      float:left;
-  }
-
   .tagline {
     font-size:.85em;
     font-family:"futura-pt", sans-serif;
   }
 
-  a:hover, a:active {
-    color:$body-text;
-  }
 
-  #identity {
-    float:left;
-    text-transform:uppercase;
-    width:40%;
 
-  }
+  ul#tiles {
+		margin:0;
+		padding:0;
+		list-style-type:none;
+		left:0em;
+		font-family:"futura-pt", sans-serif;
+		text-transform:uppercase;
+		font-weight:bold;
+		letter-spacing: -1px;
+		color:#222222;
+		font-size:1.7em;
+		text-align:center;
+
+	}
+	#tiles li {
+		display:block;
+		width:24%;
+		height:200px;
+		float:left;
+		padding:0;
+		margin:0;
+
+		img {
+
+			height:64px;
+			margin:40px auto 20px;
+			display:block;
+		}
+
+		img.avatar {
+			overflow:hidden;
+			width:64px;
+			border-radius:10px;
+		}
+	}
+
+	#id_tile {
+		border-top: 5px solid $orange;
+		border-bottom: 5px solid $orange;
+	}
+	#blog_tile {
+		border-top: 5px solid $secondary;
+		border-bottom: 5px solid $secondary;
+	}
+	#projects_tile {
+		border-top: 5px solid $tertiary;
+		border-bottom: 5px solid $tertiary;
+	}
+	#about_tile {
+		border-top: 5px solid $quaternary;
+		border-bottom: 5px solid $quaternary;
+	}
+
+	#site-header-content {
+		padding:0;
+	}
+
 }
 
-nav {
-  list-style-type:none;
-  display:block;
-  clear:both;
-}
 
-nav li {
-  display:inline;
-  margin-right:.3em;
-}
+
 
 nav a:link, nav a:visited {
   font-weight:bold;

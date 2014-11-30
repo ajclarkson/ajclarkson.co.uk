@@ -1,33 +1,16 @@
 footer {
   clear:both;
-  background:#222;
-  color:#ccc;
+  margin-top:4em;
+  background:#efefef;
+  border-top:2px solid $orange;
+  color:#888;
   font-family:"futura-pt";
-  
+
 
   #footer-content {
      padding:1.5em 0 2em;
   }
 
-  .top-link {
-      display:block;
-      width:75px;
-      height:50px;
-      text-indent:-9999px;
-      margin:0 auto; 
-      position:relative;
-      top:-20px;
-      background:url('/images/up-arrow.png') no-repeat center center $body-text; 
-      border-radius:50px;
-      -webkit-transition:all 0.1s ease-in-out;
-  -moz-transition:all 0.1s ease-in-out;
-  -o-transition:all 0.1s ease-in-out;
-  transition:all 0.1s ease-in-out;
-  }
-
-  .top-link:hover {
-    top:-24px;
-  }
 }
 
 footer a:link, footer a:visited {

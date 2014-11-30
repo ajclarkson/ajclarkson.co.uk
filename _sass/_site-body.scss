@@ -8,7 +8,7 @@
 	margin:5em auto 6em;
 
 	h1 {
-		font-size:5em;
+
   		font-weight:600;
   		line-height:1.1em;
   		font-family:'futura-pt', sans-serif;
@@ -74,12 +74,9 @@
 p.excerpt {
   float:none;
   width:100%;
-  font-weight:400;
-  font-size:2em;
   margin-bottom:1.2em;
   border-bottom:1px solid $divider-colour;
   padding-bottom:1em;
-  line-height:1.2em;
 }
 .post-meta {
 	h3 {
@@ -122,18 +119,18 @@ p.excerpt {
 .post-tags {
 		list-style-type:none;
 		left:0;
-		
+
 	li {
 		margin:0 .5em -.2em 0 !important;
 		float:left;
 		a:after {
 			content: ", ";
 		}
-		
+
 	}
 
 	li:last-child {
-		a:after {	 
+		a:after {
 				content: "";
 		}
 	}
@@ -195,8 +192,8 @@ p.excerpt {
 .next-link, .previous-link {
 	position:fixed;
 	top:50%;
-	
-	
+
+
 	height:75px;
 	width:80px;
 	text-indent:-9999999px;
@@ -213,9 +210,9 @@ p.excerpt {
 }
 .highlight {
  	 border:1px solid #dddddd; clear:both;
- 	overflow:scroll; 
- 	border-radius:10px;	
- 	
+ 	overflow:scroll;
+ 	border-radius:10px;
+
 }
 
 pre {

@@ -96,12 +96,12 @@ select,
 textarea {
   color: #222222;
   font-family: "jubilat", georgia, serif;
-  font-size: 16px;
-  font-size: 1.6em;
-  line-height: 1.4; }
+  font-size: 18px;
+  font-size: 1.8em;
+  line-height: 1.6; }
 
 h1 {
-  font-size: 5em;
+  font-size: 4em;
   font-weight: 600;
   line-height: 1.1em;
   font-family: "futura-pt", sans-serif;
@@ -136,6 +136,11 @@ h5 {
   line-height: 1.5em; }
 
 /*16/16*/
+p.excerpt {
+  font-weight: 400;
+  font-size: 1.5em;
+  line-height: 1.2em; }
+
 strong {
   font-weight: 600;
   letter-spacing: .03em; }
@@ -173,7 +178,8 @@ footer a.rss-button, a.rss-button:hover {
 ----------------------------------------------- */
 .island {
   max-width: 900px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0; }
 
 a:link, a:visited {
   color: #e57554; }
@@ -264,43 +270,61 @@ a.button-link:hover, a.button-link:active {
 /* =Header
 ----------------------------------------------- */
 #site-header {
-  padding: 4em 0;
-  background: #efefef;
-  border-top: 5px solid #e57554; }
+  background: #f2f2f2; }
   #site-header h1 {
     font-family: "futura-pt", sans-serif;
-    font-weight: 200;
-    font-size: 1.25em; }
-    #site-header h1 strong {
-      font-weight: 600; }
-    #site-header h1 a:link, #site-header h1 a:visited {
-      color: #222222;
-      text-decoration: none; }
-  #site-header img.avatar {
-    overflow: hidden;
-    width: 50px;
-    margin: 0.15em 1em 0 -70px;
-    padding: 0;
-    border-radius: 10px;
-    float: left; }
+    font-weight: 200; }
+  #site-header a:link, #site-header a:visited {
+    color: #222222;
+    text-decoration: none; }
+  #site-header a:hover, #site-header a:active {
+    color: #e57554;
+    padding-bottom: 2px;
+    border-bottom: 1px dotted #e57554; }
   #site-header .tagline {
     font-size: .85em;
     font-family: "futura-pt", sans-serif; }
-  #site-header a:hover, #site-header a:active {
-    color: #222222; }
-  #site-header #identity {
-    float: left;
+  #site-header ul#tiles {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    left: 0em;
+    font-family: "futura-pt", sans-serif;
     text-transform: uppercase;
-    width: 40%; }
-
-nav {
-  list-style-type: none;
-  display: block;
-  clear: both; }
-
-nav li {
-  display: inline;
-  margin-right: .3em; }
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #222222;
+    font-size: 1.7em;
+    text-align: center; }
+  #site-header #tiles li {
+    display: block;
+    width: 24%;
+    height: 200px;
+    float: left;
+    padding: 0;
+    margin: 0; }
+    #site-header #tiles li img {
+      height: 64px;
+      margin: 40px auto 20px;
+      display: block; }
+    #site-header #tiles li img.avatar {
+      overflow: hidden;
+      width: 64px;
+      border-radius: 10px; }
+  #site-header #id_tile {
+    border-top: 5px solid #e57554;
+    border-bottom: 5px solid #e57554; }
+  #site-header #blog_tile {
+    border-top: 5px solid #3f7ea6;
+    border-bottom: 5px solid #3f7ea6; }
+  #site-header #projects_tile {
+    border-top: 5px solid #d99e32;
+    border-bottom: 5px solid #d99e32; }
+  #site-header #about_tile {
+    border-top: 5px solid #46483c;
+    border-bottom: 5px solid #46483c; }
+  #site-header #site-header-content {
+    padding: 0; }
 
 nav a:link, nav a:visited {
   font-weight: bold;
@@ -312,7 +336,6 @@ nav a:link, nav a:visited {
 .post, .page {
   margin: 5em auto 6em; }
   .post h1, .page h1 {
-    font-size: 5em;
     font-weight: 600;
     line-height: 1.1em;
     font-family: 'futura-pt', sans-serif;
@@ -364,12 +387,9 @@ nav a:link, nav a:visited {
 p.excerpt {
   float: none;
   width: 100%;
-  font-weight: 400;
-  font-size: 2em;
   margin-bottom: 1.2em;
   border-bottom: 1px solid #dddddd;
-  padding-bottom: 1em;
-  line-height: 1.2em; }
+  padding-bottom: 1em; }
 
 .post-meta h3 {
   font-size: .75em;
@@ -501,27 +521,13 @@ a:link.strava, a:visited.strava {
 ----------------------------------------------- */
 footer {
   clear: both;
-  background: #222;
-  color: #ccc;
+  margin-top: 4em;
+  background: #efefef;
+  border-top: 2px solid #e57554;
+  color: #888;
   font-family: "futura-pt"; }
   footer #footer-content {
     padding: 1.5em 0 2em; }
-  footer .top-link {
-    display: block;
-    width: 75px;
-    height: 50px;
-    text-indent: -9999px;
-    margin: 0 auto;
-    position: relative;
-    top: -20px;
-    background: url("/images/up-arrow.png") no-repeat center center #222222;
-    border-radius: 50px;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out; }
-  footer .top-link:hover {
-    top: -24px; }
 
 footer a:link, footer a:visited {
   color: #ccc; }

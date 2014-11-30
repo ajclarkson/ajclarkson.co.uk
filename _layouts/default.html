@@ -15,37 +15,28 @@
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     </head>
     <body>
-
-        
-        <header id="site-header">
+        <header id="site-header" class="clear">
             <section id="site-header-content" class="island clear">
-                <img src="/images/new-avatar.jpg" alt="Adam James Clarkson" class="avatar"/>
-                <div id="identity">
-                    <h1 class="title"><a href="/"><strong>Adam</strong> James Clarkson</a></h1>
-                    <p class="tagline">Designer | Developer | Postgrad</p>
-                </div><!-- /identitiy -->  
-                {% include social-links.html %}
-                <nav>
-                    <li><a href="/">home</a></li>
-                    <li><a href="/about">about</a></li>
-                    <li><a href="/projects">projects</a></li>
-                    <li><a href="/blog">blog</a></li>
-                </nav>
+            		<ul id="tiles">
+            			<li id="id_tile"><img class="avatar" src="/images/ajclarkson.jpg" /><a href="/">@ajclarkson</a></li>
+            			<li id="blog_tile"><img src="/images/list9.png" /><a href="/blog/">Articles</a></li>
+            			<li id="projects_tile"><img src="/images/code26.png" /><a href="/projects/">Projects</a></li>
+            			<li id="about_tile"><img src="/images/information51.png" /><a href="/about/">About Me</a></li>
 
-            </section><!-- /site-header-content -->
+            		</ul>
+           </section><!-- /site-header-content -->
         </header><!-- /header -->
 
 
         {{ content }}
 
         <footer class="clear">
-            <a href="#" class="top-link">Back to Top</a>
             <section id="footer-content" class="island">
-                <div class="footer-text">&copy;2013 ajclarkson </div>
+                <div class="footer-text">&copy;2014 ajclarkson </div>
                 {% include social-links.html %}
             </section>
         </footer><!-- /footer -->
-          
+
 
       <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

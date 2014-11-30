@@ -4,12 +4,31 @@
  <title>Adam James Clarkson</title>
  <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
  <link href="http://ajclarkson.co.uk/"/>
- <updated>2014-11-30T14:36:27+00:00</updated>
+ <updated>2014-11-30T19:56:52+00:00</updated>
  <id>http://ajclarkson.co.uk</id>
  <author>
    <name>Adam James Clarkson</name>
  </author>
  
+ 
+ <entry>
+   <title>Never Forget to Reply to an Email with PyMap</title>
+   <link href="http://ajclarkson.co.uk/blog/pymap-email-reminders/"/>
+   <updated>2014-11-30T00:00:00+00:00</updated>
+   <id>http://ajclarkson.co.uk/blog/pymap-email-reminders</id>
+   <content type="html">&lt;p&gt;When you have a lot of email to stay on top of it&#39;s all too easy to get swamped, and one or two inevitably fall through the cracks. Now that can either be inconvienent or distastorous. There&#39;s hundreds of ways of staying on top of email out there, but I have decided to start building my own solution, as any developer worth their salt would do!&lt;/p&gt;
+
+&lt;p&gt;My long term solution to the email problem so far has been my &#39;Pending&#39; folder. I am a big advocat of Inbox Zero, and obsessively try to keep my inbox empty as a result, but there are some emails which can&#39;t be dealt with right away. So they go into the &#39;Pending&#39; folder. Some of them are never seen again.&lt;/p&gt;
+
+&lt;p&gt;It&#39;s like backing up your machine, a system like that works well if you remember to work it well. If I forget to check my &#39;Pending&#39; folder for a few days, then there is little point in it being there. So I needed a solution to make sure that I didn&#39;t forget. Enter &lt;strong&gt;PyMap&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;It&#39;s in it&#39;s infancy at the moment, but it performs one crucial function for me. At 8:50am every morning, it takes a peek into the &#39;Pending&#39; folder of each of my email accounts and finds out what is there. It then constructs a friendly email reminder telling me how many I need to deal with, and showing a brief summary of up to 5 of them. It&#39;s just the kick I need to actually get on with it.&lt;/p&gt;
+
+&lt;p&gt;I&#39;ll be expanding it to include other functions in the future, but I decided to put it out there in case other people need a similar kick to get back on top of their outstanding emails.&lt;/p&gt;
+
+&lt;p&gt;Check it out over &lt;a href=&quot;http://github.com/ajclarkson/pymap&quot;&gt;on github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Adam&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Jekyll Post Navigation Within a Category</title>
