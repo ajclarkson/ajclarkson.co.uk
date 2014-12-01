@@ -66,7 +66,7 @@ em { font-style:italic; }
 .island {
   max-width:900px;
   margin:0 auto;
-  padding:0;
+  padding:0 1.5em;
 }
 
 a:link, a:visited {
@@ -211,30 +211,70 @@ a:link.strava, a:visited.strava { color:#fc4c02; }
 
 @media screen and (min-width: 20.00em) {
 	body { font-size:106% }
+	h1 { font-size:2.5em;}
+	p.excerpt { font-size: 1.2em; }
 	#tiles { font-size: 0.8em!important;}
 }
 
 @media screen and (min-width: 25.00em) {
-	body { font-size:106% }
+	body { font-size:108% }
 	#tiles { font-size: 0.5em; }
 }
 
 @media screen and (min-width: 37.5em) {
 	body { font-size:112%; }
+	h1 { font-size: 4em;}
+	p.excerpt { font-size: 1.5em;}
 	#tiles { font-size: 1.2em!important;}
 	#tiles li {height:7em!important;}
 	.tile_icon { margin:1em auto 0.5em;}
 	.tile_icon img { width:64px!important; }
+
+	.post, .page {
+		aside {
+			border-top:2px solid #e57554; border-bottom: none;
+			float:left; width:21.6393202%; margin-right:0%; padding-top:1em;
+			img, p, ol, ul, figcaption, h3 { width:100%;}
+			.datebox, .tagbox { float:none; width:100%;}
+		}
+		.article-details {
+			@include grid_72_right;
+			border-top:1px solid $divider-colour;
+			margin-bottom:none;
+			padding-bottom:none;
+			border-bottom: none;
+			clear:none;
+		}
+	}
+	.post, {
+		p, ul, ol, h2, h3, blockquote, img, figcaption, .media-container, .highlight {
+			@include grid_72_right;
+  	}
+
+  	p.excerpt {
+  		width:100%;
+  	}
+	}
+
+
 }
 
-@media screen and (min-width: 50.00em ) {
+@media screen and (min-width: 56.250em ) {
 	body { font-size: 125.0%; }
+
 }
 
 @media screen and (min-width: 64.375em ) {
 	body { font-size: 137.5%; }
+	.next-link, .previous-link {
+		display:block;
+	}
 }
 
 @media screen and (min-width: 75.00em) and (min-height: 37.5em) {
-	body {font-size:150%;}
+	body {font-size:145%;}
+
+}
+@media screen and (min-width: 88.00em) {
+	.island { padding:0; }
 }

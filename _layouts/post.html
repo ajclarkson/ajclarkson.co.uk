@@ -9,15 +9,19 @@ layout: default
             <p class="excerpt">{{ page.excerpt }}</p>
 
             <section id="post-content" class="clear">
-                 <aside class="post-meta">
-                	<h3>Posted On</h3>
-                	<p>{{ page.date | date_to_string }}</p>
+                 <aside class="post-meta clear">
+                 	<span class="datebox">
+                		<h3>Posted On</h3>
+                		<p>{{ page.date | date_to_string }}</p>
+                	</span>
+                	<span class="tagbox">
                 	<h3>Tagged</h3>
                 	<ul class="post-tags">
                 		{% for tag in page.tags %}
                 		<li><a href="/tag/{{tag}}">{{tag}}</a></li>
                 		{% endfor %}
                 	</ul>
+                	</span>
 
             	</aside>
 
@@ -29,7 +33,7 @@ layout: default
         var disqus_shortname = 'ajclarkson'; // required: replace example with your forum shortname
         var disqus_identifier = '{{ page.url }}';
 		var disqus_url = 'http://ajclarkson.co.uk{{ page.url }}';
-		
+
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
@@ -39,7 +43,7 @@ layout: default
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> 
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </article><!-- /article.post -->
 
 

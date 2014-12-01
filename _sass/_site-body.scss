@@ -18,16 +18,20 @@
 
 	aside {
 		clear:both;
-  		float:left;
-  		width:21.6393202%;
-  		margin-right:0%;
-  		border-top:2px solid #e57554;
-  		padding-top:1em;
-  		margin-top:.5em;
+  		border-bottom:1px solid $divider-colour;
+  		margin:.5em 0 1.5em; padding-bottom: 1em;
+  		font-size:0.75em;
+  		.datebox {
+  			display:block;
+  			width:30%;
+  			float:left;
+  			margin:0; padding: 0;
+  		}
+  		.tagbox {
+  			display:block; float:left;
 
-  		img, p, ol, ul, figcaption, h3 {
- 			width:100%;
-		}
+  		}
+  		img, p, ol, ul, figcaption, h3 { width:100%;}
 	}
 }
 
@@ -36,10 +40,6 @@
 }
 
 .post {
-	p, ul, ol, h2, h3, blockquote, img, figcaption, .media-container, .highlight {
-		@include grid_72_right;
-    }
-
     .media-container-full-width, img.full-width{
     	clear:both;
     	float:none;
@@ -116,8 +116,11 @@ p.excerpt {
 
 }
 .article-details {
-	@include grid_72_right;
-	border-top:1px solid $divider-colour;
+	width:100%;
+	clear:both;
+	margin-bottom:3.5em;
+	padding-bottom:1.5em;
+	border-bottom:2px solid $orange;
 
 	a:link, a:visited {
 		text-decoration:none;
@@ -137,7 +140,7 @@ p.excerpt {
 .next-link, .previous-link {
 	position:fixed;
 	top:50%;
-
+	display:none;
 
 	height:75px;
 	width:80px;
