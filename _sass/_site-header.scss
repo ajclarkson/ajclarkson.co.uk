@@ -27,30 +27,23 @@
 		font-weight:bold;
 		letter-spacing: -1px;
 		color:#222222;
-		font-size:1.7em;
+		font-size:1.2em;
 		text-align:center;
 
 	}
 	#tiles li {
 		display:block;
 		width:24%;
-		height:200px;
+		height:6em;
 		float:left;
 		padding:0;
 		margin:0;
 
-		img {
+		.tile_icon { margin:1em auto .75em; display:block; }
 
-			height:64px;
-			margin:40px auto 20px;
-			display:block;
-		}
+		img { width:32px; margin:0 auto; display:block;}
 
-		img.avatar {
-			overflow:hidden;
-			width:64px;
-			border-radius:10px;
-		}
+		img.avatar { overflow:hidden; border-radius:10px; }
 	}
 
 	#id_tile {

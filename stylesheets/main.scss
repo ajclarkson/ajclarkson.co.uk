@@ -7,50 +7,24 @@
 /* =Typography
 ----------------------------------------------- */
 
-body,
-button,
-input,
-select,
-textarea {
-  color: $body-text;
-  font-family: "jubilat", georgia, serif;
-  font-size: 18px;
-  font-size: 1.8em;
-  line-height: 1.6;
+body, button, input, select, textarea {
+	color: $body-text;
+	font: normal 100%/1.4 "jubilat", georgia, serif;
 }
 
 
-h1 {
-  font-size:4em;
-  font-weight:600;
-  line-height:1.1em;
-  font-family:"futura-pt", sans-serif;
-  margin-bottom:.5em;
-  letter-spacing:-.04em;
-}
-h2 { font-size: 1.5em; line-height:1.5em; font-weight:bold;font-family:"futura-pt", sans-serif; margin-bottom:.5em; margin-top:.5em;} /*26/16*/
-h3 { font-size: 1em; line-height:1.5em; font-weight:bold; font-family:"futura-pt", sans-serif; margin-bottom:1.5em;text-transform:uppercase;} /*21/16*/
-h4 { font-size: 1.125em; line-height:1.5em;} /*18/16*/
-h5 { font-size: 1em; line-height:1.5em;} /*16/16*/
+h1 { font: 4em/1.1 "futura-pt", 'Arial', sans-serif; letter-spacing:-.04em; margin-bottom:0.5em; }
+h2 {font: bold 1.5em/1.5 "futura-pt", 'Arial', sans-serif; margin:.5em 0; }
+h3 {font: bold 1em/1.5 "futura-pt", "Arial", sans-serif; margin:auto 0 1.5em; text-transform:uppercase;}
+h4 { font-size: 1.125em; line-height:1.5em;}
+h5 { font-size: 1em; line-height:1.5em;}
 
-p.excerpt {
-  font-weight:400;
-  font-size:1.5em;
-  line-height:1.2em;
-}
+p.excerpt { font-size:1.5em; line-height:1.2em; font-weight:400; }
+strong { font-weight:600; letter-spacing:.03em; }
+em { font-style:italic; }
 
-strong {
-  font-weight:600;
-  letter-spacing:.03em;
-}
-
-em {
-  font-style:italic;
-}
 
 .social-links {
-
-
   a {
     display:inline-block;
     font-size:.5em;
@@ -60,7 +34,7 @@ em {
 
   }
 }
-  a.twitter-button, footer a.twitter-button:hover{
+  a.twitter-button, footer a.twitter-button:hover {
     background:url("/images/twitter_bird.png") no-repeat center center;
 
   }
@@ -222,28 +196,45 @@ a.button-link:hover, a.button-link:active {
   float:right;
 }
 
-
-
-
-a:link.twitter , a:visited.twitter {
-  color:#00acee;
-}
-a:link.instagram, a:visited.instagram {
-  color:#634d40;
-}
-a:link.dribbble, a:visited.dribbble {
-  color:#ea4c89;
-}
-a:link.github, a:visited.github {
-  color:#171515;
-}
-a:link.strava, a:visited.strava {
-  color:#fc4c02;
-}
-
-
-
+a:link.twitter , a:visited.twitter { color:#00acee; }
+a:link.instagram, a:visited.instagram { color:#634d40;}
+a:link.dribbble, a:visited.dribbble { color:#ea4c89;}
+a:link.github, a:visited.github { color:#171515; }
+a:link.strava, a:visited.strava { color:#fc4c02; }
 
 /* =Footer
 ----------------------------------------------- */
 @import "site-footer";
+
+/* =Media Queries
+----------------------------------------------- */
+
+@media screen and (min-width: 20.00em) {
+	body { font-size:106% }
+	#tiles { font-size: 0.8em!important;}
+}
+
+@media screen and (min-width: 25.00em) {
+	body { font-size:106% }
+	#tiles { font-size: 0.5em; }
+}
+
+@media screen and (min-width: 37.5em) {
+	body { font-size:112%; }
+	#tiles { font-size: 1.2em!important;}
+	#tiles li {height:7em!important;}
+	.tile_icon { margin:1em auto 0.5em;}
+	.tile_icon img { width:64px!important; }
+}
+
+@media screen and (min-width: 50.00em ) {
+	body { font-size: 125.0%; }
+}
+
+@media screen and (min-width: 64.375em ) {
+	body { font-size: 137.5%; }
+}
+
+@media screen and (min-width: 75.00em) and (min-height: 37.5em) {
+	body {font-size:150%;}
+}

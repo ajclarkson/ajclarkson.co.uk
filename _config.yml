@@ -4,4 +4,6 @@ highlighter: pygments
 destination: ./public
 permalink: /:categories/:title/
 tag_dir: tag
+sass:
+ style: compressed
 exclude: ['scss','Gem','Guard','*.rb','.sass-cache','.git']
