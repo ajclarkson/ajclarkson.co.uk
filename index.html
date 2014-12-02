@@ -10,17 +10,7 @@ layout: default
             <p class="excerpt">{{ page.excerpt }}</p>
 
             <section id="post-content" class="clear">
-                 <aside class="post-meta">
-                	<h3>Posted On</h3>
-                	<p>{{ page.date | date_to_string }}</p>
-                	<h3>Tagged</h3>
-                	<ul class="post-tags">
-                		{% for tag in page.tags %}
-                		<li><a href="/tag/{{tag}}">{{tag}}</a></li>
-                		{% endfor %}
-                	</ul>
 
-            	</aside>
 
             	{{ page.content }}
             </section><!-- /post-content -->

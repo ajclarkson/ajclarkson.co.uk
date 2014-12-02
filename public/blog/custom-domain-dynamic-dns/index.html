@@ -7,44 +7,30 @@
 		<script type="text/javascript" src="/js/html5shiv.js"></script>
 		<link rel="stylesheet" href="/stylesheets/main.css">
 		<link rel="stylesheet" href="/stylesheets/syntax.css">
-		<script type="text/javascript" src="//use.typekit.net/bwl3cak.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		<script src="//use.typekit.net/ahk4squ.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
 	</head>
 	<body>
 	<header id="site-header" class="clear">
 		<section id="site-header-content" class="island clear">
-		<ul id="tiles">
-			<li id="id_tile"><div class="tile_icon"><img class="avatar" src="/images/ajclarkson.jpg" alt="ajclarkson" /><a href="/" title="home"></div>@ajclarkson</a></li>
-			<li id="blog_tile"><div class="tile_icon"><img src="/images/blog.png" alt="blog"/></div><a href="/blog/" title="blog">Articles</a></li>
-			<li id="projects_tile"><div class="tile_icon"><img src="/images/projects.png" alt="projects"/></div><a href="/projects/" title="projects">Projects</a></li>
-			<li id="about_tile"><div class="tile_icon"><img src="/images/about.png" alt="about" /></div><a href="/about/" title="about">About Me</a></li>
-		</ul><!-- /tiles -->
+			<div id="identity"><a href="/">Adam<strong>Clarkson</strong></a></div>
+			<ul>
+				<li id="blog_tile"><a href="/blog/">Blog</a></li>
+				<li id="projects_tile"><a href="/projects/">Projects</a></li>
+				<li id="about_tile"><a href="/about/">About</a></li>
+			</ul>
 		</section><!-- /site-header-content -->
 	</header><!-- /header -->
 
 	<article class="island post">
 	<a href="/blog/pymap-email-reminders/" class="next-link">Older Post</a>
 	<a href="/blog/auto-mount-webdav-raspberry-pi/" class="previous-link">Newer Post</a>
-
+<div class="post-date">01 December 2014</div>
 	<h1>Dynamic DNS with a Custom Domain, EntryDNS &amp; Python</h1>
 	<p class="excerpt">Plenty of services exist to provide you with free Dynamic DNS hostnames, but what if you want to use your own domain name to point to a non-static IP?</p>
+
 	<section id="post-content" class="clear">
-		<aside class="post-meta clear">
-			<span class="datebox">
-				<h3>Posted On</h3>
-				<p>01 Dec 2014</p>
-			</span><!-- /datebox-->
-			<span class="tagbox">
-				<h3>Tagged</h3>
-				<ul class="post-tags">
-					
-						<li><a href="/tag/SysAdmin">SysAdmin</a></li>
-					
-						<li><a href="/tag/Python">Python</a></li>
-					
-				</ul><!-- /post-tags-->
-			</span><!-- /tagbox -->
-		</aside><!-- /post-meta -->
+
 
 		<p>While it is possible to get a whole slew of free dynamic dns host names online, they all come in a format of: `myawesomehostname.theircompany.com` or some other variation. These services are great for providing you remote access to a home machine, or some other location without a static IP, but I really wanted to find a way of using my own domain name to various non-static services.</p>
 
@@ -107,6 +93,17 @@ curl -k -X PUT -d <span class="s2">&quot;&quot;</span> https://entrydns.net/reco
 
 <p>Quite a long post, but hopefully it will help some of you out with using your own domain for DynamicDNS, for free! I have several of these running now pointing to various services that I run from home, and it's all working fantastically.</p>
 <p>&mdash; Adam</p>
+
+	<aside id="post-meta">
+		<ul id="tags-list">
+			<li>Tagged:</li>
+			
+				<li><a href="/tag/SysAdmin">SysAdmin</a></li>
+			
+				<li><a href="/tag/Python">Python</a></li>
+			
+		</ul><!-- /post-tags-->
+	</aside>
 
 	</section><!-- /post-content -->
 

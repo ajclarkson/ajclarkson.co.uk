@@ -4,7 +4,7 @@
  <title>Adam James Clarkson</title>
  <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
  <link href="http://ajclarkson.co.uk/"/>
- <updated>2014-12-02T17:22:20+00:00</updated>
+ <updated>2014-12-02T23:02:55+00:00</updated>
  <id>http://ajclarkson.co.uk</id>
  <author>
    <name>Adam James Clarkson</name>
@@ -16,7 +16,7 @@
    <link href="http://ajclarkson.co.uk/blog/auto-mount-webdav-raspberry-pi/"/>
    <updated>2014-12-02T00:00:00+00:00</updated>
    <id>http://ajclarkson.co.uk/blog/auto-mount-webdav-raspberry-pi</id>
-   <content type="html">&lt;p&gt;The instructions in this post were devised on a RaspberryPi running Raspbian GNU/Linux 7 (wheezy), but they should be applicable to other setups where you want command line access to an ownCloud folder.&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;blockquote&gt;The instructions in this post were devised on a RaspberryPi running Raspbian GNU/Linux 7 (wheezy), but they should be applicable to other setups where you want command line access to an ownCloud folder.&lt;/blockquote&gt;&lt;/p&gt;
 
 &lt;h2&gt;The Issue&lt;/h2&gt;
 &lt;p&gt;Both of my RaspberryPi&#39;s run without any input devices attached to them, so I don&#39;t run GUI desktop environments on them. However, I do still want to be able to sync my ownCloud folder with them. Unfortunately the official ownCloud client is severely lacking when it comes to command line support. So here is how I get around it, by mounting my cloud folders via webDAV.&lt;/p&gt;

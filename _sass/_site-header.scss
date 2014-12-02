@@ -1,37 +1,36 @@
 #site-header {
 	background:$background;
+	padding:1.5em 0 0;
 	a:link, a:visited { color:$body-text; text-decoration:none; }
-	a:hover, a:active { color:$primary-color; padding-bottom:2px; border-bottom:1px dotted; }
+	a:hover, a:active { color:#3F7EA6; position:relative; top:-0.1em; }
 
-	ul#tiles {
-		margin:0;padding:0; list-style-type:none; left:0em;
-		font: bold 1.2em "futura-pt", sans-serif; text-transform:uppercase;
-		letter-spacing: -1px; text-align:center;
+	#identity {
+		display:block; float:left; width:40%;
 	}
-	#tiles li {
-		display:block; width:25%; height:6em;
-		float:left; padding:0; margin:0;
-		.tile_icon { margin:1em auto .75em; display:block; }
-		img { width:32px; margin:0 auto; display:block;}
-		img.avatar { overflow:hidden; border-radius:10px; }
+	ul {
+		list-style-type:none;
+		float:left;
+		left:0;
+		width:60%;
+		li {
+			display:block;
+			width:33%;
+			float:left;
+
+			a:link, a:visited {
+				color:#3F7EA6;
+				display:block;
+				margin-left:2em;
+				padding-top:0.2em;
+			}
+			a:active, a:hover {
+				color:$alternate-text-color;
+			}
+		}
+		margin:none; padding:none;
 	}
 
-	#id_tile {
-		border-top: 5px solid $primary-color;
-		border-bottom: 5px solid $primary-color;
-	}
-	#blog_tile {
-		border-top: 5px solid #3F7EA6;
-		border-bottom: 5px solid #3F7EA6;
-	}
-	#projects_tile {
-		border-top: 5px solid #D99E32;
-		border-bottom: 5px solid #D99E32;
-	}
-	#about_tile {
-		border-top: 5px solid #46483C;
-		border-bottom: 5px solid #46483C;
-	}
+
 	#site-header-content {
 		padding:none;
 	}
