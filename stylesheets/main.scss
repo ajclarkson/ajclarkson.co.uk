@@ -8,10 +8,8 @@
 ----------------------------------------------- */
 
 body, button, input, select, textarea {
-	color: $body-text;
-	font: normal 100%/1.4 "jubilat", georgia, serif;
+	font: normal 100%/1.4 "jubilat", georgia, serif; color: $body-text;
 }
-
 
 h1 { font: 4em/1.1 "futura-pt", 'Arial', sans-serif; letter-spacing:-.04em; margin-bottom:0.5em; }
 h2 {font: bold 1.5em/1.5 "futura-pt", 'Arial', sans-serif; margin:.5em 0; }
@@ -24,157 +22,39 @@ strong { font-weight:600; letter-spacing:.03em; }
 em { font-style:italic; }
 
 
-.social-links {
-  a {
-    display:inline-block;
-    font-size:.5em;
-    width:32px; height:32px;
-    text-align:left;
-    text-indent:-99999px;
-
-  }
-}
-  a.twitter-button, footer a.twitter-button:hover {
-    background:url("/images/twitter_bird.png") no-repeat center center;
-
-  }
-  a.email-button, footer a.email-button:hover {
-    background:url("/images/email.png") no-repeat center center;
-
-  }
-  a.rss-button, footer a.rss-button:hover {
-    background:url("/images/rss.png") no-repeat center center;
-
-  }
-
-  footer a.twitter-button, a.twitter-button:hover{
-    background:url("/images/twitter_bird_alt.png") no-repeat center center;
-
-  }
-  footer a.email-button, a.email-button:hover {
-    background:url("/images/email_alt.png") no-repeat center center;
-
-  }
-  footer a.rss-button, a.rss-button:hover {
-    background:url("/images/rss_alt.png") no-repeat center center;
-
-  }
-
-
 /* =Global
 ----------------------------------------------- */
-.island {
-  max-width:900px;
-  margin:0 auto;
-  padding:0 1.5em;
-}
+.island { max-width:900px; margin:0 auto; padding:0 1.5em; }
 
 a:link, a:visited {
-	color:$link-colour;
+	color:$link-color;
 	-webkit-transition: all 0.15s linear;
 	-moz-transition: all 0.15s linear;
 	transition: all 0.15s linear;
 }
 
-a:active, a:hover {
-  color:$hover-colour;
-}
+a:active, a:hover { color:$hover-color; }
+p { margin-bottom:1.5em; }
 
-p {
-  margin-bottom:1.5em;
-}
-
-ul, ol {
-  margin-bottom:1.5em;
-  position:relative;
-  left:2em;
-}
-
-ul {
-  list-style-type:disc;
-}
-ol{
-  list-style-type:decimal;
-}
+ul, ol { margin-bottom:1.5em; position:relative; left:2em; }
+ul { list-style-type:disc; }
+ol{ list-style-type:decimal; }
 
 blockquote {
-  font-family:"futura-pt", sans-serif;
-  font-style:italic;
-  color:#aaa;
-  font-size:1.2em;
-  margin-bottom:1.5em;
-
+	font: 1.2em "futura-pt", sans-serf; font-style:italic;
+	color:$alternate-text-color; margin-bottom:1.5em;
 }
 
-figcaption {
-  color:#888;
-  font-family:"futura-pt", sans-serif;
-  font-size:.9em;
-  margin-bottom:1.5em;
+figcaption { font: 0.9em "futura-pt", sans-serif; color:$alternate-text-color; margin-bottom:1.5em; }
+code { font-family: monospace; white-space:pre; font-size:0.85em;}
 
-}
-
-code {
-  font-family: monospace;
-  white-space:pre;
-}
-
-.media-container, .media-container-full-width {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px; height: 0; overflow: hidden;
-  margin-bottom:1.5em;
-
-
-  iframe, object, embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-.social-links{
-  list-style-type:none;
-  margin:0;
-  padding:0;
-  float:right;
-  width:40%;
-  font-size:2em;
-  text-align:right;
-  position:relative;
-  left:0em;
-
-  li {
-    display:inline;
-    margin-left:.125em;
-  }
-
-  a {
-    text-decoration: none;
-  }
-}
-
-.button-link {
-  display:inline-block;
-  background:#e57554;
-  padding:1em 1.2em;
-  margin-bottom:1.5em;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-}
-
-a.button-link:link, a.button-link:visited {
-    color:#f9ddd5;
-    font-family:"futura-pt", sans-serif;
-    text-transform:uppercase;
-    text-decoration:none;
-    font-size:.75em;
-}
-
-a.button-link:hover, a.button-link:active {
-  color:#ffffff;
+.media-container {
+	background:$background; padding:1em 1em 0; margin-bottom:1.5em;
+	width:100%; clear:both; float:none; overflow: hidden; border-radius:20px;
+	img { width:100%!important; }
+	.highlight { overflow:scroll; width:100%!important;}
+	figcaption { padding-top:0.5em; }
+	iframe, object, embed, figcaption { clear:both; float:none!important; width: 100%!important; }
 }
 
 /* =Header
@@ -183,18 +63,7 @@ a.button-link:hover, a.button-link:active {
 
 /* =Content
 ----------------------------------------------- */
-
 @import "site-body";
-
-.portfolio-details {
-    float:right;
-    width:72.3606798%;
-}
-
-#page-content {
-  width:72.3606798%;
-  float:right;
-}
 
 a:link.twitter , a:visited.twitter { color:#00acee; }
 a:link.instagram, a:visited.instagram { color:#634d40;}
@@ -222,6 +91,7 @@ a:link.strava, a:visited.strava { color:#fc4c02; }
 }
 
 @media screen and (min-width: 37.5em) {
+	/* Split to Column Layout Mode */
 	body { font-size:112%; }
 	h1 { font-size: 4em;}
 	p.excerpt { font-size: 1.5em;}
@@ -232,49 +102,33 @@ a:link.strava, a:visited.strava { color:#fc4c02; }
 
 	.post, .page {
 		aside {
-			border-top:2px solid #e57554; border-bottom: none;
+			border-top:2px solid $primary-color; border-bottom: none;
 			float:left; width:21.6393202%; margin-right:0%; padding-top:1em;
 			img, p, ol, ul, figcaption, h3 { width:100%;}
 			.datebox, .tagbox { float:none; width:100%;}
 		}
 		.article-details {
-			@include grid_72_right;
-			border-top:1px solid $divider-colour;
-			margin-bottom:none;
-			padding-bottom:none;
-			border-bottom: none;
-			clear:none;
+			@include grid_72_right; clear:none;
+			border-top:1px solid $divider-color;
+			margin-bottom:none; padding-bottom:none; border-bottom: none;
 		}
 	}
-	.post, {
-		p, ul, ol, h2, h3, blockquote, img, figcaption, .media-container, .highlight {
+	.post {
+		p, ul, ol, h2, h3, blockquote, img, figcaption, .highlight {
 			@include grid_72_right;
-  	}
-
-  	p.excerpt {
-  		width:100%;
-  	}
 	}
-
-
+		p.excerpt {
+			width:100%;
+		}
+	}
 }
 
-@media screen and (min-width: 56.250em ) {
-	body { font-size: 125.0%; }
-
-}
+@media screen and (min-width: 56.250em ) { body { font-size: 125.0%; } }
 
 @media screen and (min-width: 64.375em ) {
 	body { font-size: 137.5%; }
-	.next-link, .previous-link {
-		display:block;
-	}
+	.next-link, .previous-link { display:block; }
 }
 
-@media screen and (min-width: 75.00em) and (min-height: 37.5em) {
-	body {font-size:145%;}
-
-}
-@media screen and (min-width: 88.00em) {
-	.island { padding:0; }
-}
+@media screen and (min-width: 75.00em) and (min-height: 37.5em) { body {font-size:145%; } }
+@media screen and (min-width: 88.00em) { .island { padding:0; } }

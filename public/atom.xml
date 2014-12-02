@@ -4,12 +4,80 @@
  <title>Adam James Clarkson</title>
  <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
  <link href="http://ajclarkson.co.uk/"/>
- <updated>2014-12-01T11:29:11+00:00</updated>
+ <updated>2014-12-01T18:16:29+00:00</updated>
  <id>http://ajclarkson.co.uk</id>
  <author>
    <name>Adam James Clarkson</name>
  </author>
  
+ 
+ <entry>
+   <title>Dynamic DNS with a Custom Domain, EntryDNS &amp; Python</title>
+   <link href="http://ajclarkson.co.uk/blog/custom-domain-dynamic-dns/"/>
+   <updated>2014-12-01T00:00:00+00:00</updated>
+   <id>http://ajclarkson.co.uk/blog/custom-domain-dynamic-dns</id>
+   <content type="html">&lt;p&gt;While it is possible to get a whole slew of free dynamic dns host names online, they all come in a format of: `myawesomehostname.theircompany.com` or some other variation. These services are great for providing you remote access to a home machine, or some other location without a static IP, but I really wanted to find a way of using my own domain name to various non-static services.&lt;/p&gt;
+
+&lt;h2&gt;The Issue&lt;/h2&gt;
+&lt;p&gt;Domain Registrars generally let you use their name servers for your domain, and if you are pointing to a static IP, everyone is happy. Simply point it, wait for the dreaded propagation to happen, then away you go. They don&#39;t however, provide easy ways of updating which IP your domain points to (without logging into a web interface, for example). This makes using your own domain name for a non static IP very cumbersome, and would mean you would need to discover the newly assigned IP before you could point your domain to it, not very practical I&#39;m sure you will agree.&lt;/p&gt;
+
+&lt;p&gt;So if I&#39;ve already bought my domain name, why should I pay someone else to let me dynamically update it, or settle for using one of their domains?&lt;/p&gt;
+
+&lt;h2&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;Thankfully, it is possible using a combination of &lt;a href=&quot;http://entrydns.net&quot;&gt;EntryDNS&lt;/a&gt; and a simple script. &lt;strong&gt;I&#39;ll just mention, I&#39;m not affiliated with EntryDNS in anyway, it&#39;s just a really useful service.&lt;/strong&gt; Here&#39;s what we need to do:&lt;/p&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Register EntryDNS as the nameserver for our domain name&lt;/li&gt;
+	&lt;li&gt;Create DNS Records on EntryDNS for your domain (or subdomain)&lt;/li&gt;
+	&lt;li&gt;Use the EntryDNS API to programmatically update the IP of your domain.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Sounds simple, right? Let&#39;s get started.&lt;/p&gt;
+&lt;h3&gt;Domain Setup&lt;/h3&gt;
+&lt;p&gt;Head on over to &lt;a href=&quot;http://entrydns.net&quot;&gt;EntryDNS&lt;/a&gt; and create an account. Then you&#39;ll want to go ahead and &quot;Add Domain&quot; and enter your domain name. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Even if you want to use a subdomain as your Dynamic DNS, you&#39;ll have to complete this step.&lt;/p&gt;
+
+&lt;p&gt;Click on your newly created domain, and by mousing over the &quot;Add Record&quot; option, you should get a window which looks like the image below:&lt;/p&gt;
+&lt;div class=&quot;media-container clear&quot;&gt;
+	&lt;img class=&quot;&quot; src=&quot;/images/post/EntryDNS-arecord.png&quot; alt=&quot;Adding an A Record - EntryDNS&quot; /&gt;
+	&lt;figcaption&gt;Creating an A record in EntryDNS&lt;/figcaption&gt;
+&lt;/div&gt;
+&lt;p&gt;Create an A record for your domain. If you are wanting to use a subdomain for your dynamic dns (e.g sub.myawesomedomain.com), then point this A record to the IP you want your main domain to resolve. Then repeat the steps above this time adding &#39;sub.myawesomedomain.com&#39; as a domain, and create an A record for that, then follow along using that one.&lt;/p&gt;
+
+&lt;h3&gt;Change Your Nameservers&lt;/h3&gt;
+&lt;p&gt;Your next step is to head over to your domain registrar and change the nameservers for your domain to point to the EntryDNS ones. At the time of writing this these are:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;ns1.entrydns.net&lt;/li&gt;
+	&lt;li&gt;ns2.entrydns.net&lt;/li&gt;
+	&lt;li&gt;ns3.entrydns.net&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Unfortunately, you may have a bit of a wait on your hands while that change propagates. It can take up to 72 hours for your domain name to start using EntryDNS as it&#39;s nameserver.&lt;/p&gt;
+
+&lt;h3&gt;Getting Dynamic&lt;/h3&gt;
+&lt;p&gt;Now that EntryDNS is responsible for your DNS we can start to get dynamic with it. When you created the A record for your domain, an authentication token was generated along with it. (Something like: SDsoT8ryycWzessi7pgx). This token is unique to your domain A record, and acts as authentication for the EntryDNS API, so keep it safe and secret (The one I posted I made up, so don&#39;t waste your time trying it).&lt;/p&gt;
+
+&lt;p&gt;EntryDNS allow you to update your domain by using one of the following two API calls:&lt;/p&gt;
+&lt;div class=&quot;media-container clear&quot;&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Providing IP address to update&lt;/span&gt;
+curl -k -X PUT -d &lt;span class=&quot;s2&quot;&gt;&amp;quot;ip=IP&amp;quot;&lt;/span&gt; https://entrydns.net/records/modify/TOKEN
+&lt;span class=&quot;c&quot;&gt;# IP Address will be generated from request origin&lt;/span&gt;
+curl -k -X PUT -d &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt; https://entrydns.net/records/modify/TOKEN&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: EntryDNS API Calls&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;By replacing `IP` and `TOKEN` where appropriate in either of those calls, your domain will be updated to point to the new IP. Dynamic DNS at it&#39;s finest. It&#39;s easy to incorporate that into a bash script or a cronjob and you are away, but if you want a slightly more advanced method of updating then read on.&lt;/p&gt;
+
+&lt;h3&gt;EntryDNS Updater&lt;/h3&gt;
+&lt;p&gt;I originally just ran one of the API calls from above as a cronjob and had great success with using my own domain name for Dynamic DNS. However this meant that my domain was being updated constantly, regardless of whether it needed to be or not. With that in mind I developed &lt;a href=&quot;http://github.com/ajclarkson/entrydns-updater&quot;&gt;EntryDNS Updater&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is a simple python utility that checks your current IP against a cache file, and if it has changed, proceeds with the update. It reads the EntryDNS authentication tokens from a JSON file, so you can update as many domains as you like each time your IP changes.&lt;/p&gt;
+
+&lt;p&gt;Feel free to grab the code and try it out over &lt;a href=&quot;http://github.com/ajclarkson/entrydns-updater&quot;&gt;on Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Quite a long post, but hopefully it will help some of you out with using your own domain for DynamicDNS, for free! I have several of these running now pointing to various services that I run from home, and it&#39;s all working fantastically.&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Adam&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Never Forget to Reply to an Email with PyMap</title>
@@ -42,6 +110,7 @@
 
 &lt;h2&gt;The Solution&lt;/h2&gt;
 &lt;p&gt;Jekyll has a very powerful plugin interface for writing &quot;generators&quot; which perform certain tasks when your site is built. After searching around there were a few different solutions to this problem, and one that was almost there but stopped just short. So I wrote my own generator. The logic is simple enough, as you will see from the code. It steps through each category, sorting the posts and adding both a next and previous `in_category` tag to the post data.&lt;/p&gt;
+&lt;div class=&quot;media-container clear&quot;&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Jekyll&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WithinCategoryPostNavigation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Generator&lt;/span&gt;
 		&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -67,16 +136,19 @@
 	&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figcaption&gt;Code Listing: within_category_post_navigation.rb&lt;/figcaption&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Simply put that script into your _plugins directory (create it under your site root if it doesn&#39;t exist). Here&#39;s an example of how it is used on this site:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% if page.next_in_category != nil %} 
+&lt;div class=&quot;media-container clear&quot;&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% if page.next_in_category != nil %}
 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{page.next_in_category.url}}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;next-link&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Older Post&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-{% endif %} 
+{% endif %}
 {% if page.previous_in_category != nil %}
 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{page.previous_in_category.url}}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;previous-link&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Newer Post&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
 {% endif %}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figcaption&gt;Code Listing: utilising the next_in_category and previous_in_category tags.&lt;/figcaption&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Note how no reference is made to the current category. This is by design, as it means I can share this code as a partial, and if I wanted to utilise this type of navigation on my portofolio items I could slot it in without the need to amend it.&lt;/p&gt;</content>
  </entry>

@@ -1,70 +1,38 @@
 #site-header {
-  background:$background;
+	background:$background;
+	a:link, a:visited { color:$body-text; text-decoration:none; }
+	a:hover, a:active { color:$primary-color; padding-bottom:2px; border-bottom:1px dotted; }
 
-  h1 {
-    font-family:"futura-pt", sans-serif;
-    font-weight:200;
-
-
-  }
-	a:link, a:visited {
-      color:$body-text;
-      text-decoration:none;
- 	}
- 	 a:hover, a:active {
-    color:$orange;
-    padding-bottom:2px;
-    border-bottom:1px dotted $orange;
-  }
-
-  ul#tiles {
-		margin:0;
-		padding:0;
-		list-style-type:none;
-		left:0em;
-		font-family:"futura-pt", sans-serif;
-		text-transform:uppercase;
-		font-weight:bold;
-		letter-spacing: -1px;
-		color:#222222;
-		font-size:1.2em;
-		text-align:center;
-
+	ul#tiles {
+		margin:0;padding:0; list-style-type:none; left:0em;
+		font: bold 1.2em "futura-pt", sans-serif; text-transform:uppercase;
+		letter-spacing: -1px; text-align:center;
 	}
 	#tiles li {
-		display:block;
-		width:25%;
-		height:6em;
-		float:left;
-		padding:0;
-		margin:0;
-
+		display:block; width:25%; height:6em;
+		float:left; padding:0; margin:0;
 		.tile_icon { margin:1em auto .75em; display:block; }
-
 		img { width:32px; margin:0 auto; display:block;}
-
 		img.avatar { overflow:hidden; border-radius:10px; }
 	}
 
 	#id_tile {
-		border-top: 5px solid $orange;
-		border-bottom: 5px solid $orange;
+		border-top: 5px solid $primary-color;
+		border-bottom: 5px solid $primary-color;
 	}
 	#blog_tile {
-		border-top: 5px solid $secondary;
-		border-bottom: 5px solid $secondary;
+		border-top: 5px solid #3F7EA6;
+		border-bottom: 5px solid #3F7EA6;
 	}
 	#projects_tile {
-		border-top: 5px solid $tertiary;
-		border-bottom: 5px solid $tertiary;
+		border-top: 5px solid #D99E32;
+		border-bottom: 5px solid #D99E32;
 	}
 	#about_tile {
-		border-top: 5px solid $quaternary;
-		border-bottom: 5px solid $quaternary;
+		border-top: 5px solid #46483C;
+		border-bottom: 5px solid #46483C;
 	}
-
 	#site-header-content {
-		padding:0;
+		padding:none;
 	}
-
 }

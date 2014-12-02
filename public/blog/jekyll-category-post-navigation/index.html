@@ -1,68 +1,61 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title> Jekyll Post Navigation Within a Category | Adam James Clarkson</title>
-        <meta name="viewport" content="width=device-width">
-        <!-- HTML5 Shiv-->
-        <script type="text/javascript" src="/js/html5shiv.js"></script>
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/stylesheets/main.css">
-        <!-- Syntax Highlighter -->
-        <link rel="stylesheet" href="/stylesheets/syntax.css">
-        <!-- Typekit -->
-        <script type="text/javascript" src="//use.typekit.net/bwl3cak.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    </head>
-    <body>
-        <header id="site-header" class="clear">
-            <section id="site-header-content" class="island clear">
-            		<ul id="tiles">
-            			<li id="id_tile"><div class="tile_icon"><img class="avatar" src="/images/ajclarkson.jpg" /><a href="/"></div>@ajclarkson</a></li>
-            			<li id="blog_tile"><div class="tile_icon"><img src="/images/list9.png" /></div><a href="/blog/">Articles</a></li>
-            			<li id="projects_tile"><div class="tile_icon"><img src="/images/code26.png" /></div><a href="/projects/">Projects</a></li>
-            			<li id="about_tile"><div class="tile_icon"><img src="/images/information51.png" /></div><a href="/about/">About Me</a></li>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title> Jekyll Post Navigation Within a Category | Adam James Clarkson</title>
+		<meta name="viewport" content="width=device-width">
+		<script type="text/javascript" src="/js/html5shiv.js"></script>
+		<link rel="stylesheet" href="/stylesheets/main.css">
+		<link rel="stylesheet" href="/stylesheets/syntax.css">
+		<script type="text/javascript" src="//use.typekit.net/bwl3cak.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	</head>
+	<body>
+	<header id="site-header" class="clear">
+		<section id="site-header-content" class="island clear">
+		<ul id="tiles">
+			<li id="id_tile"><div class="tile_icon"><img class="avatar" src="/images/ajclarkson.jpg" alt="ajclarkson" /><a href="/" title="home"></div>@ajclarkson</a></li>
+			<li id="blog_tile"><div class="tile_icon"><img src="/images/blog.png" alt="blog"/></div><a href="/blog/" title="blog">Articles</a></li>
+			<li id="projects_tile"><div class="tile_icon"><img src="/images/projects.png" alt="projects"/></div><a href="/projects/" title="projects">Projects</a></li>
+			<li id="about_tile"><div class="tile_icon"><img src="/images/about.png" alt="about" /></div><a href="/about/" title="about">About Me</a></li>
+		</ul><!-- /tiles -->
+		</section><!-- /site-header-content -->
+	</header><!-- /header -->
 
-            		</ul>
-           </section><!-- /site-header-content -->
-        </header><!-- /header -->
-
-
-        <article class="island post">
+	<article class="island post">
 	<a href="/blog/why-jekyll/" class="next-link">Older Post</a>
 	<a href="/blog/pymap-email-reminders/" class="previous-link">Newer Post</a>
 
-            <h1>Jekyll Post Navigation Within a Category</h1>
-            <p class="excerpt">Jekyll comes equipped with `post.next` and `post.previous` links, but how about just moving through the posts within one category?</p>
+	<h1>Jekyll Post Navigation Within a Category</h1>
+	<p class="excerpt">Jekyll comes equipped with `post.next` and `post.previous` links, but how about just moving through the posts within one category?</p>
+	<section id="post-content" class="clear">
+		<aside class="post-meta clear">
+			<span class="datebox">
+				<h3>Posted On</h3>
+				<p>16 Oct 2013</p>
+			</span><!-- /datebox-->
+			<span class="tagbox">
+				<h3>Tagged</h3>
+				<ul class="post-tags">
+					
+						<li><a href="/tag/Jekyll">Jekyll</a></li>
+					
+						<li><a href="/tag/Development">Development</a></li>
+					
+						<li><a href="/tag/Ruby">Ruby</a></li>
+					
+				</ul><!-- /post-tags-->
+			</span><!-- /tagbox -->
+		</aside><!-- /post-meta -->
 
-            <section id="post-content" class="clear">
-                 <aside class="post-meta clear">
-                 	<span class="datebox">
-                		<h3>Posted On</h3>
-                		<p>16 Oct 2013</p>
-                	</span>
-                	<span class="tagbox">
-                	<h3>Tagged</h3>
-                	<ul class="post-tags">
-                		
-                		<li><a href="/tag/Jekyll">Jekyll</a></li>
-                		
-                		<li><a href="/tag/Development">Development</a></li>
-                		
-                		<li><a href="/tag/Ruby">Ruby</a></li>
-                		
-                	</ul>
-                	</span>
-
-            	</aside>
-
-            	<p>Jekyll comes with a number of helper functions rolled into it as default. They're accessed using the liquid template tags. One particularly useful one is to provide a link to the next and previous posts in your blog. Simply by using `post.next` or `post.previous`.</p>
+		<p>Jekyll comes with a number of helper functions rolled into it as default. They're accessed using the liquid template tags. One particularly useful one is to provide a link to the next and previous posts in your blog. Simply by using `post.next` or `post.previous`.</p>
 
 <h2>The Issue</h2>
 <p>I'm not alone in using Jekyll to power a site which offers more than a blog. I use two Jekyll categories on my site, "Blog" for blog posts, and "Projects" for my portfolio pages. This allows me to keep two distinct default layouts, and make sure the posts only appear on the appropriate pages. However, when using `post.next` or `post.previous`, no attention is paid to what category a post is in. It simply moves between them all based on the date that they were published.</p>
 
 <h2>The Solution</h2>
 <p>Jekyll has a very powerful plugin interface for writing "generators" which perform certain tasks when your site is built. After searching around there were a few different solutions to this problem, and one that was almost there but stopped just short. So I wrote my own generator. The logic is simple enough, as you will see from the code. It steps through each category, sorting the posts and adding both a next and previous `in_category` tag to the post data.</p>
+<div class="media-container clear">
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Jekyll</span>
 	<span class="k">class</span> <span class="nc">WithinCategoryPostNavigation</span> <span class="o">&lt;</span> <span class="no">Generator</span>
 		<span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
@@ -88,36 +81,37 @@
 	<span class="k">end</span>
 <span class="k">end</span></code></pre></div>
 <figcaption>Code Listing: within_category_post_navigation.rb</figcaption>
+</div>
 
 <p>Simply put that script into your _plugins directory (create it under your site root if it doesn't exist). Here's an example of how it is used on this site:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html">{% if page.next_in_category != nil %} 
+<div class="media-container clear">
+<div class="highlight"><pre><code class="language-html" data-lang="html">{% if page.next_in_category != nil %}
 	<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{page.next_in_category.url}}&quot;</span> <span class="na">class=</span><span class="s">&quot;next-link&quot;</span><span class="nt">&gt;</span>Older Post<span class="nt">&lt;/a&gt;</span>
-{% endif %} 
+{% endif %}
 {% if page.previous_in_category != nil %}
 	<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{page.previous_in_category.url}}&quot;</span> <span class="na">class=</span><span class="s">&quot;previous-link&quot;</span><span class="nt">&gt;</span>Newer Post<span class="nt">&lt;/a&gt;</span>
 {% endif %}</code></pre></div>
 <figcaption>Code Listing: utilising the next_in_category and previous_in_category tags.</figcaption>
+</div>
 
 <p>Note how no reference is made to the current category. This is by design, as it means I can share this code as a partial, and if I wanted to utilise this type of navigation on my portofolio items I could slot it in without the need to amend it.</p>
-            </section><!-- /post-content -->
-             <div id="disqus_thread" class="clear island"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'ajclarkson'; // required: replace example with your forum shortname
-        var disqus_identifier = '/blog/jekyll-category-post-navigation/';
+
+	</section><!-- /post-content -->
+
+	<div id="disqus_thread" class="clear island"></div>
+	<script type="text/javascript">
+		var disqus_shortname = 'ajclarkson';
+		var disqus_identifier = '/blog/jekyll-category-post-navigation/';
 		var disqus_url = 'http://ajclarkson.co.uk/blog/jekyll-category-post-navigation/';
-
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </article><!-- /article.post -->
 
 
@@ -149,29 +143,19 @@
 
 
 
-        <footer class="clear">
-            <section id="footer-content" class="island">
-                <div class="footer-text">&copy;2014 ajclarkson </div>
-                <ul class="social-links">
-    <li><a href="http://twitter.com/ajclarkson" class="twitter-button">twitter</a></li>
-    <!--<li><a href="http://github.com/ajclarkson" class='symbol'>roundedgithubalt</a></li>-->
-    <li><a href="/atom.xml" class="rss-button">rss</a></li>
-    <li><a href="mailto:adam@ajclarkson.co.uk" class="email-button">email</a></li>
-</ul><!-- /social-links -->
-            </section>
-        </footer><!-- /footer -->
+	<footer class="clear">
+		<section id="footer-content" class="island">
+			<p>Handcrafted by <a href="/about">Adam Clarkson</a>, powered by Jekyll &amp; Git. To keep updated you might want to <a href="http://twitter.com/ajclarkson">follow me on twitter</a> or <a href="/atom.xml">subscribe to my RSS</a>. &copy; 2013&mdash;2014</p>
+		</section><!-- /footer-content -->
+	</footer><!-- /footer -->
 
-
-      <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43082725-1', 'ajclarkson.co.uk');
-  ga('send', 'pageview');
-
-</script>
-
-    </body>
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43082725-1', 'ajclarkson.co.uk');
+	ga('send', 'pageview');
+	</script>
+	</body>
 </html>

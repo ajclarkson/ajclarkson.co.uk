@@ -1,34 +1,28 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title> Articles Archive | Adam James Clarkson</title>
-        <meta name="viewport" content="width=device-width">
-        <!-- HTML5 Shiv-->
-        <script type="text/javascript" src="/js/html5shiv.js"></script>
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/stylesheets/main.css">
-        <!-- Syntax Highlighter -->
-        <link rel="stylesheet" href="/stylesheets/syntax.css">
-        <!-- Typekit -->
-        <script type="text/javascript" src="//use.typekit.net/bwl3cak.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    </head>
-    <body>
-        <header id="site-header" class="clear">
-            <section id="site-header-content" class="island clear">
-            		<ul id="tiles">
-            			<li id="id_tile"><div class="tile_icon"><img class="avatar" src="/images/ajclarkson.jpg" /><a href="/"></div>@ajclarkson</a></li>
-            			<li id="blog_tile"><div class="tile_icon"><img src="/images/list9.png" /></div><a href="/blog/">Articles</a></li>
-            			<li id="projects_tile"><div class="tile_icon"><img src="/images/code26.png" /></div><a href="/projects/">Projects</a></li>
-            			<li id="about_tile"><div class="tile_icon"><img src="/images/information51.png" /></div><a href="/about/">About Me</a></li>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title> Articles Archive | Adam James Clarkson</title>
+		<meta name="viewport" content="width=device-width">
+		<script type="text/javascript" src="/js/html5shiv.js"></script>
+		<link rel="stylesheet" href="/stylesheets/main.css">
+		<link rel="stylesheet" href="/stylesheets/syntax.css">
+		<script type="text/javascript" src="//use.typekit.net/bwl3cak.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	</head>
+	<body>
+	<header id="site-header" class="clear">
+		<section id="site-header-content" class="island clear">
+		<ul id="tiles">
+			<li id="id_tile"><div class="tile_icon"><img class="avatar" src="/images/ajclarkson.jpg" alt="ajclarkson" /><a href="/" title="home"></div>@ajclarkson</a></li>
+			<li id="blog_tile"><div class="tile_icon"><img src="/images/blog.png" alt="blog"/></div><a href="/blog/" title="blog">Articles</a></li>
+			<li id="projects_tile"><div class="tile_icon"><img src="/images/projects.png" alt="projects"/></div><a href="/projects/" title="projects">Projects</a></li>
+			<li id="about_tile"><div class="tile_icon"><img src="/images/about.png" alt="about" /></div><a href="/about/" title="about">About Me</a></li>
+		</ul><!-- /tiles -->
+		</section><!-- /site-header-content -->
+	</header><!-- /header -->
 
-            		</ul>
-           </section><!-- /site-header-content -->
-        </header><!-- /header -->
-
-
-               <article class="page island clear">
+	       <article class="page island clear">
         <h1>Article Archive</h1>
 
                 <p class="excerpt">I write about a range of topics covering web design, software development, and the processes that I use. I also write about my experiences in these fields.</p>
@@ -48,12 +42,40 @@
                 	
                 	<li><a href="/tag/Lifehacking">Lifehacking</a></li>
                 	
+                	<li><a href="/tag/SysAdmin">SysAdmin</a></li>
+                	
                 </ul>
             </section>
              <h2>Recent Articles</h2>
             <section id="recent-articles" class="clear">
                 <ul>
                 	
+					<li>
+                        <aside class="post-meta clear">
+                        	<span class="datebox">
+                        	<h3>Posted On</h3>
+                            <p>01 Dec 2014</p>
+                          </span>
+                          <span class="tagbox">
+                            <h3>Tagged</h3>
+                			<ul class="post-tags">
+                				
+                					<li><a href="/tag/SysAdmin">SysAdmin</a></li>
+                				
+                					<li><a href="/tag/Python">Python</a></li>
+                				
+                			</ul>
+                		</span>
+                        </aside>
+                        <div class="article-details">
+                            <h2><a href="/blog/custom-domain-dynamic-dns/">Dynamic DNS with a Custom Domain, EntryDNS &amp; Python</a></h2>
+                            <p>Plenty of services exist to provide you with free Dynamic DNS hostnames, but what if you want to use your own domain name to point to a non-static IP?</p>
+
+                        </div>
+                    </li>
+
+
+
 					<li>
                         <aside class="post-meta clear">
                         	<span class="datebox">
@@ -145,29 +167,19 @@
 
         </article><!-- /page -->
 
-        <footer class="clear">
-            <section id="footer-content" class="island">
-                <div class="footer-text">&copy;2014 ajclarkson </div>
-                <ul class="social-links">
-    <li><a href="http://twitter.com/ajclarkson" class="twitter-button">twitter</a></li>
-    <!--<li><a href="http://github.com/ajclarkson" class='symbol'>roundedgithubalt</a></li>-->
-    <li><a href="/atom.xml" class="rss-button">rss</a></li>
-    <li><a href="mailto:adam@ajclarkson.co.uk" class="email-button">email</a></li>
-</ul><!-- /social-links -->
-            </section>
-        </footer><!-- /footer -->
+	<footer class="clear">
+		<section id="footer-content" class="island">
+			<p>Handcrafted by <a href="/about">Adam Clarkson</a>, powered by Jekyll &amp; Git. To keep updated you might want to <a href="http://twitter.com/ajclarkson">follow me on twitter</a> or <a href="/atom.xml">subscribe to my RSS</a>. &copy; 2013&mdash;2014</p>
+		</section><!-- /footer-content -->
+	</footer><!-- /footer -->
 
-
-      <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43082725-1', 'ajclarkson.co.uk');
-  ga('send', 'pageview');
-
-</script>
-
-    </body>
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43082725-1', 'ajclarkson.co.uk');
+	ga('send', 'pageview');
+	</script>
+	</body>
 </html>
