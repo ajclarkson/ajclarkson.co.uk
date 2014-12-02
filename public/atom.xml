@@ -4,12 +4,104 @@
  <title>Adam James Clarkson</title>
  <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
  <link href="http://ajclarkson.co.uk/"/>
- <updated>2014-12-01T18:16:29+00:00</updated>
+ <updated>2014-12-02T16:34:06+00:00</updated>
  <id>http://ajclarkson.co.uk</id>
  <author>
    <name>Adam James Clarkson</name>
  </author>
  
+ 
+ <entry>
+   <title>Automatically Mount your ownCloud folder with webDAV</title>
+   <link href="http://ajclarkson.co.uk/blog/auto-mount-webdav-raspberry-pi/"/>
+   <updated>2014-12-02T00:00:00+00:00</updated>
+   <id>http://ajclarkson.co.uk/blog/auto-mount-webdav-raspberry-pi</id>
+   <content type="html">&lt;p&gt;The instructions in this post were devised on a RaspberryPi running Raspbian GNU/Linux 7 (wheezy), but they should be applicable to other setups where you want command line access to an ownCloud folder.&lt;/p&gt;
+
+&lt;h2&gt;The Issue&lt;/h2&gt;
+&lt;p&gt;Both of my RaspberryPi&#39;s run without any input devices attached to them, so I don&#39;t run GUI desktop environments on them. However, I do still want to be able to sync my ownCloud folder with them. Unfortunately the official ownCloud client is severely lacking when it comes to command line support. So here is how I get around it, by mounting my cloud folders via webDAV.&lt;/p&gt;
+
+&lt;h2&gt;The Solution&lt;/h2&gt;
+
+&lt;p&gt;In order to access a webDAV share as a filesystem, you&#39;ll need to install the davfs2 package. It&#39;s in the repositories by default, so this step is easy:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install davfs2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: Install davfs2&lt;/figcaption&gt;
+
+&lt;p&gt;davfs2 has a quirk if you are using Debian (or a Debian based variant), in which it doesn&#39;t have the correct permissions to run as a non-root user. You may see the error: &lt;code&gt;/sbin/mount.davfs: program is not setuid root&lt;/code&gt; This can be fixed using one of the following commands:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo dpkg-reconfigure davfs2
+&lt;span class=&quot;c&quot;&gt;# or a more manual approach&lt;/span&gt;
+sudo chmod u+s /usr/sbin/mount.davfs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: Fix davfs2 setuid root error&lt;/figcaption&gt;
+
+&lt;p&gt;Now add a line to your &lt;code&gt;/etc/fstab&lt;/code&gt; file to make mounting easier. Note we are specifying &lt;code&gt;noauto&lt;/code&gt; here, we will perform the automatic mounting step later. &lt;code&gt;/etc/fstab&lt;/code&gt; is often run &lt;strong&gt;before&lt;/strong&gt; network initialisation, and therefore an automatic mount here will fail.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;https://cloud.example.com/webDAV/URL 	/media/cloud 	davfs 	noauto,user		0		0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: /etc/fstab addition&lt;/figcaption&gt;
+
+&lt;p&gt;Add your user to the correct group:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;usermod -a -G davfs2 &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: Add user to dav2fs group&lt;/figcaption&gt;
+
+&lt;p&gt;Now you should be able to mount your share and work with your files. You will be prompted for your username and password, and if you have set up ownCloud with a self-signed certificate, then you will be asked to confirm that you trust it.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mount /media/cloud
+umount /media/cloud&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: Test webDAV share mounting&lt;/figcaption&gt;
+
+&lt;h3&gt;Storing Credentials&lt;/h3&gt;
+
+&lt;p&gt;It&#39;s pretty inconvenient to have to type in your username / password and accept your self-signed certificate every time you want to mount your drive. It&#39;s also a hurdle which needs to be overcome if you want to be able to automatically have your webDAV share mounted. So let&#39;s break it down and take care of the username / password first.&lt;/p&gt;
+
+&lt;p&gt;davfs2 makes use of the &lt;code&gt;/home/user/.davfs2/secrets&lt;/code&gt; file for storing such credentials. You simply need to create this with the correct permissions and then provide the host, username and password details.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;touch /home/user/.dav2fs/secrets
+chmod &lt;span class=&quot;m&quot;&gt;0600&lt;/span&gt; /home/user/.dav2fs/secrets
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://cloud.example.com/webDAV/URL 	&amp;lt;username&amp;gt;	&amp;lt;password&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt; /home/user/.dav2fs/secrets&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: Creating a secrets file for login&lt;/figcaption&gt;
+
+&lt;p&gt;After that step, you will be able to mount your share without providing a username and password, but you will still be asked if you trust your self-signed certificate (if you are using one). If that&#39;s the case, let&#39;s take care of it now.&lt;/p&gt;
+
+&lt;h3&gt;Accepting a Self Signed Certificate&lt;/h3&gt;
+
+&lt;p&gt;If you created a self-signed certificate for ownCloud, then you should have the &lt;code&gt;server.crt&lt;/code&gt; &amp;amp; &lt;code&gt;server.key&lt;/code&gt; on your server. We need to convert the &lt;code&gt;server.crt&lt;/code&gt; into a &lt;code&gt;.pem&lt;/code&gt; certificate that will work with davfs2:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;openssl x509 -in server.crt -out server.pem -outform PEM&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: Convert server certificate format&lt;/figcaption&gt;
+
+&lt;p&gt;You&#39;ll need to store the new &lt;code&gt;server.pem&lt;/code&gt; that we just created in &lt;code&gt;/home/user/.davfs2/certs/server.pem&lt;/code&gt; (you may have to create the certs folder). Then you need to make davfs2 aware of it&#39;s existence, which is done in the config file &lt;code&gt;/home/user/.davfs2/davfs2.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# find the line which starts:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# servercert&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# and change it to:&lt;/span&gt;
+servercert	server.pem&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: modify davfs2.conf&lt;/figcaption&gt;
+
+
+&lt;p&gt;Once you have done that, you should be able to mount your webDAV share without any user input being required. Give it a test:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mount /media/cloud
+umount /media/cloud&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: Test webDAV share mounting&lt;/figcaption&gt;
+
+&lt;h3&gt;Automatic Share Mounting&lt;/h3&gt;
+
+&lt;p&gt;Remember when we edited the &lt;code&gt;/etc/fstab&lt;/code&gt; file we used the &lt;code&gt;noauto&lt;/code&gt; option? Well, what if you do want your share mounted automatically?&lt;/p&gt;
+
+&lt;p&gt;Because we can&#39;t mount a webDAV share until after the network connection has been established, we can&#39;t use the &lt;code&gt;auto&lt;/code&gt; option in our &lt;code&gt;/etc/fstab&lt;/code&gt; file. Instead, we will take advantage of everything which we have set up so far to use one simple command to take care of this. &lt;/p&gt;
+
+&lt;p&gt;Your &lt;code&gt;/etc/rc.local&lt;/code&gt; file is executed after boot, and so is an excellent place to provide the functionality we are looking for, so simply add:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mount -a
+&lt;span class=&quot;c&quot;&gt;# make sure this command is above the exit 0 command&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figcaption&gt;Code Listing: /etc/rc.local addition for auto-mounting&lt;/figcaption&gt;
+
+&lt;p&gt;Assuming you have a network connection when you boot, you should now have your ownCloud webDAV share mounted automatically. Wasn&#39;t that hard, was it?&lt;/p&gt;
+
+&lt;p&gt;&amp;mdash;Adam&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Dynamic DNS with a Custom Domain, EntryDNS &amp; Python</title>
