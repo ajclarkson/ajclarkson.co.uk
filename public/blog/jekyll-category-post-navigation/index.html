@@ -6,33 +6,36 @@
 		<meta name="viewport" content="width=device-width">
 		<script type="text/javascript" src="/js/html5shiv.js"></script>
 		<script type="text/javascript" src="/js/picturefill.js"></script>
-		<link rel="stylesheet" href="/stylesheets/main.css">
-		<link rel="stylesheet" href="/stylesheets/syntax.css">
+
+		<link rel="stylesheet" href="/assets/site-c6778b87a86cc0943d30436f7f3f1a34.css">
+
 		<script src="//use.typekit.net/ahk4squ.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
 	</head>
 	<body>
-	<header id="site-header" class="clear">
-		<section id="site-header-content" class="island clear">
+	<header id="site_header">
+		<section class="wrap">
 			<div id="identity"><a href="/">Adam<strong>Clarkson</strong></a></div>
-			<ul>
+			<nav id="site_nav">
 				<li id="blog_tile"><a href="/blog/">Blog</a></li>
 				<li id="projects_tile"><a href="/projects/">Projects</a></li>
 				<li id="about_tile"><a href="/about/">About</a></li>
-			</ul>
+			</nav>
 		</section><!-- /site-header-content -->
 	</header><!-- /header -->
-
-	<article class="island post">
-	<a href="/blog/why-jekyll/" class="next-link">Older Post</a>
-	<a href="/blog/pymap-email-reminders/" class="previous-link">Newer Post</a>
-<div class="post-date">&mdash; 16 October 2013 &mdash;</div>
+	<main class="wrap site_content" role="main">
+		<article>
+	
+		<a href="/blog/why-jekyll/" class="next_link">Older Post</a>
+	
+	
+		<a href="/blog/pymap-email-reminders/" class="previous_link">Newer Post</a>
+	
+	<div class="post_date">&mdash; 16 October 2013 &mdash;</div>
 	<h1>Jekyll Post Navigation Within a Category</h1>
 	<p class="excerpt">Jekyll comes equipped with `post.next` and `post.previous` links, but how about just moving through the posts within one category?</p>
 
-	<section id="post-content" class="clear">
-
-
+	<section class="content_block" >
 		<p>Jekyll comes with a number of helper functions rolled into it as default. They’re accessed using the liquid template tags. One particularly useful one is to provide a link to the next and previous posts in your blog. Simply by using <code>post.next</code> or <code>post.previous</code>.</p>
 
 <h2 id="the-issue">The Issue</h2>
@@ -90,7 +93,7 @@
 <p>—Adam</p>
 
 
-	<aside id="post-meta">
+	<aside id="post_meta">
 		<ul id="tags-list">
 			<li>Tagged:</li>
 			
@@ -105,7 +108,7 @@
 
 	</section><!-- /post-content -->
 
-	<div id="disqus_thread" class="clear island"></div>
+	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 		var disqus_shortname = 'ajclarkson';
 		var disqus_identifier = '/blog/jekyll-category-post-navigation/';
@@ -148,10 +151,10 @@
 
 
 
-
-	<footer class="clear">
-		<section id="footer-content" class="island">
-			<p>Handcrafted by <a href="/about">Adam Clarkson</a>, powered by Jekyll &amp; Git. To keep updated you might want to <a href="http://twitter.com/ajclarkson">follow me on twitter</a> or <a href="/atom.xml">subscribe to my RSS</a>. &copy; 2013&mdash;2014</p>
+	</main>
+	<footer id="site_footer">
+		<section id="footer_content" class="wrap">
+			<p>Handcrafted by <a href="/about">Adam Clarkson</a>, powered by Jekyll &amp; Git. To keep updated you might want to <a href="http://twitter.com/ajclarkson">follow me on twitter</a> or <a href="/feed.xml">subscribe to my RSS</a>. &copy; 2013&mdash;2014</p>
 		</section><!-- /footer-content -->
 	</footer><!-- /footer -->
 

@@ -62,7 +62,7 @@ umount /media/cloud
 <figcaption>Code Listing: Test webDAV share mounting</figcaption>
 </figure>
 
-## Storing Credentials
+### Storing Credentials
 
 It's pretty inconvenient to have to type in your username / password and accept your self-signed certificate every time you want to mount your drive. It's also a hurdle which needs to be overcome if you want to be able to automatically have your webDAV share mounted. So let's break it down and take care of the username / password first.
 
@@ -79,7 +79,7 @@ echo "https://cloud.example.com/webDAV/URL 	<username>	<password>" > /home/user/
 
 After that step, you will be able to mount your share without providing a username and password, but you will still be asked if you trust your self-signed certificate (if you are using one). If that's the case, let's take care of it now.
 
-## Accepting a Self Signed Certificate
+### Accepting a Self Signed Certificate
 
 If you created a self-signed certificate for ownCloud, then you should have the `server.crt` &amp; `server.key` on your server. We need to convert the `server.crt` into a `.pem` certificate that will work with davfs2:
 
@@ -112,7 +112,7 @@ umount /media/cloud
 <figcaption>Code Listing: Test webDAV share mounting</figcaption>
 </figure>
 
-## Automatic Share Mounting
+### Automatic Share Mounting
 
 Remember when we edited the `/etc/fstab` file we used the `noauto` option? Well, what if you do want your share mounted automatically?
 

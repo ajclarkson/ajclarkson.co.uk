@@ -6,33 +6,36 @@
 		<meta name="viewport" content="width=device-width">
 		<script type="text/javascript" src="/js/html5shiv.js"></script>
 		<script type="text/javascript" src="/js/picturefill.js"></script>
-		<link rel="stylesheet" href="/stylesheets/main.css">
-		<link rel="stylesheet" href="/stylesheets/syntax.css">
+
+		<link rel="stylesheet" href="/assets/site-c6778b87a86cc0943d30436f7f3f1a34.css">
+
 		<script src="//use.typekit.net/ahk4squ.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
 	</head>
 	<body>
-	<header id="site-header" class="clear">
-		<section id="site-header-content" class="island clear">
+	<header id="site_header">
+		<section class="wrap">
 			<div id="identity"><a href="/">Adam<strong>Clarkson</strong></a></div>
-			<ul>
+			<nav id="site_nav">
 				<li id="blog_tile"><a href="/blog/">Blog</a></li>
 				<li id="projects_tile"><a href="/projects/">Projects</a></li>
 				<li id="about_tile"><a href="/about/">About</a></li>
-			</ul>
+			</nav>
 		</section><!-- /site-header-content -->
 	</header><!-- /header -->
-
-	<article class="island post">
-	<a href="/blog/pymap-email-reminders/" class="next-link">Older Post</a>
-	<a href="/blog/auto-mount-webdav-raspberry-pi/" class="previous-link">Newer Post</a>
-<div class="post-date">&mdash; 01 December 2014 &mdash;</div>
+	<main class="wrap site_content" role="main">
+		<article>
+	
+		<a href="/blog/pymap-email-reminders/" class="next_link">Older Post</a>
+	
+	
+		<a href="/blog/auto-mount-webdav-raspberry-pi/" class="previous_link">Newer Post</a>
+	
+	<div class="post_date">&mdash; 01 December 2014 &mdash;</div>
 	<h1>Dynamic DNS with a Custom Domain, EntryDNS &amp; Python</h1>
 	<p class="excerpt">Plenty of services exist to provide you with free Dynamic DNS hostnames, but what if you want to use your own domain name to point to a non-static IP?</p>
 
-	<section id="post-content" class="clear">
-
-
+	<section class="content_block" >
 		<p>While it is possible to get a whole slew of free dynamic dns host names online, they all come in a format of: <code>myawesomehostname.theircompany.com</code> or some other variation. These services are great for providing you remote access to a home machine, or some other location without a static IP, but I really wanted to find a way of using my own domain name to various non-static services.</p>
 
 <h2 id="the-issue">The Issue</h2>
@@ -112,7 +115,7 @@ curl -k -X PUT -d <span class="s2">&quot;&quot;</span> https://entrydns.net/reco
 <p>— Adam</p>
 
 
-	<aside id="post-meta">
+	<aside id="post_meta">
 		<ul id="tags-list">
 			<li>Tagged:</li>
 			
@@ -125,7 +128,7 @@ curl -k -X PUT -d <span class="s2">&quot;&quot;</span> https://entrydns.net/reco
 
 	</section><!-- /post-content -->
 
-	<div id="disqus_thread" class="clear island"></div>
+	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 		var disqus_shortname = 'ajclarkson';
 		var disqus_identifier = '/blog/custom-domain-dynamic-dns/';
@@ -168,10 +171,10 @@ curl -k -X PUT -d <span class="s2">&quot;&quot;</span> https://entrydns.net/reco
 
 
 
-
-	<footer class="clear">
-		<section id="footer-content" class="island">
-			<p>Handcrafted by <a href="/about">Adam Clarkson</a>, powered by Jekyll &amp; Git. To keep updated you might want to <a href="http://twitter.com/ajclarkson">follow me on twitter</a> or <a href="/atom.xml">subscribe to my RSS</a>. &copy; 2013&mdash;2014</p>
+	</main>
+	<footer id="site_footer">
+		<section id="footer_content" class="wrap">
+			<p>Handcrafted by <a href="/about">Adam Clarkson</a>, powered by Jekyll &amp; Git. To keep updated you might want to <a href="http://twitter.com/ajclarkson">follow me on twitter</a> or <a href="/feed.xml">subscribe to my RSS</a>. &copy; 2013&mdash;2014</p>
 		</section><!-- /footer-content -->
 	</footer><!-- /footer -->
 

@@ -4,7 +4,7 @@
  <title>Adam James Clarkson</title>
  <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
  <link href="http://ajclarkson.co.uk/"/>
- <updated>2014-12-03T11:39:11+00:00</updated>
+ <updated>2014-12-03T15:53:36+00:00</updated>
  <id>http://ajclarkson.co.uk</id>
  <author>
    <name>Adam James Clarkson</name>
@@ -74,7 +74,7 @@ umount /media/cloud&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figcaption&gt;Code Listing: Test webDAV share mounting&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h2 id=&quot;storing-credentials&quot;&gt;Storing Credentials&lt;/h2&gt;
+&lt;h3 id=&quot;storing-credentials&quot;&gt;Storing Credentials&lt;/h3&gt;
 
 &lt;p&gt;It’s pretty inconvenient to have to type in your username / password and accept your self-signed certificate every time you want to mount your drive. It’s also a hurdle which needs to be overcome if you want to be able to automatically have your webDAV share mounted. So let’s break it down and take care of the username / password first.&lt;/p&gt;
 
@@ -91,7 +91,7 @@ chmod &lt;span class=&quot;m&quot;&gt;0600&lt;/span&gt; /home/user/.dav2fs/secre
 
 &lt;p&gt;After that step, you will be able to mount your share without providing a username and password, but you will still be asked if you trust your self-signed certificate (if you are using one). If that’s the case, let’s take care of it now.&lt;/p&gt;
 
-&lt;h2 id=&quot;accepting-a-self-signed-certificate&quot;&gt;Accepting a Self Signed Certificate&lt;/h2&gt;
+&lt;h3 id=&quot;accepting-a-self-signed-certificate&quot;&gt;Accepting a Self Signed Certificate&lt;/h3&gt;
 
 &lt;p&gt;If you created a self-signed certificate for ownCloud, then you should have the &lt;code&gt;server.crt&lt;/code&gt; &amp;amp; &lt;code&gt;server.key&lt;/code&gt; on your server. We need to convert the &lt;code&gt;server.crt&lt;/code&gt; into a &lt;code&gt;.pem&lt;/code&gt; certificate that will work with davfs2:&lt;/p&gt;
 
@@ -124,7 +124,7 @@ umount /media/cloud&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figcaption&gt;Code Listing: Test webDAV share mounting&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h2 id=&quot;automatic-share-mounting&quot;&gt;Automatic Share Mounting&lt;/h2&gt;
+&lt;h3 id=&quot;automatic-share-mounting&quot;&gt;Automatic Share Mounting&lt;/h3&gt;
 
 &lt;p&gt;Remember when we edited the &lt;code&gt;/etc/fstab&lt;/code&gt; file we used the &lt;code&gt;noauto&lt;/code&gt; option? Well, what if you do want your share mounted automatically?&lt;/p&gt;
 

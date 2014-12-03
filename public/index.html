@@ -6,24 +6,25 @@
 		<meta name="viewport" content="width=device-width">
 		<script type="text/javascript" src="/js/html5shiv.js"></script>
 		<script type="text/javascript" src="/js/picturefill.js"></script>
-		<link rel="stylesheet" href="/stylesheets/main.css">
-		<link rel="stylesheet" href="/stylesheets/syntax.css">
+
+		<link rel="stylesheet" href="/assets/site-c6778b87a86cc0943d30436f7f3f1a34.css">
+
 		<script src="//use.typekit.net/ahk4squ.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
 	</head>
 	<body>
-	<header id="site-header" class="clear">
-		<section id="site-header-content" class="island clear">
+	<header id="site_header">
+		<section class="wrap">
 			<div id="identity"><a href="/">Adam<strong>Clarkson</strong></a></div>
-			<ul>
+			<nav id="site_nav">
 				<li id="blog_tile"><a href="/blog/">Blog</a></li>
 				<li id="projects_tile"><a href="/projects/">Projects</a></li>
 				<li id="about_tile"><a href="/about/">About</a></li>
-			</ul>
+			</nav>
 		</section><!-- /site-header-content -->
 	</header><!-- /header -->
-
-	
+	<main class="wrap site_content" role="main">
+		
 <article class="island post">
 	<a href="/blog/custom-domain-dynamic-dns/" class="next-link">Older Post</a>
 	
@@ -92,7 +93,7 @@ umount /media/cloud</code></pre></div>
 <figcaption>Code Listing: Test webDAV share mounting</figcaption>
 </figure>
 
-<h2 id="storing-credentials">Storing Credentials</h2>
+<h3 id="storing-credentials">Storing Credentials</h3>
 
 <p>It’s pretty inconvenient to have to type in your username / password and accept your self-signed certificate every time you want to mount your drive. It’s also a hurdle which needs to be overcome if you want to be able to automatically have your webDAV share mounted. So let’s break it down and take care of the username / password first.</p>
 
@@ -109,7 +110,7 @@ chmod <span class="m">0600</span> /home/user/.dav2fs/secrets
 
 <p>After that step, you will be able to mount your share without providing a username and password, but you will still be asked if you trust your self-signed certificate (if you are using one). If that’s the case, let’s take care of it now.</p>
 
-<h2 id="accepting-a-self-signed-certificate">Accepting a Self Signed Certificate</h2>
+<h3 id="accepting-a-self-signed-certificate">Accepting a Self Signed Certificate</h3>
 
 <p>If you created a self-signed certificate for ownCloud, then you should have the <code>server.crt</code> &amp; <code>server.key</code> on your server. We need to convert the <code>server.crt</code> into a <code>.pem</code> certificate that will work with davfs2:</p>
 
@@ -142,7 +143,7 @@ umount /media/cloud</code></pre></div>
 <figcaption>Code Listing: Test webDAV share mounting</figcaption>
 </figure>
 
-<h2 id="automatic-share-mounting">Automatic Share Mounting</h2>
+<h3 id="automatic-share-mounting">Automatic Share Mounting</h3>
 
 <p>Remember when we edited the <code>/etc/fstab</code> file we used the <code>noauto</code> option? Well, what if you do want your share mounted automatically?</p>
 
@@ -196,10 +197,10 @@ umount /media/cloud</code></pre></div>
 </article><!-- /article.post -->
 
 
-
-	<footer class="clear">
-		<section id="footer-content" class="island">
-			<p>Handcrafted by <a href="/about">Adam Clarkson</a>, powered by Jekyll &amp; Git. To keep updated you might want to <a href="http://twitter.com/ajclarkson">follow me on twitter</a> or <a href="/atom.xml">subscribe to my RSS</a>. &copy; 2013&mdash;2014</p>
+	</main>
+	<footer id="site_footer">
+		<section id="footer_content" class="wrap">
+			<p>Handcrafted by <a href="/about">Adam Clarkson</a>, powered by Jekyll &amp; Git. To keep updated you might want to <a href="http://twitter.com/ajclarkson">follow me on twitter</a> or <a href="/feed.xml">subscribe to my RSS</a>. &copy; 2013&mdash;2014</p>
 		</section><!-- /footer-content -->
 	</footer><!-- /footer -->
 

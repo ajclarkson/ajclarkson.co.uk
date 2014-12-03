@@ -1,0 +1,105 @@
+//
+// typography.scss - ajclarkson.co.uk
+//
+// type setting for the site
+
+h1 {
+	font-weight:800;
+	font-style:italic;
+	font-size: 2.5em;
+	line-height:1em;
+	text-align:center;
+	margin-bottom:$baseline;
+	@media screen and (min-width:500px) {
+		font-size:3rem;
+	}
+}
+
+h2 {
+	font-weight:800;
+	font-size:1.5em;
+	font-family:$sans-font;
+	margin-bottom:$baseline/4;
+}
+
+h3 {
+	font-weight:800;
+	font-size:1em;
+	font-family:$sans-font;
+	text-transform:uppercase;
+	line-height: $baseline;
+	margin-bottom:$baseline/4;
+}
+
+a, a:visited {
+	color:$highlight;
+	text-decoration:none;
+}
+
+a:hover, a:active {
+	color:$dark-complement;
+}
+
+%small {
+	font-size:0.75em;
+}
+
+small, .small {
+	@extend %small;
+}
+
+.excerpt {
+	font-size:1.2em;
+	text-align:center;
+}
+
+code {
+	@extend %small;
+	font-family: $code-font;
+}
+
+blockquote {
+	padding-left:$baseline;
+
+	width:100%;
+
+	font-weight:400;
+	font-style:italic;
+	font-size:1.2em;
+	font-family:$serif-font;
+	line-height:$baseline;
+	color: $dark-complement;
+
+	border-left:2px solid $highlight;
+
+	@media (min-width:500px) {
+		margin:auto auto $baseline;
+		width:85%;
+	}
+}
+
+figcaption {
+	font-weight:400;
+	@extend %small;
+	font-family:$sans-font;
+	color:$dark-complement;
+	margin-top:$baseline/4 0 $baseline;
+	text-align:center;
+}
+
+#post_meta {
+	font-weight:400;
+	@extend %small;
+	font-family:$sans-font;
+	color:$dark-complement;
+	text-transform:uppercase;
+}
+
+#disqus_thread {
+	font-family:$sans-font;
+}
+
+#site_footer {
+	@extend small;
+	font-style:italic;
+}

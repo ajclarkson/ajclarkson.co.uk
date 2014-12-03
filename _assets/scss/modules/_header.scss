@@ -1,0 +1,67 @@
+//
+// header.scss - ajclarkson.co.uk
+//
+// website header styling
+
+#site_header {
+	padding:$baseline 0;
+	margin:0;
+	background:$background;
+
+	a:link, a:visited {
+		color:$body-text;
+		text-decoration:none;
+	}
+	a:hover, a:active {
+		position:relative;
+		top:-0.1em;
+		color:$alternate-highlight;
+	}
+
+
+}
+
+#identity {
+	display:block;
+	width:40%;
+	float:left;
+}
+
+#site_nav {
+	width:60%;
+	float:left;
+	padding-left:0;
+	list-style-type:none;
+
+	li {
+		display:block;
+		width:33%;
+		float:left;
+		text-align:center;
+	}
+	@media (min-width:500px) {
+		li {
+			text-align:left;
+			a:link, a:visited {
+				display:block;
+				margin-left:2em;
+				color:$alternate-highlight;
+			}
+			a:hover, a:active {
+				color:$dark-complement;
+			}
+		}
+		#blog_tile {
+			background:url('/images/blog.png') no-repeat 0.3em;
+			background-size:$baseline/1.5;
+		}
+		#projects_tile {
+			background:url('/images/projects.png') no-repeat 0.3em;
+			background-size:$baseline/1.5;
+		}
+		#about_tile {
+			background:url('/images/about.png') no-repeat 0.3em;
+			background-size:$baseline/1.5;
+		}
+	}
+}

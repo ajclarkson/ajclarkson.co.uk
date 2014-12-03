@@ -1,0 +1,18 @@
+//
+// footer.scss - ajclarkson.co.uk
+//
+// website footer styling
+
+#site_footer {
+	margin:$baseline*2 0 0 0;
+
+	background: $background;
+	border-top:2px solid $highlight;
+	color:$dark-complement;
+
+	#footer_content {
+		padding:$baseline $baseline;
+		max-width:500px;
+	}
+
+}

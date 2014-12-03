@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-<article class="page island clear">
+<article class="page island">
 	<h1>{{page.title}}</h1>
 	<p class="excerpt">You're currently browsing articles on <a href="/tag/{{page.tag}}">{{page.tag}}</a>. You can also browse the <a href="/blog">archive</a> of all articles.</p>
 
-	<section id="recent-articles" class="clear">
+	<section id="recent-articles">
 		<ul>
 		{% for post in site.posts %}
 			{% for tag in post.tags %}

@@ -4,9 +4,17 @@ highlighter: pygments
 destination: ./public
 permalink: /:categories/:title/
 tag_dir: tag
-sass:
- style: compressed
+
 exclude: ['scss','Gem','Guard','*.rb','.sass-cache','.git']
+
+assets:
+  js_compressor: uglifier
+  css_compressor: sass
+  cache: true
+  sources:
+    - _assets/scss
+    - _assets/js
+  cachebust: hard
 
 picture:
   source: _images/
