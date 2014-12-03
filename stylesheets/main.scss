@@ -20,8 +20,8 @@ h5 { font-size: 1em; line-height:1.5em;}
 p.excerpt { font-size:1.2em; line-height:1.2em; text-align:center; }
 strong { font-weight:600; letter-spacing:.03em; }
 em { font-style:italic; }
-code { background: $background; padding:0.2em; }
-.highlight code { background: none; padding: 0}
+code { background: $background; padding:0.2em;  font-family: monospace; font-size:1em; white-space:pre-line;}
+.highlight code { background: none; padding: 0; white-space:pre; }
 
 /* =Global
 ----------------------------------------------- */
@@ -48,7 +48,7 @@ blockquote {
 }
 
 figcaption { font: 0.7em "ff-meta-web-pro", sans-serif; color:$alternate-text-color; margin-bottom:1.5em;  width:100%; text-align:center;}
-code { font-family: monospace; white-space:pre; font-size:0.85em;}
+
 
 .media-container {
 	margin-bottom:1.5em; display:block;
