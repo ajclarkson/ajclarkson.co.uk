@@ -36,6 +36,13 @@
 		width:33%;
 		float:left;
 		text-align:center;
+
+		a, a:visited {
+			color:$alternate-highlight;
+		}
+		a:hover, a:active {
+			color:$dark-complement;
+		}
 	}
 	@media (min-width:500px) {
 		li {
@@ -43,11 +50,8 @@
 			a:link, a:visited {
 				display:block;
 				margin-left:2em;
-				color:$alternate-highlight;
 			}
-			a:hover, a:active {
-				color:$dark-complement;
-			}
+
 		}
 		#blog_tile {
 			background:url('/images/blog.png') no-repeat 0.3em;
