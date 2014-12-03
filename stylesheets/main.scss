@@ -20,7 +20,7 @@ h5 { font-size: 1em; line-height:1.5em;}
 p.excerpt { font-size:1.2em; line-height:1.2em; text-align:center; }
 strong { font-weight:600; letter-spacing:.03em; }
 em { font-style:italic; }
-code { background: $background; padding:0.2em;  font-family: monospace; font-size:1em; white-space:pre-line;}
+code { background: $background; padding:0.2em;  font-family: 'source-code-pro', monospace; font-size:0.75em; white-space:pre-line; }
 .highlight code { background: none; padding: 0; white-space:pre; }
 
 /* =Global
@@ -120,7 +120,7 @@ a:link.strava, a:visited.strava { color:#fc4c02; }
 		#recent-articles {
 			width:80%;
 		}
-		.media-container {
+		.media-container, .highlight {
 			width:120%;
 			margin-left:-10%;
 		}

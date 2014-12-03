@@ -4,7 +4,7 @@
  <title>Adam James Clarkson</title>
  <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
  <link href="http://ajclarkson.co.uk/"/>
- <updated>2014-12-03T09:38:36+00:00</updated>
+ <updated>2014-12-03T09:45:41+00:00</updated>
  <id>http://ajclarkson.co.uk</id>
  <author>
    <name>Adam James Clarkson</name>
@@ -150,13 +150,13 @@ umount /media/cloud&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now that EntryDNS is responsible for your DNS we can start to get dynamic with it. When you created the A record for your domain, an authentication token was generated along with it. (Something like: SDsoT8ryycWzessi7pgx). This token is unique to your domain A record, and acts as authentication for the EntryDNS API, so keep it safe and secret (The one I posted I made up, so don&#39;t waste your time trying it).&lt;/p&gt;
 
 &lt;p&gt;EntryDNS allow you to update your domain by using one of the following two API calls:&lt;/p&gt;
-&lt;div class=&quot;media-container clear&quot;&gt;
+
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Providing IP address to update&lt;/span&gt;
 curl -k -X PUT -d &lt;span class=&quot;s2&quot;&gt;&amp;quot;ip=IP&amp;quot;&lt;/span&gt; https://entrydns.net/records/modify/TOKEN
 &lt;span class=&quot;c&quot;&gt;# IP Address will be generated from request origin&lt;/span&gt;
 curl -k -X PUT -d &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt; https://entrydns.net/records/modify/TOKEN&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figcaption&gt;Code Listing: EntryDNS API Calls&lt;/figcaption&gt;
-&lt;/div&gt;
+
 
 &lt;p&gt;By replacing `IP` and `TOKEN` where appropriate in either of those calls, your domain will be updated to point to the new IP. Dynamic DNS at it&#39;s finest. It&#39;s easy to incorporate that into a bash script or a cronjob and you are away, but if you want a slightly more advanced method of updating then read on.&lt;/p&gt;
 
@@ -202,7 +202,6 @@ curl -k -X PUT -d &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span
 
 &lt;h2&gt;The Solution&lt;/h2&gt;
 &lt;p&gt;Jekyll has a very powerful plugin interface for writing &quot;generators&quot; which perform certain tasks when your site is built. After searching around there were a few different solutions to this problem, and one that was almost there but stopped just short. So I wrote my own generator. The logic is simple enough, as you will see from the code. It steps through each category, sorting the posts and adding both a next and previous `in_category` tag to the post data.&lt;/p&gt;
-&lt;div class=&quot;media-container clear&quot;&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Jekyll&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WithinCategoryPostNavigation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Generator&lt;/span&gt;
 		&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -228,11 +227,10 @@ curl -k -X PUT -d &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span
 	&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figcaption&gt;Code Listing: within_category_post_navigation.rb&lt;/figcaption&gt;
-&lt;/div&gt;
 
 &lt;p&gt;Simply put that script into your _plugins directory (create it under your site root if it doesn&#39;t exist). Here&#39;s an example of how it is used on this site:&lt;/p&gt;
 
-&lt;div class=&quot;media-container clear&quot;&gt;
+
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% if page.next_in_category != nil %}
 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{page.next_in_category.url}}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;next-link&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Older Post&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
 {% endif %}
@@ -240,7 +238,7 @@ curl -k -X PUT -d &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span
 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{page.previous_in_category.url}}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;previous-link&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Newer Post&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
 {% endif %}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figcaption&gt;Code Listing: utilising the next_in_category and previous_in_category tags.&lt;/figcaption&gt;
-&lt;/div&gt;
+
 
 &lt;p&gt;Note how no reference is made to the current category. This is by design, as it means I can share this code as a partial, and if I wanted to utilise this type of navigation on my portofolio items I could slot it in without the need to amend it.&lt;/p&gt;</content>
  </entry>
