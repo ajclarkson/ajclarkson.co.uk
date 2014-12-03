@@ -1,5 +1,5 @@
 #site-header {
-	background:$background; padding:1.5em 0 0;
+	background:$background; padding:1.5em 0 0; font-size:0.9em;
 	a:link, a:visited { color:$body-text; text-decoration:none; }
 	a:hover, a:active { color:#3F7EA6; position:relative; top:-0.1em; }
 
@@ -10,7 +10,8 @@
 		li {
 			display:block; width:33%; float:left;
 			a:link, a:visited {
-				color:#3F7EA6; display:block; margin-left:2em; padding-top:0.2em;
+				color:#3F7EA6; display:block;  padding-top:0.2em;
+				text-align:center;
 			}
 			a:active, a:hover { color:$alternate-text-color; }
 		}
