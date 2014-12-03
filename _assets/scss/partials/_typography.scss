@@ -78,16 +78,7 @@ blockquote {
 	}
 }
 
-figcaption {
-	font-weight:400;
-	@extend %small;
-	font-family:$sans-font;
-	color:$dark-complement;
-	margin-top:$baseline/4 0 $baseline;
-	text-align:center;
-}
-
-#post_meta {
+%meta {
 	font-weight:400;
 	@extend %small;
 	font-family:$sans-font;
@@ -95,11 +86,19 @@ figcaption {
 	text-transform:uppercase;
 }
 
+figcaption {
+	@extend %meta;
+	margin:$baseline/4 0 $baseline;
+	text-align:center;
+}
+#post_meta, .post_date, .date_list {
+	@extend %meta;
+}
+
 #disqus_thread {
 	font-family:$sans-font;
 }
 
 #site_footer {
-	@extend small;
-	font-style:italic;
+	@extend %meta;
 }

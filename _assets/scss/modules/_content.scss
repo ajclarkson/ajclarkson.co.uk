@@ -5,11 +5,7 @@
 
 .post_date {
 	margin-bottom:$baseline;
-	font-size:0.8em;
-	font-family: $sans-font;
 	text-align:center;
-	text-transform:uppercase;
-	color:$dark-complement;
 }
 
 .excerpt {
@@ -81,4 +77,33 @@ figure {
 .previous_link {
 	background:url('/images/right-arrow.png') no-repeat 18px center $body-text;
 	right:-25px;
+}
+
+#tags_list {
+	list-style-type:none;
+	margin-top:$baseline/2;
+	li {
+			display:inline-block;
+			margin:0 $baseline/4 $baseline/4 0;
+			padding:$baseline/4;
+
+			background:$background;
+			border-radius:10px;
+			a, a:visited {
+				color:$alternate-highlight;
+			}
+			a:hover, a:active {
+				color:$dark-complement;
+			}
+		}
+
+}
+
+#recent_articles {
+	list-style-type:none;
+	margin-top:$baseline/2;
+	li {
+		margin-bottom:$baseline/2;
+	}
+
 }

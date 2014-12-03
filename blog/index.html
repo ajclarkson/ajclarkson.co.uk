@@ -3,29 +3,29 @@ layout: default
 title: Articles Archive
 ---
 
-<article class="page island">
+<article>
 	<h1>Archive</h1>
 	<p class="excerpt">I write about a range of topics covering web design, software development, and the processes that I use. I also write about my experiences in these fields.</p>
 
-	<section id="post-content">
+	<section class="content_block">
 		<h2>Topics</h2>
-		<ul id="tags-list">
+		<ul id="tags_list">
 			{% for tag in site.tags %}
 				<li><a href="/tag/{{tag[0]}}">{{ tag[0] }}</a></li>
 			{% endfor %}
 		</ul>
 	</section>
 
-	<section id="recent-articles">
+	<section class="content_block">
 		{% for post in site.categories['blog'] %}
 			{% capture currentyear %}{{post.date | date: "%Y"}}{% endcapture %}
 			{% if currentyear != year %}
 				{% unless forloop.first %}</ul>{% endunless %}
 				<h2>{{ currentyear }}</h2>
-				<ul>
+				<ul id="recent_articles">
 				{% capture year %}{{currentyear}}{% endcapture %}
 			{% endif %}
-			<li><span class="date-list">{{ post.date | date: "%d/ %b" }}</span> &ndash; <a href="{{ post.url }}">{{ post.title }}</a></li>
+			<li><span class="date_list">{{ post.date | date: "%d/%b" }}&ndash;</span>  <a href="{{ post.url }}">{{ post.title }}</a></li>
 		{% endfor %}
 	</section>
 </article><!-- /page -->
