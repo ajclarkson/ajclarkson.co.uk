@@ -1,4 +1,6 @@
-.name: Adam James Clarkson
+name: Adam James Clarkson
+description: Designer, Developer, Brewer, and Cyclist
+url: http://ajclarkson.co.uk
 markdown: kramdown
 highlighter: pygments
 destination: ./public
