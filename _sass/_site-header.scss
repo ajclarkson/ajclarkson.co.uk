@@ -1,35 +1,20 @@
 #site-header {
-	background:$background;
-	padding:1.5em 0 0;
+	background:$background; padding:1.5em 0 0;
 	a:link, a:visited { color:$body-text; text-decoration:none; }
 	a:hover, a:active { color:#3F7EA6; position:relative; top:-0.1em; }
 
-	#identity {
-		display:block; float:left; width:40%;
-	}
+	#identity { display:block; float:left; width:40%;padding-top:0.2em;}
 	ul {
-		list-style-type:none;
-		float:left;
-		left:0;
-		width:60%;
-		li {
-			display:block;
-			width:33%;
-			float:left;
-
-			a:link, a:visited {
-				color:#3F7EA6;
-				display:block;
-				margin-left:2em;
-				padding-top:0.2em;
-			}
-			a:active, a:hover {
-				color:$alternate-text-color;
-			}
-		}
+		list-style-type:none; float:left; left:0; width:60%;
 		margin:none; padding:none;
+		li {
+			display:block; width:33%; float:left;
+			a:link, a:visited {
+				color:#3F7EA6; display:block; margin-left:2em; padding-top:0.2em;
+			}
+			a:active, a:hover { color:$alternate-text-color; }
+		}
 	}
-
 
 	#site-header-content {
 		padding:none;
