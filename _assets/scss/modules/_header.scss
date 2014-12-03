@@ -35,6 +35,8 @@
 		display:block;
 		width:33%;
 		float:left;
+		@extend %small;
+		padding-top:0.3em;
 		text-align:center;
 
 		a, a:visited {
@@ -46,13 +48,15 @@
 	}
 	@media (min-width:500px) {
 		li {
+			padding-top:0;
+			font-size:1em;
 			text-align:left;
 			a:link, a:visited {
 				display:block;
 				margin-left:2em;
 			}
-
 		}
+
 		#blog_tile {
 			background:url('/images/blog.png') no-repeat 0.3em;
 			background-size:$baseline/1.5;
