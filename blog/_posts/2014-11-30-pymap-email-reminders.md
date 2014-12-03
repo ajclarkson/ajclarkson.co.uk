@@ -1,0 +1,19 @@
+---
+layout: post
+title: Never Forget to Reply to an Email with PyMap
+excerpt: It's all too easy to forget that you have an email sat waiting for you to reply to it. We've all done it. Personally I started keeping them in a folder called "Pending", but how often do I remember to check that?
+tags: [Python, Development, Lifehacking]
+
+---
+When you have a lot of email to stay on top of it's all too easy to get swamped, and one or two inevitably fall through the cracks. Now that can either be inconvienent or distastorous. There's hundreds of ways of staying on top of email out there, but I have decided to start building my own solution, as any developer worth their salt would do!
+
+My long term solution to the email problem so far has been my 'Pending' folder. I am a big advocat of Inbox Zero, and obsessively try to keep my inbox empty as a result, but there are some emails which can't be dealt with right away. So they go into the 'Pending' folder. Some of them are never seen again.
+
+It's like backing up your machine, a system like that works well if you remember to work it well. If I forget to check my 'Pending' folder for a few days, then there is little point in it being there. So I needed a solution to make sure that I didn't forget. Enter **PyMap**.
+
+It's in it's infancy at the moment, but it performs one crucial function for me. At 8:50am every morning, it takes a peek into the 'Pending' folder of each of my email accounts and finds out what is there. It then constructs a friendly email reminder telling me how many I need to deal with, and showing a brief summary of up to 5 of them. It's just the kick I need to actually get on with it.
+
+I'll be expanding it to include other functions in the future, but I decided to put it out there in case other people need a similar kick to get back on top of their outstanding emails.
+
+Check it out over [on Github](http://github.com/ajclarkson/pymap).
+&mdash; Adam
