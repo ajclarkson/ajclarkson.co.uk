@@ -4,7 +4,7 @@
 // website header styling
 
 #site_header {
-	padding:$baseline 0;
+	padding:0 0 $baseline;
 	margin:0;
 	background:$background;
 
@@ -17,8 +17,6 @@
 		top:-0.1em;
 		color:$alternate-highlight;
 	}
-
-
 }
 
 #identity {
