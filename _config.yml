@@ -1,4 +1,4 @@
-name: Adam James Clarkson
+.name: Adam James Clarkson
 markdown: kramdown
 highlighter: pygments
 destination: ./public
