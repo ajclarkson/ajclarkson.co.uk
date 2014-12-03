@@ -9,4 +9,9 @@
 	padding: $baseline;
 }
 
-
+hr {
+	margin-bottom: $baseline;
+	height:0;
+	border:0;
+	border-top:1px solid $light-complement;
+}

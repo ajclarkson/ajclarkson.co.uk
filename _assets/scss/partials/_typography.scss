@@ -85,7 +85,9 @@ blockquote {
 	color:$dark-complement;
 	text-transform:uppercase;
 }
-
+.meta {
+	@extend %meta;
+}
 figcaption {
 	@extend %meta;
 	margin:$baseline/4 0 $baseline;
