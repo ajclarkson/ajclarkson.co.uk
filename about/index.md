@@ -19,6 +19,6 @@ If you want to talk to me about my work, your work, or any project ideas you mig
 
 ## About This Site
 
-I've started fresh with this version of the site, cast aside old blog posts and such, and moved to a new system in Jekyll. It gives me the flexibility to customise every aspect of each post if I like. As such the templates that you see now have been lovingly hand coded by me before being converted to a set of static pages by Jekyll. That provides you with a fast and reliable experience when browsing this site.
+Everything you see before you has been handcoded with the help of Ruby and Jekyll. The output of that's an incredibly fast set of static HTML pages for me to serve up to you. It gives me flexibility design every single page but still give you, the reader, a full featured 'blog' to read.
 
-The type on this site is set in FF Meta Serif, with the sans-serif variant in use for sub-headings and meta data. Code examples are set in Source Code Pro, all fonts are served by [Typekit](http://www.typekit.com).
+The type is set in FF Meta Serif, with the sans-serif variant in use for sub-headings and meta data. Code examples are set in Source Code Pro, all fonts are served by [Typekit](http://www.typekit.com).

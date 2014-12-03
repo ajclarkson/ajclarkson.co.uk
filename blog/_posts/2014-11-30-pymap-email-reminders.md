@@ -16,4 +16,5 @@ It's in it's infancy at the moment, but it performs one crucial function for me.
 I'll be expanding it to include other functions in the future, but I decided to put it out there in case other people need a similar kick to get back on top of their outstanding emails.
 
 Check it out over [on Github](http://github.com/ajclarkson/pymap).
+
 &mdash; Adam
