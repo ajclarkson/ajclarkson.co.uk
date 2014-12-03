@@ -76,9 +76,10 @@ ul#tags-list {
 	background:url('/images/right-arrow.png') no-repeat 18px center $body-text;
 	right:-25px;
 }
+
 .highlight {
 	border:1px solid $divider-color; clear:both;  border-radius:10px;
-	overflow-x:auto; overflow-y: hidden; width:100%;
+	overflow-x:auto; overflow-y: hidden;
 	code { overflow:auto; width:100%!important;}
 }
 pre { padding:1em; }

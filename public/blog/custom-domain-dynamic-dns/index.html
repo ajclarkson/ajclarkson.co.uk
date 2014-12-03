@@ -5,6 +5,7 @@
 		<title> Dynamic DNS with a Custom Domain, EntryDNS &amp; Python | Adam James Clarkson</title>
 		<meta name="viewport" content="width=device-width">
 		<script type="text/javascript" src="/js/html5shiv.js"></script>
+		<script type="text/javascript" src="/js/picturefill.js"></script>
 		<link rel="stylesheet" href="/stylesheets/main.css">
 		<link rel="stylesheet" href="/stylesheets/syntax.css">
 		<script src="//use.typekit.net/ahk4squ.js"></script>
@@ -32,67 +33,84 @@
 	<section id="post-content" class="clear">
 
 
-		<p>While it is possible to get a whole slew of free dynamic dns host names online, they all come in a format of: `myawesomehostname.theircompany.com` or some other variation. These services are great for providing you remote access to a home machine, or some other location without a static IP, but I really wanted to find a way of using my own domain name to various non-static services.</p>
+		<p>While it is possible to get a whole slew of free dynamic dns host names online, they all come in a format of: <code>myawesomehostname.theircompany.com</code> or some other variation. These services are great for providing you remote access to a home machine, or some other location without a static IP, but I really wanted to find a way of using my own domain name to various non-static services.</p>
 
-<h2>The Issue</h2>
-<p>Domain Registrars generally let you use their name servers for your domain, and if you are pointing to a static IP, everyone is happy. Simply point it, wait for the dreaded propagation to happen, then away you go. They don't however, provide easy ways of updating which IP your domain points to (without logging into a web interface, for example). This makes using your own domain name for a non static IP very cumbersome, and would mean you would need to discover the newly assigned IP before you could point your domain to it, not very practical I'm sure you will agree.</p>
+<h2 id="the-issue">The Issue</h2>
+<p>Domain Registrars generally let you use their name servers for your domain, and if you are pointing to a static IP, everyone is happy. Simply point it, wait for the dreaded propagation to happen, then away you go. They don’t however, provide easy ways of updating which IP your domain points to (without logging into a web interface, for example). This makes using your own domain name for a non static IP very cumbersome, and would mean you would need to discover the newly assigned IP before you could point your domain to it, not very practical I’m sure you will agree.</p>
 
-<p>So if I've already bought my domain name, why should I pay someone else to let me dynamically update it, or settle for using one of their domains?</p>
+<p>So if I’ve already bought my domain name, why should I pay someone else to let me dynamically update it, or settle for using one of their domains?</p>
 
-<h2>The Solution</h2>
-<p>Thankfully, it is possible using a combination of <a href="http://entrydns.net">EntryDNS</a> and a simple script. <strong>I'll just mention, I'm not affiliated with EntryDNS in anyway, it's just a really useful service.</strong> Here's what we need to do:</p>
+<h2 id="the-solution">The Solution</h2>
+<p>Thankfully, it is possible using a combination of <a href="http://entrydns.net">EntryDNS</a> and a simple script. <strong>I’ll just mention, I’m not affiliated with EntryDNS in anyway, it’s just a really useful service.</strong> Here’s what we need to do:</p>
 
 <ol>
-	<li>Register EntryDNS as the nameserver for our domain name</li>
-	<li>Create DNS Records on EntryDNS for your domain (or subdomain)</li>
-	<li>Use the EntryDNS API to programmatically update the IP of your domain.</li>
+  <li>Register EntryDNS as the nameserver for our domain name</li>
+  <li>Create DNS Records on EntryDNS for your domain (or subdomain)</li>
+  <li>Use the EntryDNS API to programmatically update the IP of your domain.</li>
 </ol>
 
-<p>Sounds simple, right? Let's get started.</p>
-<h3>Domain Setup</h3>
-<p>Head on over to <a href="http://entrydns.net">EntryDNS</a> and create an account. Then you'll want to go ahead and "Add Domain" and enter your domain name. </p>
-<p><strong>NOTE:</strong> Even if you want to use a subdomain as your Dynamic DNS, you'll have to complete this step.</p>
+<p>Sounds simple, right? Let’s get started.</p>
 
-<p>Click on your newly created domain, and by mousing over the "Add Record" option, you should get a window which looks like the image below:</p>
-<div class="media-container clear">
-	<img class="" src="/images/post/EntryDNS-arecord.png" alt="Adding an A Record - EntryDNS" />
-	<figcaption>Creating an A record in EntryDNS</figcaption>
-</div>
-<p>Create an A record for your domain. If you are wanting to use a subdomain for your dynamic dns (e.g sub.myawesomedomain.com), then point this A record to the IP you want your main domain to resolve. Then repeat the steps above this time adding 'sub.myawesomedomain.com' as a domain, and create an A record for that, then follow along using that one.</p>
+<h3 id="domain-setup">Domain Setup</h3>
+<p>Head on over to <a href="http://entrydns.net">EntryDNS</a> and create an account. Then you’ll want to go ahead and “Add Domain” and enter your domain name.</p>
 
-<h3>Change Your Nameservers</h3>
+<p><strong>Note:</strong> Even if you want to use a subdomain as your Dynamic DNS, you’ll have to complete this step.</p>
+
+<p>Click on your newly created domain, and by mousing over the “Add Record” option, you should get a window which looks like the image below:</p>
+
+<figure class="media-container">  <img src="/uploads/EntryDNS-arecord-320by52-c63612.png" srcset="/uploads/EntryDNS-arecord-900by146-c63612.png 900w,
+/uploads/EntryDNS-arecord-1141by185-c63612.png 900w 2x,
+/uploads/EntryDNS-arecord-620by101-c63612.png 620w,
+/uploads/EntryDNS-arecord-1141by185-c63612.png 620w 2x,
+/uploads/EntryDNS-arecord-320by52-c63612.png 320w,
+/uploads/EntryDNS-arecord-640by104-c63612.png 320w 2x,
+/uploads/EntryDNS-arecord-320by52-c63612.png 320w,
+/uploads/EntryDNS-arecord-640by104-c63612.png 320w 2x" sizes="100vw" /><figcaption><p>Creating an A record in EntryDNS</p>
+</figcaption></figure>
+
+<p>Create an A record for your domain. If you are wanting to use a subdomain for your dynamic dns (e.g sub.myawesomedomain.com), then point this A record to the IP you want your main domain to resolve. Then repeat the steps above this time adding ‘sub.myawesomedomain.com’ as a domain, and create an A record for that, then follow along using that one.</p>
+
+<h3 id="change-your-nameservers">Change Your Nameservers</h3>
+
 <p>Your next step is to head over to your domain registrar and change the nameservers for your domain to point to the EntryDNS ones. At the time of writing this these are:</p>
+
 <ul>
-	<li>ns1.entrydns.net</li>
-	<li>ns2.entrydns.net</li>
-	<li>ns3.entrydns.net</li>
+  <li>ns1.entrydns.net</li>
+  <li>ns2.entrydns.net</li>
+  <li>ns3.entrydns.net</li>
 </ul>
 
-<p>Unfortunately, you may have a bit of a wait on your hands while that change propagates. It can take up to 72 hours for your domain name to start using EntryDNS as it's nameserver.</p>
+<p>Unfortunately, you may have a bit of a wait on your hands while that change propagates. It can take up to 72 hours for your domain name to start using EntryDNS as it’s nameserver.</p>
 
-<h3>Getting Dynamic</h3>
-<p>Now that EntryDNS is responsible for your DNS we can start to get dynamic with it. When you created the A record for your domain, an authentication token was generated along with it. (Something like: SDsoT8ryycWzessi7pgx). This token is unique to your domain A record, and acts as authentication for the EntryDNS API, so keep it safe and secret (The one I posted I made up, so don't waste your time trying it).</p>
+<h3 id="getting-dynamic">Getting Dynamic</h3>
+
+<p>Now that EntryDNS is responsible for your DNS we can start to get dynamic with it. When you created the A record for your domain, an authentication token was generated along with it. (Something like: SDsoT8ryycWzessi7pgx). This token is unique to your domain A record, and acts as authentication for the EntryDNS API, so keep it safe and secret (The one I posted I made up, so don’t waste your time trying it).</p>
 
 <p>EntryDNS allow you to update your domain by using one of the following two API calls:</p>
+
+<figure>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Providing IP address to update</span>
 curl -k -X PUT -d <span class="s2">&quot;ip=IP&quot;</span> https://entrydns.net/records/modify/TOKEN
 <span class="c"># IP Address will be generated from request origin</span>
 curl -k -X PUT -d <span class="s2">&quot;&quot;</span> https://entrydns.net/records/modify/TOKEN</code></pre></div>
+
 <figcaption>Code Listing: EntryDNS API Calls</figcaption>
+</figure>
 
+<p>By replacing <code>IP</code> and <code>TOKEN</code> where appropriate in either of those calls, your domain will be updated to point to the new IP. Dynamic DNS at it’s finest. It’s easy to incorporate that into a bash script or a cronjob and you are away, but if you want a slightly more advanced method of updating then read on.</p>
 
-<p>By replacing `IP` and `TOKEN` where appropriate in either of those calls, your domain will be updated to point to the new IP. Dynamic DNS at it's finest. It's easy to incorporate that into a bash script or a cronjob and you are away, but if you want a slightly more advanced method of updating then read on.</p>
-
-<h3>EntryDNS Updater</h3>
-<p>I originally just ran one of the API calls from above as a cronjob and had great success with using my own domain name for Dynamic DNS. However this meant that my domain was being updated constantly, regardless of whether it needed to be or not. With that in mind I developed <a href="http://github.com/ajclarkson/entrydns-updater">EntryDNS Updater</a>.</p>
+<h3 id="entrydns-updater">EntryDNS Updater</h3>
+<p>I originally just ran one of the API calls from above as a cronjob and had great success with using my own domain name for Dynamic DNS. However this meant that my domain was being updated constantly, regardless of whether it needed to be or not. With that in mind I developed <a href="http://github.com/ajclarkson/entrydns-updater&quot;&gt;EntryDNS Updater">EntryDNS Updater</a>.</p>
 
 <p>This is a simple python utility that checks your current IP against a cache file, and if it has changed, proceeds with the update. It reads the EntryDNS authentication tokens from a JSON file, so you can update as many domains as you like each time your IP changes.</p>
 
 <p>Feel free to grab the code and try it out over <a href="http://github.com/ajclarkson/entrydns-updater">on Github</a>.</p>
 
-<p>Quite a long post, but hopefully it will help some of you out with using your own domain for DynamicDNS, for free! I have several of these running now pointing to various services that I run from home, and it's all working fantastically.</p>
-<p>&mdash; Adam</p>
+<p>Quite a long post, but hopefully it will help some of you out with using your own domain for DynamicDNS, for free! I have several of these running now pointing to various services that I run from home, and it’s all working fantastically.</p>
+
+<p>— Adam</p>
+
 
 	<aside id="post-meta">
 		<ul id="tags-list">

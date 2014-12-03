@@ -1,5 +1,5 @@
 name: Adam James Clarkson
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 destination: ./public
 permalink: /:categories/:title/
@@ -7,3 +7,22 @@ tag_dir: tag
 sass:
  style: compressed
 exclude: ['scss','Gem','Guard','*.rb','.sass-cache','.git']
+
+picture:
+  source: _images/
+  output: uploads
+  markup: "picture"
+  presets:
+    default:
+      ppi: [1, 2]
+      source_default:
+        width: "320"
+      source_320:
+        width: "320"
+        media: "(min-width: 320px)"
+      source_600:
+        width: "620"
+        media: "(min-width: 620px)"
+      source_960:
+        width: "900"
+        media: "(min-width: 900px)"
