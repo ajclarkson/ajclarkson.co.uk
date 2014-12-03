@@ -4,7 +4,7 @@ layout: default
 <article class="island post">
 	{% if page.next_in_category != nil %}<a href="{{page.next_in_category.url}}" class="next-link">Older Post</a>{% endif %}
 	{% if page.previous_in_category != nil %}<a href="{{page.previous_in_category.url}}" class="previous-link">Newer Post</a>{% endif %}
-<div class="post-date">{{ page.date | date_to_long_string }}</div>
+<div class="post-date">&mdash; {{ page.date | date_to_long_string }} &mdash;</div>
 	<h1>{{ page.title }}</h1>
 	<p class="excerpt">{{ page.excerpt }}</p>
 

@@ -77,7 +77,9 @@ ul#tags-list {
 	right:-25px;
 }
 .highlight {
-	border:1px solid $divider-color; clear:both; overflow:scroll; border-radius:10px;
+	border:1px solid $divider-color; clear:both;  border-radius:10px;
+	overflow-x:auto; overflow-y: hidden; width:100%;
+	code { overflow:auto; width:100%!important;}
 }
 pre { padding:1em; }
 
