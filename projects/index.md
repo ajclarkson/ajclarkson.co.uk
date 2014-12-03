@@ -28,6 +28,6 @@ _Frankly_ was designed with simple writing in mind. It's a lightweight CMS based
 It's development is on hold at the minute as I found and started using Jekyll for this site, but I do plan to return to it in future and continue to make it the ultimate minimal writing CMS.
 
 ## ARMonkeyKit
-[ARMonkeyKit on Google Code](http://code.google.com/p/armonkeykit)
+[ARMonkeyKit on Github](http://github.com/ajclarkson/armonkeykit)
 
 _ARMonkeyKit_ is a rapid prototyping framework for Augmented Reality applications based on the NyARToolkit and jMonkeyEngine 2 libraries for JAVA. The framework provides a quick and easy way of creating fiducial marker based AR applications.
