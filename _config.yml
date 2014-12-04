@@ -20,7 +20,7 @@ assets:
   cachebust: hard
 
 picture:
-  source: _images/
+  source: _uploads/
   output: uploads
   markup: "picture"
   presets:
