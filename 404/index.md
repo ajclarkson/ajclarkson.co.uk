@@ -8,7 +8,7 @@ permalink: /404.html
 <img src="/images/404.gif" alt="Sorry, I just don't know what happened!" />
 </figure>
 
-## Well I, I just, I mean...
+## Well I, I just, I don't know what happened...
 
 I'm awfully sorry but the page your looking for doesn't exist, or is yet to exist. It could be a very old link that brought you here, or maybe a spelling error.
 
