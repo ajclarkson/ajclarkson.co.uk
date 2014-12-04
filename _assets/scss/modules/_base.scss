@@ -18,7 +18,7 @@ html, :root {
 	font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
 	font-kerning: normal;
 
-	background-color:#FFFFFF;
+	background-color:$page-color;
 	color:$body-text;
 
 	@media screen and (min-width: 500px) {
@@ -29,6 +29,11 @@ html, :root {
 	}
 	@media screen and (min-width: 1200px){
 		font-size:$base-font-size * 1.5;
+	}
+
+	&.dark-mode {
+		background-color: $page-invert;
+		color: $body-text-invert;
 	}
 }
 

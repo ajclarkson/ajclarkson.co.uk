@@ -17,4 +17,9 @@
 		text-align:center;
 	}
 
+	.dark-mode & {
+		background:$background-invert;
+		color:$dark-complement-invert;
+	}
+
 }

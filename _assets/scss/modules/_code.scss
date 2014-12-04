@@ -9,6 +9,10 @@ code {
 	white-space:pre-line;
 	background:$background;
 	border-radius:5px;
+
+	.dark-mode & {
+		background:$background-invert;
+	}
 }
 
 .highlight {
@@ -30,6 +34,11 @@ code {
 	pre {
 	padding:1em;
 	margin:0;
+	}
+
+	.dark-mode & { 
+		background:$background-invert;
+		border:1px solid $light-complement-invert;
 	}
 }
 

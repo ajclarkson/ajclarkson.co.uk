@@ -13,11 +13,19 @@
 	margin-bottom:$baseline;
 	padding-bottom:$baseline;
 	border-bottom:1px solid $light-complement;
+
+	.dark-mode & {
+		border-bottom:1px solid $light-complement-invert;
+	}
 }
 
 .site_content {
 	padding-top:$baseline*2;
 	border-top:4px solid $highlight;
+
+	.dark-mode & {
+		border-top:4px solid $highlight-invert;
+	}
 }
 
 .content_block {
@@ -56,6 +64,10 @@ figure {
 		}
 		li:last-child { a:after { content: ""; } }
 	}
+
+	.dark-mode & {
+		border-top:1px solid $light-complement-invert;
+	}
 }
 
 .next_link, .previous_link {
@@ -92,9 +104,21 @@ figure {
 			border-radius:10px;
 			a, a:visited {
 				color:$alternate-highlight;
+
+				.dark-mode & {
+					color:$alternate-highlight-invert;
+				}
 			}
 			a:hover, a:active {
 				color:$dark-complement;
+
+				.dark-mode & {
+					color:$dark-complement-invert;
+				}
+			}
+
+			.dark-mode & {
+				background:$background-invert;
 			}
 		}
 
@@ -118,5 +142,9 @@ figure {
 a:link.twitter , a:visited.twitter { color:#00acee; }
 a:link.instagram, a:visited.instagram { color:#634d40;}
 a:link.dribbble, a:visited.dribbble { color:#ea4c89;}
-a:link.github, a:visited.github { color:#171515; }
+a:link.github, a:visited.github { color:#171515; 
+	.dark-mode & {
+		color:$dark-complement-invert;
+	}
+}
 a:link.strava, a:visited.strava { color:#fc4c02; }

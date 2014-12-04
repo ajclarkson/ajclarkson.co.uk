@@ -35,10 +35,18 @@ h3 {
 a, a:visited {
 	color:$highlight;
 	text-decoration:none;
+
+	.dark-mode & {
+		color:$highlight-invert;
+	}
 }
 
 a:hover, a:active {
 	color:$dark-complement;
+
+	.dark-mode & {
+		color: $dark-complement-invert;
+	}
 }
 
 %small {
@@ -77,6 +85,10 @@ blockquote {
 		margin:auto auto $baseline;
 		width:85%;
 	}
+
+	.dark-mode & {
+		color:$dark-complement-invert;
+	}
 }
 
 %meta {
@@ -85,6 +97,10 @@ blockquote {
 	font-family:$sans-font;
 	color:$dark-complement;
 	text-transform:uppercase;
+
+	.dark-mode & {
+		color:$dark-complement-invert;
+	}
 }
 .meta {
 	@extend %meta;

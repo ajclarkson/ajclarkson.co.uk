@@ -11,11 +11,23 @@
 	a:link, a:visited {
 		color:$body-text;
 		text-decoration:none;
+
+		.dark-mode & {
+			color:$body-text-invert;
+		}
 	}
 	a:hover, a:active {
 		position:relative;
 		top:-0.1em;
 		color:$alternate-highlight;
+
+		.dark-mode & {
+			color:$alternate-highlight-invert;
+		}
+	}
+
+	.dark-mode & {
+		background:$background-invert;
 	}
 }
 
@@ -43,20 +55,48 @@
 
 		a, a:visited {
 			color:$alternate-highlight;
+
+			.dark-mode & {
+				color:$alternate-highlight-invert;
+			}
 		}
 		a:hover, a:active {
 			color:$dark-complement;
+
+			.dark-mode & { 
+				color:$dark-complement-invert;
+			}
+		}
+
+		.dark-mode & {
+			border-left:2px solid $light-complement-invert;
 		}
 
 	}
 	li:last-child {
 			border:none;
 		}
+
+	#dark_mode_tile {
+			background:url('/static/images/night.png') no-repeat right center;
+			background-size:$baseline/1.5;
+			width:$baseline;
+			height:$baseline;
+			padding-top:$baseline/4;
+			cursor: hand;
+			span { display:none; }
+
+			.dark-mode & {
+				background:url('/static/images/day.png') no-repeat right center;
+				background-size:$baseline/1.5;
+			}
+	}
 	@media (min-width:500px) {
 		li {
 			padding-top:0;
 			font-size:1em;
 			text-align:right;
+			display:inline-block;
 			
 			a:link, a:visited {
 				display:block;
@@ -67,14 +107,30 @@
 		#blog_tile {
 			background:url('/static/images/blog.png') no-repeat right;
 			background-size:$baseline/1.5;
+
+			.dark-mode & {
+				background:url('/static/images/blog-invert.png') no-repeat right;
+				background-size:$baseline/1.5;
+			}
 		}
 		#projects_tile {
 			background:url('/static/images/projects.png') no-repeat right;
 			background-size:$baseline/1.5;
+
+			.dark-mode & {
+				background:url('/static/images/projects-invert.png') no-repeat right;
+				background-size:$baseline/1.5;
+			}
 		}
 		#about_tile {
 			background:url('/static/images/about.png') no-repeat right;
 			background-size:$baseline/1.5;
+
+			.dark-mode & {
+				background:url('/static/images/about-invert.png') no-repeat right;
+				background-size:$baseline/1.5;
+			}
 		}
+		
 	}
 }
