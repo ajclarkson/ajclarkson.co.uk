@@ -72,11 +72,11 @@ figure {
 	}
 }
 .next_link {
-	background:url('/images/left-arrow.png') no-repeat 31px center $body-text;
+	background:url('/static/images/left-arrow.png') no-repeat 31px center $body-text;
 	left:-25px;
 }
 .previous_link {
-	background:url('/images/right-arrow.png') no-repeat 18px center $body-text;
+	background:url('/static/images/right-arrow.png') no-repeat 18px center $body-text;
 	right:-25px;
 }
 

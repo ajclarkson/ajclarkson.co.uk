@@ -5,7 +5,7 @@ permalink: /404.html
 
 ---
 <figure class="avatar">
-<img src="/images/404.gif" alt="Sorry, I just don't know what happened!" />
+<img src="/static/images/404.gif" alt="Sorry, I just don't know what happened!" />
 </figure>
 
 ## Well I, I just, I don't know what happened...

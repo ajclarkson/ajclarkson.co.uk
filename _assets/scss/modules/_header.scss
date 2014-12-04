@@ -17,8 +17,6 @@
 		top:-0.1em;
 		color:$alternate-highlight;
 	}
-
-
 }
 
 #identity {
@@ -40,7 +38,6 @@
 		@extend %small;
 		padding-top:0.3em;
 		text-align:center;
-
 		a, a:visited {
 			color:$alternate-highlight;
 		}
@@ -53,6 +50,7 @@
 			padding-top:0;
 			font-size:1em;
 			text-align:left;
+			
 			a:link, a:visited {
 				display:block;
 				margin-left:2em;
@@ -60,15 +58,15 @@
 		}
 
 		#blog_tile {
-			background:url('/images/blog.png') no-repeat 0.3em;
+			background:url('/static/images/blog.png') no-repeat 0.3em;
 			background-size:$baseline/1.5;
 		}
 		#projects_tile {
-			background:url('/images/projects.png') no-repeat 0.3em;
+			background:url('/static/images/projects.png') no-repeat 0.3em;
 			background-size:$baseline/1.5;
 		}
 		#about_tile {
-			background:url('/images/about.png') no-repeat 0.3em;
+			background:url('/static/images/about.png') no-repeat 0.3em;
 			background-size:$baseline/1.5;
 		}
 	}
