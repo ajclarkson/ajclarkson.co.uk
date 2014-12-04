@@ -8,7 +8,7 @@
 	padding:0 0 $baseline;
 	margin:0;
 	background:$background;
-
+	@extend %clearfix;
 	a:link, a:visited {
 		color:$body-text;
 		text-decoration:none;
