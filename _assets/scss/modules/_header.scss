@@ -21,52 +21,59 @@
 
 #identity {
 	display:block;
-	width:40%;
+	width:25%;
 	float:left;
 }
 
 #site_nav {
-	width:60%;
+	width:75%;
 	float:left;
 	padding-left:0;
 	list-style-type:none;
 
 	li {
 		display:block;
-		width:33%;
-		float:left;
+		float:right;
+		margin: 0 0 0 $baseline/2;
+		border-left:2px solid $light-complement;
+		padding-left:$baseline/2;
 		@extend %small;
 		padding-top:0.3em;
 		text-align:center;
+
 		a, a:visited {
 			color:$alternate-highlight;
 		}
 		a:hover, a:active {
 			color:$dark-complement;
 		}
+
 	}
+	li:last-child {
+			border:none;
+		}
 	@media (min-width:500px) {
 		li {
 			padding-top:0;
 			font-size:1em;
-			text-align:left;
+			text-align:right;
 			
 			a:link, a:visited {
 				display:block;
-				margin-left:2em;
+				margin-right:$baseline/1.1;
 			}
 		}
 
 		#blog_tile {
-			background:url('/static/images/blog.png') no-repeat 0.3em;
+			background:url('/static/images/blog.png') no-repeat right;
 			background-size:$baseline/1.5;
 		}
 		#projects_tile {
-			background:url('/static/images/projects.png') no-repeat 0.3em;
+			background:url('/static/images/projects.png') no-repeat right;
 			background-size:$baseline/1.5;
 		}
 		#about_tile {
-			background:url('/static/images/about.png') no-repeat 0.3em;
+			background:url('/static/images/about.png') no-repeat right;
 			background-size:$baseline/1.5;
 		}
 	}
