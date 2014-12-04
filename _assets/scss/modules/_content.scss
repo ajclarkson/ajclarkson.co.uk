@@ -148,3 +148,12 @@ a:link.github, a:visited.github { color:#171515;
 	}
 }
 a:link.strava, a:visited.strava { color:#fc4c02; }
+
+#disqus_thread {
+
+	.dark-mode & {
+		padding:$baseline;
+		background:$background;
+		border-radius:$baseline;
+	}
+}
