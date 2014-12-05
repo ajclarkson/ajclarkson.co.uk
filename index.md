@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Hey, I'm <a href="/about/">Adam</a>
-excerpt: A designer &amp; developer, currently writing a PhD.
+excerpt: A designer &amp; developer, currently writing a Ph.D.
 ---
 
 ## Recent Blog Posts
