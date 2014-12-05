@@ -21,9 +21,15 @@
 
 .site_content {
 	padding-top:$baseline*2;
+	position:relative;
+	top:-($baseline*5);
+
+	background:$page-color;
 	border-top:4px solid $highlight;
 
 	.dark-mode & {
+		
+		background:$page-invert;
 		border-top:4px solid $highlight-invert;
 	}
 }
