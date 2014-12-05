@@ -51,7 +51,7 @@
 		display:block;
 		float:right;
 		margin: 0 0 0 $baseline/2;
-		border-left:2px solid $light-complement;
+		border-left:1px solid $light-complement;
 		padding-left:$baseline/2;
 		@extend %small;
 		text-align:center;
@@ -72,7 +72,7 @@
 		}
 
 		.dark-mode & {
-			border-left:2px solid $light-complement-invert;
+			border-left:1px solid $light-complement-invert;
 		}
 
 	}
