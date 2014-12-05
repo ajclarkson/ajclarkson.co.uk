@@ -10,7 +10,7 @@ excerpt: A designer &amp; developer, currently writing a PhD.
 
 ### [{{ post.title }}]({{ post.url }})
 
-<span class="meta">{{ post.date | date_to_long_string }}</span>
+<span class="meta"> {{ post.date | date_to_long_string }}</span>
 
 {{ post.excerpt }}
 <hr />
