@@ -148,12 +148,23 @@ figure {
 a:link.twitter , a:visited.twitter { color:#00acee; }
 a:link.instagram, a:visited.instagram { color:#634d40;}
 a:link.dribbble, a:visited.dribbble { color:#ea4c89;}
+a:link.strava, a:visited.strava { color:#fc4c02; }
 a:link.github, a:visited.github { color:#171515; 
+	.dark-mode & {
+		color:$light-complement-invert;
+	}
+}
+
+
+a:hover.twitter, a:active.twitter, a:hover.instagram, a:active.instagram,
+a:hover.dribbble, a:active.dribbble, a:hover.github, a:active.github,
+a:hover.strava, a:active.strava {
+	color:$dark-complement;
+
 	.dark-mode & {
 		color:$dark-complement-invert;
 	}
-}
-a:link.strava, a:visited.strava { color:#fc4c02; }
+} 
 
 #disqus_thread {
 
