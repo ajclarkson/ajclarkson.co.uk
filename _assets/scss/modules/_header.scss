@@ -35,6 +35,10 @@
 	display:block;
 	width:25%;
 	float:left;
+	@extend %small;
+	@media (min-width:500px){
+		font-size:1em;
+	}
 }
 
 #site_nav {
@@ -50,7 +54,6 @@
 		border-left:2px solid $light-complement;
 		padding-left:$baseline/2;
 		@extend %small;
-		padding-top:0.3em;
 		text-align:center;
 
 		a, a:visited {
@@ -75,11 +78,13 @@
 	}
 	li:last-child {
 			border:none;
+			padding-left:0;
+			margin-left:0;
 		}
 
 	#dark_mode_tile {
 			background:url('/static/images/night.png') no-repeat right center;
-			background-size:$baseline/1.5;
+			background-size:$baseline/2.5;
 			width:$baseline;
 			height:$baseline;
 			padding-top:$baseline/4;
@@ -88,7 +93,7 @@
 
 			.dark-mode & {
 				background:url('/static/images/day.png') no-repeat right center;
-				background-size:$baseline/1.5;
+				background-size:$baseline/2;
 			}
 	}
 	@media (min-width:500px) {
