@@ -4,12 +4,88 @@
  <title>Adam James Clarkson</title>
  <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
  <link href="http://ajclarkson.co.uk/"/>
- <updated>2014-12-05T10:56:51+00:00</updated>
+ <updated>2014-12-09T16:45:46+00:00</updated>
  <id>http://ajclarkson.co.uk</id>
  <author>
    <name>Adam James Clarkson</name>
  </author>
 
+ 
+ <entry>
+   <title>PyGame Framebuffer Access for Non-Root Users</title>
+   <link href="http://ajclarkson.co.uk/blog/pygame-no-root/"/>
+   <updated>2014-12-05T11:46:00+00:00</updated>
+   <id>http://ajclarkson.co.uk/blog/pygame-no-root</id>
+   <content type="html">&lt;h2 id=&quot;the-issue&quot;&gt;The Issue&lt;/h2&gt;
+
+&lt;p&gt;When trying to render graphics from the console using pygame, root access is required to make any modification to the framebuffer. Spotting that this wasn’t the case with other framebuffer programs such as &lt;code&gt;fbi&lt;/code&gt;, there had to be a solution. By passing some driver environment variables to python it is possible to overcome this problem and allow your framebuffer program to run as a regular, non-root user.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-solution&quot;&gt;The Solution&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; These instructions were devised while developing a RaspberryPi framebuffer application, so there may be some subtle differences with your setup if you are not using a RaspberryPi. The core principles still apply though.&lt;/p&gt;
+
+&lt;p&gt;It’s actually pretty straight forward to solve this issue, once you know where the problem lies. It’s related to how python treats the input/output drivers which are accessed for mouse control and framebuffer applications. Here’s 3 easy steps to make sure you can run without root privilages.&lt;/p&gt;
+
+&lt;h3 id=&quot;check-the-framebuffer-permissions&quot;&gt;1. Check the Framebuffer Permissions&lt;/h3&gt;
+
+&lt;p&gt;This should be correct as default, but it can’t hurt to take a look. The framebuffer should be owned by root, but accessible by any member of the ‘video’ group:&lt;/p&gt;
+
+&lt;figure&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls -la /dev/ &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep fb
+crw-rw---T  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; root video    29,   &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; Jan  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1970&lt;/span&gt; fb0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;figcaption&gt;Code Listing: Checking the framebuffer permissions&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;If the permissions aren’t correct you can fix them with:&lt;/p&gt;
+
+&lt;figure&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown root:video /dev/fb*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;figcaption&gt;Code Listing: Fixing the framebuffer permissions&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;check-user-groups&quot;&gt;2. Check User Groups&lt;/h3&gt;
+
+&lt;p&gt;In order for the previous step to mean anything, you need to make sure your user is actually in the ‘video’ group:&lt;/p&gt;
+
+&lt;figure&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;groups
+ajclarkson sudo audio video plugdev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;figcaption&gt;Code Listing: Checking the user&#39;s groups&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;If you aren’t in the video group, go ahead and add yourself:&lt;/p&gt;
+
+&lt;figure&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo usermod -a -G video &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;figcaption&gt;Code Listing: Adding a user to the video group&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;passing-python-environment-variables&quot;&gt;3. Passing Python Environment Variables&lt;/h3&gt;
+
+&lt;p&gt;The first two steps should have been set by default, it’s this final one which gives your script the information it needs to prevent root level access calls. The following three commands provide SDL video driver information for the framebuffer, and override pygames requirement to have a mouse driver (if you’re writing to the framebuffer you are probably in an environment where the mouse isn’t needed).&lt;/p&gt;
+
+&lt;figure&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;# ensure the number in &amp;#39;fb0&amp;#39; matches the device name of your framebuffer&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;putenv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;SDL_FBDEV&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;/dev/fb0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;putenv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;SDL_VIDEODRIVER&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;fbcon&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;putenv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;SDL_NOMOUSE&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;figcaption&gt;Code Listing: Setting Framebuffer &amp;amp; Mouse Driver Environment Variables&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;And that should be that. After undertaking these exact steps I was able to write to the framebuffer on a RaspberryPi running the script as a regular user. This features heavily in my upcoming Python powered RaspberryPi photo slideshow application, it’s in final testing now, so I’ll be posting about it really soon!&lt;/p&gt;
+
+&lt;p&gt;—Adam&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Automatically Mount your ownCloud folder with webDAV</title>
