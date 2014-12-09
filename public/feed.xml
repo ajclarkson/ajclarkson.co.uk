@@ -4,7 +4,7 @@
  <title>Adam James Clarkson</title>
  <link href="http://ajclarkson.co.uk/atom.xml" rel="self"/>
  <link href="http://ajclarkson.co.uk/"/>
- <updated>2014-12-09T16:45:46+00:00</updated>
+ <updated>2014-12-09T16:53:02+00:00</updated>
  <id>http://ajclarkson.co.uk</id>
  <author>
    <name>Adam James Clarkson</name>
@@ -14,7 +14,7 @@
  <entry>
    <title>PyGame Framebuffer Access for Non-Root Users</title>
    <link href="http://ajclarkson.co.uk/blog/pygame-no-root/"/>
-   <updated>2014-12-05T11:46:00+00:00</updated>
+   <updated>2014-12-06T00:00:00+00:00</updated>
    <id>http://ajclarkson.co.uk/blog/pygame-no-root</id>
    <content type="html">&lt;h2 id=&quot;the-issue&quot;&gt;The Issue&lt;/h2&gt;
 
