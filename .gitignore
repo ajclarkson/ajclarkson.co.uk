@@ -1,4 +1,5 @@
 .sass-cache/*
 .jekyll-assets-cache/*
+.vagrant/**
 Gemfile.lock
 .DS_Store
