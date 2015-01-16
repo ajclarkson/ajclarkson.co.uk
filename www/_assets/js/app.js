@@ -3,6 +3,9 @@
 //= require dark-mode
 //= require analytics
 //= require typed
+var title = document.title;
+var title = title.split(" |")[0];
+var tag_title = title.split(" on ")[1];
 
 $(function(){
   $(".type-target-home").typed({
@@ -32,4 +35,11 @@ $(function(){
     typeSpeed: 100,
     backDelay: 1500
   });
+});
+$(function(){
+	$(".type-target-tag").typed({
+	    strings: ["<strong>print</strong> blog_posts --filter_by_tag '<em>"+tag_title+"</em>'"],
+	    typeSpeed: 100,
+	    backDelay: 1500
+	  });
 });
