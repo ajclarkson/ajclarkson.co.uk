@@ -7,13 +7,12 @@
 #site_footer {
 	margin:$baseline*2 0 0 0;
 
-	background: $background;
-	border-top:2px solid $highlight;
+	background: $head-background;
 	color:$dark-complement;
 
 	#footer_content {
 		padding:$baseline auto;
-		max-width:480px;
+		max-width:600px;
 		text-align:center;
 	}
 

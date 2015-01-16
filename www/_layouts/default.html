@@ -22,19 +22,20 @@
 	</head>
 	<body>
 	<header id="site_header">
-		<section class="wrap">
-			<div id="identity"><a href="/">Adam<strong>Clarkson</strong></a></div>
-			<nav id="site_nav">
-				<li id="dark_mode_tile" class="js-dark-mode"><span>&#9788;</span></li>
-				<li id="about_tile"><a href="/about/">About</a></li>
-				<li id="projects_tile"><a href="/projects/">Projects</a></li>
-				<li id="blog_tile"><a href="/blog/">Blog</a></li>
+		<section id="header_content" class="wrap">
+	
+			<a href="/" id="identity" title="ajclarkson | Design &amp; Develop" >Adam<strong>Clarkson</strong></a>
+	
 
-			</nav>
-
-		</section><!-- /site-header-content -->
+		<ul id="nav">
+			<li><a href="/projects">Projects</a></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/about">About</a></li>
+			<li class="js-dark-mode"><span>☼</span></li>
+		</ul>
+		</section>
 	</header><!-- /header -->
-	<section class="wrap site_content" role="main">
+	<section class="site_content" role="main">
 		{{ content }}
 	</section>
 	<footer id="site_footer">
@@ -43,6 +44,7 @@
 				&copy; 2013&mdash;{{ 'now' | date: "%Y" }} All Rights Reserved.</p>
 		</section><!-- /footer-content -->
 	</footer><!-- /footer -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
 	{% javascript app %}
 
 	</body>

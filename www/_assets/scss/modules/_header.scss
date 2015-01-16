@@ -5,143 +5,42 @@
 //
 
 #site_header {
-	padding:0 0 $baseline*6;
-	margin:0;
-	background:$background;
-	a:link, a:visited {
-		color:$body-text;
-		text-decoration:none;
-
-		.dark-mode & {
-			color:$body-text-invert;
-		}
-	}
-	a:hover, a:active {
-		position:relative;
-		top:-0.1em;
-		color:$alternate-highlight;
-
-		.dark-mode & {
-			color:$alternate-highlight-invert;
-		}
-	}
+	background:#262e32;
+	margin-bottom:0;
+	padding-bottom:0;
+	width:100%;
+	height:130px;
+	position:fixed;
+	top:0;
+	z-index:1000;
 
 	.dark-mode & {
 		background:$background-invert;
+		color:$dark-complement-invert;
 	}
 }
-
+#header_content {
+	padding:$baseline 0 0;
+	margin-bottom:0;
+	@extend %clearfix;
+}
 #identity {
 	display:block;
-	width:25%;
 	float:left;
-	@extend %small;
-	@media (min-width:500px){
-		font-size:1em;
-	}
+	width:25%;
+	margin-right:0%;
 }
-
-#site_nav {
+#nav {
 	width:75%;
 	float:left;
+	list-style:none;
 	padding-left:0;
-	list-style-type:none;
+
+	text-align:right;
 
 	li {
-		display:block;
-		float:right;
-		margin: 0 0 0 $baseline/2;
-		border-left:1px solid $light-complement;
-		padding-left:$baseline/2;
-		@extend %small;
-		text-align:center;
-
-		a, a:visited {
-			color:$alternate-highlight;
-
-			.dark-mode & {
-				color:$alternate-highlight-invert;
-			}
-		}
-		a:hover, a:active {
-			color:$dark-complement;
-
-			.dark-mode & { 
-				color:$dark-complement-invert;
-			}
-		}
-
-		.dark-mode & {
-			border-left:1px solid $light-complement-invert;
-		}
-
+		display:inline;
+		margin-left:2em;
 	}
-	li:last-child {
-			border:none;
-			padding-left:0;
-			margin-left:0;
-		}
 
-	#dark_mode_tile {
-			background:url('/static/images/night.png') no-repeat right center;
-			background-size:$baseline/2.5;
-			width:$baseline/1.2;
-			height:$baseline/1.3;
-			
-			cursor: hand;
-			span { display:none; }
-
-			.dark-mode & {
-				background:url('/static/images/day.png') no-repeat right center;
-				background-size:$baseline/2;
-			}
-
-			@media (min-width:500px) {
-				width:$baseline;
-				height:$baseline;
-				padding-top:$baseline/4;
-			}
-	}
-	@media (min-width:500px) {
-		li {
-			padding-top:0;
-			font-size:1em;
-			text-align:right;
-			display:inline-block;
-			
-			a:link, a:visited {
-				display:block;
-				margin-right:$baseline/1.1;
-			}
-		}
-
-		#blog_tile {
-			background:url('/static/images/blog.png') no-repeat right;
-			background-size:$baseline/1.5;
-
-			.dark-mode & {
-				background:url('/static/images/blog-invert.png') no-repeat right;
-				background-size:$baseline/1.5;
-			}
-		}
-		#projects_tile {
-			background:url('/static/images/projects.png') no-repeat right;
-			background-size:$baseline/1.5;
-
-			.dark-mode & {
-				background:url('/static/images/projects-invert.png') no-repeat right;
-				background-size:$baseline/1.5;
-			}
-		}
-		#about_tile {
-			background:url('/static/images/about.png') no-repeat right;
-			background-size:$baseline/1.5;
-
-			.dark-mode & {
-				background:url('/static/images/about-invert.png') no-repeat right;
-				background-size:$baseline/1.5;
-			}
-		}
-		
-	}
 }

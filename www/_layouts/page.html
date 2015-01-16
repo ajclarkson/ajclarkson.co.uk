@@ -2,13 +2,26 @@
 layout: default
 ---
 <article>
-	{% if page.title %}
-	<h1>{{ page.title }}</h1>
-	{% endif %}
-	{% if page.excerpt %}
-	<p class="excerpt">{{ page.excerpt }}</p>
-	{% endif %}
-	<section class="content_block" >
+	<header id="masthead">
+		<section id="masthead_content" class="wrap">
+			{% if page.title %}
+				<h1>{{ page.title }}</h1>
+			{% endif %}
+			{% if page.excerpt %}
+
+				{% if page.id == "about" %}
+				<p class="excerpt type-target"><strong>$></strong> <span class="type-target-about"></span></p>
+				{% elsif page.id == "projects" %}
+				<p class="excerpt type-target"><strong>$></strong> <span class="type-target-projects"></span></p>
+				{% elsif page.id == "blog" %}
+				<p class="excerpt type-target"><strong>$></strong> <span class="type-target-blog"></span></p>
+				{% else %}
+				<p class="excerpt">{{ page.excerpt }}</p>
+				{% endif %}
+			{% endif %}
+		</section>
+	</header>
+	<section class="content_block wrap" >
 		{{ content }}
 	</section><!-- /post-content -->
 </article><!-- /article.post -->

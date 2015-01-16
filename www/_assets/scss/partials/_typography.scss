@@ -5,12 +5,18 @@
 //
 
 h1 {
-	font-weight:800;
-	font-style:italic;
+	font-weight:400;
 	font-size: 2.5em;
 	line-height:1em;
-	text-align:center;
 	margin-bottom:$baseline;
+	font-family:$sans-font;
+
+	.em1 {
+		color:#68717D;
+	}
+	.em2 {
+		color:#ADB4C4;
+	}
 	@media screen and (min-width:500px) {
 		font-size:3rem;
 	}
@@ -24,7 +30,7 @@ h2 {
 }
 
 h3 {
-	font-weight:800;
+	font-weight:400;
 	font-size:1em;
 	font-family:$sans-font;
 	text-transform:uppercase;
@@ -49,6 +55,32 @@ a:hover, a:active {
 	}
 }
 
+#nav a, #nav a:visited {
+	font-family:$sans-font;
+	color:$light-complement;
+}
+
+#nav a:hover, #nav a:active {
+	font-family:$sans-font;
+	color:$highlight;
+}
+
+.js-dark-mode {
+	color:$light-complement;
+
+}
+
+#identity {
+	font-family:$sans-font;
+	
+}
+
+a#identity, a:visited#identity {
+		color:$light-complement;
+	}
+	a:hover#identity, a:active#indentity {
+		color:$highlight;
+	}
 %small {
 	font-size:0.75em;
 }
@@ -57,9 +89,15 @@ small, .small {
 	@extend %small;
 }
 
+.type-target {
+		font-family:$code-font;
+		font-size:1em;
+	}
+
 .excerpt {
 	font-size:1.2em;
-	text-align:center;
+
+	
 }
 
 code {
@@ -89,6 +127,10 @@ blockquote {
 	.dark-mode & {
 		color:$dark-complement-invert;
 	}
+}
+
+.emph {
+	color:$highlight;
 }
 
 %meta {
