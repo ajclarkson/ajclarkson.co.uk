@@ -92,8 +92,22 @@ small, .small {
 .type-target {
 		font-family:$code-font;
 		font-size:1em;
+
+		strong {
+			color: #68717D;
+		}
+
+		em {
+			font-style: normal;
+			color: #ADB4C4;
+		}
 	}
 
+.term {
+	strong {
+		color:$highlight;
+	}
+}
 .excerpt {
 	font-size:1.2em;
 

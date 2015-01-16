@@ -10,11 +10,11 @@ layout: default
 			{% if page.excerpt %}
 
 				{% if page.id == "about" %}
-				<p class="excerpt type-target"><strong>$></strong> <span class="type-target-about"></span></p>
+				<p class="excerpt type-target"><span class="term"><strong>$></strong></span> <span class="type-target-about"></span></p>
 				{% elsif page.id == "projects" %}
-				<p class="excerpt type-target"><strong>$></strong> <span class="type-target-projects"></span></p>
+				<p class="excerpt type-target"><span class="term"><strong>$></strong></span> <span class="type-target-projects"></span></p>
 				{% elsif page.id == "blog" %}
-				<p class="excerpt type-target"><strong>$></strong> <span class="type-target-blog"></span></p>
+				<p class="excerpt type-target"><span class="term"><strong>$></strong></span> <span class="type-target-blog"></span></p>
 				{% else %}
 				<p class="excerpt">{{ page.excerpt }}</p>
 				{% endif %}

@@ -6,7 +6,7 @@
 
 $(function(){
   $(".type-target-home").typed({
-    strings: ["create your_new_project", "design --output 'beautiful websites'", "develop bespoke_function --input 'your_requirements'", "Designer & Developer - Available for Hire."],
+    strings: ["<strong>create</strong> your_new_project", "<strong>design</strong> --output '<em>beautiful websites</em>'", "<strong>develop</strong> bespoke_function --input '<em>your_requirements</em>'", "<strong>Designer</strong> & <strong>Developer</strong> --status='<em>Available for Hire</em>'"],
     typeSpeed: 100,
     loop: true,
     backDelay: 1500
@@ -14,21 +14,21 @@ $(function(){
 });
 $(function(){
   $(".type-target-about").typed({
-    strings: ["begin life_story --version=SHORT"],
+    strings: ["<strong>begin</strong> life_story --version='<em>SHORT</em>'"],
     typeSpeed: 100,
     backDelay: 1500
   });
 });
 $(function(){
   $(".type-target-projects").typed({
-    strings: ["list projects --limit=recent_only"],
+    strings: ["<strong>list</strong> projects --limit='<em>recent_only</em>'"],
     typeSpeed: 100,
     backDelay: 1500
   });
 });
 $(function(){
   $(".type-target-blog").typed({
-    strings: ["show all_blog_posts --order_by=year"],
+    strings: ["<strong>show</strong> all_blog_posts --order_by='<em>year</em>'"],
     typeSpeed: 100,
     backDelay: 1500
   });
