@@ -6,7 +6,7 @@
 
 $(function(){
   $(".type-target-home").typed({
-    strings: ["<strong>create</strong> your_new_project", "<strong>design</strong> --output '<em>beautiful websites</em>'", "<strong>develop</strong> bespoke_function --input '<em>your_requirements</em>'", "<strong>Designer</strong> & <strong>Developer</strong> --status='<em>Available for Hire</em>'"],
+    strings: ["<strong>create</strong> your_new_project", "<strong>design</strong> --output '<em>beautiful websites</em>'", "<strong>develop</strong> bespoke_function --input '<em>your_requirements</em>'", "<strong>Designer</strong> & <strong>Developer</strong> --status '<em>Available for Hire</em>'"],
     typeSpeed: 100,
     loop: true,
     backDelay: 1500
