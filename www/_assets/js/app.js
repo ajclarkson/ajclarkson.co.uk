@@ -14,21 +14,21 @@ $(function(){
 });
 $(function(){
   $(".type-target-about").typed({
-    strings: ["<strong>begin</strong> life_story --version='<em>SHORT</em>'"],
+    strings: ["<strong>begin</strong> life_story --version '<em>SHORT</em>'"],
     typeSpeed: 100,
     backDelay: 1500
   });
 });
 $(function(){
   $(".type-target-projects").typed({
-    strings: ["<strong>list</strong> projects --limit='<em>recent_only</em>'"],
+    strings: ["<strong>list</strong> projects --limit '<em>recent_only</em>'"],
     typeSpeed: 100,
     backDelay: 1500
   });
 });
 $(function(){
   $(".type-target-blog").typed({
-    strings: ["<strong>show</strong> all_blog_posts --order_by='<em>year</em>'"],
+    strings: ["<strong>show</strong> all_blog_posts --order_by '<em>year</em>'"],
     typeSpeed: 100,
     backDelay: 1500
   });
