@@ -2,6 +2,7 @@
 layout: page
 title: Projects
 excerpt: A collection of my personal development projects.
+id: projects
 ---
 
 

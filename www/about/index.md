@@ -2,6 +2,7 @@
 layout: page
 title: About Me
 excerpt: I'm Adam, a designer &amp; developer who is currently writing a PhD on Content Delivery in Augmented Reality Systems.
+id: about
 ---
 
 {% picture ajclarkson.jpg class="avatar" %}
@@ -21,4 +22,4 @@ If you want to talk to me about my work, your work, or any project ideas you mig
 
 Everything you see before you has been handcoded with the help of Ruby and Jekyll. The output of that's an incredibly fast set of static HTML pages for me to serve up to you. It gives me flexibility design every single page but still give you, the reader, a full featured 'blog' to read.
 
-The type is set in FF Meta Serif, with the sans-serif variant in use for sub-headings and meta data. Code examples are set in Source Code Pro, all fonts are served by [Typekit](http://www.typekit.com).
+The type is set in FF Meta Serif, with Franklin Gothic for the headings and meta data. Code examples are set in Source Code Pro, all fonts are served by [Typekit](http://www.typekit.com).

@@ -11,7 +11,7 @@
 		<meta property="og:url" content="/blog/pygame-no-root/"/>
 		<meta property="og:description" content="When researching how to use pygame to output to the linux framebuffer I came across the issue of my script failing to write to the framebuffer unless it had root privilages. Google showed me quite a few other people had this problem as well, so I set out to find a solution."/>
 
-		<link rel="stylesheet" href="/assets/site-9bc899e8b2c261cee71177a35832eb7f.css">
+		<link rel="stylesheet" href="/assets/site-fcb20865700a22894ff2112331da7dfc.css">
 
 		<!-- Typekit -->
 		<script src="//use.typekit.net/ahk4squ.js"></script>
@@ -22,29 +22,34 @@
 	</head>
 	<body>
 	<header id="site_header">
-		<section class="wrap">
-			<div id="identity"><a href="/">Adam<strong>Clarkson</strong></a></div>
-			<nav id="site_nav">
-				<li id="dark_mode_tile" class="js-dark-mode"><span>&#9788;</span></li>
-				<li id="about_tile"><a href="/about/">About</a></li>
-				<li id="projects_tile"><a href="/projects/">Projects</a></li>
-				<li id="blog_tile"><a href="/blog/">Blog</a></li>
+		<section id="header_content" class="wrap">
+	
+			<a href="/" id="identity" title="ajclarkson | Design &amp; Develop" >Adam<strong>Clarkson</strong></a>
+	
 
-			</nav>
-
-		</section><!-- /site-header-content -->
+		<ul id="nav">
+			<li><a href="/projects">Projects</a></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/about">About</a></li>
+			<li class="js-dark-mode"><span>☼</span></li>
+		</ul>
+		</section>
 	</header><!-- /header -->
-	<section class="wrap site_content" role="main">
+	<section class="site_content" role="main">
 		<article>
-	
-		<a href="/blog/auto-mount-webdav-raspberry-pi/" class="next_link">Older Post</a>
-	
-	
-	<div class="post_date">&mdash; 06 December 2014 &mdash;</div>
-	<h1>PyGame Framebuffer Access for Non-Root Users</h1>
-	<p class="excerpt">When researching how to use pygame to output to the linux framebuffer I came across the issue of my script failing to write to the framebuffer unless it had root privilages. Google showed me quite a few other people had this problem as well, so I set out to find a solution.</p>
+	<header id="masthead">
+		<section id="masthead_content" class="wrap">
+			
+				<a href="/blog/auto-mount-webdav-raspberry-pi/" class="next_link">Older Post</a>
+			
+			
+			<h1>PyGame Framebuffer Access for Non-Root Users</h1>
+			<p class="excerpt">When researching how to use pygame to output to the linux framebuffer I came across the issue of my script failing to write to the framebuffer unless it had root privilages. Google showed me quite a few other people had this problem as well, so I set out to find a solution.</p>
+		</section>
+	</header>
 
-	<section class="content_block" >
+	<section class="content_block wrap" >
+	<div class="post_date">Posted &mdash; 06 December 2014</div>
 		<h2 id="the-issue">The Issue</h2>
 
 <p>When trying to render graphics from the console using pygame, root access is required to make any modification to the framebuffer. Spotting that this wasn’t the case with other framebuffer programs such as <code>fbi</code>, there had to be a solution. By passing some driver environment variables to python it is possible to overcome this problem and allow your framebuffer program to run as a regular, non-root user.</p>
@@ -128,19 +133,21 @@ ajclarkson sudo audio video plugdev</code></pre></div>
 
 	</section><!-- /post-content -->
 
-	<div id="disqus_thread"></div>
-	<script type="text/javascript">
-		var disqus_shortname = 'ajclarkson';
-		var disqus_identifier = '/blog/pygame-no-root/';
-		var disqus_url = 'http://ajclarkson.co.uk/blog/pygame-no-root/';
-		(function() {
-			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		})();
-	</script>
-	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	<section id="comments" class="wrap">
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			var disqus_shortname = 'ajclarkson';
+			var disqus_identifier = '/blog/pygame-no-root/';
+			var disqus_url = 'http://ajclarkson.co.uk/blog/pygame-no-root/';
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</section>
 </article><!-- /article.post -->
 
 
@@ -175,10 +182,11 @@ ajclarkson sudo audio video plugdev</code></pre></div>
 	<footer id="site_footer">
 		<section id="footer_content" class="wrap">
 			<p>Handcrafted by <a href="/about">Adam Clarkson</a>, powered by Jekyll &amp; Git. To keep updated you might want to <a href="http://twitter.com/ajclarkson">follow me on twitter</a> or <a href="/feed.xml">subscribe to my RSS</a>.<br />
-				&copy; 2013&mdash;2014 All Rights Reserved.</p>
+				&copy; 2013&mdash;2015 All Rights Reserved.</p>
 		</section><!-- /footer-content -->
 	</footer><!-- /footer -->
-	<script src="/assets/app-bff91d8da269e06537e03d722ac37809.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+	<script src="/assets/app-68b9a39619cd991b680a13515e238e60.js"></script>
 
 	</body>
 </html>

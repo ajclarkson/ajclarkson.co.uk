@@ -18,7 +18,7 @@ html, :root {
 	font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
 	font-kerning: normal;
 
-	background-color:$page-color;
+	background-color:$head-background;
 	color:$body-text;
 
 	@media screen and (min-width: 500px) {

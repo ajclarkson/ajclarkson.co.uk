@@ -12,27 +12,62 @@
 .excerpt {
 	margin-bottom:$baseline;
 	padding-bottom:$baseline;
-	border-bottom:1px solid $light-complement;
-
-	.dark-mode & {
-		border-bottom:1px solid $light-complement-invert;
+	
+	.typed-cursor{
+	    opacity: 1;
+	    -webkit-animation: blink 1s infinite;
+	    -moz-animation: blink 1s infinite;
+	    animation: blink 1s infinite;
 	}
+	@keyframes blink{
+	    0% { opacity:1; }
+	    50% { opacity:0; }
+	    100% { opacity:1; }
+	}
+	@-webkit-keyframes blink{
+	    0% { opacity:1; }
+	    50% { opacity:0; }
+	    100% { opacity:1; }
+	}
+	@-moz-keyframes blink{
+	    0% { opacity:1; }
+	    50% { opacity:0; }
+	    100% { opacity:1; }
+	}
+
+
+	
 }
 
 .site_content {
-	padding-top:$baseline*2;
-	position:relative;
-	top:-($baseline*5);
+	margin-top:0;
 
 	background:$page-color;
-	border-top:4px solid $highlight;
+
+	clear:both;
 
 	.dark-mode & {
 		
 		background:$page-invert;
-		border-top:4px solid $highlight-invert;
+		
 	}
 }
+
+#masthead {
+	background:$head-background;
+	color:$light-complement;
+	margin-top:130px;
+
+	.dark-mode & {
+		background:$background-invert;
+		color:$dark-complement-invert;
+	}
+
+	
+}
+#masthead .home {
+		padding:$baseline*2 $baseline;
+	}
 
 .content_block {
 	width: 100%;
