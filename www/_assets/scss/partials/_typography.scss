@@ -38,6 +38,10 @@ h3 {
 	margin-bottom:$baseline/4;
 }
 
+h4 {
+	font-family:$sans-font;
+}
+
 a, a:visited {
 	color:$highlight;
 	text-decoration:none;
@@ -81,6 +85,19 @@ a#identity, a:visited#identity {
 	a:hover#identity, a:active#indentity {
 		color:$highlight;
 	}
+
+#hire-box {
+	a, a:visited {
+		color:$light-complement;
+		font-family: $sans-font;
+		text-transform:uppercase;
+		@extend %small;
+	}
+	a:hover, a:active {
+		color: $highlight;
+	}
+}
+
 %small {
 	font-size:0.75em;
 }
@@ -112,6 +129,12 @@ small, .small {
 	font-size:1.2em;
 
 	
+}
+
+#process {
+	font-family:$sans-font;
+	text-transform:uppercase;
+	letter-spacing:1px;
 }
 
 code {
