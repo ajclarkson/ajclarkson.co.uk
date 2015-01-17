@@ -1,16 +1,16 @@
 ---
 layout: home
-title: Hey, I'm <a href="/about/">Adam</a>
+title: Design, Develop, Create
 excerpt: A designer &amp; developer, currently writing a Ph.D.
 ---
 
 <h2 class="banner-title stack">Full Stack Development</h2>
 
-<ul id="process">
-	<li id="process-discuss">Discuss</li>
-	<li id="process-design">Design</li>
-	<li id="process-develop">Develop</li>
-	<li id="process-deliver">Deliver</li>
+<ul id="process" class="scrollme">
+	<li id="process-discuss" class="animateme" data-when="span" data-from="0.5" data-to="0" data-opacity="0.1" data-translatex="-200" data-rotatez="90">Discuss</li>
+	<li id="process-design" class="animateme" data-when="enter" data-from="0.5" data-to="0" data-opacity="0.1" data-translatey="200" data-rotatez="90">Design</li>
+	<li id="process-develop" class="animateme" data-when="enter" data-from="0.5" data-to="0" data-opacity="0.1" data-translatey="-200" data-rotatez="90">Develop</li>
+	<li id="process-deliver" class="animateme" data-when="enter" data-from="0.5" data-to="0" data-opacity="0.1" data-translatex="200" data-rotatez="90">Deliver</li>
 </ul>
 
 

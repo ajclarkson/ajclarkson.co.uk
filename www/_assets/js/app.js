@@ -3,6 +3,7 @@
 //= require dark-mode
 //= require analytics
 //= require typed
+//= require scrollme
 var title = document.title;
 var title = title.split(" |")[0];
 var tag_title = title.split(" on ")[1];

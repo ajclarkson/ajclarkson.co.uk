@@ -85,6 +85,10 @@
 	padding:$baseline * 3.5 0 $baseline;
 	margin:$baseline 0 $baseline * 2;
 	border-bottom:2px solid $light-complement;
+	
+	.dark-mode & {
+		border-bottom:2px solid $light-complement-invert;
+	}
 }
 .stack {
 	background:url('/static/images/stack.png') no-repeat;
@@ -97,6 +101,10 @@
 	border-bottom:2px solid $light-complement;
 	@extend %clearfix;
 	margin-bottom:$baseline;
+
+	.dark-mode & {
+		border-bottom:2px solid $light-complement-invert;
+	}
 	li {
 		display:block;
 		float:left;
@@ -128,6 +136,10 @@
 	padding:0 0 $baseline;
 	border-bottom:2px solid $light-complement;
 	margin-bottom:$baseline * 2;
+
+	.dark-mode & {
+		border-bottom:2px solid $light-complement-invert;
+	}
 }
 #skills-intro {
 	width:70%;
