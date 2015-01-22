@@ -63,6 +63,13 @@
 		color:$dark-complement-invert;
 	}
 
+	.post & {
+		padding-top:$baseline*2;
+
+		h1 {
+			margin-bottom:$baseline * 2;
+		}
+	}
 	
 }
 #masthead .home {
@@ -78,10 +85,14 @@
 	}
 }
 
+
+
 .banner-title {
 	text-align:center;
 	font-weight:normal;
 	text-transform:uppercase;
+	color:$dark-complement;
+	letter-spacing:1px;
 	padding:$baseline * 3.5 0 $baseline;
 	margin:$baseline 0 $baseline * 2;
 	border-bottom:2px solid $light-complement;
@@ -148,85 +159,53 @@
 	width:100%;
 	@extend %clearfix;
 	padding:0 0 $baseline;
-	border-bottom:2px solid $light-complement;
 	margin-bottom:$baseline * 2;
-
-	.dark-mode & {
-		border-bottom:2px solid $light-complement-invert;
-	}
 }
 #skills-intro {
 	width:100%;
 	padding: 0 $baseline;
+	text-align:center;
 
-	@media (min-width:700px) {
-		width:70%;
-		float:left;
+	h2 {
+		padding-top:$baseline;
+		margin-bottom:$baseline *2;
 	}
+
 }
-#hire-box {
+.work_slider {
+	top: -$baseline;
+	background:$highlight;
+	margin-top:0;
 	width:100%;
-	padding: 0 $baseline;
-
-	.avatar {
-		display:none;
-		margin:0 auto $baseline;
+	padding-bottom:-$baseline;
+	div {
 		width:100%;
-		max-width:110px;
-		border-radius:100px;
-
-		@media (min-width:700px){
+		span {
 			display:block;
+			max-width:700px;
+			width:80%;
+			margin:0 auto;
 		}
-	}
 
-	a {
-		padding:$baseline/8;
-		display:block;
-		margin-bottom:$baseline/4;
-		text-align:center;
-		background:#68717D;
-		border-radius:5px;
-	}
-
-	@media (min-width:700px){
-		float:left;
-		width:30%;
-	}
-	
-}
-
-.work_list {
-	list-style-type: none;
-	padding-left:0;
-	margin-top:$baseline * 1.5;
-	li {
-		max-width:600px;
-
-		
-
-		@media (min-width:700px) {
-			float:left;
-			width:50%;
+		img {
+			padding:0;
+			margin-bottom:-$baseline;
 		}
+
 	}
-}
 
-.work_link_content {
-	margin:0 $baseline /2;
-
-	h4 {
-		background: $head-background;
-		padding:$baseline/2;
-		margin-bottom:0;
+	.work-meta {
+		top: -$baseline;
+		margin-bottom:-$baseline;
+		background:$head-background;
 		color:$light-complement;
 		text-align:center;
-	}
+		opacity:0.99;
 
-	img {
-			max-width:100%;
-			padding:0 8.4%;
+		h4 {
+			opacity:1;
 		}
+	}
 }
 
 figure {
