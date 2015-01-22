@@ -165,9 +165,9 @@
 	}
 }
 #hire-box {
-	width:30%;
-	float:left;
+	width:100%;
 	padding: 0 $baseline;
+
 	.avatar {
 		display:block;
 		margin:0 auto $baseline;
@@ -183,6 +183,11 @@
 		text-align:center;
 		background:#68717D;
 		border-radius:5px;
+	}
+
+	@media (min-width:700px){
+		float:left;
+		width:30%;
 	}
 	
 }
