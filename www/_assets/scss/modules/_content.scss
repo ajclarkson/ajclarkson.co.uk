@@ -169,11 +169,15 @@
 	padding: 0 $baseline;
 
 	.avatar {
-		display:block;
+		display:none;
 		margin:0 auto $baseline;
 		width:100%;
 		max-width:110px;
 		border-radius:100px;
+
+		@media (min-width:700px){
+			display:block;
+		}
 	}
 
 	a {
@@ -190,6 +194,39 @@
 		width:30%;
 	}
 	
+}
+
+.work_list {
+	list-style-type: none;
+	padding-left:0;
+	margin-top:$baseline * 1.5;
+	li {
+		max-width:600px;
+
+		
+
+		@media (min-width:700px) {
+			float:left;
+			width:50%;
+		}
+	}
+}
+
+.work_link_content {
+	margin:0 $baseline /2;
+
+	h4 {
+		background: $head-background;
+		padding:$baseline/2;
+		margin-bottom:0;
+		color:$light-complement;
+		text-align:center;
+	}
+
+	img {
+			max-width:100%;
+			padding:0 8.4%;
+		}
 }
 
 figure {

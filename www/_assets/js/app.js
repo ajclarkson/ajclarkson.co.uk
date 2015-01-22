@@ -44,3 +44,14 @@ $(function(){
 	    backDelay: 1500
 	  });
 });
+
+$(document).ready(function(){
+  $('.work_slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 6000,
+      speed:1000,
+      fade: true,
+  });
+});

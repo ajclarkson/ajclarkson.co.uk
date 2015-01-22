@@ -4,6 +4,8 @@ title: Design, Develop, Create
 excerpt: A designer &amp; developer, currently writing a Ph.D.
 ---
 
+
+
 <h2 class="banner-title stack">Full Stack Development</h2>
 
 <ul id="process" class="scrollme">
@@ -28,19 +30,4 @@ excerpt: A designer &amp; developer, currently writing a Ph.D.
 		<a href="http://twitter.com/ajclarkson" class='twitter-link'>@ajclarkson</a>
 	</section>
 </div>
-
-## Recent Blog Posts
-
-{% for post in site.categories['blog'] limit:3 %}
-
-### [{{ post.title }}]({{ post.url }})
-
-<span class="meta">{{ post.date | date_to_long_string }}</span>
-
-{{ post.excerpt }}
-<hr />
-{% endfor %}
-
-You can find more posts in the [archive](/blog/).
-
 
