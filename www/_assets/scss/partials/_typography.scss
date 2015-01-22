@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-	font-weight:800;
+	font-weight:400;
 	font-size:1.5em;
 	font-family:$sans-font;
 	margin-bottom:$baseline/4;
@@ -35,7 +35,9 @@ h3 {
 	font-family:$sans-font;
 	text-transform:uppercase;
 	line-height: $baseline;
-	margin-bottom:$baseline/4;
+	margin-bottom:$baseline/2;
+	letter-spacing:0.5px;
+	color:$head-background;
 }
 
 h4 {

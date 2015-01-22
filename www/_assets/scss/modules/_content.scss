@@ -105,15 +105,29 @@
 	.dark-mode & {
 		border-bottom:2px solid $light-complement-invert;
 	}
+
 	li {
 		display:block;
 		float:left;
 		width:50%;
 		text-align:center;
-		padding-top:$baseline * 3.5;
+		padding-top:$baseline * 4.2;
+		margin-bottom:$baseline;
+
+		@media (min-width:500px) {
+			
+			padding-top:$baseline * 4.2;
+		}
 
 		@media (min-width:700px) {
 			width:25%;
+			margin-bottom:0;
+			padding-top:$baseline * 4.5;	
+		}
+
+		@media (min-width:860px) {
+			margin-bottom:0;
+			padding-top:$baseline * 3.5;
 		}
 	}
 
@@ -142,9 +156,13 @@
 	}
 }
 #skills-intro {
-	width:70%;
-	float:left;
+	width:100%;
 	padding: 0 $baseline;
+
+	@media (min-width:700px) {
+		width:70%;
+		float:left;
+	}
 }
 #hire-box {
 	width:30%;
@@ -153,6 +171,7 @@
 	.avatar {
 		display:block;
 		margin:0 auto $baseline;
+		width:100%;
 		max-width:110px;
 		border-radius:100px;
 	}
