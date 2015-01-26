@@ -1,0 +1,27 @@
+---
+layout: page
+title: Projects
+excerpt: A collection of my personal development projects.
+id: projects
+---
+
+
+<article>
+
+	<section class="content_block portfolio">
+		<h2>Selected Work</h2>
+		<p>Below is a selection of Design &amp; Development projects I have worked on, covering a wide range of disciplines. Click on a project to see more details. </p>
+		<ul id="portfolio-list">
+		{% for post in site.categories['projects'] %}
+		<li>
+			{% picture {{ post.image_name }}.png %}
+			<div class="portfolio-title">
+				<h4><a href="{{post.url}}">{{ post.title }} </a></h4>
+				<p> {{ post.skills }} </p>
+			</div>
+		</li>
+
+		{% endfor %}
+		</ul>
+	</section>
+</article>

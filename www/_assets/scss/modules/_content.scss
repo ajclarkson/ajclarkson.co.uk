@@ -220,6 +220,65 @@ a:hover.call-to-action, a:active.call-to-action {
 		}
 	}
 }
+.portfolio {
+	text-align:center;
+}
+#portfolio-list {
+	list-style-type: none;
+	margin-top:$baseline;
+	li {
+		width:100%;
+		margin:0 0 $baseline/4 0;
+		float:left;
+		text-align:center;
+
+		img {
+			max-width:85%;
+			margin:0 auto;
+			padding:0;
+			position:relative;
+			z-index:1;
+		}
+		
+		.portfolio-title {
+			border-top:1px $light-complement solid;
+			top:-$baseline * 1.3;
+			margin-bottom:0;
+			z-index:2;
+			background:$page-color;
+			@extend %small;
+			width:98%;
+			display:block;
+			h4 {
+				
+				padding-top:$baseline / 2;
+				font-weight:normal;
+				margin-bottom:0;
+			}
+
+			p {
+				@extend %small;
+				margin-bottom:0;
+			}
+
+			
+
+			.dark-mode & {
+				background: $page-invert;
+				border-color:$light-complement-invert;
+			}
+		}
+
+		@media (min-width:700px) {
+			width:47%;
+			margin-right:3%;
+		}
+	}
+	li:nth-child[even] {
+		margin-right:0;
+	}
+
+}
 
 figure {
 	display:block;

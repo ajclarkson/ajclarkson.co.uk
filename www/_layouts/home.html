@@ -9,13 +9,24 @@ layout: default
 		</section>
 	</header>
 	<div class="work_slider">
-	  <div><span>{% picture mopilates_screen.png  %}</span><section class="work-meta"><aside class="wrap"><h4>Michelle Ormrod Pilates</h4><p>Branding, Web Design, Custom Development, Stationary</p><a href="/" class="call-to-action">View Details</a></aside></section></div>
-	  <div><span>{% picture tgjbrock_screen.png  %}</span>
-	  <section class="work-meta"><aside class="wrap"><h4>Tom Brock - Personal Site</h4><p>Responsive Web Design, Pixel Artwork</p><a href="/" class="call-to-action">View Details</a></aside></section></div>
-	  <div><span>{% picture er_print.png  %}</span><section class="work-meta"><aside class="wrap"><h4>Football Stadium Prints</h4><p>Digital Artwork, Illustration</p><a href="/" class="call-to-action">View Details</a></aside></section></div>
-	  <div><span>{% picture scr_screen.png  %}</span>
-	  <section class="work-meta"><aside class="wrap"><h4>St Aidan's College SCR</h4><p>Branding, Web Design</p><a href="/" class="call-to-action">View Details</a></aside></section></div>
-</div>
+
+	{% for post in site.categories['projects'] %}
+		{% capture showcase %}{{ post.showcase }}{% endcapture %}
+		{% if showcase == 'true' %}
+			<div>
+				<span>{% picture {{ post.image_name }}.png  %}</span>
+				<section class="work-meta">
+					<aside class="wrap">
+						<h4>{{ post.title }}</h4>
+						<p>{{ post.skills }}</p>
+						<a href="{{ post.url }}" class="call-to-action">View Details</a>
+					</aside>
+				</section>
+			</div>
+		{% endif %}
+	{% endfor %}
+	</div>
+
 	<section class="content_block wrap" >
 		{{ content }}
 	</section><!-- /post-content -->

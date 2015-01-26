@@ -25,7 +25,7 @@ $(function(){
 });
 $(function(){
   $(".type-target-projects").typed({
-    strings: ["<strong>list</strong> projects --limit '<em>recent_only</em>'"],
+    strings: ["<strong>list</strong> projects --order_by '<em>date</em>'"],
     typeSpeed: 100,
     backDelay: 1500
   });
@@ -53,5 +53,7 @@ $(document).ready(function(){
       autoplaySpeed: 6000,
       speed:1000,
       fade: true,
+      pauseOnHover: false,
+      arrows:true,
   });
 });
