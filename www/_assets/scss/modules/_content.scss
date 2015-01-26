@@ -81,7 +81,7 @@
 	}
 	
 }
-#masthead .home {
+.home  #masthead {
 		padding:$baseline*2 $baseline;
 	}
 
@@ -91,23 +91,6 @@
 
 	@media (min-width:500px) {
 		width:80%;
-	}
-}
-
-
-
-.banner-title {
-	text-align:center;
-	font-weight:normal;
-	text-transform:uppercase;
-	color:$dark-complement;
-	letter-spacing:1px;
-	padding:$baseline * 3.5 0 $baseline;
-	margin:$baseline 0 $baseline * 2;
-	border-bottom:2px solid $light-complement;
-	
-	.dark-mode & {
-		border-bottom:2px solid $light-complement-invert;
 	}
 }
 
@@ -122,21 +105,11 @@ a:hover.call-to-action, a:active.call-to-action {
 	color:$light-complement;
 }
 
-.stack {
-	background:url('/static/images/stack.png') no-repeat;
-	background-position:top center;
-}
-
 #process {
 	list-style-type:none;
-	padding:0 0 $baseline * 2;
-	border-bottom:2px solid $light-complement;
+	padding:0 0 $baseline;
 	@extend %clearfix;
 	margin-bottom:$baseline;
-
-	.dark-mode & {
-		border-bottom:2px solid $light-complement-invert;
-	}
 
 	li {
 		display:block;

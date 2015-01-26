@@ -27,6 +27,11 @@ h2 {
 	font-size:1.5em;
 	font-family:$sans-font;
 	margin-bottom:$baseline/4;
+
+	.home & {
+		text-align:center;
+		margin-bottom:$baseline * 2;
+	}
 }
 
 h3 {
