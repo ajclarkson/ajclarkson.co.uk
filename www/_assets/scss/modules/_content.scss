@@ -71,6 +71,14 @@
 			margin-bottom:$baseline * 2;
 		}
 	}
+
+	.portfolio & {
+		padding-top:$baseline*2;
+
+		h1 {
+			margin-bottom: $baseline * 2;
+		}
+	}
 	
 }
 #masthead .home {
@@ -220,7 +228,7 @@ a:hover.call-to-action, a:active.call-to-action {
 		}
 	}
 }
-.portfolio {
+.portfolio-introduction {
 	text-align:center;
 }
 #portfolio-list {

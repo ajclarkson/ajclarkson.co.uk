@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: portfolio
 title: Michelle Ormrod Pilates
 external_link: http://www.mopilates.co.uk
 image_name: mopilates_screen
@@ -8,3 +8,5 @@ skills: Branding, Web Design, Backend Development, Stationary Design
 excerpt: Michelle Ormrod Pilates Website.
 
 ---
+
+{% picture {{ page.image_name}}.png %}
