@@ -57,6 +57,7 @@
 	background:$head-background;
 	color:$light-complement;
 	margin-top:130px;
+	border-bottom:10px solid $highlight;
 
 	.dark-mode & {
 		background:$background-invert;
