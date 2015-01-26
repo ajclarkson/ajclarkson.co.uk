@@ -101,6 +101,18 @@
 		border-bottom:2px solid $light-complement-invert;
 	}
 }
+
+a.call-to-action, a:visited.call-to-action {
+	background:$highlight;
+	color:$head-background;
+	padding:$baseline/2 $baseline;
+	border-radius:10px;
+	@extend %small;
+}
+a:hover.call-to-action, a:active.call-to-action {
+	color:$light-complement;
+}
+
 .stack {
 	background:url('/static/images/stack.png') no-repeat;
 	background-position:top center;

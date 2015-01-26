@@ -89,6 +89,17 @@ a#identity, a:visited#identity {
 		color:$highlight;
 	}
 
+.work-meta {
+
+	h4 {
+		margin-bottom:$baseline/4;
+	}
+	p {
+		@extend %small;
+		margin-bottom:$baseline;
+	}
+}
+
 #hire-box {
 	a, a:visited {
 		color:$light-complement;
