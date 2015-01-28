@@ -7,10 +7,9 @@ id: about
 
 {% picture ajclarkson.jpg class="avatar" %}
 
-My PhD takes up a huge portion of my time at the minute. Time that is spent delving through Computer Vision problems, and looking at new ways we can deliver content into often unpredicatble and unstable Augmented Reality environments.
+You can usually find me pushing pixels around the web, smudging pencil sketches, or worrying about gaining an extra millisecond of efficiency out of some code. When I do manage to break free from my computer, I get out cycling or disappear into my kitchen and brew up some craft beer.
 
-When I'm not working on that I'm usually pushing pixels around the web, smudging pencil sketches, or worrying about gaining an extra millisecond of efficiency out of some code. When I do manage to break free from my computer, I get out cycling or disappear into my kitchen and brew up some craft beer.
-
+I've just submitted my Ph.D. in Computer Science, proposing a new way of delivering content into Augmented Reality environments &mdash; inspired by my focus on content in all aspects of design and development. 
 
 ## Social Lurkings
 
@@ -20,6 +19,8 @@ If you want to talk to me about my work, your work, or any project ideas you mig
 
 ## About This Site
 
-Everything you see before you has been handcoded with the help of Ruby and Jekyll. The output of that's an incredibly fast set of static HTML pages for me to serve up to you. It gives me flexibility design every single page but still give you, the reader, a full featured 'blog' to read.
+Everything you see before you has been handcoded with the help of Ruby, HTML5, CSS3, and Javascript, all pulled together by Jekyll. It gives me flexibility design every single page but still give you, the reader, a full featured 'dynamic' site.
 
 The type is set in Freight Text Pro, with Franklin Gothic for the headings and meta data. Code examples are set in Source Code Pro, all fonts are served by [Typekit](http://www.typekit.com).
+
+A lot of the icons you can see on the site are provided by the excellent people at <a href="http://flaticon.com">flat icon</a>.

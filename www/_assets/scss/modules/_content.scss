@@ -76,7 +76,7 @@
 		padding-top:$baseline*2;
 
 		h1 {
-			margin-bottom: $baseline * 2;
+			margin-bottom: $baseline;
 		}
 	}
 	
@@ -154,6 +154,26 @@ a:hover.call-to-action, a:active.call-to-action {
 	@extend %clearfix;
 	padding:0 0 $baseline;
 	margin-bottom:$baseline * 2;
+
+	.further-information {
+		width:100%;
+		
+		list-style-type: none;
+		text-align:center;
+		li {
+			display:block;
+			padding:$baseline/2;
+
+			@media (min-width:500px) {
+				display:inline-block;
+				margin-right:$baseline/2;
+				
+			}
+		}
+		li:last-child {
+			margin-right:0;
+		}
+	}
 }
 #skills-intro {
 	width:100%;
@@ -261,6 +281,91 @@ a:hover.call-to-action, a:active.call-to-action {
 
 }
 
+.project-details {
+	figure {
+		background: #fafafa;
+		border:1px solid $light-complement;
+		padding:$baseline 0;
+
+		@media (min-width:500px) {
+		width:100%;
+		margin-left:0;
+	}
+	}
+	img {
+		display:block;
+		width:100%;
+		max-width:760px;
+		margin:0 auto;
+	}
+
+}
+.project-info {
+	margin:$baseline*2 0;
+
+	.summary {
+		text-align:center;
+	}
+}
+
+.project-image-list {
+	list-style-type: none;
+	width:100%;
+	padding-left:0;
+	margin-left:0;
+
+	li {
+		width:100%;
+	}
+
+	ul {
+		list-style-type: none;
+		padding-left:$baseline / 2;
+
+		li {
+			display:block;
+			width:100%;
+		}
+	}
+	h2, p {
+		padding:0 $baseline/2 0 0;
+	}
+	li:last-child {
+		h2,p {
+			padding:0 0 0 $baseline/2;
+		}
+
+
+	}
+}
+
+.project-list-2 {
+	li {
+		width:100%;
+
+		@media (min-width:700px) {
+			width:48%;
+			margin-right:2%;
+			float:left;
+		}
+	}
+	li:last-child {
+		margin-right:0;
+	}
+}
+.project-list-3 {
+	li {
+		@media (min-width:700px) {
+			width:32%;
+			margin-right:2%;
+			float:left;
+		}
+	}
+	li:last-child {
+		margin-right:0;
+	}
+}
+
 figure {
 	display:block;
 	width:100%;
@@ -361,6 +466,9 @@ figure {
 	max-width:300px;
 	margin:0 auto $baseline;
 	text-align:center;
+	img {
+		border-radius:50px;
+	}
 }
 
 a:link.twitter , a:visited.twitter { color:#00acee; }

@@ -21,7 +21,10 @@ excerpt: A designer &amp; developer, currently writing a Ph.D.
 		<p>Need a new logo? Website getting dated? Can't find software to do as you wish?</p>
 		<p>With a background in Software Engineering and an eye for design, from the conception of your ideas through to maintaining them in the big bad world, I can help.</p>
 		<p>Let's have a chat about your next project.</p>
-
+		<ul class="further-information">
+			<li><a href="/about" class="call-to-action">About Me</a></li>
+			<li><a href="mailto:adam@ajclarkson.co.uk" class="call-to-action">Email Me</a></li>
+		</ul>
 	</section>
 
 </div>
