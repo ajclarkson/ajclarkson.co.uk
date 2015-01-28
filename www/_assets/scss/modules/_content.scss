@@ -288,9 +288,13 @@ a:hover.call-to-action, a:active.call-to-action {
 		padding:$baseline 0;
 
 		@media (min-width:500px) {
-		width:100%;
-		margin-left:0;
-	}
+			width:100%;
+			margin-left:0;
+		}
+		.dark-mode & {
+			border-color:$dark-complement-invert;
+			background:$light-complement-invert;
+		}
 	}
 	img {
 		display:block;
