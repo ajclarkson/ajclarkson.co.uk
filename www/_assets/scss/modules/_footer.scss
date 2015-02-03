@@ -29,9 +29,17 @@
 	margin:0 auto $baseline;
 	width:100%;
 	display:block;
+	padding-left:0;
 	li {
 		display:inline-block;
 		margin-right:$baseline;
+
+		img {
+			border:none;
+		}
+		a {
+			border:none;
+		}
 	}
 	li:last-child {
 		margin-right:0;
