@@ -1,5 +1,4 @@
 //= require picturefill
-//= require html5shiv
 //= require dark-mode
 //= require analytics
 //= require typed
@@ -47,6 +46,7 @@ $(function(){
 
 $(document).ready(function(){
   $('.work_slider').slick({
+      slide: '.slide',
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,

@@ -192,9 +192,9 @@ a:hover.call-to-action, a:active.call-to-action {
 	margin-top:0;
 	width:100%;
 	padding-bottom:-$baseline;
-	div {
+	.slide {
 		width:100%;
-		span {
+		.slide-image {
 			display:block;
 			max-width:700px;
 			width:80%;
