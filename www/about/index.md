@@ -9,7 +9,7 @@ id: about
 
 You can usually find me pushing pixels around the web, smudging pencil sketches, or worrying about gaining an extra millisecond of efficiency out of some code. When I do manage to break free from my computer, I get out cycling or disappear into my kitchen and brew up some craft beer.
 
-I've just submitted my Ph.D. in Computer Science, proposing a new way of delivering content into Augmented Reality environments &mdash; inspired by my focus on content in all aspects of design and development. 
+I'm currently working for <a href="http://www.ocadotechnology.com">Ocado Technology</a>a>, as a developer with the non-food team. I've also recently submitted my Ph.D. in Computer Science, proposing a new way of delivering content into Augmented Reality environments &mdash; inspired by my focus on content in all aspects of design and development. 
 
 ## Social Lurkings
 

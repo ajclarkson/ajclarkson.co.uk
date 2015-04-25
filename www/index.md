@@ -18,9 +18,10 @@ excerpt: A designer &amp; developer, currently writing a Ph.D.
 <div id='services' class="scrollme">
 	<section id="skills-intro" class="animateme" data-when="enter" data-from="0.5" data-to="0" data-opacity="0.2" data-translatex="0" data-translatey="40" >
 		
-		<p>Need a new logo? Website getting dated? Can't find software to do as you wish?</p>
-		<p>With a background in Software Engineering and an eye for design, from the conception of your ideas through to maintaining them in the big bad world, I can help.</p>
-		<p>Let's have a chat about your next project.</p>
+	<p>I'm passionate about Front End Design &amp; Development, and with an academic background in Software Engineering, I'm quite at home doing backend application development too.</p>
+
+	<p>From the conception of an idea, right through to maintaining it in the big bad world, I enjoy taking a problem solving approach to the full software lifecycle.</p>
+	
 		<ul class="further-information">
 			<li><a href="/about" class="call-to-action">About Me</a></li>
 			<li><a href="mailto:adam@ajclarkson.co.uk" class="call-to-action">Email Me</a></li>
