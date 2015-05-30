@@ -13,7 +13,7 @@ I'm currently working for <a href="http://www.ocadotechnology.com">Ocado Technol
 
 ## Social Lurkings
 
-I can also be found in the usual dark corners of the internet, where if you're interested you can take a look at my <a href="http://twitter.com/ajclarkson" class="twitter">opinions</a>, <a href="http://instagram.com/ajclarkson" class="instagram">photos</a>, <a href="http://dribbble.com/ajclarkson" class="dribbble">designs</a>, <a href="http://github.com/ajclarkson" class="github">code</a>, and <strike>laziness</strike> <a href="http://app.strava.com/athletes/148024" class="strava">cycling activity</a>.
+I can be found in the usual dark corners of the internet, where if you're interested you can take a look at my <a href="http://twitter.com/ajclarkson" class="twitter">opinions</a>, <a href="http://instagram.com/ajclarkson" class="instagram">photos</a>, <a href="http://dribbble.com/ajclarkson" class="dribbble">designs</a>, <a href="http://github.com/ajclarkson" class="github">code</a>, and <strike>laziness</strike> <a href="http://app.strava.com/athletes/148024" class="strava">cycling activity</a>.
 
 If you want to talk to me about my work, your work, or any project ideas you might have feel free to email me: [adam@ajclarkson.co.uk](mailto:adam@ajclarkson.co.uk).
 
