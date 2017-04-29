@@ -1,35 +1,34 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "ajclarkson",
+  "description": "The source code for my homepage",
+  "version": "2.0.0",
+  "author": "Adam Clarkson",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
+    "url": "https://gitlab.com/ajclarkson/ajclarkson/issues"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.6",
-    "gatsby": "^0.12.41",
-    "lodash": "^4.17.2",
-    "moment": "^2.18.1",
-    "react-addons-shallow-compare": "^15.5.2",
+    "bootstrap": "4.0.0-alpha.6",
+    "lodash": "4.17.2",
+    "moment": "2.18.1",
+    "react-addons-shallow-compare": "15.5.2",
     "react-bootstrap": "0.31.0",
-    "react-dates": "^4.1.0",
-    "react-helmet": "^3.2.2",
-    "underscore.string": "^3.2.3"
+    "react-dates": "4.1.0",
+    "react-helmet": "3.2.2",
+    "underscore.string": "3.2.3"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^2.0.0",
-    "gh-pages": "^0.12.0"
+    "gatsby": "^0.12.41",
+    "cz-conventional-changelog": "^2.0.0"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://gitlab.com/ajclarkson/ajclarkson#readme",
   "keywords": [
-    "gatsby"
+    "ajclarkson", "gatsby", "homepage"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://gitlab.com/ajclarkson/ajclarkson.git"
   },
   "scripts": {
     "dev": "gatsby develop",
