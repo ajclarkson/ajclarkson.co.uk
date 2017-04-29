@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { Container } from 'react-responsive-grid'
+
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
+
+require('bootstrap/dist/css/bootstrap-grid.min.css');
 
 class Template extends React.Component {
   render () {
@@ -26,10 +28,10 @@ class Template extends React.Component {
       )
     }
     return (
-      <Container>
+      <div className="container">
         {header}
         {children}
-      </Container>
+      </div>
     )
   }
 }
