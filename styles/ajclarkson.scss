@@ -1,5 +1,5 @@
 $base-font-stack: "freight-sans-pro",sans-serif;
-$heading-font-stack: "franklin-gothic-urw",sans-serif;
+$heading-font-stack: "futura",sans-serif;
 $code-font-stack: "source-code-pro",sans-serif;
 
 $color-primary: #E57554;
@@ -75,7 +75,29 @@ bottom:0;
 
 }
 
-.mac {
-  width:100px;
-  height:100px;
+.page-content {
+  margin-top:1.5em;
+}
+/// menu
+.menu {
+  position: fixed;
+}
+.menu__title {
+  padding-top:1em;
+  font-size:1em;
+}
+
+.page-title {
+  border-bottom: 1px solid $color-tertiary;
+  padding-bottom:0.5em;
+  margin-bottom: 1em;
+}
+
+.post-archive {
+  list-style-type:none;
+  padding:0;
+}
+
+.post-archive__item {
+  margin-bottom:1.5em;
 }

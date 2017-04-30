@@ -10,26 +10,33 @@ require('font-awesome/css/font-awesome.min.css');
 class Template extends React.Component {
   render () {
     const { location, children } = this.props
-    let header
+    let content
     if (location.pathname === prefixLink('/')) {
-      header = (<div></div>)
+      content = (<div>{children}</div>)
     } else {
-      header = (
-        <header className="container">
-        <div className="name-tag">
-          <h1 className="name-tag__title">
-            <Link className="name-tag__link" to={prefixLink('/')} >
-              A
-            </Link>
-          </h1>
+      content = (
+        <div className="container">
+          <div className="row">
+            <div className="col-md-2">
+              <div className="menu">
+              <h1 className="menu__title">
+                <Link className="" to={prefixLink('/')} >
+                  AJCLARKSON
+                </Link>
+              </h1>
+              </div>
+            </div>
+            <div className="col-md-10">
+              {children}
+            </div>
+          </div>
         </div>
-        </header>
+
       )
     }
     return (
-      <div>
-        {header}
-        {children}
+      <div className="page-content">
+        {content}
       </div>
     )
   }
