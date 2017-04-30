@@ -8,12 +8,14 @@
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
+    "font-awesome": "4.7.0",
     "lodash": "4.17.2",
     "moment": "2.18.1",
     "react-addons-shallow-compare": "15.5.2",
     "react-bootstrap": "0.31.0",
     "react-dates": "4.1.0",
     "react-helmet": "3.2.2",
+    "react-typekit": "1.0.8",
     "underscore.string": "3.2.3"
   },
   "devDependencies": {
@@ -22,7 +24,9 @@
   },
   "homepage": "https://gitlab.com/ajclarkson/ajclarkson#readme",
   "keywords": [
-    "ajclarkson", "gatsby", "homepage"
+    "ajclarkson",
+    "gatsby",
+    "homepage"
   ],
   "license": "MIT",
   "main": "n/a",

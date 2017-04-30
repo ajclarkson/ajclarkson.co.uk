@@ -5,7 +5,9 @@ import get from 'lodash/get'
 import { prefixLink } from 'gatsby-helpers'
 import Helmet from "react-helmet"
 import { config } from 'config'
+import { Nav, NavItem, Tabs, Tab } from 'react-bootstrap'
 import include from 'underscore.string/include'
+
 
 class BlogIndex extends React.Component {
   render () {
@@ -24,17 +26,24 @@ class BlogIndex extends React.Component {
             {"name": "keywords", "content": "blog, articles"},
           ]}
         />
+        <div className="slide-wrapper">
+          <div className="slide">
+          <div className="container">
+            <div className="masthead">
 
-        <ul>
-          {visiblePages.map((page) => (
-              <li key={page.path}>
-                <Link to={prefixLink(page.path)}>
-                    {get(page, 'data.title', page.path)}
-                </Link>
-              </li>
-          ))}
-        </ul>
-      </div>
+            <div className="masthead__introduction">
+              I&#39;m Adam, a developer with the amazing people at <a href="http://ocadotechnology.com">Ocado Technology</a>, focusing on devops and making releases awesome.
+            </div>
+            <div className="masthead__blurb">
+              <p>I&#39;m a bit of a coffee nerd, and I spend more time hacking this site around than actually <a>writing blog posts</a>. Want to <a>read more</a>?</p>
+            </div>
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+
     )
   }
 }

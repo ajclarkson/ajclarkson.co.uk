@@ -1,5 +1,6 @@
 import React from 'react'
-import Helmet from "react-helmet"
+import Helmet from 'react-helmet'
+import Typekit from 'react-typekit'
 import { prefixLink } from 'gatsby-helpers'
 
 const BUILD_TIME = new Date().getTime()
@@ -35,6 +36,7 @@ module.exports = React.createClass({
         <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: body }} />
           <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
+          <Typekit kitId='ahk4squ' />
         </body>
       </html>
     )

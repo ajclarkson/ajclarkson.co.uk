@@ -1,34 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router'
-
+import Typekit from 'react-typekit'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
 
 require('bootstrap/dist/css/bootstrap-grid.min.css');
+require('font-awesome/css/font-awesome.min.css');
 
 class Template extends React.Component {
   render () {
     const { location, children } = this.props
     let header
     if (location.pathname === prefixLink('/')) {
-      header = (
-        <h1>
-          <Link to={prefixLink('/')} >
-            {config.blogTitle}
-          </Link>
-        </h1>
-      )
+      header = (<div></div>)
     } else {
       header = (
-        <h3>
-          <Link to={prefixLink('/')}>
-            {config.blogTitle}
-          </Link>
-        </h3>
+        <header className="container">
+        <div className="name-tag">
+          <h1 className="name-tag__title">
+            <Link className="name-tag__link" to={prefixLink('/')} >
+              A
+            </Link>
+          </h1>
+        </div>
+        </header>
       )
     }
     return (
-      <div className="container">
+      <div>
         {header}
         {children}
       </div>

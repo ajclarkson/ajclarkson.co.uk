@@ -1,3 +1,81 @@
-body {
+$base-font-stack: "freight-sans-pro",sans-serif;
+$heading-font-stack: "franklin-gothic-urw",sans-serif;
+$code-font-stack: "source-code-pro",sans-serif;
 
+$color-primary: #E57554;
+$color-secondary: #00B2AE;
+$color-tertiary: #262e32;
+$color-white: #FFFFFF;
+
+html {
+  font-size:18px;
+  margin:0;
+}
+
+body {
+  font-family: $base-font-stack;
+  margin:0;
+
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-stack;
+}
+
+a, a:visited {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+//masthead Component
+.masthead {
+  max-width:700px;
+  line-height:1.5;
+}
+
+.masthead__introduction {
+  margin:0;
+  font-size:1.5em;
+
+
+  padding-bottom:1.5em;
+}
+
+.masthead__blurb {
+  font-size:1.25em;
+  border-top:1px solid $color-white;
+  padding-top:1.5em;
+}
+
+//////////
+.slide-wrapper {
+  display: block;
+background: #FFF;
+overflow: hidden;
+position:absolute;
+left:0;
+right:0;
+top:0;
+bottom:0;
+}
+.slide {
+  width: 100%;
+    height: 100%;
+    background: $color-tertiary;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    z-index: 0;
+    color: $color-white;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.mac {
+  width:100px;
+  height:100px;
 }
