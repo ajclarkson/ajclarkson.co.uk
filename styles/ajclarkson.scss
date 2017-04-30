@@ -6,6 +6,8 @@ $color-primary: #E57554;
 $color-secondary: #00B2AE;
 $color-tertiary: #262e32;
 $color-white: #FFFFFF;
+$color-gray: #dddddd;
+$color-mid-gray: #aaaaaa;
 
 html {
   font-size:18px;
@@ -15,8 +17,7 @@ html {
 body {
   font-family: $base-font-stack;
   margin:0;
-
-
+  line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -100,4 +101,33 @@ bottom:0;
 
 .post-archive__item {
   margin-bottom:1.5em;
+}
+
+//code
+figure {
+  margin-left:0;
+}
+figcaption {
+  color: $color-mid-gray;
+  font-size:0.875em;
+  margin-top:0.25em;
+}
+code {
+
+}
+pre {
+  font-family: $code-font-stack;
+  background: $color-tertiary;
+  color: $color-gray;
+  overflow: auto;
+  padding:0.5em;
+  margin:0;
+  border-radius: 5px;
+}
+
+blockquote {
+  border-left: 2px solid $color-mid-gray;
+  margin-left:0;
+  padding-left: 1.5em;
+  color: $color-mid-gray;
 }

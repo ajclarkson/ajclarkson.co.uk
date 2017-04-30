@@ -14,6 +14,7 @@
     "react-addons-shallow-compare": "15.5.2",
     "react-bootstrap": "0.31.0",
     "react-dates": "4.1.0",
+    "react-disqus-thread": "0.4.0",
     "react-helmet": "3.2.2",
     "react-typekit": "1.0.8",
     "underscore.string": "3.2.3"

@@ -26,7 +26,7 @@ class Template extends React.Component {
               </h1>
               </div>
             </div>
-            <div className="col-md-10">
+            <div className="col-md-8">
               {children}
             </div>
           </div>

@@ -3,7 +3,7 @@ import moment from 'moment'
 import Helmet from "react-helmet"
 import ReadNext from '../components/ReadNext'
 import { config } from 'config'
-
+import ReactDisqusThread from 'react-disqus-thread'
 import '../styles/ajclarkson.scss'
 
 class MarkdownWrapper extends React.Component {
@@ -18,12 +18,13 @@ class MarkdownWrapper extends React.Component {
         />
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
-        <em>
-          Posted {moment(post.date).format('MMMM D, YYYY')}
-        </em>
-        <hr />
         <ReadNext post={post} pages={route.pages} />
 
+        <ReactDisqusThread
+				    shortname="ajclarkson"
+		        identifier={route.page.path}
+            title={post.title}
+            url={`http://ajclarkson.co.uk/${route.page.path}`} />
       </div>
     )
   }
