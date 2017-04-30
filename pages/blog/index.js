@@ -14,7 +14,7 @@ class BlogArchive extends React.Component {
     const sortedPages = sortBy(this.props.route.pages, 'data.date').reverse();
     // Posts are those with md extension that are not 404 pages OR have a date (meaning they're a react component post).
     const oldPosts = sortedPages.filter(page => (
-      get(page, 'file.ext') === 'md' && get(page, 'data.date') < new Date('2017-01-01') && !include(page.path, '/404') || get(page, 'data.date')
+      get(page, 'file.ext') === 'md' && !include(page.path, '/404') || get(page, 'data.date')
     ))
 
     return (
@@ -39,6 +39,5 @@ class BlogArchive extends React.Component {
 export default BlogArchive
 
 exports.data = {
-  title: "A post written in Javascript!",
-  date: "2016-12-09T12:40:32.169Z",
+  title: "Blog Archive",
 }

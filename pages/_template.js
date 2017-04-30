@@ -23,6 +23,14 @@ class Template extends React.Component {
                 <Link className="" to={prefixLink('/')} >
                   AJCLARKSON
                 </Link>
+                <ul className="sub-menu">
+                  <li className="sub-menu__item">
+                    <Link to={prefixLink('/blog/')}> Blog</Link>
+                  </li>
+                  <li className="sub-menu__item">
+                    <Link to={prefixLink('/about/')}> About</Link>
+                  </li>
+                </ul>
               </h1>
               </div>
             </div>

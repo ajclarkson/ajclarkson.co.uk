@@ -30,7 +30,7 @@ class BlogIndex extends React.Component {
               I&#39;m Adam, a developer with the amazing people at <a href="http://ocadotechnology.com">Ocado Technology</a>, focusing on devops and making releases awesome.
             </div>
             <div className="masthead__blurb">
-              <p>I&#39;m a bit of a coffee nerd, and I spend more time hacking this site around than actually <Link to={prefixLink('/blog/')}>writing blog posts</Link>. Want to <a>read more</a>?</p>
+              <p>I&#39;m a bit of a coffee nerd, and I spend more time hacking this site around than actually <Link to={prefixLink('/blog/')}>writing blog posts</Link>. Want to <Link to={prefixLink('/about/')}>read more</Link>?</p>
             </div>
             </div>
             </div>
