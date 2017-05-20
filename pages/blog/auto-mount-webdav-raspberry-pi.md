@@ -17,51 +17,36 @@ Both of my RaspberryPi's run without any input devices attached to them, so I do
 
 In order to access a webDAV share as a filesystem, you'll need to install the davfs2 package. It's in the repositories by default, so this step is easy:
 
-<figure>
-<pre>
-<code class="language-bash">sudo apt-get install davfs2
-</code></pre>
-<figcaption>Code Listing: Install davfs2</figcaption>
-</figure>
+```bash
+sudo apt-get install davfs2
+```
 
 davfs2 has a quirk if you are using Debian (or a Debian based variant), in which it doesn't have the correct permissions to run as a non-root user. You may see the error: `/sbin/mount.davfs: program is not setuid root` This can be fixed using one of the following commands:
 
-<figure>
-<pre>
-<code class="language-bash">sudo dpkg-reconfigure davfs2
+```bash
+sudo dpkg-reconfigure davfs2
 # or a more manual approach
 sudo chmod u+s /usr/sbin/mount.davfs
-</code></pre>
-<figcaption>Code Listing: Fix davfs2 setuid root error</figcaption>
-</figure>
+```
 
 Now add a line to your `/etc/fstab` file to make mounting easier. Note we are specifying `noauto` here, we will perform the automatic mounting step later. `/etc/fstab` is often run **before** network initialisation, and therefore an automatic mount here will fail.
 
-<figure>
-<pre>
-<code class="language-bash">https://cloud.example.com/webDAV/URL 	/media/cloud 	davfs 	noauto,user		0		0
-</code></pre>
-<figcaption>Code Listing: /etc/fstab addition</figcaption>
-</figure>
+```bash
+https://cloud.example.com/webDAV/URL 	/media/cloud 	davfs 	noauto,user		0		0
+```
 
 Add your user to the correct group:
 
-<figure>
-<pre>
-<code class="language-bash">usermod -a -G davfs2 <username>
-</code></pre>
-<figcaption>Code Listing: Add user to dav2fs group</figcaption>
-</figure>
+```bash
+usermod -a -G davfs2 <username>
+```
 
 Now you should be able to mount your share and work with your files. You will be prompted for your username and password, and if you have set up ownCloud with a self-signed certificate, then you will be asked to confirm that you trust it.
 
-<figure>
-<pre>
-<code class="language-bash">mount /media/cloud
+```bash
+mount /media/cloud
 umount /media/cloud
-</code></pre>
-<figcaption>Code Listing: Test webDAV share mounting</figcaption>
-</figure>
+```
 
 ### Storing Credentials
 
@@ -69,14 +54,11 @@ It's pretty inconvenient to have to type in your username / password and accept 
 
 davfs2 makes use of the `/home/user/.davfs2/secrets` file for storing such credentials. You simply need to create this with the correct permissions and then provide the host, username and password details.
 
-<figure>
-<pre>
-<code class="language-bash">touch /home/user/.dav2fs/secrets
+```bash
+touch /home/user/.dav2fs/secrets
 chmod 0600 /home/user/.dav2fs/secrets
-echo "https://cloud.example.com/webDAV/URL <username>	<password>" > /home/user/.dav2fs/secrets
-</code></pre>
-<figcaption>Code Listing: Creating a secrets file for login</figcaption>
-</figure>
+echo "https://cloud.example.com/webDAV/URL <username>  <password>" > /home/user/.dav2fs/secrets
+```
 
 After that step, you will be able to mount your share without providing a username and password, but you will still be asked if you trust your self-signed certificate (if you are using one). If that's the case, let's take care of it now.
 
@@ -84,34 +66,25 @@ After that step, you will be able to mount your share without providing a userna
 
 If you created a self-signed certificate for ownCloud, then you should have the `server.crt` &amp; `server.key` on your server. We need to convert the `server.crt` into a `.pem` certificate that will work with davfs2:
 
-<figure>
-<pre>
-<code class="language-bash">openssl x509 -in server.crt -out server.pem -outform PEM
-</code></pre>
-<figcaption>Code Listing: Convert server certificate format</figcaption>
-</figure>
+```bash
+openssl x509 -in server.crt -out server.pem -outform PEM
+```
 
 You'll need to store the new `server.pem` that we just created in `/home/user/.davfs2/certs/server.pem` (you may have to create the certs folder). Then you need to make davfs2 aware of it's existence, which is done in the config file `/home/user/.davfs2/davfs2.conf`.
 
-<figure>
-<pre>
-<code class="language-bash"># find the line which starts:
+```bash
+# find the line which starts:
 # servercert
 # and change it to:
 servercert	server.pem
-</code></pre>
-<figcaption>Code Listing: modify davfs2.conf</figcaption>
-</figure>
+```
 
 Once you have done that, you should be able to mount your webDAV share without any user input being required. Give it a test:
 
-<figure>
-<pre>
-<code class="language-bash">mount /media/cloud
+```bash
+mount /media/cloud
 umount /media/cloud
-</code></pre>
-<figcaption>Code Listing: Test webDAV share mounting</figcaption>
-</figure>
+```
 
 ### Automatic Share Mounting
 
@@ -121,13 +94,10 @@ Because we can't mount a webDAV share until after the network connection has bee
 
 Your `/etc/rc.local` file is executed after boot, and so is an excellent place to provide the functionality we are looking for, so simply add:
 
-<figure>
-<pre>
-<code class="language-bash">mount -a
+```bash
+mount -a
 # make sure this command is above the exit 0 command
-</code></pre>
-<figcaption>Code Listing: /etc/rc.local addition for auto-mounting</figcaption>
-</figure>
+```
 
 Assuming you have a network connection when you boot, you should now have your ownCloud webDAV share mounted automatically. Wasn't that hard, was it?
 

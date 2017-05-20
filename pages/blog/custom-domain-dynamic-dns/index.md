@@ -50,15 +50,12 @@ Now that EntryDNS is responsible for your DNS we can start to get dynamic with i
 
 EntryDNS allow you to update your domain by using one of the following two API calls:
 
-<figure>
-<pre><code class="language-bash">
+```bash
 # Providing IP address to update
 curl -k -X PUT -d "ip=IP" https://entrydns.net/records/modify/TOKEN
 # IP Address will be generated from request origin
 curl -k -X PUT -d "" https://entrydns.net/records/modify/TOKEN
-</code></pre>
-<figcaption>Code Listing: EntryDNS API Calls</figcaption>
-</figure>
+```
 
 By replacing `IP` and `TOKEN` where appropriate in either of those calls, your domain will be updated to point to the new IP. Dynamic DNS at it's finest. It's easy to incorporate that into a bash script or a cronjob and you are away, but if you want a slightly more advanced method of updating then read on.
 
