@@ -17,7 +17,8 @@ html {
 body {
   font-family: $base-font-stack;
   margin:0;
-  line-height: 1.5;
+  line-height: 1.75;
+  font-size:1.25em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -112,6 +113,10 @@ bottom:0;
 
 .post-archive__item {
   margin-bottom:1.5em;
+}
+
+.post-archive__post-date {
+  color: $color-mid-gray;
 }
 
 blockquote {

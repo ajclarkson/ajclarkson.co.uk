@@ -32,7 +32,7 @@ class BlogArchive extends React.Component {
       <ul className="post-archive">
         {oldPosts.map((page) => (
             <li key={page.path} className="post-archive__item">
-              <h3>{moment(get(page, 'data.date', page.path)).format('DD MMM YY')}/&nbsp;
+              <h3 className="post-archive__post-date">{moment(get(page, 'data.date', page.path)).format('DD MMM YY')}/&nbsp;
               <Link to={prefixLink(page.path)}>
                   {get(page, 'data.title', page.path)}
               </Link></h3>
