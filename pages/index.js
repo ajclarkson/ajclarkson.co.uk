@@ -17,8 +17,8 @@ class BlogIndex extends React.Component {
         <Helmet
           title={config.blogTitle}
           meta={[
-            {"name": "description", "content": "Sample blog"},
-            {"name": "keywords", "content": "blog, articles"},
+            {"name": "description", "content": "Developer with Ocado Technology, coffee nerd, ocassional blogger and cyclist"},
+            {"name": "keywords", "content": "technology, blog"},
           ]}
         />
         <div className="slide-wrapper">

@@ -5,6 +5,8 @@ import include from 'underscore.string/include'
 import React from 'react'
 import { Link } from 'react-router'
 import moment from 'moment'
+import Helmet from "react-helmet"
+import { config } from 'config'
 
 
 class BlogArchive extends React.Component {
@@ -19,6 +21,13 @@ class BlogArchive extends React.Component {
 
     return (
       <div>
+      <Helmet
+        title={"Archive | " + config.blogTitle}
+        meta={[
+          {"name": "description", "content": "Developer with Ocado Technology, coffee nerd, ocassional blogger and cyclist"},
+          {"name": "keywords", "content": "technology, blog"}
+        ]}
+      />
       <h2 className="page-title"><i className="fa fa-arrow-right "></i> Blog Archive</h2>
       <ul className="post-archive">
         {oldPosts.map((page) => (

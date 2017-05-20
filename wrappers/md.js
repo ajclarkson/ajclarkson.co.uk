@@ -15,6 +15,12 @@ class MarkdownWrapper extends React.Component {
       <div className="markdown">
         <Helmet
           title={`${post.title} | ${config.blogTitle}`}
+          meta={[
+            {"property": "og:title", "content": post.title},
+            {"property": "og:site_name", "content": config.blogTitle},
+            {"property": "og:description", "content": post.excerpt},
+            {"property": "og:url", "content": `${config.baseUrl}${route.page.path}`},
+          ]}
         />
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
@@ -24,7 +30,7 @@ class MarkdownWrapper extends React.Component {
 				    shortname="ajclarkson"
 		        identifier={route.page.path}
             title={post.title}
-            url={`http://ajclarkson.co.uk/${route.page.path}`} />
+            url={`${config.baseUrl}${route.page.path}`} />
       </div>
     )
   }
