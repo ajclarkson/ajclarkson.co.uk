@@ -22,15 +22,24 @@ class MarkdownWrapper extends React.Component {
             {"property": "og:url", "content": `${config.baseUrl}${route.page.path}`},
           ]}
         />
-        <h1>{post.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.body }} />
-        <ReadNext post={post} pages={route.pages} />
+        <div className="masthead masthead--page">
+          <div className="container">
+            <h1 className="post-title">{post.title}</h1>
+            <div className="post-excerpt">{post.excerpt}</div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="col-md-8 offset-md-2">
+          <div dangerouslySetInnerHTML={{ __html: post.body }} />
+          <ReadNext post={post} pages={route.pages} />
 
-        <ReactDisqusThread
+          <ReactDisqusThread
 				    shortname="ajclarkson"
 		        identifier={route.page.path}
             title={post.title}
             url={`${config.baseUrl}${route.page.path}`} />
+          </div>
+          </div>
       </div>
     )
   }

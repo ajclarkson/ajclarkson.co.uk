@@ -9,6 +9,7 @@ $color-white: #FFFFFF;
 $color-gray: #dddddd;
 $color-mid-gray: #aaaaaa;
 $color-light-gray: #f4f4f4;
+$color-dark-gray: #222222;
 
 html {
   font-size:18px;
@@ -31,14 +32,24 @@ a, a:visited {
   color: $color-primary;
   text-decoration: none;
 }
-
+a:hover, a:active {
+  color: $color-mid-gray;
+}
 //masthead Component
 .masthead {
   line-height:1.5;
   font-size:1.5em;
-  padding:5em 0;
   background: $color-light-gray;
   font-family: $heading-font-stack;
+}
+
+.masthead--home {
+  padding:4em 0;
+}
+
+.masthead--page {
+  padding-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .masthead__logo {
@@ -63,7 +74,7 @@ a, a:visited {
   margin-bottom:1em;
   background: $color-primary;
 
-  border-radius: 5px;
+  border-radius: 10px;
   text-align:center;
   display:block;
 }
@@ -75,35 +86,78 @@ a, a:visited {
   height:100%;
 }
 
-/// menu
-.menu {
-  position: fixed;
+.main-nav {
+  background: $color-light-gray;
+  font-size: 0.75em;
+  color: $color-light-gray;
 }
-.menu__title {
-  padding-top:1em;
-  font-size:1em;
+.nav-icon {
+  width:25px;
+  display:inline;
+  position:relative;
+  top: 7px;
+  margin-left:2em;
+}
+.main-nav__menu {
+
+  display:inline;
+  list-style-type:none;
+  padding:0;
+  margin:0;
+  text-transform:uppercase;
+  font-weight:bold;
+  margin-left:1em;
+
 }
 
-.sub-menu {
-  list-style-type: none;
-  padding-left:0;
-  text-align:center;
+.main-nav__item {
+  display:inline-block;
+  margin:1em 1em 1em 0;
+  padding-right:1em;
+  border-right: 3px solid $color-mid-gray;
 }
-.sub-menu__item {
-  text-transform:uppercase;
-  font-size:0.75em;
-  margin-bottom:1em;
+.main-nav__item:last-child {
+  border-right:0;
+  margin-right:0;
+}
+
+.main-nav__item--home {
+
+}
+
+.main-nav__item a {
+  color: $color-mid-gray;
+}
+
+.main-nav__item a:hover {
+  color: $color-primary;
 }
 
 .page-title {
-  border-bottom: 1px solid $color-tertiary;
+  padding-top:1em;
   padding-bottom:0.5em;
+  margin-top:0;
   margin-bottom: 1em;
+}
+
+.post-title {
+  padding-top:1em;
+  font-size:1.5em;
+  margin-top:0;
+  text-align: center;
+}
+
+.post-excerpt {
+  text-align: center;
+  font-family: $base-font-stack;
+  font-size:0.875em;
+  color: $color-mid-gray;
+  margin:2em 0 2em;
 }
 
 .post-archive {
   list-style-type:none;
-  padding:0;
+  padding:0 0 0 0;
 }
 
 .post-archive__item {
@@ -111,7 +165,8 @@ a, a:visited {
 }
 
 .post-archive__post-date {
-  color: $color-mid-gray;
+  color: $color-dark-gray;
+  display:block;
 }
 
 blockquote {

@@ -28,18 +28,26 @@ class BlogArchive extends React.Component {
           {"name": "keywords", "content": "technology, blog"}
         ]}
       />
-      <h2 className="page-title"><i className="fa fa-arrow-right "></i> Blog Archive</h2>
-      <ul className="post-archive">
-        {oldPosts.map((page) => (
-            <li key={page.path} className="post-archive__item">
-              <h3 className="post-archive__post-date">{moment(get(page, 'data.date', page.path)).format('DD MMM YY')}/&nbsp;
-              <Link to={prefixLink(page.path)}>
-                  {get(page, 'data.title', page.path)}
-              </Link></h3>
-              <div>{get (page, 'data.excerpt', page.path)}</div>
-            </li>
-        ))}
-      </ul>
+      <div className="masthead masthead--page">
+        <div className="container">
+          <h2 className="page-title"><i className="fa fa-arrow-right "></i> Blog Archive</h2>
+        </div>
+      </div>
+        <div className="container">
+          <div className="col-md-8 offset-md-2">
+          <ul className="post-archive">
+            {oldPosts.map((page) => (
+                <li key={page.path} className="post-archive__item">
+                  <h3 className="post-archive__post-date">{moment(get(page, 'data.date', page.path)).format('DD MMM YY')}/&nbsp;
+                  <Link to={prefixLink(page.path)}>
+                      {get(page, 'data.title', page.path)}
+                  </Link></h3>
+                  <div>{get (page, 'data.excerpt', page.path)}</div>
+                </li>
+            ))}
+          </ul>
+          </div>
+      </div>
       </div>
     )
   }

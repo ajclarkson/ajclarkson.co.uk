@@ -15,30 +15,23 @@ class Template extends React.Component {
       content = (<div>{children}</div>)
     } else {
       content = (
-        <div className="container">
-          <div className="row">
-            <div className="col-md-2">
-              <div className="menu">
-              <h1 className="menu__title">
-                <Link className="" to={prefixLink('/')} >
-                  AJCLARKSON
-                </Link>
-                <ul className="sub-menu">
-                  <li className="sub-menu__item">
-                    <Link to={prefixLink('/blog/')}> Blog</Link>
-                  </li>
-                  <li className="sub-menu__item">
-                    <Link to={prefixLink('/about/')}> About</Link>
-                  </li>
-                </ul>
-              </h1>
-              </div>
+          <div>
+            <div className="main-nav">
+              <img src="/logo.png" className="nav-icon" />
+              <ul className="main-nav__menu">
+              <li className="main-nav__item main-nav__item--home">
+                <Link to={prefixLink('/')}> Home</Link>
+              </li>
+                <li className="main-nav__item">
+                  <Link to={prefixLink('/blog/')}> Blog</Link>
+                </li>
+                <li className="main-nav__item">
+                  <Link to={prefixLink('/about/')}> About</Link>
+                </li>
+              </ul>
             </div>
-            <div className="col-md-8">
               {children}
-            </div>
           </div>
-        </div>
 
       )
     }

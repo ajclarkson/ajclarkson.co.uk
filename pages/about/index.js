@@ -23,7 +23,12 @@ class About extends React.Component {
           {"name": "keywords", "content": "technology, blog"}
         ]}
       />
-      <h2 className="page-title"><i className="fa fa-arrow-right "></i> About Me</h2>
+      <div className="masthead masthead--page">
+        <div className="container">
+        <h2 className="page-title"><i className="fa fa-arrow-right "></i> About Me</h2>
+        </div>
+      </div>
+      <div className="col-md-8 offset-md-2">
         <img src={ajclarkson} className="bio-image" alt="Adam Clarkson | Software Developer"/><p>I'm a developer based in the UK with <Link to="http://ocadotechnology.com">Ocado Technology</Link>, and I spend my days working on the webshop side of the new Ocado Smart Platform.
         My focus is on devops and making releases awesome. I'm a big fan of GitlabCI, and I'm currently writing lots of custom tooling to support deployments of a large scale micro service architecture
         using it. It's great because I get to work with a modern Java/Node AWS stack, and write integrations for things like slack.</p>
@@ -37,7 +42,7 @@ class About extends React.Component {
           <p>This site is written using React and webpack, built using Gatsby, and hosted on Gitlab Pages. It's a really nice flexible way of working, and closely resembles the workflow that I'd have for writing a front end app. Which is a refreshing change when it comes to static sites.</p>
           <p>It is always a work in progress, and I can't guarantee it will look the same from one visit to the next! Because all of my content is in markdown though, it means I can flip things around really easily and everything just works (in theory).</p>
 
-
+          </div>
       </div>
     )
   }

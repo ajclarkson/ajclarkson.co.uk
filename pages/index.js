@@ -21,7 +21,7 @@ class BlogIndex extends React.Component {
             {"name": "keywords", "content": "technology, blog"},
           ]}
         />
-            <div className="masthead">
+            <div className="masthead masthead--home">
               <div className="container">
                 <div className="row">
                   <div className="col-md-6 offset-md-1">
@@ -42,7 +42,7 @@ class BlogIndex extends React.Component {
 
                 </div>
 
-                <div className="col-md-4 offset-md-1">
+                <div className="col-md-2 offset-md-2">
                   <div className="home-nav  home-content">
                     <ul className="home-nav__menu">
                     <li className="home-nav__item">
