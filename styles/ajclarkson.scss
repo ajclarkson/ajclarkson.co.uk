@@ -8,6 +8,7 @@ $color-tertiary: #262e32;
 $color-white: #FFFFFF;
 $color-gray: #dddddd;
 $color-mid-gray: #aaaaaa;
+$color-light-gray: #f4f4f4;
 
 html {
   font-size:18px;
@@ -17,6 +18,7 @@ html {
 body {
   font-family: $base-font-stack;
   margin:0;
+
   line-height: 1.75;
   font-size:1.25em;
 }
@@ -32,54 +34,47 @@ a, a:visited {
 
 //masthead Component
 .masthead {
-  max-width:700px;
   line-height:1.5;
-}
-
-.masthead__introduction {
-  margin:0;
   font-size:1.5em;
-
-
-  padding-bottom:1.5em;
+  padding:5em 0;
+  background: $color-light-gray;
+  font-family: $heading-font-stack;
 }
 
-.masthead__blurb {
-  font-size:1.25em;
-  border-top:1px solid $color-white;
-  padding-top:1.5em;
+.masthead__logo {
+  padding-top:2em;
 }
 
-//////////
-.slide-wrapper {
-  display: block;
-background: #FFF;
-overflow: hidden;
-position:absolute;
-left:0;
-right:0;
-top:0;
-bottom:0;
+.home-content {
+    padding-top:3em;
 }
-.slide {
-  width: 100%;
-    height: 100%;
-    background: $color-tertiary;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 1;
-    z-index: 0;
-    color: $color-white;
-    display: flex;
-  flex-direction: column;
-  justify-content: center;
+.home-nav {
 
 }
+.home-nav__menu {
 
-.page-content {
-  margin-top:1.5em;
+  margin:0;
+  padding:0;
+  list-style-type:none;
 }
+
+.home-nav__item {
+  width:100%;
+  margin-bottom:1em;
+  background: $color-primary;
+
+  border-radius: 5px;
+  text-align:center;
+  display:block;
+}
+
+.home-nav__item a {
+  padding:1em;
+  color: $color-white;
+  display:block;
+  height:100%;
+}
+
 /// menu
 .menu {
   position: fixed;

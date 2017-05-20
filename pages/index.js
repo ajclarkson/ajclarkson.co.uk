@@ -21,21 +21,43 @@ class BlogIndex extends React.Component {
             {"name": "keywords", "content": "technology, blog"},
           ]}
         />
-        <div className="slide-wrapper">
-          <div className="slide">
-          <div className="container">
             <div className="masthead">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-6 offset-md-1">
+                      <p>I&#39;m Adam.</p>
+                      <p>A developer with the fantastic people at <a href="http://ocadotechnology.com">Ocado Technology</a>, where I focus on making releases awesome.</p>
+                  </div>
+                  <div className="col-md-4 offset-md-1">
+                    <img src="./logo.png" alt="Adam James Clarkson" className="masthead__logo"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="container">
+              <div className="row">
+                <div className="col-md-7  home-content">
 
-            <div className="masthead__introduction">
-              I&#39;m Adam, a developer with the amazing people at <a href="http://ocadotechnology.com">Ocado Technology</a>, focusing on devops and making releases awesome.
+                  <p>As well as being a software developer I&#39;m a bit of a coffee nerd, and I like to design things in my spare time. This site is usually home to my latest code experiment and I spend more time hacking it around than actually writing blog posts. That's what all good developers do though, right?</p>
+
+                </div>
+
+                <div className="col-md-4 offset-md-1">
+                  <div className="home-nav  home-content">
+                    <ul className="home-nav__menu">
+                    <li className="home-nav__item">
+                      <Link to={prefixLink('/blog/')}> Blog</Link>
+                    </li>
+                    <li className="home-nav__item">
+                      <Link to={prefixLink('/about/')}> About</Link>
+                    </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="masthead__blurb">
-              <p>I&#39;m a bit of a coffee nerd, and I spend more time hacking this site around than actually <Link to={prefixLink('/blog/')}>writing blog posts</Link>. Want to <Link to={prefixLink('/about/')}>read more</Link>?</p>
-            </div>
-            </div>
-            </div>
-          </div>
-          </div>
+
+
         </div>
 
 
