@@ -201,6 +201,27 @@ pre code {
   border-radius:10px;
 }
 
+.footer {
+  background: $color-dark-gray;
+  padding:1em 0;
+  margin-top:2em;
+  font-size:0.75em;
+  color: $color-mid-gray;
+}
+
+.social-links {
+  list-style-type: none;
+  margin:0;
+  padding:0.2em 0 0 0;
+  font-size:1.5em;
+  text-align:right;
+}
+
+.social-links__item {
+  display:inline-block;
+  margin-right:1em;
+}
+
 /*
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 */

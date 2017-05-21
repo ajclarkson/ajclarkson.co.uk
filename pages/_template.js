@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import Typekit from 'react-typekit'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
-
+import Footer from '../components/Footer';
 require('bootstrap/dist/css/bootstrap-grid.min.css');
 require('font-awesome/css/font-awesome.min.css');
 
@@ -33,11 +33,15 @@ class Template extends React.Component {
               {children}
           </div>
 
+
       )
     }
     return (
+      <div>
       <div className="page-content">
         {content}
+      </div>
+      <Footer />
       </div>
     )
   }
