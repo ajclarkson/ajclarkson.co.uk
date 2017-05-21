@@ -5,7 +5,6 @@ import include from 'underscore.string/include'
 import React from 'react'
 import { Link } from 'react-router'
 import moment from 'moment'
-import ajclarkson from './ajclarkson.jpg'
 import Helmet from 'react-helmet'
 import { config } from 'config'
 
@@ -29,7 +28,7 @@ class About extends React.Component {
         </div>
       </div>
       <div className="col-md-8 offset-md-2">
-        <img src={ajclarkson} className="bio-image" alt="Adam Clarkson | Software Developer"/><p>I'm a developer based in the UK with <Link to="http://ocadotechnology.com">Ocado Technology</Link>, and I spend my days working on the webshop side of the new Ocado Smart Platform.
+        <img src="./ajclarkson.jpg" className="bio-image" alt="Adam Clarkson | Software Developer"/><p>I'm a developer based in the UK with <Link to="http://ocadotechnology.com">Ocado Technology</Link>, and I spend my days working on the webshop side of the new Ocado Smart Platform.
         My focus is on devops and making releases awesome. I'm a big fan of GitlabCI, and I'm currently writing lots of custom tooling to support deployments of a large scale micro service architecture
         using it. It's great because I get to work with a modern Java/Node AWS stack, and write integrations for things like slack.</p>
         <p>In 2015 I submitted my Ph.D Thesis in Computer Science, on the topic of delivering content into Augmented Reality environments (if you're really keen, you can <Link to="http://etheses.dur.ac.uk/11332/">read it here</Link>).
