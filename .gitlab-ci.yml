@@ -8,8 +8,9 @@ pages:
   script:
     - npm install
     - npm run build
+    - ls -la public
   artifacts:
     paths:
-      - public
+      - public/
   only:
       - master
