@@ -10,7 +10,7 @@ class Footer extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8">
-              <p>&copy;2013&mdash;{ moment(Date.now()).format('YYYY')} Handcrafted by <Link to="/about">Adam Clarkson</Link>, powered by <Link to="https://github.com/gatsbyjs/gatsby">Gatsby</Link> and <Link to="https://gitlab.com">Gitlab</Link></p>
+              <p>&copy;2013&mdash;{ moment(Date.now()).format('YYYY')} Handcrafted by <Link to="/about/">Adam Clarkson</Link>, powered by <Link to="https://github.com/gatsbyjs/gatsby">Gatsby</Link> and <Link to="https://gitlab.com">Gitlab</Link></p>
             </div>
             <div className="col-md-4">
             <ul className="social-links">

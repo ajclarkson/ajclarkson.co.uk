@@ -15,7 +15,7 @@ class Template extends React.Component {
       content = (<div>{children}</div>)
     } else {
       content = (
-          <div>
+          <div className="page-content">
             <div className="main-nav">
               <img src="/logo.png" className="nav-icon" />
               <ul className="main-nav__menu">
@@ -38,7 +38,7 @@ class Template extends React.Component {
     }
     return (
       <div>
-      <div className="page-content">
+      <div>
         {content}
       </div>
       <Footer />

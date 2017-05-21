@@ -55,9 +55,14 @@ a:hover, a:active {
 .masthead__logo {
   padding-top:2em;
 }
-
-.home-content {
-    padding-top:3em;
+.page-content {
+  padding-bottom:4em;
+}
+.quick-links {
+  border-top: 2px solid $color-mid-gray;
+  color: $color-mid-gray;
+  padding-top:1em;
+  font-size:0.75em;
 }
 .home-nav {
 
@@ -204,7 +209,7 @@ pre code {
 .footer {
   background: $color-dark-gray;
   padding:1em 0;
-  margin-top:2em;
+
   font-size:0.75em;
   color: $color-mid-gray;
 }

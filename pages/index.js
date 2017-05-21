@@ -27,6 +27,7 @@ class BlogIndex extends React.Component {
                   <div className="col-md-6 offset-md-1">
                       <p>I&#39;m Adam.</p>
                       <p>A developer with the fantastic people at <a href="http://ocadotechnology.com">Ocado Technology</a>, where I focus on making releases awesome.</p>
+                      <p className="quick-links"><Link to="/about/">About</Link> | <Link to="/blog/">Blog</Link></p>
                   </div>
                   <div className="col-md-4 offset-md-1">
                     <img src="./logo.png" alt="Adam James Clarkson" className="masthead__logo"/>
@@ -34,28 +35,7 @@ class BlogIndex extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="container">
-              <div className="row">
-                <div className="col-md-7  home-content">
 
-                  <p>As well as being a software developer I&#39;m a bit of a coffee nerd, and I like to design things in my spare time. This site is usually home to my latest code experiment and I spend more time hacking it around than actually writing blog posts. That's what all good developers do though, right?</p>
-
-                </div>
-
-                <div className="col-md-2 offset-md-2">
-                  <div className="home-nav  home-content">
-                    <ul className="home-nav__menu">
-                    <li className="home-nav__item">
-                      <Link to={prefixLink('/blog/')}> Blog</Link>
-                    </li>
-                    <li className="home-nav__item">
-                      <Link to={prefixLink('/about/')}> About</Link>
-                    </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
 
 
         </div>
