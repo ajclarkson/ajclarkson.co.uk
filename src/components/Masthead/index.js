@@ -1,0 +1,44 @@
+import React from 'react';
+import styled from 'styled-components';
+import {Anchor, Link} from '../Base/anchor';
+
+
+const Text = styled.div`
+    font-size: 2em;
+    font-weight: 800;
+    line-height: 1.5em;
+`;
+
+const QuickLinksWrapper = styled.div`
+    margin-top:1.5em;
+    padding-top: 1.5em;
+    border-top: 1px solid #D4D7D9;
+`;
+
+const MastheadWrapper = styled.div`
+    margin-top: 6em;
+`;
+
+const Masthead = () => {
+    return(
+
+                <MastheadWrapper>
+                <Text>
+                    <p>I'm a developer with the fantastic people at <Anchor href="https://ocadotechnology.com" target="_blank">Ocado Technology</Anchor>, where I focus on making releases awesome. </p>
+                </Text>
+                </MastheadWrapper>
+    )
+};
+
+const QuickLinks = () => {
+    return (
+        <QuickLinksWrapper>
+            <Link to="/blog">Blog</Link> / <Link to="/about">About</Link> / <Anchor href="https://twitter.com/ajclarkson" target="_blank">Twitter</Anchor> / <Anchor href="https://uk.linkedin.com/in/ajclarkson" target="_blank">LinkedIn</Anchor>
+        </QuickLinksWrapper>
+    )
+};
+
+module.exports = {
+    Masthead,
+    QuickLinks
+};
