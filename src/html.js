@@ -1,0 +1,47 @@
+import React from 'react';
+import Typekit from 'react-typekit';
+
+
+const stylesStr = `
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+`;
+
+
+module.exports = class HTML extends React.Component {
+  render() {
+    const  css = (
+        <style
+          id="gatsby-inlined-css"
+          dangerouslySetInnerHTML={{ __html: stylesStr }}
+        />
+      )
+
+    return (
+      <html {...this.props.htmlAttributes}>
+        <head>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
+          {this.props.headComponents}
+          {css}
+        </head>
+        <body {...this.props.bodyAttributes}>
+          {this.props.preBodyComponents}
+          <div
+            key={`body`}
+            id="___gatsby"
+            dangerouslySetInnerHTML={{ __html: this.props.body }}
+          />
+          {this.props.postBodyComponents}
+          <Typekit kitId='ahk4squ' />
+        </body>
+      </html>
+    )
+  }
+}
