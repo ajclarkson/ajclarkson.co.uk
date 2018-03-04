@@ -54,7 +54,7 @@ const About = () => (
         <ListItem><IconAnchor href="https://twitter.com/ajclarkson" title="@ajclarkson on twitter"><FontAwesomeIcon icon={['fab', 'twitter']} /> </IconAnchor></ListItem>
         <ListItem><IconAnchor href="https://instagram.com/ajclarkson" title="ajclarkson on instagram"><FontAwesomeIcon icon={['fab', 'instagram']} /></IconAnchor></ListItem>
         <ListItem><IconAnchor href="https://uk.linkedin.com/ajclarkson" title="Adam Clarkson on LinkedIn"><FontAwesomeIcon icon={['fab', 'linkedin']} /></IconAnchor></ListItem>
-        <ListItem><IconAnchor title="ajclarkson on untappd"><FontAwesomeIcon icon={['fab', 'untappd']} /></IconAnchor></ListItem>
+        <ListItem><IconAnchor href="https://untappd.com/user/ajclarkson" title="ajclarkson on untappd"><FontAwesomeIcon icon={['fab', 'untappd']} /></IconAnchor></ListItem>
       </List>
     </Col>
   </Row>
