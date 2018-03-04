@@ -1,64 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
-import ReactDisqusThread from 'react-disqus-comments';
-import { Col, Row } from 'react-styled-flexboxgrid';
-import { H1 } from '../components/Typography';
-import { MetaSeparator, PostDate } from '../components/Post/post-meta';
-import Excerpt from '../components/Post/excerpt';
-import Post from '../components/Post/post';
+import Post from '../components/Post/';
 
 
-const ReactDisqus = styled(ReactDisqusThread)`
-    margin-top: 3em;
-
-    a {
-        color: #FF9600;
-    }
-`;
 const Template = ({ data }) => {
   const { markdownRemark: post, site: { siteMetadata: metaData } } = data;
   const {
     title, date, excerpt, path,
   } = post.frontmatter;
+
   return (
     <div>
       <Helmet title={`${title} | ${metaData.title}`} />
-      <Post>
-        <Row>
-          <Col md={8} mdOffset={2}>
-
-            <H1>{title}</H1>
-            <PostDate>
-              {date}
-            </PostDate>
-            <MetaSeparator />
-            <Excerpt>
-              {excerpt}
-            </Excerpt>
-
-          </Col>
-        </Row>
-        <Row>
-          <Col md={10} mdOffset={1}>
-            {/* eslint-disable react/no-danger */}
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            {/* eslint-enable react/no-danger */}
-          </Col>
-        </Row>
-
-        <Row>
-          <Col md={10} mdOffset={1}>
-            <ReactDisqus
-              shortname="ajclarkson"
-              title={title}
-              identifier={path}
-              url={metaData.siteUrl}
-            />
-          </Col>
-        </Row>
-      </Post>
+      <Post data={{
+ title, date, excerpt, path, html: post.html, siteUrl: metaData.siteUrl,
+}}
+      />
     </div>
 
   );

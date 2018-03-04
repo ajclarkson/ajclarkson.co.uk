@@ -4,12 +4,12 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { Col, Grid, Row } from 'react-styled-flexboxgrid';
 
 const FooterWrapper = styled.footer`
-    border-top: 1px solid #D4D7D9;
+    border-top: 1px solid ${props => props.theme.colors.secondary};
     padding: 1.5em 0;
     margin-top: 3em;
     font-size: 0.75em;
-    font-weight: 800;
-    color: #BBB;
+    font-weight: ${props => props.theme.typography.fontWeight.bold};
+    color: ${props => props.theme.colors.tertiary};
 `;
 
 const Text = styled.div`
@@ -41,4 +41,4 @@ const Footer = () => (
   </Grid>
 );
 
-module.exports = Footer;
+export default Footer;

@@ -8,12 +8,12 @@ const PostDate = styled.div`
 const MetaSeparator = styled.div`
     width: 100px;
     height: 0px;
-    border-top: 5px solid #FF9600;
+    border-top: 5px solid ${props => props.theme.colors.primary};
     margin: 1.5em 0;
 `;
 
 const MetaWrapper = styled.div`
-    border-top: 1px solid #D4D7D9;
+    border-top: 1px solid ${props => props.theme.colors.secondary};
     margin-top: 3em;
     font-size: 0.75em;
 `;
