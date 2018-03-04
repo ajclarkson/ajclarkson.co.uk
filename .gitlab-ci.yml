@@ -1,16 +1,37 @@
-image: mhart/alpine-node:6.10.3
+image: node:8.9.4
 
 stages:
+  - install
+  - test
+  - gatsby-build
   - deploy
+
+install:
+  stage: install
+  script: npm install
+  artifacts:
+    paths:
+    - node_modules/
+
+lint:
+  stage: test
+  script: npm run lint
+
+gatsby-build:
+  stage: gatsby-build
+  script: npm run build
+  artifacts:
+    paths:
+    - public/
 
 pages:
   stage: deploy
   script:
-    - npm install
-    - npm run build
     - ls -la public
   artifacts:
     paths:
       - public/
   only:
       - master
+  dependencies:
+  - gatsby-build
