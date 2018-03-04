@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col, Row } from 'react-styled-flexboxgrid';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Post from '../components/Post/';
@@ -11,13 +12,15 @@ const Template = ({ data }) => {
   } = post.frontmatter;
 
   return (
-    <div>
-      <Helmet title={`${title} | ${metaData.title}`} />
-      <Post data={{
- title, date, excerpt, path, html: post.html, siteUrl: metaData.siteUrl,
-}}
-      />
-    </div>
+    <Row>
+      <Col xs={10} xsOffset={1} md={8} mdOffset={2}>
+        <Helmet title={`${title} | ${metaData.title}`} />
+        <Post data={{
+          title, date, excerpt, path, html: post.html, siteUrl: metaData.siteUrl,
+        }}
+        />
+      </Col>
+    </Row>
 
   );
 };

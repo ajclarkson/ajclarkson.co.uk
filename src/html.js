@@ -2,9 +2,20 @@ import React from 'react';
 import Typekit from 'react-typekit';
 
 const stylesStr = `
-    html, body {
+    html {
         margin: 0;
         padding: 0;
+        font-size:16px;
+    }
+    
+    body {
+        font-size: 16px;
+    }
+    
+    @media screen and (max-width: 48em) {
+        body {
+            font-size: 10px;
+        }
     }
 `;
 
@@ -20,10 +31,7 @@ const HTML = (props) => {
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {props.headComponents}
         {css}
       </head>

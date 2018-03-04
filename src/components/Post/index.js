@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Col, Row } from 'react-styled-flexboxgrid';
 import ReactDisqusThread from 'react-disqus-comments';
 import { MetaSeparator, PostDate } from './post-meta';
 import { H1 } from '../Typography';
@@ -26,37 +25,26 @@ const Post = ({ data }) => {
   } = data;
   return (
     <PostWrapper>
-      <Row>
-        <Col md={8} mdOffset={2}>
-          <H1>{title}</H1>
-          <PostDate>
-            {date}
-          </PostDate>
-          <MetaSeparator />
-          <Excerpt>
-            {excerpt}
-          </Excerpt>
+      <H1>{title}</H1>
+      <PostDate>
+        {date}
+      </PostDate>
+      <MetaSeparator />
+      <Excerpt>
+        {excerpt}
+      </Excerpt>
 
-        </Col>
-      </Row>
-      <Row>
-        <Col md={10} mdOffset={1}>
-          {/* eslint-disable react/no-danger */}
-          <PostContent dangerouslySetInnerHTML={{ __html: html }} />
-          {/* eslint-enable react/no-danger */}
-        </Col>
-      </Row>
+      {/* eslint-disable react/no-danger */}
+      <PostContent dangerouslySetInnerHTML={{ __html: html }} />
+      {/* eslint-enable react/no-danger */}
 
-      <Row>
-        <Col md={10} mdOffset={1}>
-          <ReactDisqus
-            shortname="ajclarkson"
-            title={title}
-            identifier={path}
-            url={siteUrl}
-          />
-        </Col>
-      </Row>
+      <ReactDisqus
+        shortname="ajclarkson"
+        title={title}
+        identifier={path}
+        url={siteUrl}
+      />
+
     </PostWrapper>
   );
 };
