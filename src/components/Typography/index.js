@@ -7,9 +7,9 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
     font-size: 2.5em;
-`
+`;
 
 module.exports = {
-    H1,
-    H2
+  H1,
+  H2,
 };

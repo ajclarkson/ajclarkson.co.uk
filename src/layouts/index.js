@@ -1,41 +1,44 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Grid } from 'react-styled-flexboxgrid';
 import Base from '../components/Base';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import {Grid} from 'react-styled-flexboxgrid';
 
-require("prismjs/themes/prism-tomorrow.css");
 require('../components/Typography/font-awesome-library');
+// Load Prism styles (provided by Gatsby)
+require('prismjs/themes/prism-tomorrow.css'); // eslint-disable-line import/no-extraneous-dependencies
 
-class Template extends React.Component {
-  render() {
-    const { children, location } = this.props;
 
-    const header = (
-          <Header />
-    );
+const Template = (props) => {
+  const { children, location } = props;
+  const header = (
+    <Header />
+  );
 
-    let footer;
-    if ( location.pathname !== '/') {
-      footer = (<Footer />)
-    }
-
-    return (
-      <Base>
-        {header}
-          <Grid>
-          {children()}
-          </Grid>
-          {footer}
-      </Base>
-    )
+  let footer;
+  if (location.pathname !== '/') {
+    footer = (<Footer />);
   }
-}
+
+  return (
+    <Base>
+      {header}
+      <Grid>
+        {children()}
+      </Grid>
+      {footer}
+    </Base>
+  );
+};
 
 Template.propTypes = {
-  children: React.PropTypes.func,
-  location: React.PropTypes.object,
-  route: React.PropTypes.object,
-}
+  children: PropTypes.func.isRequired,
+  location: PropTypes.shape({
+    action: PropTypes.string,
+    pathname: PropTypes.string,
+    key: PropTypes.string,
+  }).isRequired,
+};
 
-export default Template
+export default Template;

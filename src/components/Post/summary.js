@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {Link} from '../Base/anchor';
+import { Link } from '../Base/anchor';
 
 
 const SummaryWrapper = styled.div`
@@ -27,24 +28,33 @@ const PostTitle = styled.h3`
 `;
 
 
-const Summary = ({data}) => {
-    const { date, title, excerpt, path } = data;
-    return (
+const Summary = ({ data }) => {
+  const {
+    date, title, excerpt, path,
+  } = data;
+  return (
     <SummaryWrapper>
-        <PostTitle>
-            <Link to={path}>{title}</Link>
-            <Date>
-                {date}
-            </Date>
-        </PostTitle>
+      <PostTitle>
+        <Link to={path}>{title}</Link>
+        <Date>
+          {date}
+        </Date>
+      </PostTitle>
 
-        <p>{excerpt}</p>
-
-
+      <p>{excerpt}</p>
 
 
-        </SummaryWrapper>
-    )
+    </SummaryWrapper>
+  );
+};
+
+Summary.propTypes = {
+  data: PropTypes.shape({
+    date: PropTypes.string,
+    title: PropTypes.string,
+    path: PropTypes.string,
+    excerpt: PropTypes.string,
+  }).isRequired,
 };
 
 module.exports = Summary;

@@ -22,7 +22,7 @@ const Link = styled(gatsbyLink)`
 `;
 
 module.exports = {
-    linkStyles,
-    Anchor,
-    Link
+  linkStyles,
+  Anchor,
+  Link,
 };

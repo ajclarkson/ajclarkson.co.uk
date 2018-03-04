@@ -1,0 +1,18 @@
+{
+  "extends": [ "airbnb" ],
+  "rules": {
+    "react/jsx-filename-extension": [0, { "extensions": [".js"] }],
+    "react/prop-types": [2, { "ignore": [ "htmlAttributes", "headComponents", "bodyAttributes", "preBodyComponents", "body", "postBodyComponents"] }], //ignore gatsby core object prop types
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ]
+
+  },
+  "settings": {
+    "import/core-modules": ["react", "prop-types", "config"]
+  }
+}
