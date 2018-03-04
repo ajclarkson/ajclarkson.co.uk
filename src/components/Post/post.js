@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {linkStyles} from '../Base/anchor';
+import { linkStyles } from '../Base/anchor';
 
 const Post = styled.div`
  

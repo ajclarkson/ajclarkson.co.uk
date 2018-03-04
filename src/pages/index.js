@@ -1,27 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import {Col, Row} from 'react-styled-flexboxgrid';
-import {Masthead, QuickLinks} from '../components/Masthead';
+import { Col, Row } from 'react-styled-flexboxgrid';
+import { Masthead, QuickLinks } from '../components/Masthead';
 
-const index = ({data}) => {
-    const { allMarkdownRemark: { edges: posts }, site: { siteMetadata: metaData} } = data;
-    return (
-        <Row>
-            <Col md={8}>
-            <Helmet title={metaData.title} />
-            <Masthead/>
-            <QuickLinks />
-            </Col>
-        </Row>
-    )
+const index = ({ data }) => {
+  const { site: { siteMetadata: metaData } } = data;
+  return (
+    <Row>
+      <Col md={8}>
+        <Helmet title={metaData.title} />
+        <Masthead />
+        <QuickLinks />
+      </Col>
+    </Row>
+  );
 };
 
 index.propTypes = {
-  route: React.PropTypes.object,
-}
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+    }),
+  }).isRequired,
+};
 
-export default index
+export default index;
 
+/* eslint-disable */
 export const pageQuery = graphql`
   query IndexQuery {
     site {
@@ -36,12 +44,11 @@ export const pageQuery = graphql`
           frontmatter {
             path
             date(formatString: "DD MMMM, YYYY")
-          }
-          frontmatter {
             title
           }
         }
       }
     }
   }
-`
+`;
+/* eslint-enable */

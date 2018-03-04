@@ -9,39 +9,37 @@ const stylesStr = `
     }
 `;
 
-
-module.exports = class HTML extends React.Component {
-  render() {
-    const  css = (
-        <style
-          id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{ __html: stylesStr }}
+const HTML = (props) => {
+  const css = (
+    <style
+      id="gatsby-inlined-css"
+      dangerouslySetInnerHTML={{ __html: stylesStr }} // eslint-disable-line react/no-danger
+    />
+  );
+  return (
+    <html lang="en" {...props.htmlAttributes}>
+      <head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-      )
+        {props.headComponents}
+        {css}
+      </head>
+      <body {...props.bodyAttributes}>
+        {props.preBodyComponents}
+        <div
+          key="body"
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: props.body }} // eslint-disable-line react/no-danger
+        />
+        {props.postBodyComponents}
+        <Typekit kitId="ahk4squ" />
+      </body>
+    </html>
+  );
+};
 
-    return (
-      <html {...this.props.htmlAttributes}>
-        <head>
-          <meta charSet="utf-8" />
-          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-          {this.props.headComponents}
-          {css}
-        </head>
-        <body {...this.props.bodyAttributes}>
-          {this.props.preBodyComponents}
-          <div
-            key={`body`}
-            id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
-          />
-          {this.props.postBodyComponents}
-          <Typekit kitId='ahk4squ' />
-        </body>
-      </html>
-    )
-  }
-}
+module.exports = HTML;

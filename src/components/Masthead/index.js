@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Anchor, Link} from '../Base/anchor';
+import { Anchor, Link } from '../Base/anchor';
 
 
 const Text = styled.div`
@@ -19,26 +19,22 @@ const MastheadWrapper = styled.div`
     margin-top: 6em;
 `;
 
-const Masthead = () => {
-    return(
+const Masthead = () => (
 
-                <MastheadWrapper>
-                <Text>
-                    <p>I'm a developer with the fantastic people at <Anchor href="https://ocadotechnology.com" target="_blank">Ocado Technology</Anchor>, where I focus on making releases awesome. </p>
-                </Text>
-                </MastheadWrapper>
-    )
-};
+  <MastheadWrapper>
+    <Text>
+      <p>I&apos;m a developer with the fantastic people at <Anchor href="https://ocadotechnology.com" target="_blank">Ocado Technology</Anchor>, where I focus on making releases awesome. </p>
+    </Text>
+  </MastheadWrapper>
+);
 
-const QuickLinks = () => {
-    return (
-        <QuickLinksWrapper>
-            <Link to="/blog">Blog</Link> / <Link to="/about">About</Link> / <Anchor href="https://twitter.com/ajclarkson" target="_blank">Twitter</Anchor> / <Anchor href="https://uk.linkedin.com/in/ajclarkson" target="_blank">LinkedIn</Anchor>
-        </QuickLinksWrapper>
-    )
-};
+const QuickLinks = () => (
+  <QuickLinksWrapper>
+    <Link to="/blog">Blog</Link> / <Link to="/about">About</Link> / <Anchor href="https://twitter.com/ajclarkson" target="_blank">Twitter</Anchor> / <Anchor href="https://uk.linkedin.com/in/ajclarkson" target="_blank">LinkedIn</Anchor>
+  </QuickLinksWrapper>
+);
 
 module.exports = {
-    Masthead,
-    QuickLinks
+  Masthead,
+  QuickLinks,
 };

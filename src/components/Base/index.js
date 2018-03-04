@@ -6,6 +6,6 @@ const Base = styled.div`
     margin:0;
     line-height: 1.75;
     font-size:1.5em;
-`
+`;
 
 export default Base;
