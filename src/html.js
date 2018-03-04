@@ -1,7 +1,6 @@
 import React from 'react';
 import Typekit from 'react-typekit';
 
-
 const stylesStr = `
     html, body {
         margin: 0;

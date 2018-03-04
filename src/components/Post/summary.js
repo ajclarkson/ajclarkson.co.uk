@@ -5,7 +5,7 @@ import { Link } from '../Base/anchor';
 
 
 const SummaryWrapper = styled.div`
-    border-bottom: 1px solid #D4D7D9;
+    border-bottom: 1px solid ${props => props.theme.colors.secondary};
     margin-bottom: 3em;
     padding-bottom: 1.5em;
     
@@ -18,8 +18,8 @@ const SummaryWrapper = styled.div`
 const Date = styled.div`
     font-size:0.5em;
     margin-top: 1em;
-    color: #FF9600;
-    font-weight: 800;
+    color: ${props => props.theme.colors.primary};
+    font-weight: ${props => props.theme.typography.fontWeight.bold};
     
 `;
 

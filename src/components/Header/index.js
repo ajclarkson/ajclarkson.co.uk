@@ -7,30 +7,27 @@ import logo from './logo.png';
 const HeaderContainer = styled.header`
     margin-bottom:1.5em;
     padding: 1em;
-    
 `;
 
 const Navigation = styled.nav`
     margin:0;
     text-align:right;
-    
-    
 `;
 
 const NavigationLink = styled(Link)`
     display:inline-block;
     text-decoration: none;
     text-transform: uppercase;
-    color: #BBB;
+    color: ${props => props.theme.colors.tertiary};
     padding-bottom: 0.5em;
     margin-left: 3em;
     font-size: 0.75em;
-    font-weight: 800;
+    font-weight: ${props => props.theme.typography.fontWeight.bold};
     
     
     &:hover {
-        border-bottom: 2px solid #FF9600;
-        color: #FF9600;
+        border-bottom: 2px solid ${props => props.theme.colors.primary};
+        color: ${props => props.theme.colors.primary};
         transition: color .2s;
     }
 `;
@@ -50,7 +47,6 @@ const Header = () => (
         <Col xs={11}>
           <Navigation>
             <NavigationLink to="/blog">Blog</NavigationLink>
-
             <NavigationLink to="/about">About</NavigationLink>
           </Navigation>
         </Col>

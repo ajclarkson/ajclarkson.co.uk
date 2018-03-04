@@ -5,14 +5,14 @@ import { Anchor, Link } from '../Base/anchor';
 
 const Text = styled.div`
     font-size: 2em;
-    font-weight: 800;
+    font-weight: ${props => props.theme.typography.fontWeight.bold};
     line-height: 1.5em;
 `;
 
 const QuickLinksWrapper = styled.div`
     margin-top:1.5em;
     padding-top: 1.5em;
-    border-top: 1px solid #D4D7D9;
+    border-top: 1px solid ${props => props.theme.colors.secondary};
 `;
 
 const MastheadWrapper = styled.div`
