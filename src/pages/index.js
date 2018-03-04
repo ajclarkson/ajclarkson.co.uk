@@ -8,7 +8,7 @@ const index = ({ data }) => {
   const { site: { siteMetadata: metaData } } = data;
   return (
     <Row>
-      <Col md={8}>
+      <Col xs={10} xsOffset={1} md={8}>
         <Helmet title={metaData.title} />
         <Masthead />
         <QuickLinks />

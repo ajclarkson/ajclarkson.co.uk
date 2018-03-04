@@ -33,7 +33,7 @@ const Text = styled.p``;
 
 const About = () => (
   <Row>
-    <Col md={8} mdOffset={2}>
+    <Col xs={10} xsOffset={1} md={8} mdOffset={2}>
       <Masthead />
       {/* eslint-disable max-len */}
       <Text>
@@ -48,7 +48,7 @@ const About = () => (
       {/* eslint-enable max-len */}
 
     </Col>
-    <Col md={8} mdOffset={2}>
+    <Col xs={10} xsOffset={1} md={8} mdOffset={2}>
 
       <List>
         <ListItem><IconAnchor href="https://twitter.com/ajclarkson" title="@ajclarkson on twitter"><FontAwesomeIcon icon={['fab', 'twitter']} /> </IconAnchor></ListItem>

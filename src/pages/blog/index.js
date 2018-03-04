@@ -10,7 +10,7 @@ const blogIndex = ({ data }) => {
   return (
     <Row>
       <Helmet title={metaData.title} />
-      <Col md={8} mdOffset={2}>
+      <Col xs={10} xsOffset={1} md={8} mdOffset={2}>
         <H2>Archive</H2>
         {posts.map((post) => {
                 if (post.node.path !== '/404/') {
