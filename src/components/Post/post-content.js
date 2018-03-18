@@ -36,7 +36,6 @@ const PostContent = styled.div`
         font-size:0.75em;
         
         a {
-            color: ${props => props.theme.colors.secondaryLighter};
             text-decoration: none;
             border-bottom: none;
         }
@@ -45,16 +44,16 @@ const PostContent = styled.div`
     pre {
         code {
             padding: 0;  
-             background: none;
+            background: none;
+             
+            a {
+                color: ${props => props.theme.colors.secondaryLighter};
+                text-decoration: none;
+                border-bottom: none;
+            }
         }
         
         border-radius: 5px;
-        
-        a {
-            color: ${props => props.theme.colors.secondaryLighter};
-            text-decoration: none;
-            border-bottom: none;
-        }
        
     }
     

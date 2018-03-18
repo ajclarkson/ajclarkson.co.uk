@@ -60,7 +60,7 @@ curl -k -X PUT -d "" https://entrydns.net/records/modify/TOKEN
 By replacing `IP` and `TOKEN` where appropriate in either of those calls, your domain will be updated to point to the new IP. Dynamic DNS at it's finest. It's easy to incorporate that into a bash script or a cronjob and you are away, but if you want a slightly more advanced method of updating then read on.
 
 ### EntryDNS Updater
-I originally just ran one of the API calls from above as a cronjob and had great success with using my own domain name for Dynamic DNS. However this meant that my domain was being updated constantly, regardless of whether it needed to be or not. With that in mind I developed [EntryDNS Updater](http://github.com/ajclarkson/entrydns-updater").
+I originally just ran one of the API calls from above as a cronjob and had great success with using my own domain name for Dynamic DNS. However this meant that my domain was being updated constantly, regardless of whether it needed to be or not. With that in mind I developed [EntryDNS Updater](http://github.com/ajclarkson/entrydns-updater).
 
 This is a simple python utility that checks your current IP against a cache file, and if it has changed, proceeds with the update. It reads the EntryDNS authentication tokens from a JSON file, so you can update as many domains as you like each time your IP changes.
 
