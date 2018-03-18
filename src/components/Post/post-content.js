@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-const PostContent = styled.div`
- 
-    
+const PostContent = styled.div`   
     a {
         color: ${props => props.theme.colors.base};
         text-decoration:none;
@@ -52,6 +50,20 @@ const PostContent = styled.div`
         
         border-radius: 5px;
         
+    }
+    
+    img {
+        display:block;
+        width: 100%;
+        margin: 1.5em 0;
+    }
+    
+    .gatsby-resp-image-link {
+        border-bottom: none;
+    }
+    
+    .gatsby-resp-image-wrapper {
+        margin: 3em 0;
     }
   
 `;
