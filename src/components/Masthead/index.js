@@ -20,7 +20,6 @@ const MastheadWrapper = styled.div`
 `;
 
 const Masthead = () => (
-
   <MastheadWrapper>
     <Text>
       <p>I&apos;m a developer with the fantastic people at <Anchor href="https://ocadotechnology.com" target="_blank">Ocado Technology</Anchor>, where I focus on making releases awesome. </p>

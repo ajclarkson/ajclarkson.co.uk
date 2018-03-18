@@ -5,7 +5,6 @@ import ReactDisqusThread from 'react-disqus-comments';
 import { MetaSeparator, PostDate } from './post-meta';
 import { H1 } from '../Typography';
 import PostContent from './post-content';
-import Excerpt from './excerpt';
 
 const ReactDisqus = styled(ReactDisqusThread)`
     margin-top: 3em;
@@ -21,7 +20,7 @@ const PostWrapper = styled.div`
 
 const Post = ({ data }) => {
   const {
-    title, date, excerpt, html, path, siteUrl,
+    title, date, html, path, siteUrl,
   } = data;
   return (
     <PostWrapper>
@@ -30,9 +29,6 @@ const Post = ({ data }) => {
         {date}
       </PostDate>
       <MetaSeparator />
-      <Excerpt>
-        {excerpt}
-      </Excerpt>
 
       {/* eslint-disable react/no-danger */}
       <PostContent dangerouslySetInnerHTML={{ __html: html }} />

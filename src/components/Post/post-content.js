@@ -15,12 +15,12 @@ const PostContent = styled.div`
     
    h2 {
         font-size: 1.5em;
-        margin-bottom: 1.5em;
+        margin-top: 1.5em;
         border-bottom: 1px solid ${props => props.theme.colors.secondary};
     }
     
     h3 {
-        font-size: 1.25em;
+        font-size: 1.125em;
         margin: 1.5em 0 0em;
         padding-left: 0.5em;
         border-left: 5px solid ${props => props.theme.colors.primary};
@@ -50,6 +50,12 @@ const PostContent = styled.div`
         
         border-radius: 5px;
         
+        a {
+            color: ${props => props.theme.colors.secondaryLighter};
+            text-decoration: none;
+            border-bottom: none;
+        }
+       
     }
     
     img {
