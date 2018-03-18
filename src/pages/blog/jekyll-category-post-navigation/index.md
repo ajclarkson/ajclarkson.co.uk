@@ -5,11 +5,8 @@ excerpt: Jekyll comes equipped with `post.next` and `post.previous` links, but h
 tags: [Jekyll, Development, Ruby]
 date: 2013-10-16
 path: /blog/jekyll-category-post-navigation/
-
 ---
-Jekyll comes with a number of helper functions rolled into it as default. They're accessed using the liquid template tags. One particularly useful one is to provide a link to the next and previous posts in your blog. Simply by using `post.next` or `post.previous`.
-
-## The Issue
+![Directions](directions.jpeg)
 I'm not alone in using Jekyll to power a site which offers more than a blog. I use two Jekyll categories on my site, "Blog" for blog posts, and "Projects" for my portfolio pages. This allows me to keep two distinct default layouts, and make sure the posts only appear on the appropriate pages. However, when using `post.next` or `post.previous`, no attention is paid to what category a post is in. It simply moves between them all based on the date that they were published.
 
 ## The Solution
@@ -54,5 +51,3 @@ Simply put that script into your _plugins directory (create it under your site r
 ```
 
 Note how no reference is made to the current category. This is by design, as it means I can share this code as a partial, and if I wanted to utilise this type of navigation on my portofolio items I could slot it in without the need to amend it.
-
-&mdash;Adam
