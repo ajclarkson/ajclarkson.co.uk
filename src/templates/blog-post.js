@@ -10,7 +10,6 @@ const Template = ({ data }) => {
   const {
     title, date, excerpt, path,
   } = post.frontmatter;
-
   return (
     <Row>
       <Col xs={10} xsOffset={1} md={8} mdOffset={2}>

@@ -6,7 +6,7 @@ tags: [SysAdmin, Python]
 date: 2014-12-01
 path: /blog/custom-domain-dynamic-dns/
 ---
-
+![Stamps](stamps.jpeg)
 While it is possible to get a whole slew of free dynamic dns host names online, they all come in a format of: `myawesomehostname.theircompany.com` or some other variation. These services are great for providing you remote access to a home machine, or some other location without a static IP, but I really wanted to find a way of using my own domain name to various non-static services.
 
 ## The Issue
@@ -67,5 +67,3 @@ This is a simple python utility that checks your current IP against a cache file
 Feel free to grab the code and try it out over [on Github](http://github.com/ajclarkson/entrydns-updater).
 
 Quite a long post, but hopefully it will help some of you out with using your own domain for DynamicDNS, for free! I have several of these running now pointing to various services that I run from home, and it's all working fantastically.
-
-&mdash; Adam

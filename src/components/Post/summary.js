@@ -25,8 +25,12 @@ const Date = styled.div`
 
 const PostTitle = styled.h3`
     font-size:1.5em;
+    margin-bottom: 0;
 `;
 
+const TitleLink = styled(Link)`
+  border-bottom: none;
+`;
 
 const Summary = ({ data }) => {
   const {
@@ -35,10 +39,11 @@ const Summary = ({ data }) => {
   return (
     <SummaryWrapper>
       <PostTitle>
-        <Link to={path}>{title}</Link>
         <Date>
           {date}
         </Date>
+        <TitleLink to={path}>{title}</TitleLink>
+
       </PostTitle>
 
       <p>{excerpt}</p>
