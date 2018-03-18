@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid } from 'react-styled-flexboxgrid';
-import { ThemeProvider } from 'styled-components';
+import {Grid} from 'react-styled-flexboxgrid';
+import {ThemeProvider} from 'styled-components';
 import Base from '../components/Base';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 require('../components/Typography/font-awesome-library');
-// Load Prism styles (provided by Gatsby)
-require('prismjs/themes/prism-tomorrow.css'); // eslint-disable-line import/no-extraneous-dependencies
 
 const theme = {
   colors: {
