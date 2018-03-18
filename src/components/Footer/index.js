@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { Col, Grid, Row } from 'react-styled-flexboxgrid';
-import { Anchor, Link } from '../Base/anchor';
+import {Col, Grid, Row} from 'react-styled-flexboxgrid';
+import {Anchor, Link} from '../Base/anchor';
 
 const FooterWrapper = styled.footer`
     border-top: 1px solid ${props => props.theme.colors.secondary};
     padding: 1.5em 0;
     margin-top: 3em;
-    font-size: 0.75em;
+    font-size: 0.65em;
     font-weight: ${props => props.theme.typography.fontWeight.bold};
     color: ${props => props.theme.colors.tertiary};
 `;
@@ -49,6 +49,14 @@ const LinkItemIcon = styled(FontAwesomeIcon)`
     margin-left: 0.5em;
 `;
 
+const FooterAnchor = styled(Anchor)`
+    border-bottom: none;
+    color: ${props => props.theme.colors.tertiary};
+    
+    &:hover {
+        transition: color .2s;
+    }
+`;
 
 const Footer = () => (
   <Grid fluid>
@@ -57,7 +65,7 @@ const Footer = () => (
         <Col md={4}>
           <Text>
 
-            <FontAwesomeIcon icon={['fab', 'react']} /> + <FontAwesomeIcon icon={['fab', 'gitlab']} /> = <FontAwesomeIcon icon="thumbs-up" />
+            <FooterAnchor href="https://gatsbyjs.org" title="GatsbyJs">Gatsby</FooterAnchor> + <FooterAnchor href="https://netlify.com" title="Netlify">Netlify</FooterAnchor> = <FontAwesomeIcon icon="thumbs-up" />
           </Text>
         </Col>
         <Col md={8}>
