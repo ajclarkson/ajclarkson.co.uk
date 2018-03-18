@@ -36,7 +36,12 @@ const PostContent = styled.div`
         border-radius: 5px;
         font-family: ${props => props.theme.typography.fontStack.code};
         font-size:0.75em;
-       
+        
+        a {
+            color: ${props => props.theme.colors.secondaryLighter};
+            text-decoration: none;
+            border-bottom: none;
+        }
     }
     
     pre {
@@ -46,6 +51,7 @@ const PostContent = styled.div`
         }
         
         border-radius: 5px;
+        
     }
   
 `;
