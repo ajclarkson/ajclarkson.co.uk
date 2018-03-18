@@ -28,6 +28,8 @@ pages:
   stage: deploy
   script:
     - ls -la public
+    - mkdir -p public/.well-known/acme-challenge/Qiuj40XhtpEqiad6ZPFSJZmFPxwnZFaPwC0epeTxcYY
+    - echo $CERT_CHALLENGE > public/.well-known/acme-challenge/Qiuj40XhtpEqiad6ZPFSJZmFPxwnZFaPwC0epeTxcYY/index.html
   artifacts:
     paths:
       - public/
