@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Adam James Clarkson',
     author: 'Adam James Clarkson',
-    siteUrl: 'http://ajclarkson.co.uk',
+    siteUrl: 'https://ajclarkson.co.uk',
     description: '',
   },
   plugins: [
