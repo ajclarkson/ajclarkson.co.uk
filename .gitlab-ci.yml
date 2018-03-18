@@ -27,9 +27,10 @@ gatsby-build:
 pages:
   stage: deploy
   script:
-    - ls -la public
-    - mkdir -p public/.well-known/acme-challenge/Qiuj40XhtpEqiad6ZPFSJZmFPxwnZFaPwC0epeTxcYY
-    - echo $CERT_CHALLENGE > public/.well-known/acme-challenge/Qiuj40XhtpEqiad6ZPFSJZmFPxwnZFaPwC0epeTxcYY/index.html
+    - mkdir -p public/.well-known/acme-challenge/$CERT_FOLDER_ROOT
+    - echo $CERT_CHALLENGE_ROOT > public/.well-known/acme-challenge/$CERT_FOLDER_ROOT/index.html
+    - mkdir -p public/.well-known/acme-challenge/$CERT_FOLDER_WWW
+    - echo $CERT_CHALLENGE_WWW > public/.well-known/acme-challenge/$CERT_FOLDER_WWW/index.html
   artifacts:
     paths:
       - public/
