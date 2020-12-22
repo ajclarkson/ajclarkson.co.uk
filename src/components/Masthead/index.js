@@ -22,14 +22,14 @@ const MastheadWrapper = styled.div`
 const Masthead = () => (
   <MastheadWrapper>
     <Text>
-      <p>I&apos;m a developer with the fantastic people at <Anchor href="https://ocadotechnology.com" target="_blank">Ocado Technology</Anchor>, where I focus on making releases awesome. </p>
+      <p>I&apos;m an Engineering Team Lead with the fantastic people at <Anchor href="https://ocadotechnology.com" target="_blank">Ocado Technology</Anchor>, where I focus on making releases awesome. </p>
     </Text>
   </MastheadWrapper>
 );
 
 const QuickLinks = () => (
   <QuickLinksWrapper>
-    <Link to="/blog">Blog</Link> / <Link to="/about">About</Link> / <Anchor href="https://twitter.com/ajclarkson" target="_blank">Twitter</Anchor> / <Anchor href="https://uk.linkedin.com/in/ajclarkson" target="_blank">LinkedIn</Anchor>
+    <Link to="/blog">Blog</Link> / <Link to="/about">About</Link> /<Anchor href="https://uk.linkedin.com/in/ajclarkson" target="_blank">LinkedIn</Anchor>
   </QuickLinksWrapper>
 );
 
