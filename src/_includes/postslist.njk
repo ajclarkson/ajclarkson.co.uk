@@ -1,0 +1,9 @@
+<section class="post-list">
+{% for post in postslist | reverse %}
+  <div class="post-list-item">
+    <div class="post-list-item__date">{{ post.date | readableDate }}</div>
+    <h3><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+    <div class="post-list-item__excerpt">{{ post.data.excerpt }}</div>
+  </div>
+{% endfor %}
+</section>
