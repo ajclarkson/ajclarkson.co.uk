@@ -1,6 +1,7 @@
 $base-color: #222222;
 $primary-accent-color: #FF9600;
 $secondary-accent-color: #BBBBBB;
+$link-transition-speed: 0.3s;
 
 html {
     font-size: 16px;
@@ -37,6 +38,62 @@ a:link, a:visited {
 a:hover, a:active {
     color: var(--primary-accent);
     border-bottom: 2px solid $primary-accent-color;
-    transition: 0.3s;
+    transition: $link-transition-speed;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    font-size: 0.75em;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        padding: 0;
+        text-transform: uppercase;
+        font-weight:800;
+    }
+
+    &__list-item {
+        margin-right: 3em;
+    }
+
+    &__link {
+        &:link, &:visited {
+            color: $secondary-accent-color;
+            border-bottom: none;
+        }
+
+        &:hover, &:active {
+            color: $primary-accent-color;
+        }
+    }
+}
+
+main {
+    max-width: 800px;
+    margin: 5em auto 0;
+}
+
+.masthead {
+    font-size:2em;
+    line-height:1.5em;
+    font-weight:800;
+    margin-bottom: 1.5em;
+}
+
+.quick-links {
+    border-top: 1px solid $secondary-accent-color;
+}
+
+.quick-links__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.quick-links__list-item {
+    display: inline-block;
+}
