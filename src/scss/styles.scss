@@ -36,7 +36,7 @@ a:link, a:visited {
     border-bottom: 2px solid $secondary-accent-color;
 }
 a:hover, a:active {
-    color: var(--primary-accent);
+    color: $primary-accent-color;
     border-bottom: 2px solid $primary-accent-color;
     transition: $link-transition-speed;
 }
@@ -128,7 +128,7 @@ main {
 .post-header {
     &__divider {
         width:100px;
-        border-top: 5px solid var(--primary-accent);
+        border-top: 5px solid $primary-accent-color;
         height: 0px;
         margin:1.5em 0;
     }
@@ -157,3 +157,62 @@ main {
     }
 }
 
+@mixin footer-link {
+    color: $secondary-accent-color;
+    border-bottom: none;
+}
+
+@mixin footer-link-hover {
+    color: $primary-accent-color;
+}
+        
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    font-size: 0.75em;
+    color: $secondary-accent-color;
+    border-top: 1px solid $secondary-accent-color;
+    margin:6em 3em 0;
+    font-weight: 600;
+
+    &__attribution-link {
+        &:link, &:visited {
+            @include footer-link
+        }
+
+        &:active, &:hover {
+            @include footer-link-hover
+        }
+    }
+    
+    &__links {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        padding: 0;
+        font-weight:800;
+    }
+
+    &__links-item {
+        margin-right: 1.5em;
+        padding-right: 1.5em;
+        border-right: 1px solid $secondary-accent-color;
+
+        &:last-child {
+            border-right:0;
+            margin-right: 0;
+        }
+    }
+
+    &__links-link {
+        &:link, &:visited {
+            @include footer-link
+        }
+
+        &:active, &:hover {
+            @include footer-link-hover
+        }
+    }
+}
