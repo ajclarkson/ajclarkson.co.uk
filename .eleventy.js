@@ -9,7 +9,12 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy("src/**/*.jpeg");
     eleventyConfig.addPassthroughCopy("src/**/*.png");
     eleventyConfig.addPassthroughCopy("src/css");
-    eleventyConfig.addWatchTarget("src/css");
+    eleventyConfig.setUseGitIgnore(false);
+    // eleventyConfig.addWatchTarget("src/css");
+
+    eleventyConfig.setBrowserSyncConfig({
+		files: './_site/css/**/*.css'
+	});
 
     eleventyConfig.addFilter("readableDate", dateObj => {
         return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("LLLL dd, yyyy");
