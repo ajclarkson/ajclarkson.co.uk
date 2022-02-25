@@ -78,6 +78,10 @@ main {
     margin: 5em auto 0;
 }
 
+.home-logo {
+    margin-bottom: 1.5em;
+}
+
 .masthead {
     font-size:2em;
     line-height:1.5em;
@@ -97,3 +101,59 @@ main {
 .quick-links__list-item {
     display: inline-block;
 }
+
+.post-list {
+    &__item {
+        border-bottom: 1px solid $secondary-accent-color;
+        padding-bottom: 3em;    
+        margin-bottom: 3em;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__item-date {
+        color: $primary-accent-color;
+        font-size: 0.75em;
+        font-weight: 800;
+    }
+
+    &__item-title {
+        margin-top: 0.5em;
+        font-size:1.5em;
+    }
+}
+
+.post-header {
+    &__divider {
+        width:100px;
+        border-top: 5px solid var(--primary-accent);
+        height: 0px;
+        margin:1.5em 0;
+    }
+
+    &__date {
+        font-size:1.5em;
+        font-weight:800;
+    }
+
+}
+
+.post-body {
+
+    img {
+        width:100%;
+        margin: 1.5em 0;
+    }
+
+    h2 {
+        font-size:1.5em;
+        margin-top: 1.5em;
+    }
+
+    &__comments {
+        margin-top: 3em;
+    }
+}
+
