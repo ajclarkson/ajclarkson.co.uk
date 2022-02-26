@@ -4,7 +4,8 @@ excerpt: Plenty of services exist to provide you with free Dynamic DNS hostnames
 tags: [SysAdmin, Python]
 date: 2014-12-01
 ---
-![Stamps](stamps.jpeg)
+{% image "stamps.jpeg", page.url, "Stamps" %}
+
 While it is possible to get a whole slew of free dynamic dns host names online, they all come in a format of: `myawesomehostname.theircompany.com` or some other variation. These services are great for providing you remote access to a home machine, or some other location without a static IP, but I really wanted to find a way of using my own domain name to various non-static services.
 
 ## The Issue
@@ -28,7 +29,8 @@ Head on over to [EntryDNS](http://entrydns.net) and create an account. Then you'
 **Note:** Even if you want to use a subdomain as your Dynamic DNS, you'll have to complete this step.
 
 Click on your newly created domain, and by mousing over the "Add Record" option, you should get a window which looks like the image below:
-![Creating an A Record in EntryDNS](EntryDNS-arecord.png)
+
+{% image "EntryDNS-arecord.png", page.url, "Creating an A Record in EntryDNS" %}
 
 Create an A record for your domain. If you are wanting to use a subdomain for your dynamic dns (e.g sub.myawesomedomain.com), then point this A record to the IP you want your main domain to resolve. Then repeat the steps above this time adding 'sub.myawesomedomain.com' as a domain, and create an A record for that, then follow along using that one.
 
