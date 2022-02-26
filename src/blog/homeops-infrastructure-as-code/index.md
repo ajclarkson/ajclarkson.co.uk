@@ -5,7 +5,8 @@ tags: [HomeOps, SysAdmin, RaspberryPi, Linux, Ansible]
 date: 2019-01-13
 ---
 
-![Network Switch](switch.jpg)
+
+{% image "switch.jpg", page.url, "Network Switch" %}
 
 I'm a developer, and as a result of that I have the overwhelming urge to experiment with shiny new technologies and different ways of doing things. I've accepted that and I'm fine with it - but it doesn't always align nicely with running some stable servers at home. Deciding to switch to a new application, try the latest version, or a whole different paradigm has come back to bite me on far too many occassions. That dreaded feeling when realising it's probably easier to remedy the outcome of an experiment with a fresh start is one I'm sure many are familiar with. If like mine, your home server box was always some frankenstein evolution over time, bolting things in as you need them - then it can be quite daunting with being faced with needing to reproduce that from scratch.
 

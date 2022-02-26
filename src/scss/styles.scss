@@ -1,6 +1,6 @@
 $base-color: #222222;
 $primary-accent-color: #FF9600;
-$secondary-accent-color: #BBBBBB;
+$secondary-accent-color: #585454;
 $link-transition-speed: 0.3s;
 
 html {
@@ -48,6 +48,11 @@ a:hover, a:active {
     padding: 30px 50px;
     font-size: 0.75em;
 
+    &__brand-image {
+        width:50px;
+        height:50px;
+    }
+
     &__list {
         display: flex;
         align-items: center;
@@ -80,6 +85,7 @@ main {
 
 .home-logo {
     margin-bottom: 1.5em;
+    width:75px;
 }
 
 .masthead {
@@ -144,6 +150,8 @@ main {
 
     img {
         width:100%;
+        height: auto;
+        display: block;
         margin: 1.5em 0;
     }
 

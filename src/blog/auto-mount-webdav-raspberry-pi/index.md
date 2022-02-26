@@ -5,7 +5,9 @@ tags: [Cloud, SysAdmin, RaspberryPi, Linux]
 date: 2014-12-02
 ---
 
-![Storage Containers](storage.jpeg)
+
+{% image "storage.jpeg", page.url, "Storage Containers" %}
+
 Both of my RaspberryPi's run without any input devices attached to them, so I don't run GUI desktop environments on them. However, I do still want to be able to sync my ownCloud folder with them. Unfortunately the official ownCloud client is severely lacking when it comes to command line support. So here is how I get around it, by mounting my cloud folders via webDAV.
 
 ## The Solution
