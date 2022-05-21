@@ -7,7 +7,7 @@ layout: layouts/base.njk
 <section class="post-header">
 <h1 class="post-header__title">{{ title }}</h1>
 <div class="post-header__meta">
-Posted on {{ date | readableDate }} • ~{{ content | timeToRead }} reading time
+Posted on {{ date | readableDate }} <span class="post-header__highlight">•</span> ~{{ content | timeToRead }} reading time
 </div>
 
 <div class="post-header__divider"></div>
