@@ -3,8 +3,11 @@ title: Automatically Mount your ownCloud folder with webDAV
 excerpt: ownCloud provides a basic Command Line Tool for syncronising a folder with your cloud share, but you have to run it each time you want to sync. Using the webDAV capabilities of ownCloud you can mount your folder as a remote drive and work with it that way.
 tags: [Cloud, SysAdmin, RaspberryPi, Linux]
 date: 2014-12-02
+hidden: true
 ---
-
+<div class="post-body__deprecation-warning"><p><strong>Warning! This post is old!</strong></p>
+<p>This post was originally written in 2014, and I no longer use this method for mounting folders. I kept the post here as it still sees some traffic, but it is now hidden from the blog archive. You might still find the information useful here, but the content is not being updated / maintained.</p>
+</div>
 
 {% image "storage.jpeg", page.url, "Storage Containers" %}
 

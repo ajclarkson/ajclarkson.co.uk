@@ -3,7 +3,12 @@ title: Jekyll Post Navigation Within a Category
 excerpt: Jekyll comes equipped with `post.next` and `post.previous` links, but how about just moving through the posts within one category?
 tags: [Jekyll, Development, Ruby]
 date: 2013-10-16
+hidden: true
 ---
+
+<div class="post-body__deprecation-warning"><p><strong>Warning! This post is old!</strong></p>
+<p>This post was originally written in 2013, and I haven't used Jekyll for a long time now. I kept the post here as it still sees some traffic, but it is now hidden from the blog archive. You might still find the information useful here, but the content is not being updated / maintained.</p>
+</div>
 
 {% image "directions.jpeg", page.url, "Directions" %}
 

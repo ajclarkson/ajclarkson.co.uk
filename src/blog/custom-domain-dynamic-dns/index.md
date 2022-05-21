@@ -3,7 +3,12 @@ title: Dynamic DNS with a Custom Domain, EntryDNS & Python
 excerpt: Plenty of services exist to provide you with free Dynamic DNS hostnames, but what if you want to use your own domain name to point to a non-static IP?
 tags: [SysAdmin, Python]
 date: 2014-12-01
+hidden: true
 ---
+<div class="post-body__deprecation-warning"><p><strong>Warning! This post is old!</strong></p>
+<p>This post was originally written in 2014, and I no longer use EntryDNS. I kept the post here as it still sees some traffic, but it is now hidden from the blog archive. You might still find the information useful here, but the content is not being updated / maintained.</p>
+</div>
+
 {% image "stamps.jpeg", page.url, "Stamps" %}
 
 While it is possible to get a whole slew of free dynamic dns host names online, they all come in a format of: `myawesomehostname.theircompany.com` or some other variation. These services are great for providing you remote access to a home machine, or some other location without a static IP, but I really wanted to find a way of using my own domain name to various non-static services.
