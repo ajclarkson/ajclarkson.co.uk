@@ -3,7 +3,10 @@
   "version": "3.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "eleventy-plugin-reading-time": "0.0.1",
+    "eleventy-plugin-time-to-read": "^1.2.0"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-img": "^1.1.0",

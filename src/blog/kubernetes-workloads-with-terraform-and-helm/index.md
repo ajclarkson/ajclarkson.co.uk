@@ -74,9 +74,13 @@ Your new `hello-world` namespace should be in the list, and with that you've cre
 
 If you're familiar with Kubernetes you'll know that while it's perfectly possible to represent all of your workloads in pure Kubernetes manifests, it can lead to a lot of duplication and copying and pasting defaults. The [Helm](https://helm.sh/) package manager for Kubernetes is a widely used solution to this, providing simple templates to use to deploy fully configured application stacks with a single command.
 
+### Terraform vs Helm
+
 In many regards Helm could be seen as an alternative to managing your Kubernetes manifests in terraform. It is stateful, and keeps a record of what is deployed in your cluster, provides rollbacks and upgrade mechanisms. So it achieves many of the things we set out to in this post. One thing it doesn't easily do though, is provide one single overall state for the workloads in the cluster. My aim is to be able to run a single command and have everything set to a known state.
 
 So I opted to also use the Helm provider for terraform. This allows you to declare Helm resources in the cluster, benefiting from the simple package manager templating, but allowing the state to be maintained in one central place. Now I can run a simple `terraform apply` and have my mix of pure Kubernetes resources and Helm charts all deployed. It also has the benefit that variables can be passed and shared between both resources, something that would be far more complex if I was using a blend of terraform and the standalone Helm commands.
+
+### Drawbacks 
 
 The main drawback I have found to this so far is that Terraform manages the state of the helm resource in a very light touch way. As such it doesn't expose what resources are actually getting created by a helm chart, Terraform is blind to this. The terraform state actually represents the configuration of a chart. So when you change or override a value, you will see a diff of the chart configuration and not explicitly what resources will change in your cluster. 
 
@@ -163,7 +167,7 @@ And we're back!
 
 This post has introduced a way of provisioning workloads in a Kubernetes cluster that takes advantage of the strengths of both Terraform and Helm to reduce disaster recovery to a single operation. The example here is very simplistic, but the concept can be used to run any application in your cluster. 
 
-### Resources
+## Resources
 
 - [k3d](https://k3d.io) 
 - [Kubernetes Terraform Provider Documentation](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs)
