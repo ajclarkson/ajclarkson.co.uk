@@ -16,8 +16,10 @@ Posted on {{ date | readableDate }} • {{ content | timeToRead }} reading time
 
 
 
-<section class="post-body">
-{{ content | safe }}
+<section class="content">
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
 </section>
 
 <div id="disqus_thread" class="post-body__comments"></div>

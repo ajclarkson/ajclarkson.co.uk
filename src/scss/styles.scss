@@ -97,8 +97,13 @@ a:hover, a:active {
 }
 
 main {
-    max-width: 800px;
-    margin: 5em auto 0;
+    max-width: 1000px;
+    margin: 5em auto 0em;
+}
+
+.content {
+    max-width: 760px;
+    margin: 0 auto;
 }
 
 .home-logo {
@@ -175,11 +180,12 @@ main {
     &__title {
         margin-bottom:0.25em;
     }
+    margin-bottom: 3em;
 
 }
 
 .post-body {
-
+    
     &__deprecation-warning {
         padding: 1em;
         color: $warning-text-color;
