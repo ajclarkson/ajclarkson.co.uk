@@ -2,13 +2,11 @@ const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 const path = require('path');
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const readingTime = require('eleventy-plugin-reading-time');
 const timeToRead = require('eleventy-plugin-time-to-read');
 
 module.exports = (eleventyConfig) => {
 
     eleventyConfig.addPlugin(pluginSyntaxHighlight);
-    eleventyConfig.addPlugin(readingTime);
     eleventyConfig.addPlugin(timeToRead);
 
     eleventyConfig.addPassthroughCopy("src/**/*.jpg");

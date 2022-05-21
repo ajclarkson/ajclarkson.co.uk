@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "eleventy-plugin-reading-time": "0.0.1",
     "eleventy-plugin-time-to-read": "^1.2.0"
   },
   "devDependencies": {
