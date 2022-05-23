@@ -16,9 +16,16 @@ body {
     margin: 0px;
     padding: 0px;
     min-height: 100vh;
-    font-size:1.5em;
     font-family: "lato",sans-serif;
     color: $base-color;
+
+    @media screen and (max-width: 600px) {
+        font-size:1em;
+    }
+
+    @media screen and (min-width: 601px) {
+        font-size:1.5em;
+    }
 }
 
 *, *::before, *::after {
@@ -67,8 +74,17 @@ a:hover, a:active {
     font-size: 0.75em;
 
     &__brand-image {
-        width:50px;
-        height:50px;
+        
+
+        @media screen and (max-width: 600px) {
+            width:30px;
+            height:30px;
+        }
+    
+        @media screen and (min-width: 601px) {
+            width:50px;
+            height:50px;
+        }
     }
 
     &__list {
@@ -81,10 +97,13 @@ a:hover, a:active {
     }
 
     &__list-item {
-        margin-right: 3em;
+        margin-left: 3em;
+        text-align: right;
     }
 
     &__link {
+        
+
         &:link, &:visited {
             color: $secondary-accent-color;
             border-bottom: none;
@@ -97,8 +116,20 @@ a:hover, a:active {
 }
 
 main {
-    max-width: 1000px;
-    margin: 5em auto 0em;
+    margin: 5em auto;
+    padding: 0 1em;
+
+    @media screen and (max-width: 790px) {
+        max-width: 100%;
+    }
+
+    @media screen and (min-width:791px) {
+        max-width: 800px;
+    }
+
+    @media screen and (min-width: 999px) {
+        max-width: 1000px;
+    }
 }
 
 .content {
@@ -108,7 +139,16 @@ main {
 
 .home-logo {
     margin-bottom: 1.5em;
-    width:75px;
+
+    @media screen and (max-width: 600px) {
+        width:40px;
+        height:40px;
+    }
+
+    @media screen and (min-width: 601px) {
+        width:75px;
+        height:75px;
+    }
 }
 
 .masthead {
