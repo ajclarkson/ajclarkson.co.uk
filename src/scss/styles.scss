@@ -1,7 +1,7 @@
 $base-color: #222222;
 $primary-accent-color: #FF9600;
-$secondary-accent-color: #585454;
-$tertiary-accent-color: #7BB2D9;
+$secondary-accent-color: #949B9B;
+$tertiary-accent-color: #28666E;
 $link-transition-speed: 0.5s;
 $warning-background-color: #fff3cd;
 $warning-border-color: #ffeeba;
@@ -203,6 +203,40 @@ main {
     }
 }
 
+.tag-list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0 0 1em;
+    font-size:0.75em;
+
+    &__item {
+        margin-right: 0.5em;
+        padding: 0;
+        border-radius: 20px;
+        transition: $link-transition-speed;
+        border: 2px solid $tertiary-accent-color;
+
+        &:hover {
+            background: $tertiary-accent-color;
+            transition: $link-transition-speed;
+        }
+
+        a:link, a:visited {
+            color: $tertiary-accent-color;
+            display: block;
+            padding: 0.25em 0.75em;
+        }
+        a:hover, a:active {
+            color: $secondary-accent-color;
+            border-bottom: none;
+        }
+    }
+
+    
+    
+}
+
 .post-header {
     &__divider {
         width:100px;
@@ -212,7 +246,7 @@ main {
     }
 
     &__meta {
-        font-weight:800;
+        // font-weight:800;
         font-size:0.75em;
         color: $secondary-accent-color;
     }
@@ -224,6 +258,8 @@ main {
     &__highlight {
         color: $primary-accent-color;
     }
+
+    border-bottom: 5px solid $primary-accent-color;
     margin-bottom: 3em;
 
 }
@@ -253,6 +289,11 @@ main {
     &__comments {
         margin-top: 3em;
     }
+}
+
+.page-header {
+    border-bottom: 5px solid $primary-accent-color;
+    margin-bottom: 3em;
 }
 
 @mixin footer-link {
@@ -313,4 +354,8 @@ main {
             @include footer-link-hover
         }
     }
+}
+
+.archive-link {
+    margin-bottom: 1em;
 }

@@ -55,7 +55,18 @@ module.exports = (eleventyConfig) => {
         };
 
             
-    eleventyConfig.addShortcode("image", imageShortcode)
+    eleventyConfig.addShortcode("image", imageShortcode);
+
+    eleventyConfig.addCollection('blogTags', (collections) => {
+      const uniqueTags = collections
+        .getFilteredByTag('blog')
+        .filter((item) => !item.data.hidden)
+        .reduce((tags, item) => tags.concat(item.data.tags), [])
+        .filter((tag) => !!tag)
+        .filter((tag) => !!tag && !['blog'].includes(tag))
+        .sort();
+      return Array.from(new Set(uniqueTags));
+    });
 
     return {
         dir: {

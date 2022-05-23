@@ -1,7 +1,7 @@
 ---
 title: "Managing Kubernetes Workloads with Terraform and Helm"
 excerpt: "By combining helm and terraform it is possible to provision an entire Kubernetes clusters workloads with a single command. I use this with my home server to provide easy stateful management of my workloads, and simple disaster recovery"
-tags: []
+tags: [Kubernetes, Terraform, Helm]
 date: 2022-05-15
 ---
 

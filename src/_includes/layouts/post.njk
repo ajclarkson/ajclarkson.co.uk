@@ -8,9 +8,16 @@ layout: layouts/base.njk
 <h1 class="post-header__title">{{ title }}</h1>
 <div class="post-header__meta">
 Posted on {{ date | readableDate }} <span class="post-header__highlight">•</span> ~{{ content | timeToRead }} reading time
+
+<ul class="tag-list">
+{% for tag in tags %}
+  {% if tag !== 'blog' %}
+    <li class="tag-list__item"><a class="tag-list__link" href="/tags/{{ tag }}" title="{{ tag }}">{{ tag }}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
 </div>
 
-<div class="post-header__divider"></div>
 </section>
 
 

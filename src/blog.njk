@@ -2,7 +2,16 @@
 layout: layouts/page.njk
 title: Archive 
 ---
+<section class = "page-header">
+
 <h1>Archive</h1>
 
+<ul class="tag-list">
+{% for tag in collections.blogTags %}
+    <li class="tag-list__item"><a class="tag-list__link" href="/tags/{{ tag }}" title="{{ tag }}">{{ tag }}</a></li>
+{% endfor %}
+</ul>
+
+</section>
 {% set postslist = collections.blog %}
 {% include "postslist.njk" %}
