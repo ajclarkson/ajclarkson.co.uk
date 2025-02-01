@@ -1,0 +1,13 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+const allPosts = await getCollection("blog");
+const pageTitle = "Articles";
+---
+<PageLayout pageTitle={pageTitle}>
+    <h1>Post Archive</h1>
+    <ul class="post-archive">
+        {allPosts.map(( post: any) => <BlogPost url={`/blog/${post.id}`} title={post.data.title} date={post.data.pubDate} />)}
+    </ul>
+</PageLayout>

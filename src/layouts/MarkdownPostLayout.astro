@@ -1,0 +1,16 @@
+---
+import PageLayout from './PageLayout.astro';
+import Tags from '../components/Tags.astro';
+const { frontmatter } = Astro.props;
+const postDate = frontmatter.pubDate;
+---
+<PageLayout pageTitle={frontmatter.title}>
+    <div class="post-header">
+        <Tags tags={ frontmatter.tags} />
+        <h1>{frontmatter.title}</h1>
+        <div class="post-meta">
+         <p>{postDate.toLocaleDateString('en-Gb' )} • {frontmatter.minutesRead}</p>
+        </div>
+    </div>
+    <slot />
+</PageLayout>

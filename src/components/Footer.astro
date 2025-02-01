@@ -1,0 +1,39 @@
+---
+import Icon from './Icon.astro'
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faBluesky, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
+
+library.add(faBluesky, faLinkedin, faInstagram);
+
+const blueskyIcon = icon({prefix: "fab", iconName: faBluesky.iconName});
+const linkedinIcon = icon({prefix: "fab", iconName: faLinkedin.iconName});
+const instagramIcon = icon({prefix: "fab", iconName: faInstagram.iconName});
+---
+
+<footer>
+    <a href="https://bsky.app/profile/ajclarkson.co.uk" aria-label="ajclarkson.co.uk on Bluesky"><Icon icon={blueskyIcon} /></a>
+    <a href="https://instagram.com/ajclarkson" aria-label="ajclarkson on Instagram"><Icon icon={instagramIcon} /></a>
+    <a href="https://linkedin.com/profile/ajclarkson" aria-label="ajclarkson on LinkedIn"><Icon icon={linkedinIcon} /></a>
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        gap: 1rem;
+        margin: auto 1rem 0;
+        align-items:center;
+        justify-content: center;
+        text-align:center;
+        border-top: 1px solid var(--secondary-text-color);
+        padding: 1rem;
+
+        a:link, a:visited, a:active {
+            color: var(--secondary-text-color);
+        }
+
+        a:hover {
+            color: var(--link-hover-color);
+        }
+    }
+</style>
+

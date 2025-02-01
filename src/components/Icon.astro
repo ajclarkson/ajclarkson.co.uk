@@ -1,0 +1,14 @@
+---
+const { icon } = Astro.props;
+---
+
+<Fragment set:html={icon.html} />
+<style is:global>
+.svg-inline--fa {
+    overflow: visible;
+    box-sizing: content-box;
+    display: inline-block;
+    height: 1em;
+    vertical-align: -0.125em;
+}
+</style>

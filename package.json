@@ -1,0 +1,24 @@
+{
+  "name": "tutorial",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^4.0.3",
+    "@astrojs/rss": "^4.0.11",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "astro": "^5.2.1",
+    "install": "^0.13.0",
+    "mdast-util-to-string": "^4.0.0",
+    "npm": "^11.1.0",
+    "preact": "^10.25.4",
+    "reading-time": "^1.5.0"
+  }
+}

@@ -1,0 +1,9 @@
+name: ajclarkson
+root: ~/workspace/ajclarkson.co.uk
+
+windows:
+  - editor:
+    - nvim
+  - terminal:
+    - fish
+    - clear
