@@ -1,0 +1,6 @@
+---
+const { date, title, url } = Astro.props
+const postYear = date.toLocaleDateString('en-gb', { year: 'numeric' });
+const postMonth = date.toLocaleDateString('en-gb', { month: '2-digit' });
+---
+<li>{postYear}/{postMonth} <a href={url}>{title}</a></li>

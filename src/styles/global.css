@@ -1,0 +1,148 @@
+:root {
+    --background-color: #f1f5f9;
+    --primary-text-color: #222222;
+    --heading-font-family: "Fira Sans", sans-serif;
+    --accent-color: #CC5500;
+    --link-color: #CC5500;
+    --link-hover-color: #375B66;
+    --tertiary-text-color: #09B2E6;
+    --link-transition-speed: 0.5s;
+    --secondary-text-color: #c1c9c9;
+}
+
+html {
+    background-color: var(--background-color);
+}
+
+body {
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    padding: 1rem;
+    line-height: 2;
+    font-family: "lato", sans-serif;
+    color: var(--primary-text-color);
+    font-size: 1rem;
+
+    @media (min-width: 700px) {
+        font-size: 1.25rem;
+    }
+}
+
+header {
+    margin-bottom: 4rem;
+    padding: 1em;
+}
+
+nav {
+    font-family: var(--heading-font-family);
+    font-size: 1.5rem;
+    a:link, a:visited, a:active {
+       text-decoration: none;
+       color: var(--link-color);
+   }
+
+   a:hover {
+       color: var(--link-hover-color);
+   }
+}
+
+.brand {
+   font-weight:600;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+a.brand:link, a.brand:visited, a.brand:active {
+    color: var(--primary-text-color);
+}
+
+.link-divider {
+    font-weight: 200;
+}
+
+.header-link {
+    font-weight: 200;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.home-content {
+    margin-top: 5rem;
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+
+    @media (min-width: 700px) {
+        margin-top: 10rem;
+        font-size: 1.5em;
+    }
+}
+
+.home-page-links {
+    border-top: 1px solid var(--secondary-text-color);
+    padding-top: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: var(--heading-font-family);
+    line-height: 1;
+    margin-top: 3rem;
+}
+
+a:link, a:visited {
+    color: var(--link-color);
+    transition: var(--link-transition-speed);
+}
+a:hover {
+    color: var(--link-hover-color);
+    transition: var(--link-transition-speed);
+}
+
+h1 {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+}
+
+.post-header{
+    h1 {
+        margin-top: -0.25rem;
+    }
+}
+.post-meta {
+    margin-bottom: 2rem;
+    margin-top: -0.25rem;
+    font-family: var(--heading-font-family);
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+.post-archive {
+    list-style-type:none;
+    padding-left: 0;
+    margin-top: 4rem;
+
+    a {
+        margin-left: 1rem;
+        text-decoration: none;
+    }
+}
+
+code {
+    font-size: 0.875rem;
+}

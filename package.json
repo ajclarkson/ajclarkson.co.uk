@@ -1,36 +1,26 @@
 {
-  "name": "ajclarkson.gitlab.io",
-  "version": "3.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "eleventy-plugin-time-to-read": "^1.2.0"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
-    "@11ty/eleventy-img": "^2.0.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "luxon": "^2.3.1",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.49.9"
-  },
+  "name": "tutorial",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run sass && eleventy",
-    "sass": "sass --style=compressed src/scss/styles.scss _site/css/styles.css",
-    "watch:eleventy": "eleventy --serve",
-    "watch:sass": "npm run sass -- --watch",
-    "dev": "npm-run-all sass --parallel watch:*"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/ajclarkson/ajclarkson.gitlab.io.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/ajclarkson/ajclarkson.gitlab.io/issues"
-  },
-  "homepage": "https://gitlab.com/ajclarkson/ajclarkson.gitlab.io#readme"
+  "dependencies": {
+    "@astrojs/netlify": "^6.1.0",
+    "@astrojs/preact": "^4.0.3",
+    "@astrojs/rss": "^4.0.11",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "astro": "^5.2.1",
+    "install": "^0.13.0",
+    "mdast-util-to-string": "^4.0.0",
+    "npm": "^11.1.0",
+    "preact": "^10.25.4",
+    "reading-time": "^1.5.0",
+    "sharp": "^0.33.5"
+  }
 }
