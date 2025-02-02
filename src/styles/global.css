@@ -22,8 +22,13 @@ body {
     line-height: 2;
     font-family: "lato", sans-serif;
     color: var(--primary-text-color);
-    font-size: 1.25rem;
+    font-size: 1rem;
+
+    @media (min-width: 700px) {
+        font-size: 1.25rem;
+    }
 }
+
 header {
     margin-bottom: 4rem;
     padding: 1em;
@@ -53,15 +58,15 @@ a.brand:link, a.brand:visited, a.brand:active {
 }
 
 .link-divider {
-    font-weight: 100;
+    font-weight: 200;
 }
 
 .header-link {
-    font-weight: 100;
+    font-weight: 200;
 }
 
 .container {
-    width: 80ch;
+    width: 100%;
     max-width: 700px;
     margin: 0 auto 4rem;
 
@@ -72,15 +77,16 @@ a.brand:link, a.brand:visited, a.brand:active {
 }
 
 .home-content {
-    font-size: 1.75rem;
-    margin-top: 10rem;
+    margin-top: 5rem;
 
     h1 {
-        margin-bottom: 0;
+        margin-bottom: 1rem;
     }
 
-    p {
-        margin-top: -0.5rem;
+
+    @media (min-width: 700px) {
+        margin-top: 10rem;
+        font-size: 1.5em;
     }
 }
 
@@ -95,6 +101,8 @@ a.brand:link, a.brand:visited, a.brand:active {
 
 h1, h2, h3, h4, h5 {
     font-family: var(--heading-font-family);
+    line-height: 1;
+    margin-top: 3rem;
 }
 
 a:link, a:visited {
@@ -113,23 +121,28 @@ h1 {
 
 .post-header{
     h1 {
-        margin-top: -2rem;
+        margin-top: -0.25rem;
     }
 }
 .post-meta {
     margin-bottom: 2rem;
-    margin-top: -1.5rem;
+    margin-top: -0.25rem;
     font-family: var(--heading-font-family);
-    font-weight: 100;
+    font-weight: 200;
     font-size: 1rem;
 }
 
 .post-archive {
     list-style-type:none;
     padding-left: 0;
+    margin-top: 4rem;
 
     a {
         margin-left: 1rem;
         text-decoration: none;
     }
+}
+
+code {
+    font-size: 0.875rem;
 }
