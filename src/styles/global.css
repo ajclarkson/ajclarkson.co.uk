@@ -64,6 +64,11 @@ a.brand:link, a.brand:visited, a.brand:active {
     width: 80ch;
     max-width: 700px;
     margin: 0 auto 4rem;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .home-content {

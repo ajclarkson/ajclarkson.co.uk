@@ -4,6 +4,10 @@ root: ~/workspace/ajclarkson.co.uk
 windows:
   - editor:
     - nvim
+  - dev:
+    - nvm use
+    - npx astro dev --host
   - terminal:
     - fish
     - clear
+    - nvm use

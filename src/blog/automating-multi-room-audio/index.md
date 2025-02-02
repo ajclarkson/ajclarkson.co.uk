@@ -1,0 +1,47 @@
+---
+title: 'Automating Multi Room Audio'
+pubDate: '2025-02-01'
+description: "One of my longest standing automations is based around the idea of having audio follow you around the house, and it's easy to achieve with Home Assistant and Node Red"
+author: 'Adam Clarkson'
+tags: ["Home Automation"]
+---
+
+This is one of my longest standing but favourite automations, being able to have audio automatically follow you around the house as you move room to room is one of those automations you won't notice every day, you'll just appreciate it.
+
+I'd had sonos speakers for a while before I got into Home Automation, and being able to group them and play the same thing in multiple rooms is great - but needing to take out your phone, open an app, and create groups adds a certain amount of friction. That friction wasn't enough to prevent me from doing it when I was intentionally thinking about it, but this need for intentionality meant it was ripe for automating.
+
+By automating multi room audio based on room presence, now when we're listening to music or watching TV and need to grab something from the kitchen the audio automatically follows.
+
+## The Principle
+
+One speaker serves as the "leader" in my setup, for us this is the Sonos Beam soundbar which is attached to the living room TV. When presence is detected in another room which has a Sonos speaker, this speaker is added to a group with the "leader" and the audio starts playing in the room. When presence is no longer detected, then the room is removed from the group.
+
+![Basic Multi Room Audio Automation Node Red Flow](./basic-example.png)
+
+_I'm illustrating this with NodeRed screenshots, as that's my platform of choice for automation, but the principle is easily reproducible in native Home Assistant automations._
+## Getting it Working
+Working with our example, the living room is the "lead" speaker, and we're joining the kitchen speaker to the group, so we're calling:
+
+- Domain: `media_player`
+- Service: `join`
+- Entity: `media_player.living_room`
+- Data: `{ "group_members": ["media_player.kitchen"]}`
+
+In the unjoin case, it would be:
+- Domain: `media_player`
+- Service: `unjoin`
+- Entity: `media_player.kitchen`
+
+## Having More Control
+
+The basic example will work to join/unjoin as you enter and leave the kitchen, but you might not want this behaviour "always on" in every room you have a speaker. For example, we have a speaker in the bedroom, where we want this off by default, but it's nice to have the option to enable it.
+
+![Multi Room Audio Automation Flow with Checks](./protected-example.png)
+
+By creating `input_boolean.bedroom_sonos_follow_enabled` as a helper entity, you now have a switch which can be added to a dashboard and used in your automation flows to check whether or not this behaviour should be applied. Now you're in control, and you can have different settings for each room. However this simple check has a downside. If you're standing in a room where sonos follow isn't enabled and you want to enable it, turning on the `input_boolean` won't have any effect. This grouping logic is only triggered by a state change in occupancy, and you're already occupying the room. 
+
+To take care of that, just configure your automation to also watch for state changes on the boolean.
+
+![Multi Room Audio Automation Flow with Switch and Checks](./complete-example.png)
+
+Now your automation will react, so if you turn on the `input_boolean` the speaker will be joined to the lead group, and if you turn it off it will be removed from the group. Time to enjoy some automated multi-room audio!
