@@ -5,10 +5,12 @@ import preact from "@astrojs/preact";
 
 import netlify from "@astrojs/netlify";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://ajclarkson.co.uk",
-  integrations: [preact()],
+  integrations: [preact(), mdx()],
 
   markdown: {
     remarkPlugins: [remarkReadingTime],
