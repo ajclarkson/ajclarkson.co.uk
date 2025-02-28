@@ -1,16 +1,46 @@
 ---
 import PageLayout from './PageLayout.astro';
 import Tags from '../components/Tags.astro';
-const { frontmatter } = Astro.props;
-const postDate = frontmatter.pubDate;
+import Icon from '../components/Icon.astro';
+import { Image } from 'astro:assets';
+
+const { frontmatter, index } = Astro.props;
+const postDate = new Date(frontmatter.pubDate);
+const shortMonths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const nthNumber = (number) => {
+  if (number > 3 && number < 21) return "th";
+  switch (number % 10) {
+    case 1:
+      return "st";
+    case 2:
+      return "nd";
+    case 3:
+      return "rd";
+    default:
+      return "th";
+  }
+};
+const month = postDate.toLocaleDateString("en-Gb", { month: "long" });
+const year = postDate.getFullYear();
+const day = postDate.getDate();
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/blog/*/*.{jpeg,jpg,png,gif}");
 ---
 <PageLayout pageTitle={frontmatter.title}>
-    <div class="post-header">
-        <Tags tags={ frontmatter.tags} />
-        <h1>{frontmatter.title}</h1>
-        <div class="post-meta">
-         <p>{postDate.toLocaleDateString('en-Gb' )} • {frontmatter.minutesRead}</p>
+    <div class="post-header row">
+            <div class="post-title col-50">
+                <div class="post-index-number">{index}/</div>
+                <h1>{frontmatter.title}</h1>
+                <p class="post-description">{frontmatter.description}</p>
+                <div class="post-meta">
+                    Published on {`${month} ${day}${nthNumber(day)}, ${year}`} • {frontmatter.minutesRead}               </div>
+            </div>
+            <div class="post-image col-50">
+                <Image src={images[frontmatter.imagePath]()} alt="{frontmatter.imageAlt}" />
+                <div class="post-image-credit">Photo by <a href="https://unsplash.com/@jamesjadotte?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">James Jadotte</a> on <a href="https://unsplash.com/photos/a-white-speaker-sitting-on-top-of-a-wooden-shelf-X-FoKbm4Z8g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
+            </div>
         </div>
     </div>
-    <slot />
+    <div class="post-body container">
+            <slot />
+    </div>
 </PageLayout>

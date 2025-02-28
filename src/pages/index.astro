@@ -1,15 +1,16 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 const pageTitle = "Home";
 ---
-<BaseLayout pageTitle={pageTitle}>
-    <div class="container">
-        <div class="home-content">
-        <h1>Adam Clarkson</h1>
-        <p>I'm a Senior Engineering Manager with the fantastic people at <a href="https://ocadotechnology.com/">Ocado Technology</a>, where I focus on enabling autonomy and delivering high quality software. I'm also a Home Automation enthusiast, and I spend quite a lot of my spare time experimenting with that and <a href="/blog">writing</a> about it.</p>
+<PageLayout pageTitle={pageTitle}>
+        <div class="container">
+        <div class="row">
+
+            <div class="col-100 home-intro">
+                <h1>Hi, I'm Adam</h1>
+
+             <p>I'm a Senior Engineering Manager with the fantastic people at <a href="https://ocadotechnology.com/">Ocado Technology</a>, where I focus on enabling autonomy and delivering high quality software. I'm also a Home Automation enthusiast, and I spend quite a lot of my spare time experimenting with that and <a href="/blog">writing</a> about it.</p>
+            </div>
         </div>
-        <div class="home-page-links">
-            <a href="/blog">Blog</a> / <a href="https://linkedin.com/profile/ajclarkson">LinkedIn</a>
         </div>
-    </div>
 </BaseLayout>

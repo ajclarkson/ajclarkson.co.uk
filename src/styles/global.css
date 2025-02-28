@@ -1,13 +1,15 @@
 :root {
-    --background-color: #f1f5f9;
-    --primary-text-color: #222222;
-    --heading-font-family: "Fira Sans", sans-serif;
+    --background-color: rgb(36,42,47);
+    --primary-text-color: rgb(250,252,254);
+    --heading-font-family: "Montserrat", sans-serif;
     --accent-color: #CC5500;
     --link-color: #CC5500;
     --link-hover-color: #375B66;
     --tertiary-text-color: #09B2E6;
     --link-transition-speed: 0.5s;
     --secondary-text-color: #c1c9c9;
+    /* Brute Settings */
+    --border: rgb(215,216,218);
 }
 
 html {
@@ -18,77 +20,47 @@ body {
     min-height: 100vh;
     display:flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem;
     line-height: 2;
     font-family: "lato", sans-serif;
     color: var(--primary-text-color);
     font-size: 1rem;
 
-    @media (min-width: 700px) {
+
+    @media (min-width: 840px) {
         font-size: 1.25rem;
     }
 }
 
 header {
+    font-size: 1.25rem;
     margin-bottom: 4rem;
-    padding: 1em;
 }
 
 nav {
     font-family: var(--heading-font-family);
-    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.875em;
+
     a:link, a:visited, a:active {
        text-decoration: none;
+       color: var(--primary-text-color);
+    }
+
+    a:hover {
        color: var(--link-color);
-   }
+    }
 
-   a:hover {
-       color: var(--link-hover-color);
-   }
-}
-
-.brand {
-   font-weight:600;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-
-a.brand:link, a.brand:visited, a.brand:active {
-    color: var(--primary-text-color);
-}
-
-.link-divider {
-    font-weight: 200;
-}
-
-.header-link {
-    font-weight: 200;
-}
-
-.container {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto 4rem;
-
-    img {
-        width: 100%;
-        height: auto;
+    .brand {
+        font-size: 2rem;
+    }
+    .links {
+        text-align: right;
+        padding: 10px;
     }
 }
 
-.home-content {
-    margin-top: 5rem;
-
-    h1 {
-        margin-bottom: 1rem;
-    }
-
-
-    @media (min-width: 700px) {
-        margin-top: 10rem;
-        font-size: 1.5em;
-    }
-}
 
 .home-page-links {
     border-top: 1px solid var(--secondary-text-color);
@@ -119,17 +91,73 @@ h1 {
     font-size: 2.5rem;
 }
 
-.post-header{
-    h1 {
-        margin-top: -0.25rem;
+.post-header {
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    
+    @media (min-width: 840px) {
+        margin-top: 5rem;
+        margin-bottom: 10rem;
     }
+    
+    .post-image {
+        text-align: right;
+        img {
+            width: 100%;
+            height: auto;
+
+            @media (min-width: 840px) {
+                width: auto;
+                height: auto;
+                max-height: 50rem;
+            }
+        }
+        .post-image-credit {
+
+            font-size: 0.5em;
+            font-style: italic;
+            text-align: right;
+        }
+    }
+    .post-title {
+        padding-top: 1rem;
+        
+        @media (min-width: 840px) {
+            padding-top: 4rem;
+        }
+        .post-index-number {
+            font-size: 8rem;
+            font-family: var(--heading-font-family);
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-top: -2rem;
+            margin-bottom: 2rem;
+        }
+    }
+     .post-meta {
+        margin-top: 2rem;
+        padding-top: 0.75rem;
+        font-family: var(--heading-font-family);
+        font-weight: 200;
+        font-size: 0.875rem;
+        border-top: 1px solid;
+        margin-bottom: 2rem;
+
+        @media (min-width: 840px) {
+            margin-bottom: auto;
+        }
+    }
+
 }
-.post-meta {
-    margin-bottom: 2rem;
-    margin-top: -0.25rem;
-    font-family: var(--heading-font-family);
-    font-weight: 200;
-    font-size: 1rem;
+
+.post-body {
+    padding-bottom: 6rem;
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .post-archive {
@@ -145,4 +173,19 @@ h1 {
 
 code {
     font-size: 0.875rem;
+}
+
+.page-title {
+    margin-bottom: 4rem;
+}
+.post-year-group-title {
+    margin-bottom: 2rem;
+}
+
+.home-intro {
+    h1 {
+        margin-top: 6rem;
+        margin-bottom: 4rem;
+    }
+
 }
