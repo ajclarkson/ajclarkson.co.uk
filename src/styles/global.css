@@ -24,10 +24,10 @@ body {
     line-height: 2;
     font-family: "lato", sans-serif;
     color: var(--primary-text-color);
-    font-size: 10rem;
+    font-size: 1rem;
 
 
-    @media (min-width: 700px) {
+    @media (min-width: 840px) {
         font-size: 1.25rem;
     }
 }
@@ -91,16 +91,26 @@ h1 {
     font-size: 2.5rem;
 }
 
-.post-header{
-    margin-top: 5rem;
-    margin-bottom: 10rem;
+.post-header {
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    
+    @media (min-width: 840px) {
+        margin-top: 5rem;
+        margin-bottom: 10rem;
+    }
     
     .post-image {
         text-align: right;
         img {
-            width: auto;
+            width: 100%;
             height: auto;
-            max-height: 50rem;
+
+            @media (min-width: 840px) {
+                width: auto;
+                height: auto;
+                max-height: 50rem;
+            }
         }
         .post-image-credit {
 
@@ -110,7 +120,11 @@ h1 {
         }
     }
     .post-title {
-        padding-top: 4rem;
+        padding-top: 1rem;
+        
+        @media (min-width: 840px) {
+            padding-top: 4rem;
+        }
         .post-index-number {
             font-size: 8rem;
             font-family: var(--heading-font-family);
@@ -129,12 +143,16 @@ h1 {
         font-weight: 200;
         font-size: 0.875rem;
         border-top: 1px solid;
+        margin-bottom: 2rem;
+
+        @media (min-width: 840px) {
+            margin-bottom: auto;
+        }
     }
 
 }
 
 .post-body {
-
     padding-bottom: 6rem;
     img {
         width: 100%;
@@ -162,4 +180,12 @@ code {
 }
 .post-year-group-title {
     margin-bottom: 2rem;
+}
+
+.home-intro {
+    h1 {
+        margin-top: 6rem;
+        margin-bottom: 4rem;
+    }
+
 }
