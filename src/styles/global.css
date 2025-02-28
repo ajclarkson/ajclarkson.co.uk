@@ -156,3 +156,10 @@ h1 {
 code {
     font-size: 0.875rem;
 }
+
+.page-title {
+    margin-bottom: 4rem;
+}
+.post-year-group-title {
+    margin-bottom: 2rem;
+}

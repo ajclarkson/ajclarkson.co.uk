@@ -6,8 +6,17 @@ const allPosts = await getCollection("blog");
 const pageTitle = "Articles";
 ---
 <PageLayout pageTitle={pageTitle}>
-    <h1>Post Archive</h1>
-    <ul class="post-archive">
-        {allPosts.map(( post: any) => <BlogPost url={`/blog/${post.id}`} title={post.data.title} date={post.data.pubDate} />)}
-    </ul>
+    <div class="container-small">
+        <div class="row page-title">
+            <div class="col-100">
+                <h1>Post Archive</h1>
+            </div>
+        </div>
+    <div class="row full-row-border-bottom post-year-group-title">
+        <div class="col-100">
+            <h2>2025</h2>
+        </div>
+    </div>
+    {allPosts.map(( post: any) => <BlogPost url={`/blog/${post.id}`} title={post.data.title} date={post.data.pubDate} />)}
+    </div>
 </PageLayout>
