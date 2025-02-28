@@ -4,7 +4,7 @@ const { tags } = Astro.props;
 
 <div class="tags">
     {tags.map((tag: string) => (
-      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+      <span class="tag"><a href={`/tags/${tag}`}>{tag}</a></span>
     ))}
 </div>
 
@@ -22,11 +22,9 @@ const { tags } = Astro.props;
     }
 
     .tags {
-      display: flex;
-      flex-wrap: wrap;
+        display: inline-block;
     }
 
     .tag {
-      font-size: 0.875em;
     }
 </style>
