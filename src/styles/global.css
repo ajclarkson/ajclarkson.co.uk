@@ -56,8 +56,8 @@ nav {
         font-size: 2rem;
     }
     .links {
-        padding-top: 1.5rem;
         text-align: right;
+        padding: 10px;
     }
 }
 
@@ -135,6 +135,7 @@ h1 {
 
 .post-body {
 
+    padding-bottom: 6rem;
     img {
         width: 100%;
         height: auto;
