@@ -1,9 +1,11 @@
 ---
 import Navigation from './Navigation.astro';
-import Hamburger from './Hamburger.astro';
+
+interface Props {
+    segments?: { label: string; href: string }[];
+}
+const { segments } = Astro.props;
 ---
 <header>
-    <nav>
-        <Navigation />
-    </nav>
+    <Navigation segments={segments} />
 </header>

@@ -1,16 +1,17 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
-const pageTitle = "Home";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
 ---
-<PageLayout pageTitle={pageTitle}>
-        <div class="container">
-        <div class="row">
-
-            <div class="col-100 home-intro">
-                <h1>Hi, I'm Adam</h1>
-
-             <p>I'm a Senior Engineering Manager with the fantastic people at <a href="https://ocadotechnology.com/">Ocado Technology</a>, where I focus on enabling autonomy and delivering high quality software. I'm also a Home Automation enthusiast, and I spend quite a lot of my spare time experimenting with that and <a href="/blog">writing</a> about it.</p>
-            </div>
+<BaseLayout pageTitle="Home" bodyClass="home">
+    <div class="home-brand">ajclarkson</div>
+    <div class="hero">
+        <h1>Hi, I'm Adam.<span class="cursor"></span></h1>
+        <p>I'm interested in systems that work — really work, not just under ideal conditions. At home I build home automation with the same care I'd bring to production software. At work I build and lead engineering teams, and I'm increasingly thinking about what AI means for how we build both.</p>
+        <div class="hero-cta">
+            <a href="/writing/">Read my writing →</a>
         </div>
+        <div class="hero-social">
+            <a href="https://bsky.app/profile/ajclarkson.co.uk">@ajclarkson.co.uk on Bluesky</a>
         </div>
+    </div>
 </BaseLayout>
