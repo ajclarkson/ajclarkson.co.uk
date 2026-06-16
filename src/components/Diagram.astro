@@ -1,0 +1,44 @@
+---
+interface Props {
+    code: string;
+    caption?: string;
+}
+const { code, caption } = Astro.props;
+const id = `diagram-${Math.random().toString(36).slice(2, 9)}`;
+---
+<figure class="diagram-figure">
+    <div class="diagram" id={id} data-diagram-code={code}></div>
+    {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<script>
+import mermaid from 'mermaid';
+
+mermaid.initialize({
+    startOnLoad: false,
+    theme: 'base',
+    themeVariables: {
+        background:           '#191724',
+        primaryColor:         '#26233a',
+        primaryTextColor:     '#e0def4',
+        primaryBorderColor:   '#403d52',
+        lineColor:            '#908caa',
+        secondaryColor:       '#1f1d2e',
+        tertiaryColor:        '#191724',
+        edgeLabelBackground:  '#1f1d2e',
+        clusterBkg:           '#1f1d2e',
+        titleColor:           '#e0def4',
+        fontFamily:           '"JetBrains Mono", monospace',
+        fontSize:             '13px',
+        nodeTextColor:        '#e0def4',
+    }
+});
+
+document.querySelectorAll<HTMLElement>('.diagram[data-diagram-code]').forEach(async (el) => {
+    const code = el.dataset.diagramCode ?? '';
+    if (!code) return;
+    const { svg } = await mermaid.render(el.id + '-svg', code);
+    el.innerHTML = svg;
+    el.removeAttribute('data-diagram-code');
+});
+</script>

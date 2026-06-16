@@ -1,0 +1,18 @@
+---
+import { getCollection, render } from 'astro:content';
+import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('writing');
+  return posts.map((post) => {
+      return { params: { slug: post.id }, props: { post } };
+  });
+}
+
+const { post } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await render(post);
+post.data.minutesRead = remarkPluginFrontmatter.minutesRead;
+---
+<MarkdownPostLayout frontmatter={post.data}>
+  <Content />
+</MarkdownPostLayout>

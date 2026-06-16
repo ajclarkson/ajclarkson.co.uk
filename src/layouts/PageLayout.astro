@@ -2,13 +2,10 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BaseLayout from './BaseLayout.astro';
-import '../styles/global.css';
-const { pageTitle} = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <Header />
-    <div class="container-large">
+    <Header segments={[{ label: 'writing', href: '/writing/' }]} />
     <slot />
-    </div>
     <Footer />
 </BaseLayout>

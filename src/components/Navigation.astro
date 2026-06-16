@@ -1,8 +1,16 @@
 ---
+interface Props {
+    segments?: { label: string; href: string }[];
+}
+const { segments = [] } = Astro.props;
 ---
-<div>
-    <div class="row">
-    <div class="brand col-25 collapse-to-50"><a href="/">AJC</a></div>
-    <div class="links col-75 collapse-to-50"><a href="/blog/" class="header-link">Blog</a></div>
-    </div>
-</div>
+<nav class="breadcrumb" aria-label="breadcrumb">
+    <span class="prompt">&#62;</span>
+    <a href="/" class="brand">ajclarkson</a>
+    {segments.map(seg => (
+        <>
+            <span class="sep">/</span>
+            <a href={seg.href}>{seg.label}</a>
+        </>
+    ))}
+</nav>
