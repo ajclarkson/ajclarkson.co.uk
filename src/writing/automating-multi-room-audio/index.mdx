@@ -22,7 +22,7 @@ One speaker serves as the "leader" in my setup, for us this is the Sonos Beam so
     A([state_changed:\nbinary_sensor.kitchen_occupied]):::trigger -- occupied --> B[media_player.kitchen\njoin group]:::action
     A -- cleared --> C[media_player.kitchen\nleave group]:::action`} caption="Basic multi-room audio flow" />
 
-_I'm illustrating this with NodeRed screenshots, as that's my platform of choice for automation, but the principle is easily reproducible in native Home Assistant automations._
+_I'm illustrating this with Node-RED flow diagrams, as that's my platform of choice for automation, but the principle is easily reproducible in native Home Assistant automations._
 ## Getting it Working
 Working with our example, the living room is the "lead" speaker, and we're joining the kitchen speaker to the group, so we're calling:
 
