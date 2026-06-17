@@ -7,37 +7,21 @@ const allPosts = await getCollection("writing");
 const sorted = allPosts.sort(
     (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 );
-
-const byYear = sorted.reduce((acc, post) => {
-    const year = new Date(post.data.pubDate).getFullYear().toString();
-    if (!acc[year]) acc[year] = [];
-    acc[year].push(post);
-    return acc;
-}, {} as Record<string, typeof sorted>);
-
-const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 ---
 <PageLayout pageTitle="Writing">
     <div class="writing-index">
         <div class="page-title">
             <h1>Writing</h1>
         </div>
-        {years.map(year => (
-            <div class="post-year-group">
-                <div class="post-year-group-title">
-                    <h2>{year}</h2>
-                </div>
-                <ul class="post-archive">
-                    {byYear[year].map(post => (
-                        <li>
-                            <span class="post-date">
-                                {new Date(post.data.pubDate).toLocaleDateString('en-gb', { day: 'numeric', month: 'short' })}
-                            </span>
-                            <a href={`/writing/${post.id}`}>{post.data.title}</a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        ))}
+        <ul class="post-archive">
+            {sorted.map(post => (
+                <li>
+                    <span class="post-date">
+                        {new Date(post.data.pubDate).toLocaleDateString('en-gb', { day: 'numeric', month: 'short', year: 'numeric' })}
+                    </span>
+                    <a href={`/writing/${post.id}`}>{post.data.title}</a>
+                </li>
+            ))}
+        </ul>
     </div>
 </PageLayout>
