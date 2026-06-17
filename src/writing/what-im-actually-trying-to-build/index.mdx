@@ -1,0 +1,47 @@
+---
+title: "What I'm Actually Trying to Build"
+pubDate: '2026-06-17'
+description: "Seven years into home automation, the goal isn't smart lights or clever gadgets. It's a system that never needs me to act as its input."
+author: 'Adam Clarkson'
+tags: ["Home Automation"]
+---
+
+I've been building and tweaking my home automation for around seven years at this point. In that time I've gone through cloud integrations that got discontinued, devices that required proprietary apps, automations that worked perfectly until a firmware update broke them, and more half-finished experiments than I care to count.
+
+What I kept learning, over and over, was that I wanted local control. A system that worked because of what was running in my house, not because of what commands I was sending over the internet.
+
+But local control is a constraint, not a goal. The goal is simpler than that: **I never want to manually act as input.**
+
+## What that actually means
+
+It's not "I want smart lights" or "I want to control my heating from my phone". Those are features. What I'm describing is closer to a design principle: the system should handle the things it knows about, and every time I have to step in and do something manually, that's a signal worth paying attention to.
+
+A manual intervention is one of three things:
+
+- **A bug**: the system should have handled this and didn't
+- **A gap**: the system has no opinion on this yet, it's a new concept or area
+- **An opportunity**: something that can't be fully automated, but where there's a smaller, solvable problem hiding inside it
+
+That third category is important. While the vision is to automate everything, the goal is to always ask why I'm intervening.
+
+## A concrete example
+
+Our whole house runs on motion sensors for lighting. 99% of the time I never think about lights. They come on when someone enters a room, adjust based on the time of day and ambient light, and turn off when the last person leaves. We genuinely don't notice them. When we're at someone else's house and this doesn't happen, it takes a moment to adjust, and that's a sign of something genuinely useful.
+
+But when we sit down for dinner, I press a button to set the light scene. When we're done, I press that same button again a couple of times to cycle back to the scene we were previously in.
+
+Can I fully automate "we're having dinner"? Probably not reliably. Deriving that context from sensors (consistent time, where people are seated, stationary for some minutes) would produce enough false positives to be more annoying than the button press. Its detection time would also be slow - this isn't going to turn a light on when you sit at the table. So I'll likely always press that button.
+
+But the button press itself is data. The system knows what scene it's in, how long it's been there, and that I've pressed the button again. That's enough to make a smarter decision about what "next" means in that moment - cycling to the next scene, or resetting to where we started. That's an opportunity: not automating the dinner scene itself, but reducing the friction around something I'll always control manually, and do almost every day.
+
+## The constraints that follow
+
+Pursuing this goal seriously produces a set of constraints that shape everything else, and there's a reason they're common software engineering principles.
+
+**Reliable.** Automations that require babysitting aren't automations. I treat much of this as mission critical - the heating not coming on, or lights behaving unexpectedly, has a real cost to the people living here. The system needs to work without my attention: safe failure modes, no dependency on external services, behaviour I can predict.
+
+**Observable.** When the lights don't do what I expected at 11pm, I need to be able to understand why. Without being in the room, without recreating the conditions. Every decision the system makes needs to be inspectable after the fact. This isn't an academic concern; it's the only way to tune behaviour over time.
+
+**Maintainable.** A system I can't understand six months later is a liability. That means configuration as data rather than hardcoded values, reusable components rather than duplicated logic, and a clear separation between what the system knows and what it does with that knowledge.
+
+These constraints aren't independent, they reinforce each other. A reliable system is easier to reason about, and an observable system is easier to maintain. But they also create real design pressure, and the rest of this site is about what that pressure produces.
