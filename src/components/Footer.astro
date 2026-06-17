@@ -2,14 +2,17 @@
 import Icon from './Icon.astro'
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
 import { faBluesky } from "@fortawesome/free-brands-svg-icons";
+import { faRss } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faBluesky);
+library.add(faBluesky, faRss);
 
 const blueskyIcon = icon({prefix: "fab", iconName: faBluesky.iconName});
+const rssIcon = icon({prefix: "fas", iconName: faRss.iconName});
 ---
 
 <footer>
     <a href="https://bsky.app/profile/ajclarkson.co.uk" aria-label="ajclarkson.co.uk on Bluesky"><Icon icon={blueskyIcon} /></a>
+    <a href="/rss.xml" aria-label="RSS feed"><Icon icon={rssIcon} /></a>
 </footer>
 
 <style>
