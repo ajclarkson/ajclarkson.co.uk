@@ -1,11 +1,20 @@
-import rss, { pagesGlobToRssItems} from '@astrojs/rss';
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
 export async function GET(context) {
+    const posts = await getCollection('writing');
+    const sorted = posts.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+
     return rss({
         title: 'ajclarkson.co.uk | Writing',
         description: 'Writing by Adam Clarkson',
         site: context.site,
-        items: await pagesGlobToRssItems(import.meta.glob('./**/*.md')),
-        customData: `<language>en-us</language>`,
+        items: sorted.map(post => ({
+            title: post.data.title,
+            pubDate: post.data.pubDate,
+            description: post.data.description,
+            link: `/writing/${post.id}/`,
+        })),
+        customData: `<language>en-gb</language>`,
     });
 }
