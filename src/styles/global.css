@@ -102,6 +102,17 @@ pre {
     margin: 2rem 0;
 }
 
+/* ── Page container ───────────────────────────────────────── */
+
+.page-container {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 /* ── Nav ──────────────────────────────────────────────────── */
 
 nav.breadcrumb {

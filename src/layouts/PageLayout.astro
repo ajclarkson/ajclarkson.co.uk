@@ -5,7 +5,9 @@ import BaseLayout from './BaseLayout.astro';
 const { pageTitle } = Astro.props;
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <Header segments={[{ label: 'writing', href: '/writing/' }]} />
-    <slot />
-    <Footer />
+    <div class="page-container">
+        <Header segments={[{ label: 'writing', href: '/writing/' }]} />
+        <slot />
+        <Footer />
+    </div>
 </BaseLayout>
