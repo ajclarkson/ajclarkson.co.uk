@@ -1,0 +1,75 @@
+---
+title: "The Stack"
+pubDate: '2026-06-28'
+description: "An overview of what's actually running: Zigbee2MQTT, Home Assistant, Node-RED, and the observability layer that makes it all debuggable. Each layer exists for a reason."
+author: 'Adam Clarkson'
+tags: ["Home Automation"]
+---
+
+import Diagram from '../../components/Diagram.astro';
+
+The constraints I described in [What I'm Actually Trying to Build](/writing/what-im-actually-trying-to-build) (reliable, observable, maintainable) apply to the stack as much as to the automations themselves. Every external dependency is a potential failure point. Every cloud service can be discontinued, rate-limited, or go down at an inconvenient moment. Every proprietary protocol is a lock-in risk.
+
+Each layer in this stack exists to answer the same question: where does the control actually live?
+
+## Devices: Zigbee and Zigbee2MQTT
+
+Almost every device in the house uses Zigbee rather than WiFi. More than deliberate, it's my default: if a Zigbee option exists for something I'm buying, that's what I'm choosing.
+
+Zigbee is a local mesh protocol. Devices talk to a coordinator plugged into a server in my house, not to a vendor's cloud. The important thing it makes possible is separating the hardware from the ecosystem. I use Philips Hue bulbs and switches, but no Hue bridge. I use Hive TRVs for heating, but no Hive hub and no Hive subscription. Without local control, operating a Hive TRV means sending a command from my server, across the internet to Hive's cloud, and back to a radiator five metres away. That's a dependency on their uptime, their API, and their business continuing to exist, for hardware that's physically in the same room. Zigbee cuts that out entirely.
+
+Zigbee2MQTT (Z2M) is the bridge between the Zigbee coordinator and the rest of the stack. It translates device messages into MQTT topics and handles the reverse: sending commands back to devices. Because Zigbee is a protocol rather than a brand, Z2M supports hardware from many different manufacturers, and I can pick the best device for a job without worrying about ecosystem compatibility.
+
+## The message bus: MQTT
+
+MQTT sits in the middle of the stack. Z2M publishes to it, Home Assistant subscribes to it, and the automation layer publishes back to it for observability.
+
+MQTT is a simple pub/sub protocol, and that simplicity is the point. The layers above and below it are decoupled. Z2M doesn't need to know about Home Assistant, and Home Assistant doesn't need to know about Z2M. MQTT is the contract between them, and that contract doesn't change when either side does.
+
+This also means MQTT carries both directions of traffic. When a device reports its state, that flows via MQTT into HA. When HA needs to send a command to a device, that goes back out via MQTT to Z2M, which translates it into a Zigbee instruction. MQTT going down doesn't just mean HA loses visibility of devices, it loses the ability to control them too.
+
+## State: Home Assistant
+
+Home Assistant is the single source of truth for everything the house knows about itself: which rooms are occupied, what the temperature is, what mode the house is in, whether it's a workday, what time sunrise is. It's a state machine, and I use it as exactly that.
+
+HA also hosts the helper entities that act as configuration: lux thresholds, temperature targets, per-room switches that enable or disable automations. This means behaviour can be changed without touching automation logic. A threshold is a value in a UI, not a constant buried in a flow. When the lighting in a room feels too aggressive, I adjust a number in the dashboard rather than opening an editor.
+
+HA has its own automation system, but I don't use it. HA is responsible for state, and a separate layer handles what to do with that state. Having a hard boundary there means I always know where logic lives, and in my stack it's never HA.
+
+## Automation: Node-RED
+
+Node-RED watches for state changes from HA, evaluates what should happen, and calls back into HA to make it happen.
+
+Why Node-RED specifically, and whether it's the right answer, is worth its own piece.
+
+## Observability: Loki and Grafana
+
+Every decision the automation layer makes gets published to MQTT as a structured snapshot: what triggered it, what the system knew, what it decided. Those events end up in Loki, where Grafana makes them queryable.
+
+This is what makes the system actually debuggable. When the lights don't behave as expected at 11pm, I can query the decision log and see exactly what the system knew and what it chose. Without this, debugging means either recreating conditions or guessing. Neither is acceptable for a system that's supposed to run unattended.
+
+Loki is just another consumer of the MQTT bus. Nothing in the automation layer knows or cares about it, which is the point. Observability is built into the architecture, not bolted on, and I'll cover how that works in the system design pieces.
+
+## Infrastructure
+
+All of this runs on a home Kubernetes cluster. That's context rather than a feature. I run it at home for other things, so it's the natural host, and it means service definitions live in version control and deployments are reproducible. It's not a requirement for any of this to work.
+
+One thing the infrastructure does make elegant is the MQTT-to-Loki pipeline. Rather than writing a custom exporter, I run a tiny bridge service that does nothing but subscribe to the relevant MQTT topics and print each message to its own log output. The log collection system that already scrapes every other service in the cluster picks that up automatically, parses the JSON fields, and forwards them to Loki. The bridge has no knowledge of Loki at all, and that's the whole design in miniature: components that do one thing, connected by contracts they don't need to look behind.
+
+## How it fits together
+
+<Diagram code={`flowchart LR
+    classDef device fill:#26233a,stroke:#eb6f92,color:#eb6f92
+    classDef infra fill:#26233a,stroke:#31748f,color:#9ccfd8
+    classDef logic fill:#26233a,stroke:#c4a7e7,color:#c4a7e7
+    classDef obs fill:#26233a,stroke:#f6c177,color:#f6c177
+    Z([Zigbee Devices]):::device <--> Z2M[Zigbee2MQTT]:::infra
+    Z2M <--> MQTT[MQTT]:::infra
+    MQTT <--> HA[Home Assistant]:::infra
+    HA <--> NR[Node-RED]:::logic
+    NR --> MQTT
+    MQTT --> B[MQTT bridge]:::obs
+    B --> L[Loki]:::obs
+    L --> G[Grafana]:::obs`} caption="The full stack: devices to observability" />
+
+Each layer has a single job. Devices report state, Z2M translates it, MQTT carries it, HA holds it, Node-RED acts on it, and the observability layer records what happened. The system design pieces get into how those jobs are structured, which is where the more interesting decisions live.
