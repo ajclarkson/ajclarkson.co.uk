@@ -39,11 +39,11 @@ This is good architecture. The reducer is pure, in the sense that it has no side
 
 Node-RED made this possible. Subflows let me package each step as a reusable component, and wiring them together was quick. The occupancy controller, for example, handles motion events, "strong holds" (a media player playing, a switch held on), door contacts for containment logic, timer loopbacks, and a failsafe timeout. It's a genuinely complex piece of behaviour, and the runtime made it traceable.
 
-In principle, a pure reducer with no side effects should be trivially testable in isolation. In practice, that runs into Node-RED's limits immediately. There is no way to write a unit test for a function node. To verify the occupancy reducer handles containment correctly, you wire up an inject node, fabricate a message that looks like the right state, deploy, trigger it, and inspect a debug node. That's not a test, it's a manual check, and it doesn't survive a refactor.
+In principle, a pure reducer with no side effects should be trivially testable in isolation. In practice, that runs into Node-RED's limits immediately. There is no way to write a unit test for a function node. To verify the occupancy reducer handles containment correctly, I wire up an inject node, fabricate a message that looks like the right state, deploy, trigger it, and inspect a debug node. That's not a test, it's a manual check, and it doesn't survive a refactor.
 
 ## Where it started to strain
 
-The occupancy controller is a good example for a different reason too. Look at what it actually contains: a pipeline of subflows (guard, correlate, discover hold entities, reduce, guard decision contract, fanout, action runtime) and then the reducer function, which is where the actual occupancy logic lives. The evidence model, the containment logic, the decision tree, the timer behaviour. That's maybe a third of what's in the flow, the rest is pipeline.
+The occupancy controller is a good example for a different reason too. It's worth looking at what it actually contains: a pipeline of subflows (guard, correlate, discover hold entities, reduce, guard decision contract, fanout, action runtime) and then the reducer function, which is where the actual occupancy logic lives. The evidence model, the containment logic, the decision tree, the timer behaviour. That's maybe a third of what's in the flow, the rest is pipeline.
 
 The subflow solved the room problem. I can drop the occupancy controller subflow into any room tab and it works. What it didn't solve is the cross-domain problem. The lighting controller has the same pipeline. The heating controller has the same pipeline. Essentially every flow has the same pipeline.
 
@@ -58,7 +58,7 @@ The subflow solved the room problem. I can drop the occupancy controller subflow
 
 Each time I start a new automation domain, I'm rebuilding the same scaffold: create the subflow, wire up the steps, configure the environment variables, check that the contracts are passing correctly. The interesting part, the actual logic of the domain, is a function node sitting in the middle of all that. And as the reducers got more complex, with containment logic and multi-signal evidence models and timer interactions, the inability to test them properly became a real cost. If I changed the occupancy reducer, the only way to know I hadn't broken the containment edge case was to physically go and close the bedroom door.
 
-When the core of every automation is a function with defined inputs and outputs, and everything around it is scaffolding you wire up manually each time, it's definitely a signal the the host platform might not be quite right anymore. The flow editor was no longer the abstraction. It was the overhead.
+When the core of every automation is a function with defined inputs and outputs, and everything around it is scaffolding I wire up manually each time, you haven't outgrown the logic. You've outgrown the host. The flow editor was no longer the abstraction. It was the overhead.
 
 ## What the visual model is actually good for
 
@@ -66,7 +66,7 @@ This isn't a criticism of Node-RED or visual programming in general. The flowcha
 
 ## What I actually want
 
-The pattern the runtime established is good. Guard, correlate, load context, reduce, fanout, execute. Enforce that every automation follows it. Make observability automatic. Make correlation IDs automatic. Make the action contract enforced by types rather than by a guard node that can only catch failures at runtime. And make the reducer a function you can actually test: give it inputs, assert on the actions it returns, without a live Home Assistant instance, without deploying anything, without closing any doors.
+The pattern the runtime established is good. Guard, correlate, load context, reduce, fanout, execute. Enforce that every automation follows it. Make observability automatic. Make correlation IDs automatic. Make the action contract enforced by types rather than by a guard node that can only catch failures at runtime. And make the reducer a function I can actually test: give it inputs, assert on the actions it returns, without a live Home Assistant instance, without deploying anything, without closing any doors.
 
 What I want is to write this:
 
