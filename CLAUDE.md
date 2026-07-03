@@ -38,13 +38,7 @@ imageAlt: string
 
 ## Source material
 
-Home automation posts draw from the private working notes at `~/workspace/claude-home`. Key docs there:
-- `CLAUDE.md` — full system overview, entity naming, room list
-- `design-principles.md` — the architectural thinking behind the automation system
-- `runtime-architecture.md` — Node-RED pipeline design
-- `heating-v3-design.md` — heating system
-
-When writing home automation content, read the relevant doc from claude-home first.
+Home automation posts draw from working notes at `~/workspace/claude-home` — read the relevant doc from there before writing on that topic.
 
 ## Voice
 
