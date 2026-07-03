@@ -12,15 +12,15 @@ When I started building serious automations, Home Assistant's native automation 
 
 ## Why Node-RED
 
-The thing that drew me in wasn't the JavaScript support, though that turned out to matter. It was the visual model. Automations are pipelines: something changes, you evaluate it, you decide what to do, you do it. Node-RED represents that as a flowchart, and that maps almost perfectly to how I think about automation logic. I could wire up a new automation in minutes, see exactly how it connected to other flows, and iterate quickly. For getting a system off the ground, it was exactly right.
+The thing that drew me in wasn't the JavaScript support, though that turned out to matter, it was the visual model. Automations are pipelines: something changes, you evaluate it, you decide what to do, you do it. Node-RED represents that as a flowchart, and that maps almost perfectly to how I think about automation logic. I could wire up a new automation in minutes, see exactly how it connected to other flows, and iterate quickly. For getting a system off the ground, it was exactly what I was looking for.
 
-The JS function nodes were the bonus. For simple things you never needed them. But when logic got complex, you could drop into code without leaving the tool. That felt like the best of both worlds.
+The JS function nodes were a bonus. For simple things I never needed them. But when logic got complex, I could switch to writing code without leaving the tool. It felt like having the best of both worlds.
 
 ## How the runtime developed
 
-As my automations matured, I started treating them more like production software. Reliability and observability weren't nice-to-haves, they were the point. That pushed me towards what I ended up calling the "runtime": a set of reusable subflows that every automation would pass through.
+As my automations matured, I started treating them more like production software. Reliability and observability weren't nice-to-haves, they were the point. That pushed me towards what I ended up calling the "runtime", a set of reusable subflows that every automation would pass through.
 
-The pattern that emerged looked like this: every trigger flows through a guard and correlation step (is this event worth acting on? give it an ID), then a context-loading step (what does the room currently know?), then a pure reducer function (given everything we know, what should happen?), then a fanout step (publish the decision to observability, execute the actions, handle loopback timers). The reducer emits a list of actions. It never calls a service directly. The runtime executes the plan.
+The pattern that emerged was that every trigger flows through a guard and correlation step (is this event worth acting on? give it an ID), then a context-loading step (what does the room currently know?), then a pure reducer function (given everything we know, what should happen?), then a fanout step (publish the decision to observability, execute the actions, handle loopback timers). The reducer function emits a list of actions, it never calls a service directly. The runtime executes the plan.
 
 <Diagram code={`flowchart LR
     classDef trigger fill:#26233a,stroke:#eb6f92,color:#eb6f92
@@ -35,17 +35,17 @@ The pattern that emerged looked like this: every trigger flows through a guard a
     F --> E[Execute]:::obs
     E --> T`} caption="The runtime pipeline every automation passes through" />
 
-This is good architecture. The reducer is pure, in the sense that it has no side effects and given the same inputs will always produce the same actions. Every decision gets a correlation ID and is published to MQTT as a structured snapshot of what the system knew, what it decided, and why. I can query that log and understand what happened at 11pm without recreating conditions. The contracts between steps are enforced by the guard nodes.
+This is good architecture. The reducer is pure, in the sense that it has no side effects and given the same inputs will always produce the same actions. Every decision gets a correlation ID and is published to MQTT as a structured snapshot of what the system knew, what it decided, and why. I can query that log and understand what happened at any time without recreating conditions. The contracts between steps are enforced by the guard nodes, and everything is consistent.
 
-Node-RED made this possible. Subflows let me package each step as a reusable component, and wiring them together was quick. The occupancy controller, for example, handles motion events, strong holds (a media player playing, a switch held on), door contacts for containment logic, timer loopbacks, and a failsafe timeout. It's a genuinely complex piece of behaviour, and the runtime made it tractable.
+Node-RED made this possible. Subflows let me package each step as a reusable component, and wiring them together was quick. The occupancy controller, for example, handles motion events, "strong holds" (a media player playing, a switch held on), door contacts for containment logic, timer loopbacks, and a failsafe timeout. It's a genuinely complex piece of behaviour, and the runtime made it traceable.
 
 In principle, a pure reducer with no side effects should be trivially testable in isolation. In practice, that runs into Node-RED's limits immediately. There is no way to write a unit test for a function node. To verify the occupancy reducer handles containment correctly, you wire up an inject node, fabricate a message that looks like the right state, deploy, trigger it, and inspect a debug node. That's not a test, it's a manual check, and it doesn't survive a refactor.
 
 ## Where it started to strain
 
-The occupancy controller is a good example for a different reason too. Look at what it actually contains: a pipeline of subflows (guard, correlate, discover hold entities, reduce, guard decision contract, fanout, action runtime) and then the reducer function, which is where the actual occupancy logic lives. The evidence model, the containment logic, the decision tree, the timer behaviour. That's maybe a third of what's in the flow. The rest is pipeline.
+The occupancy controller is a good example for a different reason too. Look at what it actually contains: a pipeline of subflows (guard, correlate, discover hold entities, reduce, guard decision contract, fanout, action runtime) and then the reducer function, which is where the actual occupancy logic lives. The evidence model, the containment logic, the decision tree, the timer behaviour. That's maybe a third of what's in the flow, the rest is pipeline.
 
-The subflow solved the room problem. I can drop the occupancy controller subflow into any room tab and it works. What it didn't solve is the cross-domain problem. The lighting controller has the same pipeline. The heating controller has the same pipeline. The WFH inference flow has the same pipeline.
+The subflow solved the room problem. I can drop the occupancy controller subflow into any room tab and it works. What it didn't solve is the cross-domain problem. The lighting controller has the same pipeline. The heating controller has the same pipeline. Essentially every flow has the same pipeline.
 
 <Diagram code={`flowchart LR
     classDef pipeline fill:#26233a,stroke:#31748f,color:#9ccfd8
@@ -58,7 +58,7 @@ The subflow solved the room problem. I can drop the occupancy controller subflow
 
 Each time I start a new automation domain, I'm rebuilding the same scaffold: create the subflow, wire up the steps, configure the environment variables, check that the contracts are passing correctly. The interesting part, the actual logic of the domain, is a function node sitting in the middle of all that. And as the reducers got more complex, with containment logic and multi-signal evidence models and timer interactions, the inability to test them properly became a real cost. If I changed the occupancy reducer, the only way to know I hadn't broken the containment edge case was to physically go and close the bedroom door.
 
-When the core of every automation is a function with defined inputs and outputs, and everything around it is scaffolding you wire up manually each time, you haven't outgrown the logic. You've outgrown the host. The flow editor was no longer the abstraction. It was the overhead.
+When the core of every automation is a function with defined inputs and outputs, and everything around it is scaffolding you wire up manually each time, it's definitely a signal the the host platform might not be quite right anymore. The flow editor was no longer the abstraction. It was the overhead.
 
 ## What the visual model is actually good for
 
