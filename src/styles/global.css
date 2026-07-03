@@ -23,7 +23,7 @@
     --border-color:           var(--rp-highlight-med);
 
     /* Typography */
-    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-display: "Bricolage Grotesque", system-ui, sans-serif;
     --font-body:    "Inter", system-ui, sans-serif;
     --font-mono:    "JetBrains Mono", "Fira Code", monospace;
 
@@ -80,7 +80,7 @@ a:hover {
 
 h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.1;
 }
 
@@ -182,7 +182,7 @@ header {
 
     h1 {
         font-size: clamp(3rem, 7vw, 6rem);
-        font-weight: 500;
+        font-weight: 800;
         letter-spacing: -0.03em;
         margin: 0 0 2rem;
         color: var(--rp-text);
@@ -313,7 +313,7 @@ header {
 
 .post-header h1 {
     font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 400;
+    font-weight: 800;
     letter-spacing: -0.02em;
     margin: 0 0 1.25rem;
     line-height: 1.15;
